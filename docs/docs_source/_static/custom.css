@@ -1,0 +1,33 @@
+
+/* override table width restrictions */
+.wy-table-responsive table td, .wy-table-responsive table th {
+    /* !important prevents the common CSS stylesheets from
+       overriding this as on RTD they are loaded after this stylesheet */
+    white-space: normal !important;
+}
+
+.wy-table-responsive {
+    overflow: visible !important;
+}
+
+.rst-content .admonition {
+    padding: 12px !important;
+    line-height: 24px !important;
+    margin-bottom: 24px !important;
+}
+
+.rst-content .admonition p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.rst-content .admonition-excel-online-note {
+    background-color: #d3f0e0 !important;
+}
+
+.rst-content .admonition-excel-online-note .admonition-title {
+    background-color: #207144 !important;
+}
+
+.rst-content table.field-list td {
+    padding-top: 8px !important;
+}
