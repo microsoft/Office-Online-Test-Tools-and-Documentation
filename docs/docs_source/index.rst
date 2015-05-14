@@ -113,10 +113,12 @@ integration is as secure as possible, ensure that:
 * Initial requests to Office Online are made by using POST, where the access token is in the body of the POST request.
 
 Office Online identity can be established by using a public :ref:`proof key <Proof Keys>` to decrypt part of the WOPI
-requests. Also, the Office Online file cache indexes stored file contents by using an SHA256 hash. You can pass in
-the hash using the :term:`SHA265` property in the :ref:`CheckFileInfo` response. The hash is usually generated from
+requests. Also, the Office Online file cache indexes stored file contents by using a SHA256 hash. You can pass in
+the hash using the :term:`SHA256` property in the :ref:`CheckFileInfo` response. The hash is usually generated from
 the file itself, but it might also be generated from the file ID and version. To ensure that users can't force a
 cache collision and view the wrong file, no user-provided information is used to generate the hash.
+
+:term:`FileNameMaxLength`
 
 Managing Office 365 subscriptions
 ---------------------------------
@@ -175,7 +177,6 @@ Contents:
     glossary
     build_docs
 
-==================
 Indices and tables
 ==================
 

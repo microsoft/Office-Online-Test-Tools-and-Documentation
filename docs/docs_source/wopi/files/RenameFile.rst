@@ -14,8 +14,8 @@ RenameFile
     rename files. In order to activate this UI in Office Online, you must implement the RenameFile operation, and
     also do the following:
 
-    * Set :js:data:`SupportsRename` and :js:data:`UserCanRename` to true in your :ref:`CheckFileInfo` response.
-    * Set a :js:data:`FileNameMaxLength` value if the default value is not correct for your WOPI host.
+    * Set :term:`SupportsRename` and :term:`UserCanRename` to true in your :ref:`CheckFileInfo` response.
+    * Set a :term:`FileNameMaxLength` value if the default value is not correct for your WOPI host.
 
     If the host cannot rename the file because the name requested is invalid or conflicts with an existing file, the
     host should try to generate a different name based on the requested name that meets the file name requirements.

@@ -33,8 +33,9 @@ Glossary
 
     Host Frame
     Host Page
-        The host frame (also called the 'host page') is the HTML page which will host an iframe that points to an
-        Office Online application.
+    Outer Frame
+        The host frame (also called the 'host page' or 'outer frame') is the HTML page which will host an iframe that
+        points to an Office Online application.
 
         .. seealso:: :ref:`Host Frame`
 

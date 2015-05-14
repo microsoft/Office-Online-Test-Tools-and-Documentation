@@ -60,7 +60,6 @@ The following properties must be present in all CheckFileInfo responses:
         A string that uniquely identifies the owner of the file.
         **This is a required value in all CheckFileInfo responses.**
 
-
     Size
         The size of the file in bytes, expressed as an **int**.
         **This is a required value in all CheckFileInfo responses.**
@@ -95,7 +94,11 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         A URI to a web page that Office Online will navigate to when the application closes, or in the event of an
         unrecoverable error.
 
-        ..  seealso:: :term:`ClosePostMessage`
+        ..  seealso::
+
+            :term:`ClosePostMessage`
+                You can also use the ClosePostMessage property to indicate you'd like to receive a PostMessage when
+                the close button is clicked rather than navigate to a URL.
 
     DownloadUrl
         A user-accessible URI to the file intended to allow the user to download a copy of the file.
@@ -103,7 +106,11 @@ Hosts can return a number of URLs that Office Online will navigate to in various
     FileSharingUrl
         A URI to a location that allows the user to share the file.
 
-        ..  seealso:: :term:`FileSharingPostMessage`
+        ..  seealso::
+
+            :term:`FileSharingPostMessage`
+                You can also use the FileSharingPostMessage property to indicate you'd like to receive a PostMessage
+                when the share button is clicked rather than navigate to a URL.
 
     FileUrl
         A URI to the file location that the WOPI client uses to get the file. If this is provided, Office Online
@@ -171,6 +178,9 @@ implementation meets the requirements for a particular property.
         :ref:`UnlockAndRelock` operations for this file. This implies that the host can use :ref:`WOPI actions` that
         require :wopi:req:`locks` support.
 
+    SupportsRename
+        A **Boolean** value that indicates that the host supports :ref:`RenameFile` operations for this file.
+
     SupportsScenariosLinks
         A **Boolean** value that indicates that thehost supports scenarios where users can operate on files in
         limited ways via restricted URLs.
@@ -183,26 +193,51 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports :ref:`PutFile` and :ref:`PutRelativeFile` operations
         for this file.
 
+.. _User properties:
 
 User properties
 ~~~~~~~~~~~~~~~
 
+There are several properties hosts can use to provide user ID data to Office Online. Any value in the following
+properties must meet the following requirements:
+
+* Unique to a single user. The :term:`TenantId` property is the sole exception to this requirement.
+* Consistent over time. For example, if a particular user uses Office Online to view a document on Monday, then
+  returns and views another document on Tuesday, the value of the user-related properties should match.
+
+Office Online will record these User ID values, but they will be hashed and encrypted in such a way that their
+uniqueness is maintained, but the raw values are not. Hosts can opt to pass values that are already hashed/encrypted
+as long as the values meet the criteria above.
+
 ..  glossary::
     :sorted:
 
-A host is only required to specify the **OwnerId** property, which represents the owner of a given document. However, we
-recommend that you set the **UserId** property as well.
+    HostAuthenticationId
+        A **string** value uniquely identifying the user currently accessing the file.
 
-SHA256 property
-~~~~~~~~~~~~~~~
+        ..  note::
 
-Set the **SHA256** property for view scenarios. This value allows Office Online to take advantage of more performant
-caching strategies. We recommend that you set this property for edit scenarios as well.
+            This property should not be used. Hosts should use the :term:`UserId` property instead.
 
-UserFriendlyName property
-~~~~~~~~~~~~~~~~~~~~~~~~~
+    PresenceUserId
+        A **string** that identifies the user in the context of the :term:`PresenceProvider`.
 
-The UserFriendlyName property is used to display the user's name in the Office Online UI.
+        ..  note::
+
+            This property should not be used.
+
+    TenantId
+        A **string** value uniquely identifying the user's 'tenant,' or group/organization to which they belong. This
+        property is useful for hosts
+
+        ..  caution::
+
+            The presence of this property does not remove the uniqueness and consistency requirements listed above.
+            User properties are expected to be unique *per user* and consistent over time regardless of the presence
+            of a :term:`TenantId`.
+
+    UserId
+        A **string** value uniquely identifying the user currently accessing the file.
 
 User permissions properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -210,44 +245,76 @@ User permissions properties
 Office Online always assumes that users have limited permissions to documents. If you do not set the appropriate
 **UserCan\*** properties, users will not be able to perform operations such as editing documents in Office Online.
 
-The **UserCan\*** properties include:
+Ultimately, the host has final control over whether WOPI operations attempted by Office Online should succeed or fail
+based on the :term:`access token` provided in the WOPI request. Thus, these properties do not act as an authorization
+mechanism. Rather, these properties help Office Online tailor its UI and behavior to the specific permissions a user
+has. For example, Office Online will hide the file renaming UI if the :term:`UserCanRename` property is ``false``.
+However, Office Online expects that even if that UI were somehow made available to a user without appropriate
+permissions, the WOPI :ref:`RenameFile` request would fail since the host would determine the action was not
+permissable based on the :term:`access token` passed in the request.
 
-* UserCanAttend
-* UserCanNotWriteRelative
-* UserCanPresent
-* UserCanRename
-* UserCanWrite
+Note that there is no property that indicates the user has permission to read/view a file. This is because Office
+Online expects that the host will respond to any WOPI request, including :ref:`CheckFileInfo`, with an
+:http:statuscode:`404` if the access token is invalid or expired.
 
-Additional properties that affect Office Online
------------------------------------------------
+..  glossary::
+    :sorted:
 
-The following **CheckFileInfo** properties affect Office Online behavior.
+    UserCanAttend
+        A **Boolean** value that indicates that the user has permission to view a :term:`broadcast` of this file.
 
-ClientUrl property
-~~~~~~~~~~~~~~~~~~
+    UserCanNotWriteRelative
+        A **Boolean** value that indicates the user does not have sufficient permissions to create new files on the WOPI
+        server. Setting this to ``true`` prevents Office Online from calling :ref:`PutRelativeFile` on behalf of the
+        user.
 
-If you set the **ClientUrl** property, Office Online will expose buttons in the UI that enable users to open documents
-in Office for Windows, iOS, or Android. To integrate with Office Online, you must use a DAV URL for this property.
+    UserCanPresent
+        A **Boolean** value that indicates that the user has permission to :term:`broadcast` this file to a set of
+        users who have permission to broadcast or view a broadcast of this file.
+
+    UserCanRename
+        A **Boolean** value that indicates the user has permission to rename the current file. If set to ``false``,
+        Office Online will hide UI related to renaming files.
+
+    UserCanWrite
+        A **Boolean** value that indicates that the user has permissions to alter the file. Setting this to ``true``
+        enables Office Online to call :ref:`PutFile` on behalf of the user. In addition, Office Online will not load
+        documents using the :wopi:action:`edit` action if this value is ``false`` for the user.
 
 PostMessage properties
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The PostMessage properties control the behavior of Office Online with respect to incoming PostMessages. Note that if
-you are using the PostMessage extensibility features of Office Online, you must set the **PostMessageOrigin**
-property to ensure that Office Online accepts messages from your outer frame.
+you are using the PostMessage extensibility features of Office Online, you must set the :term:`PostMessageOrigin`
+property to ensure that Office Online accepts messages from your outer frame. You can read more about PostMessage
+integration at :ref:`PostMessage`.
 
-The PostMessage properties include:
+..  glossary::
+    :sorted:
 
-* ClosePostMessage
-* EditNotificationPostMessage
-* FileSharingPostMessage
-* PostMessageOrigin
+    ClosePostMessage
+        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
+        PostMessage.
+
+    EditNotificationPostMessage
+        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the
+        :js:data:`Edit_Notification` PostMessage.
+
+    FileSharingPostMessage
+        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the
+        :js:data:`UI_Sharing` PostMessage.
+
+    PostMessageOrigin
+        A **string** value indicating the domain the :term:`host frame` will be sending/receiving PostMessages
+        to/from. Office Online will only send outgoing PostMessages to this domain, and will only listen to
+        PostMessages from this domain.
 
 Breadcrumb properties
 ~~~~~~~~~~~~~~~~~~~~~
 
-**Breadcrumb\*** properties determine what is displayed in the breadcrumb area within the Office Online UI. Office
-Online does not use the **BreadcrumbDocUrl** property.
+**Breadcrumb\*** properties determine what is displayed in the breadcrumb area within the Office Online UI.
+
+..  important:: Office Online does not use the :term:`BreadcrumbDocUrl` property.
 
 ..  glossary::
     :sorted:
@@ -255,25 +322,23 @@ Online does not use the **BreadcrumbDocUrl** property.
     BreadcrumbBrandName
         A **string** that Office Online will display to the user that indicates the brand name of the host.
 
+    BreadcrumbBrandUrl
+        A URI to a web page that Office Online will navigate to when the user clicks on UI that displays
+        :term:`BreadcrumbBrandName`.
 
-The **Breadcrumb\*** properties include:
+    BreadcrumbDocName
+        A **string** that Office Online displays to the user that indicates the name of the file.
 
-* BreadcrumbBrandName
-* BreadcrumbBrandUrl
-* BreadcrumbDocName
-* BreadcrumbFolderName
-* BreadcrumbFolderUrl
+    BreadcrumbFolderName
+        A **string** that Office Online will display to the user that indicates the name of the folder that contains
+        the file.
 
-FileNameMaxLength property
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+    BreadcrumbFolderUrl:
+        A URI to a web page that Office Online will navigate to when the user clicks on UI that displays
+        :term:`BreadcrumbFolderName`.
 
-The **FileNameMaxLength** property is an integer that indicates the maximum length for file names that the WOPI host
-supports, excluding the file extension. The default value is 250. This property is optional unless you want to
-enable file renaming within Office Online, in which case it is required.
-
-
-Response Values
----------------
+Other miscellaneous properties
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ..  glossary::
     :sorted:
@@ -283,5 +348,28 @@ Response Values
         the file (for example, a marketplace of embeddable JavaScript apps). If this value is ``false``, then
         Office Online will not allow such connections.
 
-        Default value: ``false``
+    CloseButtonClosesWindow
+        A **Boolean** value that, when set to ``true``, will cause Office Online to close the browser window or tab
+        when the user activates the close button.
 
+    DisableBrowserCachingOfUserContent
+        A **Boolean** value that, when set to ``true``, will cause Office Online to disable caching of file contents
+        in the browser cache. Note that this has important performance implications. See :ref:`View performance` for
+        more details.
+
+    DisablePrint
+        A **Boolean** value that, when set to ``true``, will disable all print functionality provided by Office Online.
+
+    DisableTranslation
+        A **Boolean** value that, when set to ``true``, will disable all machine translation functionality provided by
+        Office Online.
+
+    FileNameMaxLength
+        An **integer** value that indicates the maximum length for file names that the WOPI host
+        supports, excluding the file extension. The default value is 250. This property is optional; however, hosts
+        wishing to enable file renaming within Office Online should verify that the default value is appropriate and
+        set it accordingly if not. See the :ref:`RenameFile` operation for more details.
+
+    SHA256
+        A 256 bit SHA-2-encoded [`FIPS 180-2 <http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf>`_] hash
+        of the file contents. Used for caching purposes in Office Online. See :ref:`View performance` for more details.
