@@ -31,3 +31,7 @@
 .rst-content table.field-list td {
     padding-top: 8px !important;
 }
+
+.rst-content p.caption {
+    font-size: 16px !important;
+}
