@@ -1,10 +1,15 @@
 
 ..  _Host Frame:
 
-Building a host frame
-=====================
+|stub-icon| Building a host frame
+=================================
 
-..  todo:: Document this.
+..  include:: /fragments/stub.rst
+
+.. |issue| issue:: 4
+
+
+..  _wd Parameters:
 
 Passing through wd* parameters
 ------------------------------
@@ -24,5 +29,5 @@ Other ``wd*`` parameters do not need to be removed from your outer frame URL.
 ..  Hyperlinks
 
 ..  _replaceState: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/
-    Manipulating_the_browser_history#The_replaceState()_method
+                   Manipulating_the_browser_history#The_replaceState()_method
 

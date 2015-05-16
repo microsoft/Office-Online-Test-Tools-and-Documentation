@@ -4,8 +4,7 @@
 File contents endpoint
 ======================
 
-The File contents endpoint provides access to retrieve and update the contents of a file. For more information about
-this endpoint, see [MS-WOPI] section 3.3.5.3.
+The File contents endpoint provides access to retrieve and update the contents of a file.
 
 The following table lists the operations that are exposed through this endpoint.
 

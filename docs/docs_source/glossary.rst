@@ -44,5 +44,3 @@ Glossary
         is passed to Office Online in the ``sc`` query string parameter. If included on a WOPI request, Office Online
         will return the value of ``sc`` as the value of the **X-WOPI-SessionContext** HTTP header when making
         the :ref:`CheckFileInfo` and :ref:`CheckFolderInfo` WOPI requests.
-
-    ..  todo:: What is the maximum length of the Session Context?

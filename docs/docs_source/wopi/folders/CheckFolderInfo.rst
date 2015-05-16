@@ -35,8 +35,6 @@ CheckFolderInfo
 Required response properties
 ----------------------------
 
-..  default-domain:: js
-
 The following properties must be present in all CheckFolderInfo responses:
 
 ..  No glossary since these terms shouldn't be referenceable.
@@ -52,4 +50,4 @@ OwnerId
 Response Values
 ---------------
 
-..  todo:: Add detail.
+..  todo:: :issue:`15`

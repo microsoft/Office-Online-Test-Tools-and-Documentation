@@ -30,9 +30,6 @@ Not all operations and endpoints are required. The discovery XML describes which
 required for particular actions. All actions require the :ref:`CheckFileInfo` (exposed via the Files endpoint) and
 :ref:`GetFile` (exposed via the File Contents endpoint) operations.
 
-This section describes some of the most relevant endpoints and operations. For information about all endpoints and
-operations, see [MS-WOPI] section 3.3.5.
-
 Executing WOPI operations
 -------------------------
 

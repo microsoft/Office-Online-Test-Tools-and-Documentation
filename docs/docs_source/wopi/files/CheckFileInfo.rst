@@ -70,11 +70,9 @@ The following properties must be present in all CheckFileInfo responses:
         **This is a required value in all CheckFileInfo responses.**
 
 
-Recommended minimum properties
-------------------------------
+Other response properties
+-------------------------
 
-Although the :ref:`CheckFileInfo` response only requires you to set the properties listed above, we recommend that you
-set the following properties at a minimum.
 
 Navigation URL properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,10 +115,6 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         will use this URI to get the file instead of a :ref:`GetFile` request. A host might set this property if it is
         easier or more performant to serve files from a different domain than the one handling standard WOPI requests.
 
-    HostViewUrl
-        A URI to the :term:`host frame` that loads the :wopi:action:`view` WOPI action. This URL is used by Office
-        Online to navigate between view and edit mode.
-
     HostEditUrl
         A URI to the :term:`host frame` that loads the :wopi:action:`edit` WOPI action. This URL is used by Office
         Online to navigate between view and edit mode. In addition, the HostEditUrl property contains the URL that is
@@ -137,6 +131,10 @@ Hosts can return a number of URLs that Office Online will navigate to in various
 
     HostRestUrl
         A URI that is the base URI for REST operations for the file.
+
+    HostViewUrl
+        A URI to the :term:`host frame` that loads the :wopi:action:`view` WOPI action. This URL is used by Office
+        Online to navigate between view and edit mode.
 
     PrivacyUrl
         A URI to a webpage that explains the privacy policy of the host.
@@ -159,14 +157,14 @@ implementation meets the requirements for a particular property.
     :sorted:
 
     SupportsCoauth
-        A Boolean value that indicates that the WOPI server supports multiple users making changes to this file
-        simultaneously. It must be false.
+        A **Boolean** value that indicates that the WOPI server supports multiple users making changes to this file
+        simultaneously. This value must always be ``false``.
 
-        ..  todo:: Figure out how to document this.
+        ..  note:: |future|
 
     SupportsCobalt
         A **Boolean** value that indicates that the host supports :ref:`ExecuteCellStorageRequest` and
-        :ref:`ExcecuteCellStorageRelativeRequest` operations for this file.
+        :ref:`ExecuteCellStorageRelativeRequest` operations for this file.
 
     SupportsFolders
         A **Boolean** value that indicates that the host supports :ref:`CheckFolderInfo`, :ref:`EnumerateChildren`,
@@ -198,7 +196,7 @@ implementation meets the requirements for a particular property.
 User properties
 ~~~~~~~~~~~~~~~
 
-There are several properties hosts can use to provide user ID data to Office Online. Any value in the following
+There are several properties hosts can use to provide user ID data to Office Online. Any ID value in the following
 properties must meet the following requirements:
 
 * Unique to a single user. The :term:`TenantId` property is the sole exception to this requirement.
@@ -236,6 +234,10 @@ as long as the values meet the criteria above.
             User properties are expected to be unique *per user* and consistent over time regardless of the presence
             of a :term:`TenantId`.
 
+    UserFriendlyName
+        A **string** that is the name of the user. If blank, Office Online will use a placeholder string in some
+        scenarios, or show no name at all.
+
     UserId
         A **string** value uniquely identifying the user currently accessing the file.
 
@@ -260,6 +262,13 @@ Online expects that the host will respond to any WOPI request, including :ref:`C
 ..  glossary::
     :sorted:
 
+    ReadOnly
+        A **Boolean** value that indicates that, for this user, the file cannot be changed.
+
+    RestrictedWebViewOnly:
+        A **Boolean** value that, when set to ``true``, will cause Office Online to hide any UI to download the
+        file or to open it in another application.
+
     UserCanAttend
         A **Boolean** value that indicates that the user has permission to view a :term:`broadcast` of this file.
 
@@ -280,6 +289,10 @@ Online expects that the host will respond to any WOPI request, including :ref:`C
         A **Boolean** value that indicates that the user has permissions to alter the file. Setting this to ``true``
         enables Office Online to call :ref:`PutFile` on behalf of the user. In addition, Office Online will not load
         documents using the :wopi:action:`edit` action if this value is ``false`` for the user.
+
+    WebEditingDisabled
+        A **Boolean** value that indicates that Office Online must not allow the user to edit the file. This does not
+        mean that the user doesn't have rights to edit the file.
 
 PostMessage properties
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -312,9 +325,7 @@ integration at :ref:`PostMessage`.
 Breadcrumb properties
 ~~~~~~~~~~~~~~~~~~~~~
 
-**Breadcrumb\*** properties determine what is displayed in the breadcrumb area within the Office Online UI.
-
-..  important:: Office Online does not use the :term:`BreadcrumbDocUrl` property.
+**Breadcrumb** properties determine what is displayed in the breadcrumb area within the Office Online UI.
 
 ..  glossary::
     :sorted:
@@ -328,6 +339,10 @@ Breadcrumb properties
 
     BreadcrumbDocName
         A **string** that Office Online displays to the user that indicates the name of the file.
+
+    BreadcrumbDocUrl
+        ..  deprecated:: June, 2014
+            This property is not used by Office Online.
 
     BreadcrumbFolderName
         A **string** that Office Online will display to the user that indicates the name of the folder that contains
@@ -370,6 +385,37 @@ Other miscellaneous properties
         wishing to enable file renaming within Office Online should verify that the default value is appropriate and
         set it accordingly if not. See the :ref:`RenameFile` operation for more details.
 
+    HostName
+        A **string** provided by the host used to identify it for logging and other informational purposes.
+
+    HostNotes
+        A **string** that is used by the host to pass arbitrary information to Office Online. Office Online will
+        ignore this string if it does not recognize its contents. A host must not require that Office Online
+        understand the contents of this string to operate.
+
+    IrmPolicyDescription
+        A **string** that Office Online will display to the user indicating the
+        :abbr:`IRM (Information Rights Management)` policy for the file. This value should be combined with
+        :term:`IrmPolicyTitle`.
+
+    IrmPolicyTitle
+        A **string** that the Office Online will display to the user indicating the :abbr:`IRM (Information Rights
+        Management)` policy for the file. This value should be combined with :term:`IrmPolicyDescription`.
+
+    PresenceProvider:
+        A **string** that identifies the provider of information that Office Online may use to discover
+        information about the user's online status (for example, whether a user is available via instant messenger).
+        Office Online requires knowledge of specific presence providers to be able to take advantage of this value.
+
+        ..  note:: |future|
+
+    ProtectInClient
+        A Boolean value that indicates that Office Online should take measures to prevent copying and printing of
+        the file. This is intended to help enforce :abbr:`IRM (Information Rights Management)` in Office Online.
+
     SHA256
         A 256 bit SHA-2-encoded [`FIPS 180-2 <http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf>`_] hash
         of the file contents. Used for caching purposes in Office Online. See :ref:`View performance` for more details.
+
+    TimeZone
+        A **string** that is used to pass time zone information to Office Online in a format chosen by the host.

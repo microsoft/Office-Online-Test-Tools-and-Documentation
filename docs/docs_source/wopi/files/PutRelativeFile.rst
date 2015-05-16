@@ -36,7 +36,7 @@ PutRelativeFile
     :reqheader X-WOPI-RelativeTarget:
         A **string** that specifies a file name. The host must not modify the name to fulfill the request.
 
-        ..  todo:: Are X-WOPI-RelativeTarget and X-WOPI-SuggestedTarget mutually exclusive?
+        ..  todo:: :issue:`13`
     :reqheader X-WOPI-OverwriteRelativeTarget:
         A **Boolean** value that specifies whether the host must overwrite the file name if it exists.
     :reqheader X-WOPI-Size:

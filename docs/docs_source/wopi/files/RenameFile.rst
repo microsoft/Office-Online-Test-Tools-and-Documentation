@@ -23,7 +23,7 @@ RenameFile
     If the host cannot generate a different name, it should return an HTTP status code :http:statuscode:`400`. The
     response must include an **X-WOPI-InvalidFileNameError** header that describes why the file name was invalid.
 
-    ..  todo:: Is this message shown to the user?
+    ..  todo:: :issue:`14`
 
     ..  include:: /fragments/common_params.rst
 

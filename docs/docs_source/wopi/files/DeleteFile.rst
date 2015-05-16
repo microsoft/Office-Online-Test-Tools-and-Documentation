@@ -1,7 +1,9 @@
 
 ..  _DeleteFile:
 
-DeleteFile
-==========
+|stub-icon| DeleteFile
+======================
 
-..  todo:: Document this.
+.. include:: /fragments/stub.rst
+
+.. |issue| issue:: 11

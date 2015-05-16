@@ -2,6 +2,14 @@
 Integrating with Office Online
 ==============================
 
+..  note::
+
+    This documentation is a work in progress. Topics marked with a |stub-icon| are placeholders that have not been
+    written yet. You can track the status of these topics through our public documentation `issue tracker`_. Learn how
+    you can contribute on GitHub.
+
+..  _issue tracker: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/issues
+
 You can integrate with Office Online to enable your users to view and edit Excel, PowerPoint, and Word files directly
 in the browser.
 
@@ -78,7 +86,7 @@ Conflict resolution
 Although Office Online does not support multiuser authoring scenarios, you are responsible for managing conflicts
 either with some form of file locking, or by using another type of conflict resolution.
 
-..  todo:: This probably needs to be updated.
+..  todo:: :issue:`8`
 
 File IDs
 ~~~~~~~~
@@ -117,8 +125,6 @@ requests. Also, the Office Online file cache indexes stored file contents by usi
 the hash using the :term:`SHA256` property in the :ref:`CheckFileInfo` response. The hash is usually generated from
 the file itself, but it might also be generated from the file ID and version. To ensure that users can't force a
 cache collision and view the wrong file, no user-provided information is used to generate the hash.
-
-:term:`FileNameMaxLength`
 
 Managing Office 365 subscriptions
 ---------------------------------
@@ -166,6 +172,7 @@ Contents:
     :caption: Other Scenarios
 
     createnew
+    security
     proofkeys
     performance
 
@@ -175,7 +182,8 @@ Contents:
     :caption: Reference
 
     glossary
-    build_docs
+    contributing/build_docs
+    contributing/style_guide
 
 Indices and tables
 ==================

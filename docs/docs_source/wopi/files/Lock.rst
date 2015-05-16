@@ -25,9 +25,7 @@ Lock
     Locks should expire automatically after 30 minutes. Office Online can reset this timeout by means of a
     :ref:`RefreshLock` request.
 
-    ..  todo::
-        Need to clarify the lock requirements, especially around lock mismatches and the headers that
-        should be returned by the host.
+    ..  todo:: :issue:`12`
 
     ..  include:: /fragments/common_params.rst
 

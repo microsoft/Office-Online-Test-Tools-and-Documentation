@@ -19,7 +19,7 @@ To integrate your application with Office Online, you need to do the following:
 You can also integrate your own UI elements with Office Online. For example, when users choose Share in Office Online,
 you can show your own sharing UI. These interaction points are described in the section titled :ref:`PostMessage`.
 
-The WOPI protocol is specified in `[MS-WOPI]\: Web Application Open Platform Interface API`_. This article
+The WOPI protocol is specified in `[MS-WOPI]\: Web Application Open Platform Interface API`_. This documentation
 summarizes the key points that you'll need to know to use the protocol to integrate with Office Online.
 
 

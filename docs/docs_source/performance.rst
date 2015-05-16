@@ -1,28 +1,23 @@
 
 .. _Performance:
 
-Performance
-===========
+|stub-icon| Performance
+=======================
 
-..  todo:: Document this.
+.. include:: /fragments/stub.rst
 
+.. |issue| issue:: 5
 
 .. _Preloading static content:
 
-Preloading static content
--------------------------
+|stub-icon| Preloading static content
+-------------------------------------
 
-..  todo:: Document this.
-
+..  todo:: :issue:`5`
 
 ..  _View performance:
 
-Optimizing document viewing for high volume
--------------------------------------------
+|stub-icon| Optimizing document viewing for high volume
+-------------------------------------------------------
 
-..  todo::
-
-    Document this. Relevant stuff:
-
-    * :term:`SHA256`
-    * :term:`DisableBrowserCachingOfUserContent`
+..  todo:: :issue:`5`

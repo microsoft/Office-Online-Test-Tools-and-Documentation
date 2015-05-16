@@ -52,7 +52,9 @@ information, see :ref:`Invocation URIs`.
 WOPI actions
 ------------
 
-..  todo:: Provide some detail about what actions are and how to choose the right one for a given purpose.
+..  todo:: :issue:`9`
+
+    Provide some detail about what actions are and how to choose the right one for a given purpose.
 
 ..  note:: All WOPI actions require hosts implement :ref:`CheckFileInfo` and :ref:`GetFile`.
 
@@ -143,20 +145,19 @@ WOPI actions
     This action provides the location of a :term:`broadcast` endpoint for broadcast attendees. Interaction with the
     endpoint is described in `\[MS-OBPAS\] <https://msdn.microsoft.com/en-us/library/hh642267(v=office.12).aspx>`_.
 
-
 ..  action:: syndicate
 
-    ..  todo:: Document this.
+    ..  todo:: :issue:`7`
 
 
 ..  action:: legacywebservice
 
-    ..  todo:: Document this.
+    ..  todo:: :issue:`7`
 
 
 ..  action:: rtc
 
-    ..  todo:: Document this.
+    ..  todo:: :issue:`7`
 
 
 ..  action:: preloadedit
@@ -219,9 +220,15 @@ follows:
 
 * If the PLACEHOLDER_VALUE is unknown, the entire parameter, including the angle brackets, are removed.
 * If the PLACEHOLDER_VALUE is known, the angle brackets are removed, and the PLACEHOLDER_VALUE is replaced with an
-  appropriate value. For information about supported values, see [MS-WOPI] section 3.1.5.1.1.2.3.3.
+  appropriate value.
 
 After the URL is transformed, it is a valid URL. When the URL is opened, the action will be invoked against the file
 indicated by the WOPISrc parameter.
 
-For more information about this process, see [MS-WOPI] section 3.1.5.1.1.2.3.3.
+|stub-icon| Placeholder values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+..  include:: /fragments/stub.rst
+
+.. |issue| issue:: 10
+
