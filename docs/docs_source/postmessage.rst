@@ -63,10 +63,10 @@ iframe.
 
 You can send the following messages; all others are ignored:
 
-* Blur_Focus
-* Grab_Focus
-* Host_PerfTiming
-* Host_PostmessageReady
+* :data:`Blur_Focus`
+* :data:`Grab_Focus`
+* :data:`Host_PerfTiming`
+* :data:`Host_PostmessageReady`
 
 ..  data:: Blur_Focus
 
@@ -169,9 +169,9 @@ You can send the following messages; all others are ignored:
     You might choose to follow this pattern in your WOPI host page. This means that your outer host frame and the
     Office Online iframe must coordinate to ensure that each is ready to receive and respond to messages.
 
-    To enable this coordination, Office Online sends the App_LoadingStatus message only after all of its message
-    senders and listeners are available. In addition, Office Online listens for the Host_PostmessageReady message
-    from the outer frame. Until it receives this message, some UI, such as the **Share** button, is disabled.
+    To enable this coordination, Office Online sends the :data:`App_LoadingStatus` message only after all of its message
+    senders and listeners are available. In addition, Office Online listens for the :data:`Host_PostmessageReady`
+    message from the outer frame. Until it receives this message, some UI, such as the **Share** button, is disabled.
 
     Until your host page receives the :data:`App_LoadingStatus` message, the Office Online frame cannot respond to any
     incoming messages except :data:`Host_PostmessageReady`. Office Online does not delay-load its
@@ -233,13 +233,13 @@ message being sent. The following code example shows how you might consume a mes
 
 The host page receives the following messages; all others are ignored:
 
-* App_LoadingStatus
-* Edit_Notification
-* File_Rename
-* UI_Close
-* UI_Edit
-* UI_FileVersions
-* UI_Sharing
+* :data:`App_LoadingStatus`
+* :data:`Edit_Notification`
+* :data:`File_Rename`
+* :data:`UI_Close`
+* :data:`UI_Edit`
+* :data:`UI_FileVersions`
+* :data:`UI_Sharing`
 
 ..  data:: App_LoadingStatus
 
@@ -320,11 +320,11 @@ The host page receives the following messages; all others are ignored:
 ..  data:: UI_Close
 
     The UI_Close message is posted when the Office Online application is closing, either due to an error or a user
-    action. Typically, the URL specified in the CloseUrl property in the CheckFileInfo response is displayed.
-    However, hosts can intercept this message instead and navigate in an appropriate way.
+    action. Typically, the URL specified in the :term:`CloseUrl` property in the :ref:`CheckFileInfo` response is
+    displayed. However, hosts can intercept this message instead and navigate in an appropriate way.
 
-    To send this message, the *ClosePostMessage* property in the **CheckFileInfo** response from the host must be set
-    to ``true``.
+    To send this message, the :term:`ClosePostMessage` property in the :ref:`CheckFileInfo` response from the host
+    must be set to ``true``. Otherwise Office Online will not send this message.
 
     ..  attribute:: Values
         :noindex:
@@ -343,7 +343,7 @@ The host page receives the following messages; all others are ignored:
 
 ..  data:: UI_FileVersions
 
-    The UI_FileVersions message is posted when the user chooses Previous Versions in Office Online. The host can use
+    The UI_FileVersions message is posted when the user chooses *Previous Versions* in Office Online. The host can use
     this message to optionally navigate the outer frame to an appropriate URL.
 
     ..  attribute:: Values
@@ -363,11 +363,11 @@ The host page receives the following messages; all others are ignored:
 
 ..  data:: UI_Sharing
 
-    The UI_Sharing message is posted when the user chooses Share in Office Online. The host should use this message
+    The UI_Sharing message is posted when the user chooses *Share* in Office Online. The host should use this message
     to trigger any custom sharing UI.
 
-    To send this message, the *FileSharingPostMessage* property in the **CheckFileInfo** response from the host must be
-    set to true.
+    To send this message, the :term:`FileSharingPostMessage` property in the :ref:`CheckFileInfo` response from the
+    host must be set to ``true``. Otherwise Office Online will not send this message.
 
     ..  attribute:: Values
         :noindex:

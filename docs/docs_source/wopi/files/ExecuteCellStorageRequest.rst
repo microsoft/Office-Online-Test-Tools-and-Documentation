@@ -1,9 +1,7 @@
 
 ..  _ExecuteCellStorageRequest:
 
-|stub-icon| ExecuteCellStorageRequest
-=====================================
+ExecuteCellStorageRequest
+=========================
 
-.. include:: /fragments/stub.rst
-
-.. |issue| issue:: 15
+..  include:: /fragments/deprecated_operation.rst

@@ -9,6 +9,12 @@
 .. |issue| issue:: 4
 
 
+..  _Passing access tokens securely:
+
+|stub-icon| Passing access tokens securely
+------------------------------------------
+
+
 ..  _wd Parameters:
 
 Passing through wd* parameters
@@ -18,7 +24,7 @@ Office Online will sometimes pass additional query string parameters to your hos
 are of the form ``wd*``. When you receive these query string parameters on your host page URLs, you must pass them,
 unchanged, to the Office Online iframe.
 
-In addition, if the `replaceState`_ method from the HTML5 History API is available in the user’s browser, you should
+In addition, if the `replaceState`_ method from the HTML5 History API is available in the user's browser, you should
 remove the following parameters from your outer frame URL after passing them to the Office Online iframe:
 
 * wdPreviousSession

@@ -24,8 +24,17 @@
     background-color: #d3f0e0 !important;
 }
 
+.rst-content .admonition-onenote-online-note {
+    background-color: #975d93 !important;
+    color: white !important;
+}
+
 .rst-content .admonition-excel-online-note .admonition-title {
     background-color: #207144 !important;
+}
+
+.rst-content .admonition-onenote-online-note .admonition-title {
+    background-color: #80397b !important;
 }
 
 .rst-content table.field-list td {

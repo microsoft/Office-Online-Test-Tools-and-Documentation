@@ -101,6 +101,9 @@ Hosts can return a number of URLs that Office Online will navigate to in various
     DownloadUrl
         A user-accessible URI to the file intended to allow the user to download a copy of the file.
 
+    EditAndReplyUrl
+        ..  note:: |future|
+
     FileSharingUrl
         A URI to a location that allows the user to share the file.
 
@@ -136,6 +139,10 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         A URI to the :term:`host frame` that loads the :wopi:action:`view` WOPI action. This URL is used by Office
         Online to navigate between view and edit mode.
 
+    LicenseCheckForEditIsEnabled
+        A **Boolean** value indicating whether the document being loaded is a :term:`business document` or not. See
+        :ref:`` for more information.
+
     PrivacyUrl
         A URI to a webpage that explains the privacy policy of the host.
 
@@ -156,8 +163,13 @@ implementation meets the requirements for a particular property.
 ..  glossary::
     :sorted:
 
+    EditingCannotSave
+        A **Boolean** value that indicates that the host supports editing files without saving them.
+
+        ..  deprecated:: 2014.06.01
+
     SupportsCoauth
-        A **Boolean** value that indicates that the WOPI server supports multiple users making changes to this file
+        A **Boolean** value that indicates that the host supports multiple users making changes to this file
         simultaneously. This value must always be ``false``.
 
         ..  note:: |future|
@@ -165,6 +177,9 @@ implementation meets the requirements for a particular property.
     SupportsCobalt
         A **Boolean** value that indicates that the host supports :ref:`ExecuteCellStorageRequest` and
         :ref:`ExecuteCellStorageRelativeRequest` operations for this file.
+
+    SupportsFileCreation
+        A **Boolean** value that indicates that the host supports creating new files using Office Online.
 
     SupportsFolders
         A **Boolean** value that indicates that the host supports :ref:`CheckFolderInfo`, :ref:`EnumerateChildren`,
@@ -179,7 +194,7 @@ implementation meets the requirements for a particular property.
     SupportsRename
         A **Boolean** value that indicates that the host supports :ref:`RenameFile` operations for this file.
 
-    SupportsScenariosLinks
+    SupportsScenarioLinks
         A **Boolean** value that indicates that thehost supports scenarios where users can operate on files in
         limited ways via restricted URLs.
 
@@ -220,9 +235,7 @@ as long as the values meet the criteria above.
     PresenceUserId
         A **string** that identifies the user in the context of the :term:`PresenceProvider`.
 
-        ..  note::
-
-            This property should not be used.
+        ..  note:: |future|
 
     TenantId
         A **string** value uniquely identifying the user's 'tenant,' or group/organization to which they belong. This
@@ -240,6 +253,11 @@ as long as the values meet the criteria above.
 
     UserId
         A **string** value uniquely identifying the user currently accessing the file.
+
+    UserPrincipalName
+        A **string** value uniquely identifying the user currently accessing the file.
+
+        ..  note:: |future|
 
 User permissions properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -309,6 +327,10 @@ integration at :ref:`PostMessage`.
         A **Boolean** value that, if set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
         PostMessage.
 
+    EditModePostMessage
+        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the :js:data:`UI_Edit`
+        PostMessage.
+
     EditNotificationPostMessage
         A **Boolean** value that, if set to ``true``, indicates the host expects to receive the
         :js:data:`Edit_Notification` PostMessage.
@@ -338,10 +360,11 @@ Breadcrumb properties
         :term:`BreadcrumbBrandName`.
 
     BreadcrumbDocName
-        A **string** that Office Online displays to the user that indicates the name of the file.
+        A **string** that Office Online displays to the user that indicates the name of the file. If this is not
+        provided, Office Online will use the :term:`BaseFileName` value.
 
     BreadcrumbDocUrl
-        ..  deprecated:: June, 2014
+        ..  deprecated:: 2014.06.01
             This property is not used by Office Online.
 
     BreadcrumbFolderName
@@ -366,6 +389,9 @@ Other miscellaneous properties
     CloseButtonClosesWindow
         A **Boolean** value that, when set to ``true``, will cause Office Online to close the browser window or tab
         when the user activates the close button.
+
+        If Office Online displays an error dialog when booting, dismissing the dialog is treated as a close button
+        activation with respect to this setting.
 
     DisableBrowserCachingOfUserContent
         A **Boolean** value that, when set to ``true``, will cause Office Online to disable caching of file contents
@@ -393,6 +419,8 @@ Other miscellaneous properties
         ignore this string if it does not recognize its contents. A host must not require that Office Online
         understand the contents of this string to operate.
 
+        ..  note:: |future|
+
     IrmPolicyDescription
         A **string** that Office Online will display to the user indicating the
         :abbr:`IRM (Information Rights Management)` policy for the file. This value should be combined with
@@ -402,7 +430,7 @@ Other miscellaneous properties
         A **string** that the Office Online will display to the user indicating the :abbr:`IRM (Information Rights
         Management)` policy for the file. This value should be combined with :term:`IrmPolicyDescription`.
 
-    PresenceProvider:
+    PresenceProvider
         A **string** that identifies the provider of information that Office Online may use to discover
         information about the user's online status (for example, whether a user is available via instant messenger).
         Office Online requires knowledge of specific presence providers to be able to take advantage of this value.
@@ -410,12 +438,21 @@ Other miscellaneous properties
         ..  note:: |future|
 
     ProtectInClient
-        A Boolean value that indicates that Office Online should take measures to prevent copying and printing of
+        A **Boolean** value that indicates that Office Online should take measures to prevent copying and printing of
         the file. This is intended to help enforce :abbr:`IRM (Information Rights Management)` in Office Online.
 
     SHA256
         A 256 bit SHA-2-encoded [`FIPS 180-2 <http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf>`_] hash
-        of the file contents. Used for caching purposes in Office Online. See :ref:`View performance` for more details.
+        of the file contents, as a **string**. Used for caching purposes in Office Online. See :ref:`View performance`
+        for more details.
 
     TimeZone
         A **string** that is used to pass time zone information to Office Online in a format chosen by the host.
+
+    UniqueContentId
+        In special cases, a host may choose to not provide a :term:`SHA256`, but still have some mechanism for
+        identifing that two different files contain the same content in the same manner as the :term:`SHA256` is used.
+
+        This **string** value can be provided rather than a :term:`SHA256` value, if the host can guarantee that two
+        different files with the same content will have the same UniqueContentId value. See :ref:`View performance`
+        for more details.

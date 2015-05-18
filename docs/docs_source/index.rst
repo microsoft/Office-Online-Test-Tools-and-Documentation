@@ -141,7 +141,7 @@ Interested?
 -----------
 
 If you're interested in integrating your solution with Office Online, take a moment to register at
-`Office 365 - Cloud Storage Partner Program <http://dev.office.com/programs/officecloudstorage>`_.
+`Office 365 Cloud Storage Partner Program <http://dev.office.com/programs/officecloudstorage>`_.
 
 Contents:
 
@@ -154,8 +154,8 @@ Contents:
     discovery
     endpoints
     wopi/files
-    wopi/folders
     wopi/file_contents
+    wopi/folders
     wopi/folder_contents
 
 ..  toctree::
@@ -169,12 +169,21 @@ Contents:
 ..  toctree::
     :maxdepth: 2
     :glob:
-    :caption: Other Scenarios
+    :caption: Other Considerations
 
-    createnew
     security
-    proofkeys
     performance
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :caption: Scenarios
+
+    scenarios/createnew
+    scenarios/business
+    scenarios/email
+    scenarios/embedding
+    scenarios/proofkeys
 
 ..  toctree::
     :maxdepth: 2

@@ -29,8 +29,7 @@ The following table lists the operations that are exposed through this endpoint.
 | :ref:`RenameFile`      | Renames a file on the WOPI server.                                     |
 +------------------------+------------------------------------------------------------------------+
 
-Office Online invokes these operations by issuing an HTTP request to the Files endpoint. The **X-WOPI-Override** HTTP
-header in the request contains the name of the operation to be invoked.
+For general information about invoking WOPI operations, see :ref:`Executing WOPI operations`.
 
 ..  toctree::
     :maxdepth: 2

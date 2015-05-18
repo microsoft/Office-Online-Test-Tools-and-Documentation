@@ -27,8 +27,10 @@ The following table shows the structure of the REST API for each resource type.
 +----------------+-----------------------------------------------------+-----------------------------------------------+
 
 Not all operations and endpoints are required. The discovery XML describes which WOPI endpoints and operations are
-required for particular actions. All actions require the :ref:`CheckFileInfo` (exposed via the Files endpoint) and
-:ref:`GetFile` (exposed via the File Contents endpoint) operations.
+required for particular actions. All actions require the :ref:`CheckFileInfo` (exposed via the :ref:`Files endpoint`)
+and :ref:`GetFile` (exposed via the :ref:`File contents endpoint`) operations.
+
+..  _Executing WOPI operations:
 
 Executing WOPI operations
 -------------------------
@@ -48,8 +50,9 @@ URI Parameter  Description
 =============  ===========
 
 The `token` and `id` parameters are a core part of all WOPI requests. The URI syntax for using these parameters is
-described first in the :ref:`CheckFileInfo` operation. The host provides both `token` and `id` through the urlsrc
-parameter, as described in the st_wopi-url-source simple type (see section 3.1.5.1.1.2.3.3).
+described in the documentation for each WOPI operation. The host provides both `token` and `id` by transforming the
+**urlsrc** value for the action (provided in :ref:`discovery`) and appending parameters to the URL as described in
+:ref:`Invocation URIs`.
 
 The following URI parameters may also be included with all WOPI requests.
 

@@ -18,8 +18,7 @@ The following table lists the operations that are exposed through this endpoint.
 |                 | file to the value passed.               |
 +-----------------+-----------------------------------------+
 
-Office Online invokes these operations by issuing an HTTP request to the File contents endpoint. The
-**X-WOPI-Override** HTTP header in the request contains the name of the operation to be invoked.
+For general information about invoking WOPI operations, see :ref:`Executing WOPI operations`.
 
 ..  toctree::
     :maxdepth: 2

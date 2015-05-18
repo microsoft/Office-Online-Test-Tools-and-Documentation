@@ -1,9 +1,8 @@
+..  index:: WOPI requests; DeleteFile, DeleteFile
 
 ..  _DeleteFile:
 
-|stub-icon| DeleteFile
-======================
+DeleteFile
+==========
 
-.. include:: /fragments/stub.rst
-
-.. |issue| issue:: 11
+..  include:: /fragments/deprecated_operation.rst

@@ -188,13 +188,13 @@ XML. The requirements themselves are groups of WOPI operations that must be supp
 
 ..  req:: cobalt
 
-    ..  include:: /fragments/deprecated_warning.rst
+    ..  include:: /fragments/deprecated_discovery_requirement.rst
 
     :requires: :ref:`ExecuteCellStorageRequest`, :ref:`ExecuteCellStorageRelativeRequest`
 
 ..  req:: containers
 
-    ..  include:: /fragments/deprecated_warning.rst
+    ..  include:: /fragments/deprecated_discovery_requirement.rst
 
     :requires: :ref:`CheckFolderInfo`, :ref:`DeleteFile`, :ref:`EnumerateChildren`
 
@@ -210,9 +210,9 @@ You need to transform the URI in the **urlsrc** attribute; otherwise, it is inva
   are invoking the action on.
 * Passing an *access_token* parameter, either on the query string, or in an HTTP POST.
 
-..  note::
+..  important::
     We recommend that you use an HTTP POST, for security reasons. Do not pass access tokens in query strings in a
-    production environment.
+    production environment. See :ref:`Passing access tokens securely` for more information.
 
 In addition, the **urlsrc** value might have placeholder values, contained within angle brackets (``<`` and ``>``),
 that represent optional query string parameters that can be set on the action URI. The placeholders are replaced as
