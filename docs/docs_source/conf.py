@@ -46,7 +46,8 @@ todo_include_todos = False
 numfig = True
 numfig_format = {
     'figure': 'Figure %s.',
-    'table': 'Table %s.'
+    'table': 'Table %s.',
+    'code-block': 'Listing %s.'
 }
 
 with io.open('./fragments/rst_prolog.rst', encoding='utf-8') as prolog_file:
