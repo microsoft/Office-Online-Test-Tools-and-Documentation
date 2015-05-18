@@ -1,0 +1,7 @@
+# This requirements file is what's used when running builds on readthedocs.org
+
+-r requirements.txt
+
+# When installing locally you have to do this manually, but it works on readthedocs.org because
+# docutils is already installed when running this there
+sphinxcontrib-domaintools>=0.1
