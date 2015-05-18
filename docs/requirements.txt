@@ -3,9 +3,12 @@ sphinx-rtd-theme>=0.1.8
 sphinxcontrib-findanything>=0.2.5
 
 # The behavior of auto-titlecasing 'X-' HTTP headers has been fixed,
-# but the PyPI released version (1.3.0) doesn't have the fix yet
--e hg+https://bitbucket.org/birkenfeld/sphinx-contrib/#egg=sphinxcontrib&subdirectory=httpdomain
-# sphinxcontrib-httpdomain>=1.3.1
+# but the PyPI released version (1.3.0) doesn't have the fix yet.
+# Unfortunately readthedocs also appears to have an outdated version of
+# virtualenv, pip, or setuptools that causes installations from the HG
+# repository directly to fail, so we have to live with the bug for now.
+# -e hg+https://bitbucket.org/birkenfeld/sphinx-contrib/#egg=sphinxcontrib&subdirectory=httpdomain
+sphinxcontrib-httpdomain>=1.3.0
 
 # Bug in installer, so have to install this manually
 # sphinxcontrib-domaintools>=0.1
