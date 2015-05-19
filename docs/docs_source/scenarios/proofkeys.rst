@@ -17,6 +17,7 @@ request. To verify that a request came from Office Online, you must:
 * Create the expected value of the proof headers.
 * Use the public key provided in WOPI discovery to decrypt the proof provided in the **X-WOPI-Proof** header.
 * Compare the expected proof to the decrypted proof. If they match, the request originated from Office Online.
+* Ensure that the **X-WOPI-TimeStamp** header is no more than 20 minutes old.
 
 Constructing the expected proof
 -------------------------------
