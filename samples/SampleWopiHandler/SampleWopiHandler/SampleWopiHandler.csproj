@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,6 +76,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProofKeyHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WopiHandler.cs" />
     <Compile Include="WopiRequest.cs" />
