@@ -14,6 +14,7 @@
 |stub-icon| Passing access tokens securely
 ------------------------------------------
 
+..  todo:: :issue:`35`
 
 ..  _wd Parameters:
 
@@ -36,4 +37,3 @@ Other ``wd*`` parameters do not need to be removed from your outer frame URL.
 
 ..  _replaceState: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/
                    Manipulating_the_browser_history#The_replaceState()_method
-

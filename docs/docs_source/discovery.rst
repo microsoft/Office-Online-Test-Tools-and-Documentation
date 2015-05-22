@@ -44,7 +44,7 @@ The following example shows an **action** element in the Office Online discovery
 This example defines an action called :wopi:action:`edit` that is supported for .docx files. The edit action requires
 the :wopi:req:`locks` and :wopi:req:`update` capabilities. To invoke the edit action on a file, you navigate to the URI
 included in the **urlsrc** attribute. Note that you must parse the **urlsrc** value and add some parameters. For a full
-description of this process, see :ref:`Invocation URIs`.
+description of this process, see :ref:`Action URLs`.
 
 
 .. _WOPI Actions:
@@ -199,9 +199,9 @@ XML. The requirements themselves are groups of WOPI operations that must be supp
     :requires: :ref:`CheckFolderInfo`, :ref:`DeleteFile`, :ref:`EnumerateChildren`
 
 
-..  _Invocation URIs:
+..  _Action URLs:
 
-Invocation URIs
+Action URLs
 ---------------
 
 The URI values provided in the **urlsrc** attribute in the discovery XML are not in a valid format. Simply navigating to
@@ -243,8 +243,8 @@ URL per the instructions above - any placeholder values they don't explicitly un
 
 ..  _Placeholder values:
 
-|stub-icon| Placeholder values
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Placeholder values
+^^^^^^^^^^^^^^^^^^
 
 ..  glossary::
     :sorted:
