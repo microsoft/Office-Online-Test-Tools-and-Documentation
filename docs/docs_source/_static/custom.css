@@ -26,7 +26,16 @@
 
 .rst-content .admonition-onenote-online-note {
     background-color: #975d93 !important;
-    color: white !important;
+    color: #fff !important;
+}
+
+.rst-content .admonition-onenote-online-note a:link,
+.rst-content .admonition-onenote-online-note a:visited {
+    color: #d9d9d9 !important;
+}
+
+.rst-content .admonition-onenote-online-note a:hover{
+    color: #fff !important;
 }
 
 .rst-content .admonition-excel-online-note .admonition-title {
