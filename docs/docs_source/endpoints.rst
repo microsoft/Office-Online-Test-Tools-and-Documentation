@@ -40,7 +40,72 @@ Parameters for each operation are also passed in HTTP headers, which all begin w
 WOPI operation is as simple as issuing a request to the appropriate REST endpoint and passing appropriate HTTP header
 values with the request.
 
-The following URI parameters must be included with all WOPI requests.
+
+..  _Common headers:
+
+Common WOPI request and response headers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+..  default-domain:: http
+
+..  get:: /wopi*/
+
+    All WOPI requests from Office Online may contain the following request and response headers. Note that individual
+    WOPI operations may send additional request headers or require additional response headers. These unique headers
+    are described in the documentation for each WOPI operation.
+
+    :reqheader Authorization:
+        The **string** value ``Bearer <token>`` where ``<token>`` is the :term:`access token` for the request. Note that
+        Office Online also passes the access token as a query parameter.
+
+    :reqheader X-WOPI-ClientVersion:
+        A **string** indicating the version of the Office Online server making the request. There is no standard
+        for how this string is formatted, and it must not be used for anything other than logging.
+
+    :reqheader X-WOPI-CorrelationID:
+        A **string** that the host should log when logging server activity to correlate that activity with Office Online
+        server logs.
+
+    :reqheader X-WOPI-MachineName:
+        A **string** indicating the name of the Office Online server making the request. This string must not be
+        used for anything other than logging.
+
+    :reqheader X-WOPI-PerfTraceRequested:
+        This header is not currently used by Office Online but is reserved for future use.
+
+    :reqheader X-WOPI-Proof:
+        A **string** representing data signed using a SHA256 (A 256 bit SHA-2-encoded [`FIPS 180-2`_]) encryption algorithm.
+        See :ref:`Proof keys` for more information regarding the use of this header value.
+
+    :reqheader X-WOPI-ProofOld:
+        A **string** representing data signed using a SHA256 (A 256 bit SHA-2-encoded [`FIPS 180-2`_]) encryption algorithm.
+        See :ref:`Proof keys` for more information regarding the use of this header value.
+
+    :reqheader X-WOPI-TimeStamp:
+        A **64-bit integer** that represents the number of 100-nanosecond intervals that have elapsed between
+        12:00:00 midnight, January 1, 0001 and the time of the request.
+
+    :resheader X-WOPI-MachineName:
+        A **string** indicating the name of the WOPI host server handling the request. Office Online only uses this string
+        for logging purposes.
+
+    :resheader X-WOPI-PerfTrace:
+        This header is not currently used by Office Online but is reserved for future use.
+
+    :resheader X-WOPI-ServerError:
+        A **string** indicating that an error occurred while processing the WOPI request. This header should be included
+        in a WOPI response if the status code is :http:statuscode:`500`. The value should contain details about the error.
+        Office Online only uses this string for logging purposes.
+
+    :resheader X-WOPI-ServerVersion:
+        A **string** indicating the version of the WOPI host server handling the request. There is no standard
+        for how this string is formatted, and Office Online uses it only for logging purposes.
+
+
+Common query string parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following query string parameters will be included with all WOPI requests from Office Online.
 
 =============  ===========
 URI Parameter  Description
@@ -49,9 +114,9 @@ URI Parameter  Description
 ``id``         A string representing the :term:`File ID` for the request.
 =============  ===========
 
-The `token` and `id` parameters are a core part of all WOPI requests. The URI syntax for using these parameters is
-described in the documentation for each WOPI operation. The host provides both `token` and `id` by transforming the
-**urlsrc** value for the action (provided in :ref:`discovery`) and appending parameters to the URL as described in
+The ``token`` and ``id`` parameters are a core part of all WOPI requests. The URI syntax for using these parameters is
+described in the documentation for each WOPI operation. The host provides both ``token`` and ``id`` by transforming
+the **urlsrc** value for the action (provided in :ref:`discovery`) and appending parameters to the URL as described in
 :ref:`Action URLs`.
 
 The following URI parameters may also be included with all WOPI requests.
@@ -61,6 +126,7 @@ URI Parameter  Description
 =============  ===========
 ``sc``         A string representing the :term:`Session Context` for the request.
 =============  ===========
+
 
 ..  _File ID requirements:
 
@@ -74,6 +140,7 @@ must:
 * Be a URL-safe string, because IDs are sometimes passed in URLs.
 * Remain the same when the file is moved, renamed, or edited.
 * In the case of shared documents, the ID for a given file must be the same for any user that accesses the file.
+
 
 ..  _Access token requirements:
 

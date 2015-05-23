@@ -251,14 +251,14 @@ Placeholder values
 
     UI_LLCC
         This value represents the language the Office Online application UI should use. Any language can be supplied
-        provided it is in the format described in :http:rfc:`1766`. Note that Office Online does not support all
+        provided it is in the format described in :rfc:`1766`. Note that Office Online does not support all
         languages, and may use a substitute language if the language requested is not supported. If no value is
         provided for this placeholder, Office Online will try to use the browser language setting
         (`navigator.language`). If no valid lanuage can be determined Office Online will default to English.
 
     DC_LLCC
         This value represents the language that Office Online should use for the purposes of data calculation. Any
-        language can be supplied provided it is in the format described in :http:rfc:`1766`. Typically this value
+        language can be supplied provided it is in the format described in :rfc:`1766`. Typically this value
         should be the same as the value provided for :term:`UI_LLCC`
 
     EMBEDDED
@@ -317,4 +317,4 @@ Additional notes
 
 Depending on the specific scenario where action URLs are invoked, there are additional relevant components to action
 URLs. Since action URLs are typically invoked from the host frame, these are covered in the
-:ref:`Building a host frame` section.
+:ref:`Host Frame` section.
