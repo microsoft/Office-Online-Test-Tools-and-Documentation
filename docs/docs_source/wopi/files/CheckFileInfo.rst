@@ -12,8 +12,8 @@ CheckFileInfo
 
     The CheckFileInfo operation is one of the most important WOPI operations. This operation must be implemented
     for all WOPI actions. CheckFileInfo returns information about a file, a user's permissions on that file, and general
-    information about the capabilities that the WOPI host has on the file. In addition, some CheckFileInfo properties can
-    influence the appearance and behavior of Office Online.
+    information about the capabilities that the WOPI host has on the file. In addition, some CheckFileInfo properties
+    can influence the appearance and behavior of Office Online.
 
     ..  include:: /fragments/common_params.rst
 
@@ -442,7 +442,7 @@ Other miscellaneous properties
         the file. This is intended to help enforce :abbr:`IRM (Information Rights Management)` in Office Online.
 
     SHA256
-        A 256 bit SHA-2-encoded [`FIPS 180-2 <http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf>`_] hash
+        A 256 bit SHA-2-encoded [`FIPS 180-2`_] hash
         of the file contents, as a **string**. Used for caching purposes in Office Online. See :ref:`View performance`
         for more details.
 

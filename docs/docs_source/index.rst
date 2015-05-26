@@ -190,6 +190,7 @@ Contents:
     :glob:
     :caption: Reference
 
+    code_samples
     glossary
     contributing/build_docs
     contributing/style_guide

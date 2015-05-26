@@ -43,8 +43,8 @@ The following example shows an **action** element in the Office Online discovery
 
 This example defines an action called :wopi:action:`edit` that is supported for .docx files. The edit action requires
 the :wopi:req:`locks` and :wopi:req:`update` capabilities. To invoke the edit action on a file, you navigate to the URI
-included in the **urlsrc** attribute. Note that you must parse the urlsrc value and add some parameters. For more
-information, see :ref:`Invocation URIs`.
+included in the **urlsrc** attribute. Note that you must parse the **urlsrc** value and add some parameters. For a full
+description of this process, see :ref:`Action URLs`.
 
 
 .. _WOPI Actions:
@@ -199,36 +199,122 @@ XML. The requirements themselves are groups of WOPI operations that must be supp
     :requires: :ref:`CheckFolderInfo`, :ref:`DeleteFile`, :ref:`EnumerateChildren`
 
 
-..  _Invocation URIs:
+..  _Action URLs:
 
-Invocation URIs
+Action URLs
 ---------------
 
-You need to transform the URI in the **urlsrc** attribute; otherwise, it is invalid. This involves the following:
+The URI values provided in the **urlsrc** attribute in the discovery XML are not in a valid format. Simply navigating to
+them will result in errors. A WOPI host must transform the URIs provided in order to make them valid action URLs that
+can be used to invoke actions on a file. There are two key components to transforming the **urlsrc** attribute:
 
-* Adding an additional query string parameter, *WOPISrc*, which describes where to find the file on the service that you
-  are invoking the action on.
-* Passing an *access_token* parameter, either on the query string, or in an HTTP POST.
-
-..  important::
-    We recommend that you use an HTTP POST, for security reasons. Do not pass access tokens in query strings in a
-    production environment. See :ref:`Passing access tokens securely` for more information.
-
-In addition, the **urlsrc** value might have placeholder values, contained within angle brackets (``<`` and ``>``),
-that represent optional query string parameters that can be set on the action URI. The placeholders are replaced as
-follows:
-
-* If the PLACEHOLDER_VALUE is unknown, the entire parameter, including the angle brackets, are removed.
-* If the PLACEHOLDER_VALUE is known, the angle brackets are removed, and the PLACEHOLDER_VALUE is replaced with an
-  appropriate value.
+#. Parsing and replacing :term:`placeholder values` with appropriate values, or discarding them completely
+#. Appending a *WOPISrc* value to the URI as a query string parameter
 
 After the URL is transformed, it is a valid URL. When the URL is opened, the action will be invoked against the file
-indicated by the WOPISrc parameter.
+indicated by the *WOPISrc* parameter.
 
-|stub-icon| Placeholder values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Transforming the urlsrc parameter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..  include:: /fragments/stub.rst
+Some WOPI actions expose parameters that hosts can use to customize the behavior of the Office Online application. For
+example, most actions support optional query string parameters that tell Office Online what language to render the
+application UI in.
 
-.. |issue| issue:: 10
+These parameters are exposed in the **urlsrc** attribute in the discovery XML. Each of these optional parameters are
+contained within angle brackets (``<`` and ``>``), and conform to the pattern ``<name=PLACEHOLDER_VALUE[&]>``, where
+``name`` is the name of the query string parameter and ``PLACEHOLDER_VALUE`` is a value that can be replaced by the
+host. By convention all placeholder values in Office Online action URIs are capitalized.
 
+The list of all placeholder values used by Office Online and what values are valid replacements for each placeholder are
+listed in the :ref:`Placeholder values` section.
+
+The placeholders are replaced as follows:
+
+* If the ``PLACEHOLDER_VALUE`` is unknown to the host, the entire parameter, including the angle brackets, is removed.
+* Similarly, if the ``PLACEHOLDER_VALUE`` is known but the host wishes to ignore it or use the default value for that
+  parameter, the entire parameter, including the angle brackets, should be removed.
+* If the ``PLACEHOLDER_VALUE`` is known, the angle brackets are removed, the ``name`` value is left intact, and the
+  ``PLACEHOLDER_VALUE`` string is replaced with an appropriate value. If present, the optional ``&`` must be preserved.
+
+The following section contains a list of all current placeholder values that Office Online exposes in its discovery XML.
+Note that Office Online may add new placeholders and actions at any time; hosts must ignore - and thus remove from the
+URL per the instructions above - any placeholder values they don't explicitly understand.
+
+..  _Placeholder values:
+
+Placeholder values
+^^^^^^^^^^^^^^^^^^
+
+..  glossary::
+    :sorted:
+
+    UI_LLCC
+        This value represents the language the Office Online application UI should use. Any language can be supplied
+        provided it is in the format described in :rfc:`1766`. Note that Office Online does not support all
+        languages, and may use a substitute language if the language requested is not supported. If no value is
+        provided for this placeholder, Office Online will try to use the browser language setting
+        (`navigator.language`). If no valid lanuage can be determined Office Online will default to English.
+
+    DC_LLCC
+        This value represents the language that Office Online should use for the purposes of data calculation. Any
+        language can be supplied provided it is in the format described in :rfc:`1766`. Typically this value
+        should be the same as the value provided for :term:`UI_LLCC`
+
+    EMBEDDED
+        ..  note:: This value is used in :term:`broadcast` related actions only.
+
+        This value can be set to ``true`` to indicate that the output of the action will be embedded in a web page.
+
+    DISABLE_ASYNC
+        ..  note:: This value is used in the :wopi:action:`attend` action only.
+
+        This value can be set to ``true`` to prevent a :term:`broadcast` attendee from navigating a file independently.
+
+    DISABLE_BROADCAST
+        ..  note:: This value is used in :term:`broadcast` related actions only.
+
+        This value can be set to ``true`` to load a view of a document that does not start or join a :term:`broadcast`
+        session. This view looks and behaves like a regular broadcast frame.
+
+    FULLSCREEN
+        ..  note:: This value is used in :term:`broadcast` related actions only.
+
+        This value can be set to ``true`` to load the file type in full-screen mode.
+
+    RECORDING
+        ..  note:: This value is used in :term:`broadcast` related actions only.
+
+        This value can be set to ``true`` to load the file type with a minimal user interface.
+
+    THEME_ID
+        ..  note:: This value is used in :term:`broadcast` related actions only.
+
+        This value can be set to either ``1`` or ``2`` to designate the a specific user interface appearance.
+        ``1`` denotes a light-colored theme and ``2`` denotes a darker colored theme.
+
+
+Appending a WOPISrc value
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After parsing and replacing any placeholder values in the **urlsrc** parameter, hosts must add a ``WOPISrc`` query
+string parameter to the URL. Once this is done, the URL is a valid action URL and, when loaded by a browser, will
+instantiate an Office Online application.
+
+The ```WOPISrc`` parameter tells Office Online the URL of the host's WOPI :ref:`Files endpoint`. In other words,
+it is a URL of the form ``http://server/<...>/wopi*/files/(id)``, where ``id`` is the :term:`file id` of the file. The
+``WOPISrc`` parameter value must be encoded to a URL-safe string, then the parameter is appended to the action URL.
+
+..  tip::
+
+    It may be useful to think of the ``WOPISrc`` parameter as the :ref:`CheckFileInfo` URL for the file. The
+    only difference between the ``WOPISrc`` parameter and the :ref:`CheckFileInfo` URL is that the ``WOPISrc``
+    parameter does not include an :term:`access token`.
+
+
+Additional notes
+~~~~~~~~~~~~~~~~
+
+Depending on the specific scenario where action URLs are invoked, there are additional relevant components to action
+URLs. Since action URLs are typically invoked from the host frame, these are covered in the
+:ref:`Host Frame` section.

@@ -7,8 +7,8 @@ Verifying that requests originate from Office Online by using proof keys
 When processing WOPI requests from Office Online, you might want to verify that these requests are coming from Office
 Online. To do this, you use proof keys.
 
-Office Online signs every WOPI request with a private key. The corresponding public key is available in the proof-key
-element in the WOPI discovery XML. The signature is sent with every request in the **X-WOPI-Proof** and
+Office Online signs every WOPI request with a private key. The corresponding public key is available in the
+**proof-key** element in the WOPI discovery XML. The signature is sent with every request in the **X-WOPI-Proof** and
 **X-WOPI-ProofOld** HTTP headers.
 
 The signature is assembled from information that is available to the WOPI host when it processes the incoming WOPI
@@ -19,6 +19,11 @@ request. To verify that a request came from Office Online, you must:
 * Compare the expected proof to the decrypted proof. If they match, the request originated from Office Online.
 * Ensure that the **X-WOPI-TimeStamp** header is no more than 20 minutes old.
 
+..  tip::
+    The `Office Online GitHub repository <repo>`_ contains a set of unit tests that hosts can adapt to verify proof
+    key validation implementations. See :ref:`Proof key unit tests` for more information.
+
+
 Constructing the expected proof
 -------------------------------
 
@@ -26,18 +31,33 @@ To construct the expected proof, you must assemble a byte array consisting of th
 request (in uppercase), and the value of the **X-WOPI-TimeStamp** HTTP header from the request. Each of these values
 must be converted to a byte array. In addition, you must include the length, in bytes, of each of these values.
 
-To convert the access token and request URL values, which are strings, to byte arrays, you must encode the original
-strings in UTF-8. Convert the **X-WOPI-TimeStamp** header to a *long* and then into a byte array. Do not treat it as a
-string.
+To convert the access token and request URL values, which are strings, to byte arrays, you must ensure the original
+strings are in UTF-8 first, then convert the UTF-8 strings to byte arrays. Convert the **X-WOPI-TimeStamp** header
+to a *long* and then into a byte array. Do not treat it as a string.
 
 Then, assemble the data as follows:
 
-* 4 bytes that represent the length, in bytes, of the access_token on the request.
-* The access_token.
-* 4 bytes that represent the length, in bytes, of the full URL of the WOPI request.
-* The WOPI request URL in all uppercase.
+* 4 bytes that represent the length, in bytes, of the ``access_token`` on the request.
+* The ``access_token``.
+* 4 bytes that represent the length, in bytes, of the full URL of the WOPI request, including any query string
+  parameters.
+* The WOPI request URL in all uppercase. All query string parameters on the request URL should be included.
 * 4 bytes that represent the length, in bytes, of the **X-WOPI-TimeStamp** value.
 * The **X-WOPI-TimeStamp** value.
+
+The following C# code snippet illustrates the construction of an expected proof.
+
+..  literalinclude:: ../../../samples/SampleWopiHandler/SampleWopiHandler/ProofKeyHelper.cs
+    :caption: Sample code from `ProofKeyHelper.cs`_
+    :language: csharp
+    :linenos:
+    :lineno-match:
+    :dedent: 8
+    :lines: 62-96
+    :emphasize-lines: 3-22
+
+..  _ProofKeyHelper.cs: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/
+                        blob/master/samples/SampleWopiHandler/SampleWopiHandler/ProofKeyHelper.cs
 
 Retrieving the public key
 -------------------------
@@ -54,8 +74,8 @@ Both keys are represented in the discovery XML in two different formats. One for
 Using .NET to retrieve the public key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If your application is built on the .NET framework, you should use the contents of the **value** and **valueOld**
-attributes of the proof-key element in the WOPI discovery XML. These two attributes contain the Base64-encoded public
+If your application is built on the .NET framework, you should use the contents of the **value** and **oldvalue**
+attributes of the *proof-key* element in the WOPI discovery XML. These two attributes contain the Base64-encoded public
 keys that are exported by using the `RSACryptoServiceProvider.ExportCspBlob`_ method of the .NET Framework.
 
 To import this key in your application, you must decode it from Base64 then import it by using the
@@ -70,9 +90,9 @@ Using the RSA modulus and exponent to retrieve the public key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For hosts that don't use the .NET framework, Office Online provides the RSA modulus and exponent directly. The
-modulus and exponent of the current key are found in the modulus and exponent attributes of the proof-key element in
-the WOPI discovery XML. The modulus and exponent of the old key are found in the **oldmodulus** and **oldexponent**
-attributes. All four of these values are Base64-encoded.
+modulus and exponent of the current key are found in the **modulus** and **exponent** attributes of the *proof-key*
+element in the WOPI discovery XML. The modulus and exponent of the old key are found in the **oldmodulus** and
+**oldexponent** attributes. All four of these values are Base64-encoded.
 
 The steps to import these values differ based on the language, platform, and cryptography API that you are using.
 
@@ -80,6 +100,7 @@ The following example shows how to import the public key by using the modulus an
 the PyCrypto library.
 
 ..  code-block:: python
+    :linenos:
 
     from base64 import b64decode
     from Crypto.PublicKey import RSA
@@ -100,8 +121,9 @@ the PyCrypto library.
 Verifying the proof keys
 ------------------------
 
-After you import the key, you can use the VerifyData method to verify the proof keys. Because Office Online rotates
-the current and old proof keys periodically, you have to check three combinations of proof key values:
+After you import the key, you can use a verification method provided by your cryptography library to verify incoming
+requests were signed by Office Online. Because Office Online rotates the current and old proof keys periodically, you
+have to check three combinations of proof key values:
 
 * The **X-WOPI-Proof** value using the current public key
 * The **X-WOPI-ProofOld** value using the current public key
@@ -112,6 +134,7 @@ If any one of the values is valid, the request was signed by Office Online.
 The following example shows how to verify one of these combinations in .NET.
 
 ..  code-block:: csharp
+    :linenos:
 
     private static bool TryVerification(byte[] expectedProof, byte[] signedProof, byte[] publicKeyToTry, int keySize)
     {
@@ -133,6 +156,7 @@ The following example shows how to verify one of these combinations in .NET.
 The following example shows how to verify one of these combinations in Python using the PyCrypto library.
 
 ..  code-block:: python
+    :linenos:
 
     from base64 import b64decode
     from Crypto.Hash import SHA256
@@ -142,3 +166,23 @@ The following example shows how to verify one of these combinations in Python us
         verifier = PKCS1_v1_5.new(public_key)
         h = SHA256.new(expected_proof)
         return verifier.verify(h, signed_proof)
+
+
+..  _Troubleshooting proof keys:
+
+Troubleshooting proof key implementations
+-----------------------------------------
+
+If you are having difficulty with your proof key verification implementation, here are some common issues that you
+should investigate:
+
+* Verify you're converting the URL to uppercase.
+* Verify you're including any query string parameters on the URL when transforming it for the purposes of building the
+  expected proof value.
+* Verify you're using the same encoding for any special charatcers that may be in the URL.
+* Verify you're using an HTTPS URL if your WOPI endpoints are HTTPS. This is especially important if you have SSL
+  termination in your network prior to your WOPI request handlers. In this case, the URL Office Online will use to sign
+  the requests will be HTTPS, but the URL your WOPI handlers ultimately receive will be HTTP. If you simply use the
+  incoming request URL your expected proof will not match the signature provided by Office Online.
+
+In addition, use the :ref:`Proof key unit tests` to verify your implementation with sample data.
