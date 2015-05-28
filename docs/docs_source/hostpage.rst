@@ -76,7 +76,7 @@ Applying appropriate CSS styles
 
 To ensure that the Office Online applications behave appropriately when displayed through the host page, the host page
 must apply some specific CSS styles to the Office Online iframe (lines 20-31) and the ``body`` element (lines 14-18) as
-well as set a ``viewport`` meta tag for mobile browsers (line 11). All of these requirements are illstrated in the
+well as set a ``viewport`` meta tag for mobile browsers (line 11). All of these requirements are illustrated in the
 sample host page:
 
 ..  literalinclude:: ../../samples/SampleHostPage.html

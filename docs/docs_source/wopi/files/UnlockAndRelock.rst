@@ -10,25 +10,31 @@ UnlockAndRelock
 
 ..  post:: /wopi*/files/(id)
 
-The UnlockAndRelock operation releases a lock on a file, and then immediately takes a new lock on the file.
-**This operation must be atomic.**
+    The UnlockAndRelock operation releases a lock on a file, and then immediately takes a new lock on the file.
+    **This operation must be atomic.**
 
-Office Online passes the value of the existing lock in the **X-WOPI-OldLock** header. The host should verify that the
-value provided in the **X-WOPI-OldLock** header matches the current lock on the file, and if not, respond with a
-"lock mismatch" response (:http:statuscode:`409`). If it does match, the host should release the lock and immediately
-take a new lock with the lock ID provided in the **X-WOPI-Lock** header.
-
-..  tip::
-    The UnlockAndRelock operation is very similar to the :ref:`Lock` operation. The two operations share the same
+    UnlockAndRelock is very similar semantically to the :ref:`Lock` operation. The two operations share the same
     **X-WOPI-Override** value. Thus, hosts must differentiate the two operations based on the presence, or lack of,
     the **X-WOPI-OldLock** request header.
+
+    Unlike the :ref:`Lock` operation, the UnlockAndRelock operation passes the current expected lock ID in the
+    **X-WOPI-OldLock** request header. The **X-WOPI-Lock** value is the lock ID for the new lock.
+
+    If the file is currently locked and the **X-WOPI-OldLock** value does not match the lock currently on the file,
+    or if the file is unlocked, the host must return a "lock mismatch" response (:http:statuscode:`409`) and include an
+    **X-WOPI-Lock** response header containing the value of the current lock on the file.
+
+    ..  include:: /fragments/no_lock_id.rst
+
+    See :term:`Lock` for more general information regarding locks.
+
 
     ..  include:: /fragments/common_params.rst
 
     :reqheader X-WOPI-Override:
         The **string** ``LOCK``. Required.
     :reqheader X-WOPI-Lock:
-        A **string** provided by Office Online that the host must use to identify the lock on
+        A **string** provided by Office Online that the host must use to identify the new lock on
         the file. The maximum length of a lock ID is 256 characters.
     :reqheader X-WOPI-OldLock:
         A **string** provided by Office Online that is the existing lock on the file.
@@ -36,6 +42,7 @@ take a new lock with the lock ID provided in the **X-WOPI-Lock** header.
     :code 200: Success
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
-    :code 409: Target file already exists
+    :code 409: Lock mismatch/locked by another interface; an **X-WOPI-Lock** response header containing the value of
+        the current lock on the file must always be included when using this response code
     :code 500: Server error
     :code 501: Unsupported

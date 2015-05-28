@@ -12,10 +12,18 @@ PutFile
 
     The PutFile operation updates a file's binary contents.
 
-    Office Online will always pass the lock ID in the **X-WOPI-Lock** request header. If the file is currently
-    associated with a lock established by the :ref:`Lock` operation or the :ref:`UnlockAndRelock` operation, the
-    host must ensure that a "lock mismatch" response (:http:statuscode:`409`) is returned if the lock passed does not
-    match the lock currently on the file, or if the file has been locked by someone other than Office Online.
+    ..  include:: /fragments/priorlock.rst
+
+    ..  include:: /fragments/lock409.rst
+
+    ..  include:: /fragments/no_lock_id.rst
+
+    During :ref:`document creation<Create New>`, Office Online will make a PutFile request without a prior
+    :ref:`Lock` request. Thus, when a host receives a PutFile request on a file that is not locked, the host must
+    check the current size of the file. If it is 0 bytes, the PutFile request should be considered valid and should
+    proceed. If it is any value other than 0 bytes, or is missing altogether, the host should respond with a
+    :http:statuscode:`409`. For more information, see :ref:`Create New`.
+
 
     ..  include:: /fragments/common_params.rst
 
@@ -23,14 +31,16 @@ PutFile
         The **string** ``PUT``. Required.
     :reqheader X-WOPI-Lock:
         A **string** provided by Office Online in a previous :ref:`Lock` request.
-    :reqheader X-WOPI-Size:
-        An **integer** specifying the size of the request body. Optional. The host should read the entire request
-        body if this value is not set in the request.
+
+    :resheader X-WOPI-Lock:
+        A **string** value identifying the current lock on the file. This header should always be included when
+        responding to the request with :http:statuscode:`409`.
 
     :code 200: Success
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
-    :code 409: Lock mismatch/Locked by another interface
+    :code 409: Lock mismatch/locked by another interface; an **X-WOPI-Lock** response header containing the value of
+        the current lock on the file should always be included when using this response code
     :code 413: File is too large; the maximum file size is host-specific
     :code 500: Server error
     :code 501: Unsupported
