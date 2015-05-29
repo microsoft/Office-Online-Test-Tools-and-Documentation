@@ -1,12 +1,13 @@
 
-..  _Host Frame:
+..  _Host page:
 
-|stub-icon| Building a host frame
-=================================
+|stub-icon| Building a host page
+================================
 
 ..  include:: /fragments/stub.rst
 
 .. |issue| issue:: 4
+
 
 
 ..  _Passing access tokens securely:

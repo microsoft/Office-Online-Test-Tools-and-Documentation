@@ -316,5 +316,5 @@ Additional notes
 ~~~~~~~~~~~~~~~~
 
 Depending on the specific scenario where action URLs are invoked, there are additional relevant components to action
-URLs. Since action URLs are typically invoked from the host frame, these are covered in the
-:ref:`Host Frame` section.
+URLs. Since action URLs are typically invoked from the host page, these are covered in the
+:ref:`Host page` section.

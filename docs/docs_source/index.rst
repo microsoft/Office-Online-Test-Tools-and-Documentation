@@ -163,7 +163,7 @@ Contents:
     :glob:
     :caption: UI Integration
 
-    hostframe
+    hostpage
     postmessage
 
 ..  toctree::

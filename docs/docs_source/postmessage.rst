@@ -10,9 +10,9 @@ You can integrate your UI into Office Online applications. This way, you can use
 documents, such as sharing.
 
 To integrate with Office Online in this way, implement the HTML5 Web Messaging protocol. The Web Messaging protocol,
-also known as PostMessage, allows the Office Online frame to communicate with its parent host frame, and vice-versa.
-The following example shows the general syntax for PostMessage. In this example, ``otherWindow`` is a reference to
-another window that ``msg`` will be posted to.
+also known as PostMessage, allows the Office Online frame to communicate with its parent :term:`host page`, and
+vice-versa. The following example shows the general syntax for PostMessage. In this example, ``otherWindow`` is a
+reference to another window that ``msg`` will be posted to.
 
 ..  function:: otherWindow.postMessage(msg, targetOrigin)
 
@@ -58,7 +58,7 @@ Sending messages to the Office Online iframe
 --------------------------------------------
 
 To send messages to the Office Online iframe, you must set the PostMessageOrigin property in your WOPI CheckFileInfo
-response to the URL of your host frame. If you do not do this, Office Online will ignore any messages you send to its
+response to the URL of your host page. If you do not do this, Office Online will ignore any messages you send to its
 iframe.
 
 You can send the following messages; all others are ignored:
@@ -122,7 +122,7 @@ You can send the following messages; all others are ignored:
 
 ..  data:: Host_PerfTiming
 
-    Provides performance related timestamps from the host frame. Hosts should send this message when the Office
+    Provides performance related timestamps from the host page. Hosts should send this message when the Office
     Online frame is created so load performance can be more accurately tracked.
 
     ..  attribute:: Values
@@ -166,7 +166,7 @@ You can send the following messages; all others are ignored:
 ..  data:: Host_PostmessageReady
 
     Office Online delay-loads much of its JavaScript code, including most of its PostMessage senders and listeners.
-    You might choose to follow this pattern in your WOPI host page. This means that your outer host frame and the
+    You might choose to follow this pattern in your WOPI host page. This means that your outer host page and the
     Office Online iframe must coordinate to ensure that each is ready to receive and respond to messages.
 
     To enable this coordination, Office Online sends the :data:`App_LoadingStatus` message only after all of its message

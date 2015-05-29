@@ -119,7 +119,7 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         easier or more performant to serve files from a different domain than the one handling standard WOPI requests.
 
     HostEditUrl
-        A URI to the :term:`host frame` that loads the :wopi:action:`edit` WOPI action. This URL is used by Office
+        A URI to the :term:`host page` that loads the :wopi:action:`edit` WOPI action. This URL is used by Office
         Online to navigate between view and edit mode. In addition, the HostEditUrl property contains the URL that is
         stored in the recent documents list if a :term:`ClientUrl` is not provided.
 
@@ -136,7 +136,7 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         A URI that is the base URI for REST operations for the file.
 
     HostViewUrl
-        A URI to the :term:`host frame` that loads the :wopi:action:`view` WOPI action. This URL is used by Office
+        A URI to the :term:`host page` that loads the :wopi:action:`view` WOPI action. This URL is used by Office
         Online to navigate between view and edit mode.
 
     LicenseCheckForEditIsEnabled
@@ -340,7 +340,7 @@ integration at :ref:`PostMessage`.
         :js:data:`UI_Sharing` PostMessage.
 
     PostMessageOrigin
-        A **string** value indicating the domain the :term:`host frame` will be sending/receiving PostMessages
+        A **string** value indicating the domain the :term:`host page` will be sending/receiving PostMessages
         to/from. Office Online will only send outgoing PostMessages to this domain, and will only listen to
         PostMessages from this domain.
 
