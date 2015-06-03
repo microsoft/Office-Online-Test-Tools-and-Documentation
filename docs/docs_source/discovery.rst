@@ -7,8 +7,8 @@ WOPI discovery
 ==============
 
 WOPI discovery is the process by which your application identifies Office Online capabilities, and how to initialize
-Office Online applications within your site. To retrieve the discovery XML for the live service, use the
-following URL: https://onenote.officeapps.live.com/hosting/discovery.
+Office Online applications within your site. To retrieve the discovery XML for the Office Online production service,
+use the following URL: https://onenote.officeapps.live.com/hosting/discovery.
 
 WOPI hosts use the discovery XML to determine how to interact with Office Online. The WOPI host should cache the
 data in the discovery XML. Although this XML does not change often, we recommend that you issue a request for the
@@ -316,5 +316,5 @@ Additional notes
 ~~~~~~~~~~~~~~~~
 
 Depending on the specific scenario where action URLs are invoked, there are additional relevant components to action
-URLs. Since action URLs are typically invoked from the host frame, these are covered in the
-:ref:`Host Frame` section.
+URLs. Since action URLs are typically invoked from the host page, these are covered in the
+:ref:`Host page` section.

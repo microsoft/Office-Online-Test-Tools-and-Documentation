@@ -24,13 +24,13 @@ Glossary
         should be passed to Office Online. See :ref:`File ID requirements` for a full description of the
         requirements of a file ID.
 
-    Host Frame
     Host Page
+    Host Frame
     Outer Frame
-        The host frame (also called the 'host page' or 'outer frame') is the HTML page which will host an iframe that
+        The host page (also called the 'host frame' or 'outer frame') is the HTML page which will host an iframe that
         points to an Office Online application.
 
-        .. seealso:: :ref:`Host Frame`
+        .. seealso:: :ref:`Host page`
 
     Session Context
         The Session Context is an optional parameter that a host can include on a WOPI request. It is a **string**, and
