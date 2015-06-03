@@ -179,7 +179,7 @@ should investigate:
 * Verify you're converting the URL to uppercase.
 * Verify you're including any query string parameters on the URL when transforming it for the purposes of building the
   expected proof value.
-* Verify you're using the same encoding for any special charatcers that may be in the URL.
+* Verify you're using the same encoding for any special characters that may be in the URL.
 * Verify you're using an HTTPS URL if your WOPI endpoints are HTTPS. This is especially important if you have SSL
   termination in your network prior to your WOPI request handlers. In this case, the URL Office Online will use to sign
   the requests will be HTTPS, but the URL your WOPI handlers ultimately receive will be HTTP. If you simply use the

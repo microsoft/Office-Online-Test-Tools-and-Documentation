@@ -195,7 +195,7 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports :ref:`RenameFile` operations for this file.
 
     SupportsScenarioLinks
-        A **Boolean** value that indicates that thehost supports scenarios where users can operate on files in
+        A **Boolean** value that indicates that the host supports scenarios where users can operate on files in
         limited ways via restricted URLs.
 
     SupportsSecureStore
@@ -271,7 +271,7 @@ mechanism. Rather, these properties help Office Online tailor its UI and behavio
 has. For example, Office Online will hide the file renaming UI if the :term:`UserCanRename` property is ``false``.
 However, Office Online expects that even if that UI were somehow made available to a user without appropriate
 permissions, the WOPI :ref:`RenameFile` request would fail since the host would determine the action was not
-permissable based on the :term:`access token` passed in the request.
+permissible based on the :term:`access token` passed in the request.
 
 Note that there is no property that indicates the user has permission to read/view a file. This is because Office
 Online expects that the host will respond to any WOPI request, including :ref:`CheckFileInfo`, with an
@@ -451,7 +451,7 @@ Other miscellaneous properties
 
     UniqueContentId
         In special cases, a host may choose to not provide a :term:`SHA256`, but still have some mechanism for
-        identifing that two different files contain the same content in the same manner as the :term:`SHA256` is used.
+        identifying that two different files contain the same content in the same manner as the :term:`SHA256` is used.
 
         This **string** value can be provided rather than a :term:`SHA256` value, if the host can guarantee that two
         different files with the same content will have the same UniqueContentId value. See :ref:`View performance`
