@@ -33,6 +33,7 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.todo',
     'sphinxcontrib.httpdomain',
+    'sphinxcontrib.spelling',
     'issue_directive',
     'wopi_domain',
 ]
@@ -52,6 +53,8 @@ numfig_format = {
 
 with io.open('./fragments/rst_prolog.rst', encoding='utf-8') as prolog_file:
     rst_prolog = prolog_file.read()
+
+spelling_show_suggestions = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
