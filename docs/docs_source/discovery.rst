@@ -301,7 +301,7 @@ After parsing and replacing any placeholder values in the **urlsrc** parameter, 
 string parameter to the URL. Once this is done, the URL is a valid action URL and, when loaded by a browser, will
 instantiate an Office Online application.
 
-The ```WOPISrc`` parameter tells Office Online the URL of the host's WOPI :ref:`Files endpoint`. In other words,
+The ``WOPISrc`` parameter tells Office Online the URL of the host's WOPI :ref:`Files endpoint`. In other words,
 it is a URL of the form ``http://server/<...>/wopi*/files/(id)``, where ``id`` is the :term:`file id` of the file. The
 ``WOPISrc`` parameter value must be encoded to a URL-safe string, then the parameter is appended to the action URL.
 
