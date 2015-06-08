@@ -187,7 +187,7 @@ You can send the following messages; all others are ignored:
     2. Office Online frame begins loading. Some UI elements are disabled, because :data:`Host_PostmessageReady` has
        not yet been sent by the host page.
     3. Host page finishes loading and sends :data:`Host_PostmessageReady`. No other messages are sent because the
-       host page hasn’t received the :data:`App_LoadingStatus` message from the Office Online frame.
+       host page hasn't received the :data:`App_LoadingStatus` message from the Office Online frame.
     4. Office Online frame receives :data:`Host_PostmessageReady`.
     5. Office Online frame finishes loading and sends :data:`App_LoadingStatus` to host page.
     6. Host page and Office Online communicate by using other PostMessage messages.
@@ -195,7 +195,7 @@ You can send the following messages; all others are ignored:
     ..  attribute:: Values
         :noindex:
 
-                *Empty.*
+            *Empty.*
 
     ..  rubric:: Example Message:
 
