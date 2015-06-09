@@ -250,7 +250,7 @@ namespace SampleWopiHandler
         /// Processes a CheckFileInfo request
         /// </summary>
         /// <remarks>
-        /// For full documentation on CheckFileInfo, see http://msdn.microsoft.com/en-us/library/hh643136%28v=office.12%29.aspx
+        /// For full documentation on CheckFileInfo, see https://wopi.readthedocs.org/en/latest/wopi/files/CheckFileInfo.html
         /// </remarks>
         private void HandleCheckFileInfoRequest(HttpContext context, WopiRequest requestData)
         {
@@ -276,7 +276,7 @@ namespace SampleWopiHandler
                     return;
                 }
 
-                // For more info on CheckFileInfoResponse fields, see http://msdn.microsoft.com/en-us/library/hh622920%28v=office.12%29.aspx
+                // For more info on CheckFileInfoResponse fields, see https://wopi.readthedocs.org/en/latest/wopi/files/CheckFileInfo.html#response
                 CheckFileInfoResponse responseData = new CheckFileInfoResponse()
                 {
                     // required CheckFileInfo properties
@@ -315,7 +315,7 @@ namespace SampleWopiHandler
         /// Processes a GetFile request
         /// </summary>
         /// <remarks>
-        /// For full documentation on GetFile, see http://msdn.microsoft.com/en-us/library/hh658987%28v=office.12%29.aspx
+        /// For full documentation on GetFile, see https://wopi.readthedocs.org/en/latest/wopi/file_contents/GetFile.html
         /// </remarks>
         private void HandleGetFileRequest(HttpContext context, WopiRequest requestData)
         {
@@ -351,7 +351,7 @@ namespace SampleWopiHandler
         /// Processes a PutFile request
         /// </summary>
         /// <remarks>
-        /// For full documentation on PutFile, see http://msdn.microsoft.com/en-us/library/hh657364%28v=office.12%29.aspx
+        /// For full documentation on PutFile, see https://wopi.readthedocs.org/en/latest/wopi/file_contents/PutFile.html
         /// </remarks>
         private void HandlePutFileRequest(HttpContext context, WopiRequest requestData)
         {
@@ -391,7 +391,7 @@ namespace SampleWopiHandler
             {
                 // With no lock and a non-zero file, a PutFile could potentially result in data loss by clobbering
                 // existing content.  Therefore, return a lock mismatch error.
-                ReturnLockMismatch(context.Response);
+                ReturnLockMismatch(context.Response, reason:"PutFile on unlocked file with current size != 0");
             }
 
             // Either the file has a valid lock that matches the lock in the request, or the file is unlocked
@@ -418,7 +418,7 @@ namespace SampleWopiHandler
         /// Processes a Lock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on Lock, see http://msdn.microsoft.com/en-us/library/hh623363%28v=office.12%29.aspx
+        /// For full documentation on Lock, see https://wopi.readthedocs.org/en/latest/wopi/files/Lock.html
         /// </remarks>
         private void HandleLockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -443,21 +443,13 @@ namespace SampleWopiHandler
                 {
                     // There is a valid existing lock on the file
 
-                    if (existingLock.Lock == newLock)
-                    {
-                        // The existing lock matches the provided one, so return the current lock along with our success.
-                        context.Response.Headers[WopiHeaders.OldLock] = newLock;
-                        ReturnSuccess(context.Response);
-                    }
-                    else
-                    {
-                        // The existing lock doesn't match the requested lock, so return a lock mismatch along with
-                        // the current lock.
-                        // This is a fairly common case and shouldn't be tracked as an error.  Office Online can store
-                        // information about a current session in the lock value and expects to conflict when there's
-                        // an existing session to join.
-                        ReturnLockMismatch(context.Response, existingLock.Lock);
-                    }
+                    // Regardless of whether the new lock matches the existing lock, this should be treated as a lock mismatch
+                    // per the documentation: https://wopi.readthedocs.org/en/latest/wopi/files/Lock.html
+
+                    // This is a fairly common case and shouldn't be tracked as an error.  Office Online can store
+                    // information about a current session in the lock value and expects to conflict when there's
+                    // an existing session to join.
+                    ReturnLockMismatch(context.Response, existingLock.Lock);
                 }
                 else
                 {
@@ -467,8 +459,7 @@ namespace SampleWopiHandler
                     // TODO: In a real implementation the lock should be stored in a persisted and shared system.
                     Locks[requestData.Id] = new LockInfo() { DateCreated = DateTime.UtcNow, Lock = newLock };
 
-                    // Return the new lock information
-                    context.Response.Headers[WopiHeaders.OldLock] = newLock;
+                    // Return success
                     ReturnSuccess(context.Response);
                 }
             }
@@ -478,7 +469,7 @@ namespace SampleWopiHandler
         /// Processes a RefreshLock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on RefreshLock, see http://msdn.microsoft.com/en-us/library/hh643784%28v=office.12%29.aspx
+        /// For full documentation on RefreshLock, see https://wopi.readthedocs.org/en/latest/wopi/files/RefreshLock.html
         /// </remarks>
         private void HandleRefreshLockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -519,7 +510,7 @@ namespace SampleWopiHandler
                 else
                 {
                     // The requested lock does not exist.  That's also a lock mismatch error.
-                    ReturnLockMismatch(context.Response);
+                    ReturnLockMismatch(context.Response, reason:"File not locked");
                 }
             }
         }
@@ -528,7 +519,7 @@ namespace SampleWopiHandler
         /// Processes a Unlock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on Unlock, see http://msdn.microsoft.com/en-us/library/hh623835%28v=office.12%29.aspx
+        /// For full documentation on Unlock, see https://wopi.readthedocs.org/en/latest/wopi/files/Unlock.html
         /// </remarks>
         private void HandleUnlockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -569,7 +560,7 @@ namespace SampleWopiHandler
                 else
                 {
                     // The requested lock does not exist.  That's also a lock mismatch error.
-                    ReturnLockMismatch(context.Response);
+                    ReturnLockMismatch(context.Response, reason: "File not locked");
                 }
             }
         }
@@ -578,7 +569,7 @@ namespace SampleWopiHandler
         /// Processes a UnlockAndRelock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on UnlockAndRelock, see http://msdn.microsoft.com/en-us/library/hh624108%28v=office.12%29.aspx
+        /// For full documentation on UnlockAndRelock, see https://wopi.readthedocs.org/en/latest/wopi/files/UnlockAndRelock.html
         /// </remarks>
         private void HandleUnlockAndRelockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -621,7 +612,7 @@ namespace SampleWopiHandler
                 else
                 {
                     // The requested lock does not exist.  That's also a lock mismatch error.
-                    ReturnLockMismatch(context.Response);
+                    ReturnLockMismatch(context.Response, reason: "File not locked");
                 }
             }
         }
@@ -636,11 +627,11 @@ namespace SampleWopiHandler
         private static bool ValidateWopiProofKey(HttpRequest request)
         {
             // TODO: WOPI proof key validation is not implemented in this sample.
-            // For more details on proof keys, see the X-WOPI-Proof documentation
-            // http://msdn.microsoft.com/en-us/library/hh622899%28v=office.12%29.aspx
+            // For more details on proof keys, see the documentation
+            // https://wopi.readthedocs.org/en/latest/scenarios/proofkeys.html
 
-            // The proof keys are returned by WOPI Discovery.  For more details, see
-            // http://msdn.microsoft.com/en-us/library/jj660498%28v=office.12%29.aspx
+            // The proof keys are returned by WOPI Discovery. For more details, see
+            // https://wopi.readthedocs.org/en/latest/discovery.html
 
             return true;
         }
@@ -654,9 +645,8 @@ namespace SampleWopiHandler
         private static bool ValidateAccess(WopiRequest requestData, bool writeAccessRequired)
         {
             // TODO: Access token validation is not implemented in this sample.
-            // For more details on access tokens, see the WOPI Common URI Parameters documentation
-            // http://msdn.microsoft.com/en-us/library/hh642805%28v=office.12%29.aspx
-
+            // For more details on access tokens, see the documentation
+            // https://wopi.readthedocs.org/en/latest/concepts.html#term-access-token
             return !String.IsNullOrWhiteSpace(requestData.AccessToken);
         }
 
@@ -675,10 +665,13 @@ namespace SampleWopiHandler
             ReturnStatus(response, 404, "File Unknown/User Unauthorized");
         }
 
-        private static void ReturnLockMismatch(HttpResponse response, string existingLock = null)
+        private static void ReturnLockMismatch(HttpResponse response, string existingLock = null, string reason = null)
         {
-            if (existingLock != null)
-                response.Headers[WopiHeaders.Lock] = existingLock;
+            response.Headers[WopiHeaders.Lock] = existingLock ?? String.Empty;
+            if (!String.IsNullOrEmpty(reason))
+            {
+                response.Headers[WopiHeaders.LockFailureReason] = reason;
+            }
 
             ReturnStatus(response, 409, "Lock mismatch/Locked by another interface");
         }
