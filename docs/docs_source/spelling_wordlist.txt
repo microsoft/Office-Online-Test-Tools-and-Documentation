@@ -6,13 +6,16 @@ domaintools
 exe
 gauge
 iframe
+iframes
 Indices
+metadata
 msg
 online
 Online
 performant
 pre
-Preloading
+preload
+preloading
 reStructuredText
 SHA
 smartphones

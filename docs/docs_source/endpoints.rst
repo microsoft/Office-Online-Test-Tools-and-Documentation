@@ -126,33 +126,3 @@ URI Parameter  Description
 =============  ===========
 ``sc``         A string representing the :term:`Session Context` for the request.
 =============  ===========
-
-
-..  _File ID requirements:
-
-File ID requirements
---------------------
-
-The Office files stored on your server must have unique IDs. The WOPI host uses these IDs to find files. The file IDs
-must:
-
-* Represent a single Office document.
-* Be a URL-safe string, because IDs are sometimes passed in URLs.
-* Remain the same when the file is moved, renamed, or edited.
-* In the case of shared documents, the ID for a given file must be the same for any user that accesses the file.
-
-
-..  _Access token requirements:
-
-Access token requirements
--------------------------
-
-A WOPI host needs to provide access tokens that represent users and their permissions. The WOPI host that stores the
-file has the information about user permissions, not Office Online. For this reason, the WOPI host must provide a
-token that Office Online will then pass back to it to validate. When the WOPI host receives the token, it either
-validates it, or responds with an HTTP status code if the token is invalid. The access tokens must:
-
-* Be scoped to a single user and document combination.
-* Expire after a period of time.
-
-Office Online requires no understanding of the format or content of the token.

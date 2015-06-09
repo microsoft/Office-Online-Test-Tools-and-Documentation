@@ -14,18 +14,15 @@ Lock
     To support editing files, Office Online requires that the WOPI host support locking files. When locked, a file
     should not be writable by other applications, including Office Online.
 
-    Office Online requires that the host store a string value associated with the locked file. This string value is the
-    lock ID. Office Online will always pass the lock ID as a parameter to operations that would modify the
-    contents of a file, such as :ref:`PutFile`. The host must ensure that a "lock mismatch" response
-    (:http:statuscode:`409`) is returned if the lock passed does not match the lock currently on the file.
+    If the file is currently locked the host must always return a "lock mismatch" response (:http:statuscode:`409`)
+    and include an **X-WOPI-Lock** response header containing the value of the current lock on the file. Note that
+    this differs from other lock-related operations; in those operations the value passed in with the **X-WOPI-Lock**
+    request header must be checked against the current lock value.
 
-    The host should implement locks in such a way that applications other than Office Online do not edit the file while
-    it is locked by another editor.
+    ..  include:: /fragments/no_lock_id.rst
 
-    Locks should expire automatically after 30 minutes. Office Online can reset this timeout by means of a
-    :ref:`RefreshLock` request.
+    See :term:`Lock` for more general information regarding locks.
 
-    ..  todo:: :issue:`12`
 
     ..  include:: /fragments/common_params.rst
 
@@ -33,15 +30,15 @@ Lock
         The **string** ``LOCK``. Required.
     :reqheader X-WOPI-Lock:
         A **string** provided by Office Online that the host must use to identify the lock on
-        the file. The maximum length of a lock ID is 256 characters.
+        the file. The maximum length of a lock ID is 256 ASCII characters.
 
-    :resheader X-WOPI-OldLock:
-        A **string** provided by Office Online that the host must use to identify the lock on
-        the file.
+    ..  include:: /fragments/common_lock_responses.rst
+
 
     :code 200: Success
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
-    :code 409: Target file already exists
+    :code 409: Lock mismatch/locked by another interface; an **X-WOPI-Lock** response header containing the value of
+        the current lock on the file must always be included when using this response code
     :code 500: Server error
     :code 501: Unsupported

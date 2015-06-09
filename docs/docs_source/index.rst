@@ -78,7 +78,7 @@ Authentication is handled by passing Office Online an access token that you gene
 expiration date. Also, we recommend that tokens be valid for a single user against a single file, to help mitigate
 the risk of token leaks.
 
-..  seealso:: :ref:`Access token requirements`
+..  seealso:: :term:`Access token`
 
 Conflict resolution
 ~~~~~~~~~~~~~~~~~~~
@@ -95,7 +95,7 @@ Ensure that files are represented by a persistent ID. This ID must be URL-safe b
 the URL at different times. Also, the ID must not change when the file is renamed, moved, or edited. This ensures an
 uninterrupted editing experience for your users.
 
-..  seealso:: :ref:`File ID requirements`
+..  seealso:: :term:`File ID`
 
 Versioning
 ~~~~~~~~~~
@@ -151,6 +151,7 @@ Contents:
     :caption: WOPI
 
     intro
+    concepts
     discovery
     endpoints
     wopi/files

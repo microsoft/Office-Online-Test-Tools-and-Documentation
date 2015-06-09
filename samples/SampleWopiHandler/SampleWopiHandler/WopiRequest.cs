@@ -35,6 +35,8 @@ namespace SampleWopiHandler
 
         public const string Lock = "X-WOPI-Lock";
         public const string OldLock = "X-WOPI-OldLock";
+        public const string LockFailureReason = "X-WOPI-LockFailureReason";
+        public const string LockedByOtherInterface = "X-WOPI-LockedByOtherInterface";
 
         public const string SuggestedTarget = "X-WOPI-SuggestedTarget";
         public const string RelativeTarget = "X-WOPI-RelativeTarget";
