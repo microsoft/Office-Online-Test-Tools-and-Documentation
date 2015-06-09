@@ -19,12 +19,14 @@ understanding the requirements for Office Online integration.
         A file ID must:
 
         * Represent a single Office document.
-        * Be a URL-safe string because IDs are passed in URLs, principally via the WOPIsrc parameter.
+        * Be a URL-safe string because IDs are passed in URLs, principally via the :term:`WOPISrc` parameter.
         * Remain the same when the file is moved, renamed, or edited.
         * In the case of shared documents, the ID for a given file must be the same for every user that accesses the
           file.
 
-        See :ref:`Action URLs` for more information about how the file ID should be passed to Office Online.
+        Note that the file ID is not provided to Office Online directly. Rather, it is passed as part of the
+        :term:`WOPISrc` value. See :ref:`Action URLs` and :ref:`WOPISrc` for more information about how the file ID
+        should be passed to Office Online.
 
     Access token
         An access token is a string used by the host to determine the identity and permissions of the issuer of a
@@ -80,3 +82,15 @@ understanding the requirements for Office Online integration.
 
         The specific conditions for each response are covered in the documentation for each lock-related WOPI
         operation.
+
+    WOPISrc
+        The WOPISrc (*WOPI Source*) is the URL used to execute WOPI operations on a file. It is a combination of the
+        :ref:`Files endpoint` URL for the host along with a particular :term:`file ID`. The WOPISrc does *not*
+        include an :term:`access token`. When invoking Office Online, hosts provide the WOPISrc instead of just
+        the :term:`file ID`.
+
+        The WOPISrc is needed beyond just a file ID so that Office Online can know what URL to call back to when
+        executing WOPI operations on a file. From an Office Online perspective, the WOPISrc and a :term:`file ID`
+        are synonymous, since Office Online always works with the WOPISrc itself, not the raw :term:`file ID`.
+
+        See :ref:`WOPISrc` for more details on how the WOPISrc is constructed and passed to Office Online.

@@ -10,6 +10,7 @@ Integrating with Office Online by using PostMessage
 
     msg
 
+
 You can integrate your UI into Office Online applications. This way, you can use your UI for actions on Office
 documents, such as sharing.
 
