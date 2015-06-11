@@ -54,5 +54,5 @@ The following properties must be present in all RenameFile responses:
 ..  data:: Name
     :noindex:
 
-    The **string** name of the renamed file without a path or file extension
+    The **string** name of the renamed file without a path or file extension.
     **This is a required value in all RenameFile responses.**
