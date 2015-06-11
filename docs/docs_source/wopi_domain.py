@@ -19,7 +19,7 @@ def setup(app):
                     objname="WOPI HTTP Header",
                 ),
                 req=dict(
-                    objname="WOPI HTTP Header",
+                    objname="WOPI Action Requirement",
                 ),
             )
         )

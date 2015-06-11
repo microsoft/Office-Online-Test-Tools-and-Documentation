@@ -371,7 +371,7 @@ Breadcrumb properties
         A **string** that Office Online will display to the user that indicates the name of the folder that contains
         the file.
 
-    BreadcrumbFolderUrl:
+    BreadcrumbFolderUrl
         A URI to a web page that Office Online will navigate to when the user clicks on UI that displays
         :term:`BreadcrumbFolderName`.
 
