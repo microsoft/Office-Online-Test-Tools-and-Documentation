@@ -90,6 +90,26 @@ sample host page:
     :emphasize-lines: 9, 11-29
 
 
+Working around browser iframe behavior
+--------------------------------------
+
+Some browsers exhibit strange behavior with iframes when using bookmarks or the browser forward/back buttons. In some
+cases, this will cause the Office Online iframe to be loaded twice in a single navigation. This in turn can cause
+'file locked' or 'access token expired' errors for users. In addition, sometimes the iframe is not recreated at all,
+which causes the Office Online application to load with the previous session's state. This may cause a session to
+ultimately fail for a variety of reasons, including an expired :abbr:`CSRF (Cross-Site Request Forgery)` token.
+
+In order to work around this behavior, hosts should dynamically create the Office Online iframe using JavaScript,
+then dynamically submit it. This technique is illustrated in the sample host page:
+
+..  literalinclude:: ../../samples/SampleHostPage.html
+    :caption: Markup from `SampleHostPage.html`_ illustrating how to dynamically create the Office Online iframe
+    :language: html
+    :linenos:
+    :lineno-match:
+    :lines: 36-51
+
+
 ..  Hyperlinks
 
 ..  _SampleHostPage.html:

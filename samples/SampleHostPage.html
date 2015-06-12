@@ -38,10 +38,16 @@
     <input name="access_token_ttl" value="<ACCESS_TOKEN_TTL_VALUE>" type="hidden"/>
 </form>
 
-<iframe name="office_frame"></iframe>
+<span id="frameholder"></span>
 
 <script type="text/javascript">
-    document.getElementById("office_form").submit();
+    var frameholder = document.getElementById('frameholder');
+    var office_frame = document.createElement('iframe');
+    office_frame.name = 'office_frame';
+    office_frame.id ='office_frame';
+    frameholder.appendChild(office_frame);
+
+    document.getElementById('office_form').submit();
 </script>
 
 </body>
