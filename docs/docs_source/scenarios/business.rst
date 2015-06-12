@@ -41,3 +41,21 @@ an Office 365 business account. If the user is not signed in, they'll be prompte
 Once signed in, Office Online will verify that the user has an Office 365 subscription that includes Office
 applications. After this is verified, Office Online will redirect the user back to the :term:`HostEditUrl` and the
 user can edit documents.
+
+
+Tracking users' subscription status
+-----------------------------------
+
+In the flow described above, the user must always be signed in with a valid Microsoft account or Office 365 business
+account in order to edit documents. This is not an ideal experience since it might require the user to sign in many
+times.
+
+To provide a better experience for users with Office 365 subscriptions, hosts can implement the :ref:`PutUserInfo` WOPI
+operation. Office Online will use this operation to pass back user information, including subscription status, to the
+host. The host can, in turn, pass the UserInfo string back to Office Online on subsequent :ref:`CheckFileInfo`
+responses for that user. Office Online will use the data in the UserInfo string to determine whether a subscription
+check is needed, and in most cases will not require the user to sign in. Note that hosts must treat the UserInfo
+string as an opaque string.
+
+This approach helps ensure that users are required to sign in to validate their Office 365 subscription as
+infrequently as possible.

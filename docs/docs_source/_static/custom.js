@@ -12,4 +12,15 @@ $(document).ready(function() {
     $("div.deprecated p").addClass(
         'label label-default'
     );
+
+    /* Highlight added items */
+    $("div.versionadded p").addClass(
+        'label label-success'
+    );
+
+    /* Highlight added items */
+    $("div.versionchanged p").addClass(
+        'label label-primary'
+    );
+
 });

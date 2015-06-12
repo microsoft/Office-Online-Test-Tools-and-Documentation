@@ -221,6 +221,13 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports :ref:`PutFile` and :ref:`PutRelativeFile` operations
         for this file.
 
+    SupportsUserInfo
+        A **Boolean** value that indicates that the host supports :ref:`PutUserInfo` operation for this file.
+
+        ..  versionadded:: 2015.08.03
+            Support for this property was added to Office Online on August 3, 2015.
+
+
 
 .. _User identity properties:
 
@@ -294,6 +301,14 @@ properties.
     LicenseCheckForEditIsEnabled
         A **Boolean** value indicating whether the user is a business user or not. This must be set to ``true``
         whenever the user is a business user. See :ref:`Business editing` for more information.
+
+    UserInfo
+        A **string** value containing information about the user. This string will be passed from Office Online to
+        the host by means of a :ref:`PutUserInfo` operation. If the host has a UserInfo string for the user, they
+        must include it in this property. See the :ref:`PutUserInfo` documentation for more details.
+
+        ..  versionadded:: 2015.08.03
+            Support for this property was added to Office Online on August 3, 2015.
 
 
 ..  _permissions:

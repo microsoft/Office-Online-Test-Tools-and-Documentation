@@ -154,6 +154,7 @@ Contents:
     concepts
     discovery
     endpoints
+    changelog
 
 ..  toctree::
     :maxdepth: 2
@@ -169,6 +170,7 @@ Contents:
     wopi/file_contents/PutFile
     wopi/files/PutRelativeFile
     wopi/files/RenameFile
+    wopi/files/PutUserInfo
     wopi/other
 
 ..  toctree::
