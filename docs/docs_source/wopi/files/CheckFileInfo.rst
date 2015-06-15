@@ -139,10 +139,6 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         A URI to the :term:`host page` that loads the :wopi:action:`view` WOPI action. This URL is used by Office
         Online to navigate between view and edit mode.
 
-    LicenseCheckForEditIsEnabled
-        A **Boolean** value indicating whether the document being loaded is a :term:`business document` or not. See
-        :ref:`` for more information.
-
     PrivacyUrl
         A URI to a webpage that explains the privacy policy of the host.
 
@@ -266,6 +262,11 @@ as long as the values meet the criteria above.
         A **string** value uniquely identifying the user currently accessing the file.
 
         ..  note:: |future|
+
+    LicenseCheckForEditIsEnabled
+        A **Boolean** value indicating whether the user is a business user or not. This must be set to ``true``
+        whenever the user is a business user. See :ref:`Business editing` for more information.
+
 
 User permissions properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
