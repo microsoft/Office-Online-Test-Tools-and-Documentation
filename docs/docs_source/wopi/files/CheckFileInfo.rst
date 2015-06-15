@@ -65,7 +65,7 @@ The following properties must be present in all CheckFileInfo responses:
         **This is a required value in all CheckFileInfo responses.**
 
     Version
-        The current version of the file based on the server’s file versioning schema, as a **string**. This value
+        The current version of the file based on the server's file version schema, as a **string**. This value
         must change when the file changes, and version values must never repeat for a given file.
         **This is a required value in all CheckFileInfo responses.**
 
@@ -116,7 +116,8 @@ Hosts can return a number of URLs that Office Online will navigate to in various
     FileUrl
         A URI to the file location that the WOPI client uses to get the file. If this is provided, Office Online
         will use this URI to get the file instead of a :ref:`GetFile` request. A host might set this property if it is
-        easier or more performant to serve files from a different domain than the one handling standard WOPI requests.
+        easier or provides better performance to serve files from a different domain than the one handling standard
+        WOPI requests.
 
     HostEditUrl
         A URI to the :term:`host page` that loads the :wopi:action:`edit` WOPI action. This URL is used by Office

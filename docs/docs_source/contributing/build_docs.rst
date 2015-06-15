@@ -4,6 +4,10 @@
 Building this documentation locally
 ===================================
 
+..  spelling::
+
+    exe
+
 If you want to build this documentation locally, use the following steps:
 
 #.  Clone the repository.
@@ -28,19 +32,15 @@ If you want to build this documentation locally, use the following steps:
 
 #.  Run the command ``pip install sphinxcontrib-domaintools`` (this is necessary due to a bug in the
     sphinxcontrib-domaintools installer).
-#.  Now that all the pre-requisites are installed, you can build the documentation using the following command:
+#.  Now that all the prerequisites are installed, you can build the documentation using the following command:
     ``make.bat html``. The built documentation will be output to ``build/html``.
 
 Checking spelling
 -----------------
 
-If you want to check the spelling of the documentation, run the following ``sphinx-build`` command from the ``docs``
-folder::
-
-    sphinx-build -b spelling -d .\build\doctrees .\docs_source .\build\spelling
-
-This will output a list of potentially misspelled words, along with the file in which the word was found and suggested
-replacement words. The output of the spell check will also be in the ``build/spelling/output.txt`` file::
+If you want to check the spelling of the documentation, use the ``check_spelling.bat`` command. This will output a
+list of potentially misspelled words, along with the file in which the word was found and suggested replacement
+words. The output of the spell check will also be in the ``build/spelling/output.txt`` file::
 
     contributing\build_docs.rst:47: (spellling) ["spelling", "spell ling"]
     contributing\build_docs.rst:52: (mispelled) ["misspelled", "dispelled", "mi spelled", "spelled", "misspell", "misperceived", "misplayed"]

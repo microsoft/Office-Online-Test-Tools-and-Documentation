@@ -41,7 +41,7 @@ The following example shows an **action** element in the Office Online discovery
             urlsrc="https://word-edit.officeapps.live.com/we/wordeditorframe.aspx?
             <ui=UI_LLCC&><rs=DC_LLCC&><showpagestats=PERFSTATS&>"/>
 
-This example defines an action called :wopi:action:`edit` that is supported for .docx files. The edit action requires
+This example defines an action called :wopi:action:`edit` that is supported for ``docx`` files. The edit action requires
 the :wopi:req:`locks` and :wopi:req:`update` capabilities. To invoke the edit action on a file, you navigate to the URI
 included in the **urlsrc** attribute. Note that you must parse the **urlsrc** value and add some parameters. For a full
 description of this process, see :ref:`Action URLs`.
@@ -175,7 +175,7 @@ Action requirements
 -------------------
 
 The WOPI protocol exposes a number of different REST endpoints and operations that you can perform via those endpoints.
-You don’t have to implement all of these for all actions. Actions define their requirements as part of the discovery
+You don't have to implement all of these for all actions. Actions define their requirements as part of the discovery
 XML. The requirements themselves are groups of WOPI operations that must be supported in order for the action to work.
 
 ..  req:: update

@@ -97,11 +97,11 @@ uninterrupted editing experience for your users.
 
 ..  seealso:: :term:`File ID`
 
-Versioning
-~~~~~~~~~~
+File Versions
+~~~~~~~~~~~~~
 
 You should have a mechanism by which users can clearly identify file versions through the REST APIs. Because files
-are cached to improve viewing performance, file versioning is extremely helpful. Without it, users can't easily
+are cached to improve viewing performance, file versions are extremely helpful. Without them, users can't easily
 determine whether they have the latest version of the file.
 
 Desktop application integration
