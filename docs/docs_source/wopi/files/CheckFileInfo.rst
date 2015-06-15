@@ -146,12 +146,19 @@ Hosts can return a number of URLs that Office Online will navigate to in various
     PrivacyUrl
         A URI to a webpage that explains the privacy policy of the host.
 
+        ..  deprecated:: 2015.06.01
+            This property is now ignored by Office Online.
+
     SignoutUrl
         A URI that will sign the current user out of the host's authentication system. If this property is not
         provided, no sign out UI will be shown in Office Online.
 
     TermsOfUseUrl
         A URI to a webpage that explains the terms of use policy of the host.
+
+        ..  deprecated:: 2015.06.01
+            This property is now ignored by Office Online.
+
 
 WOPI capabilities properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -167,6 +174,7 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports editing files without saving them.
 
         ..  deprecated:: 2014.06.01
+            This property is now ignored by Office Online.
 
     SupportsCoauth
         A **Boolean** value that indicates that the host supports multiple users making changes to this file
@@ -365,7 +373,7 @@ Breadcrumb properties
 
     BreadcrumbDocUrl
         ..  deprecated:: 2014.06.01
-            This property is not used by Office Online.
+            This property is now ignored by Office Online.
 
     BreadcrumbFolderName
         A **string** that Office Online will display to the user that indicates the name of the folder that contains
