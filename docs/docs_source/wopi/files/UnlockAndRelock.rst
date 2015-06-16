@@ -39,6 +39,9 @@ UnlockAndRelock
     :reqheader X-WOPI-OldLock:
         A **string** provided by Office Online that is the existing lock on the file.
 
+    ..  include:: /fragments/common_lock_responses.rst
+
+
     :code 200: Success
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized

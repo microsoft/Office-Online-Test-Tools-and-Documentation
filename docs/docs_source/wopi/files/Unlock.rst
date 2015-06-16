@@ -29,6 +29,9 @@ Unlock
         A **string** provided by Office Online that the host must use to identify the lock on
         the file. The maximum length of a lock ID is 256 characters.
 
+    ..  include:: /fragments/common_lock_responses.rst
+
+
     :code 200: Success
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
