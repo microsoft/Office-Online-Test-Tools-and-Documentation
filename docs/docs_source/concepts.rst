@@ -19,7 +19,7 @@ understanding the requirements for Office Online integration.
         A file ID must:
 
         * Represent a single Office document.
-        * Be a URL-safe string because IDs are passed in URLs.
+        * Be a URL-safe string because IDs are passed in URLs, principally via the WOPIsrc parameter.
         * Remain the same when the file is moved, renamed, or edited.
         * In the case of shared documents, the ID for a given file must be the same for every user that accesses the
           file.
