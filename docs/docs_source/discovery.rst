@@ -294,6 +294,8 @@ Placeholder values
         ``1`` denotes a light-colored theme and ``2`` denotes a darker colored theme.
 
 
+..  _WOPISrc:
+
 Appending a WOPISrc value
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -304,12 +306,6 @@ instantiate an Office Online application.
 The ``WOPISrc`` parameter tells Office Online the URL of the host's WOPI :ref:`Files endpoint`. In other words,
 it is a URL of the form ``http://server/<...>/wopi*/files/(id)``, where ``id`` is the :term:`file id` of the file. The
 ``WOPISrc`` parameter value must be encoded to a URL-safe string, then the parameter is appended to the action URL.
-
-..  tip::
-
-    It may be useful to think of the ``WOPISrc`` parameter as the :ref:`CheckFileInfo` URL for the file. The
-    only difference between the ``WOPISrc`` parameter and the :ref:`CheckFileInfo` URL is that the ``WOPISrc``
-    parameter does not include an :term:`access token`.
 
 
 Additional notes

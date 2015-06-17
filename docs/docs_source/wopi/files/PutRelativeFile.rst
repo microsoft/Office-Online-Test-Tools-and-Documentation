@@ -6,6 +6,11 @@
 PutRelativeFile
 ===============
 
+..  spelling::
+
+    Url
+
+
 ..  default-domain:: http
 
 ..  post:: /wopi*/files/(id)
@@ -54,34 +59,43 @@ PutRelativeFile
     :code 500: Server error
     :code 501: Unsupported
 
+Response
+--------
+
+The response to a PutRelativeFile call is JSON (as specified in :rfc:`4627`) containing a number of parameters, some of
+which are optional.
+
+All optional values default to the following values based on their type:
+
+=======  ================
+Type     Default value
+=======  ================
+Boolean  ``false``
+String   The empty string
+=======  ================
+
+
 Required response properties
 ----------------------------
 
-..  default-domain:: js
-
 The following properties must be present in all PutRelativeFile responses:
 
-..  data:: Name
-    :noindex:
+Name
+    The **string** name of the newly created file without a path. **This is a required value in all PutRelativeFile
+    responses.**
 
-    The **string** name of the newly created file without a path.
-    **This is a required value in all PutRelativeFile responses.**
-
-..  data:: Url
-    :noindex:
-
-    The **string** URI to the :ref:`CheckFileInfo` URI of the newly created file on the host.
+Url
+    A **string** URI of the form ``http://server/<...>/wopi*/files/(id)?access_token=(access token)``, of the newly
+    created file on the host. This URL is the :ref:`WOPISrc` for the file with an :term:`access token` appended. Or,
+    stated differently, it is the URL to the host's :ref:`Files endpoint` for the file, along with an
+    :term:`access token`. A :http:get: request to this URL will invoke the :ref:`CheckFileInfo` operation.
     **This is a required value in all PutRelativeFile responses.**
 
 Optional response properties
 ----------------------------
 
-..  data:: HostViewUrl
-    :noindex:
+HostViewUrl
+    The :term:`HostViewUrl`, as a **string**, for the newly created file.
 
-    The :data:`HostViewUrl` for the newly created file.
-
-..  data:: HostEditUrl
-    :noindex:
-
-    The :data:`HostEditUrl` for the newly created file.
+HostEditUrl
+    The :term:`HostEditUrl`, as a **string**, for the newly created file.
