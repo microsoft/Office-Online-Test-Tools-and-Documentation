@@ -80,8 +80,14 @@ understanding the requirements for Office Online integration.
         ID in its WOPI response. Typically the :ref:`Unlock` and :ref:`RefreshLock` operations are used for this
         purpose, but other lock-related operations may be used.
 
-        The specific conditions for each response are covered in the documentation for each lock-related WOPI
-        operation.
+        The specific conditions for each response are covered in the documentation for each of the
+        following lock-related WOPI operations:
+
+        * :ref:`Lock`
+        * :ref:`RefreshLock`
+        * :ref:`Unlock`
+        * :ref:`UnlockAndRelock`
+        * :ref:`PutFile`
 
     WOPISrc
         The WOPISrc (*WOPI Source*) is the URL used to execute WOPI operations on a file. It is a combination of the
