@@ -23,8 +23,6 @@ RenameFile
     If the host cannot generate a different name, it should return an HTTP status code :http:statuscode:`400`. The
     response must include an **X-WOPI-InvalidFileNameError** header that describes why the file name was invalid.
 
-    ..  todo:: :issue:`14`
-
     ..  include:: /fragments/common_params.rst
 
     :reqheader X-WOPI-Override:
@@ -34,7 +32,8 @@ RenameFile
 
     :resheader X-WOPI-InvalidFileNameError:
         A **string** describing the reason the rename operation could not be completed. This header should only be
-        included when the response code is :http:statuscode:`400`.
+        included when the response code is :http:statuscode:`400`. Office Online only uses this string for logging
+        purposes.
 
     :code 200: Success
     :code 400: Specified name is illegal
