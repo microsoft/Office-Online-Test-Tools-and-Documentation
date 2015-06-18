@@ -86,7 +86,7 @@ Name
 
 Url
     A **string** URI of the form ``http://server/<...>/wopi*/files/(id)?access_token=(access token)``, of the newly
-    created file on the host. This URL is the :ref:`WOPISrc` for the file with an :term:`access token` appended. Or,
+    created file on the host. This URL is the :term:`WOPISrc` for the file with an :term:`access token` appended. Or,
     stated differently, it is the URL to the host's :ref:`Files endpoint` for the file, along with an
     :term:`access token`. A :http:get: request to this URL will invoke the :ref:`CheckFileInfo` operation.
     **This is a required value in all PutRelativeFile responses.**

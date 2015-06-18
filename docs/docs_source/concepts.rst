@@ -25,8 +25,8 @@ understanding the requirements for Office Online integration.
           file.
 
         Note that the file ID is not provided to Office Online directly. Rather, it is passed as part of the
-        :term:`WOPISrc` value. See :ref:`Action URLs` and :ref:`WOPISrc` for more information about how the file ID
-        should be passed to Office Online.
+        :term:`WOPISrc` value. See :ref:`Action URLs` and :ref:`Appending WOPISrc` for more information about how the
+        file ID should be passed to Office Online.
 
     Access token
         An access token is a string used by the host to determine the identity and permissions of the issuer of a
@@ -99,4 +99,4 @@ understanding the requirements for Office Online integration.
         executing WOPI operations on a file. From an Office Online perspective, the WOPISrc and a :term:`file ID`
         are synonymous, since Office Online always works with the WOPISrc itself, not the raw :term:`file ID`.
 
-        See :ref:`WOPISrc` for more details on how the WOPISrc is constructed and passed to Office Online.
+        See :ref:`Appending WOPISrc` for more details on how the WOPISrc is constructed and passed to Office Online.

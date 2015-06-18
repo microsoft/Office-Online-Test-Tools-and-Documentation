@@ -209,10 +209,10 @@ them will result in errors. A WOPI host must transform the URIs provided in orde
 can be used to invoke actions on a file. There are two key components to transforming the **urlsrc** attribute:
 
 #. Parsing and replacing :ref:`placeholder values` with appropriate values, or discarding them completely
-#. Appending a *WOPISrc* value to the URI as a query string parameter
+#. Appending a :term:`WOPISrc` value to the URI as a query string parameter
 
 After the URL is transformed, it is a valid URL. When the URL is opened, the action will be invoked against the file
-indicated by the *WOPISrc* parameter.
+indicated by the :term:`WOPISrc` parameter.
 
 Transforming the urlsrc parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -294,7 +294,7 @@ Placeholder values
         ``1`` denotes a light-colored theme and ``2`` denotes a darker colored theme.
 
 
-..  _WOPISrc:
+..  _Appending WOPISrc:
 
 Appending a WOPISrc value
 ~~~~~~~~~~~~~~~~~~~~~~~~~
