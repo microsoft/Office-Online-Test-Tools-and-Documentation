@@ -88,7 +88,12 @@ Common WOPI request and response headers
 
     :reqheader X-WOPI-TimeStamp:
         A **64-bit integer** that represents the number of 100-nanosecond intervals that have elapsed between
-        12:00:00 midnight, January 1, 0001 and the time of the request.
+        12:00:00 midnight, January 1, 0001, :abbr:`UTC (Coordinated Universal Time)` and the :abbr:`UTC (Coordinated
+        Universal Time)` time of the request. Office Online uses the following C# code to set this value:
+        :code:`DateTime.UtcNow.Ticks`.
+
+        ..  seealso::
+            `DateTime.Ticks Property <https://msdn.microsoft.com/en-us/library/cc319699.aspx>`_
 
     :resheader X-WOPI-MachineName:
         A **string** indicating the name of the WOPI host server handling the request. Office Online only uses this string
