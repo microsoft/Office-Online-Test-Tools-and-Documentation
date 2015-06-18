@@ -416,10 +416,13 @@ Other miscellaneous properties
         Office Online.
 
     FileNameMaxLength
-        An **integer** value that indicates the maximum length for file names that the WOPI host
-        supports, excluding the file extension. The default value is 250. This property is optional; however, hosts
-        wishing to enable file renaming within Office Online should verify that the default value is appropriate and
-        set it accordingly if not. See the :ref:`RenameFile` operation for more details.
+        An **integer** value that indicates the maximum length for file names that the WOPI host supports, excluding
+        the file extension. The default value is 250. Note that Office Online will use this default value if the
+        property is omitted or if it is explicitly set to ``0``.
+
+        This property is optional; however, hosts wishing to enable file renaming within Office Online should verify
+        that the default value is appropriate and set it accordingly if not. See the :ref:`RenameFile` operation for
+        more details.
 
     HostName
         A **string** provided by the host used to identify it for logging and other informational purposes.
