@@ -294,7 +294,7 @@ Online expects that the host will respond to any WOPI request, including :ref:`C
     ReadOnly
         A **Boolean** value that indicates that, for this user, the file cannot be changed.
 
-    RestrictedWebViewOnly:
+    RestrictedWebViewOnly
         A **Boolean** value that, when set to ``true``, will cause Office Online to hide any UI to download the
         file or to open it in another application.
 
