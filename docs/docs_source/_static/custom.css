@@ -53,3 +53,11 @@
 .rst-content p.caption {
     font-size: 16px !important;
 }
+
+span.caption-number {
+    font-weight: bold;
+}
+
+span.caption-number:after {
+    content: "- ";
+}
