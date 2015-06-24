@@ -16,8 +16,8 @@ benefits, including:
 
 The host page is typically very simple; it must meet only the following requirements:
 
-* It must use a ``form`` element and POST the :term:`access token` and access_token_ttl values to the Office Online
-  iframe :ref:`for security purposes <Passing access tokens securely>`.
+* It must use a ``form`` element and :http:method:`POST` the :term:`access token` and access_token_ttl values to the
+  Office Online iframe :ref:`for security purposes <Passing access tokens securely>`.
 * It must include any JavaScript needed to interact with the Office Online iframe using
   :ref:`PostMessage <PostMessage>`.
 * It must manage :ref:`wd* query string parameters <wd Parameters>`.
@@ -41,17 +41,35 @@ Passing access tokens securely
 
 It is important, for security purposes, that access tokens not be passed to the Office Online iframe as a query
 string parameter. Doing so would greatly increase the likelihood of token leakage. To avoid this problem, hosts
-should pass the access token and access_token_ttl values to the Office Online iframe using a form POST. This technique
-is illustrated in the sample host page:
+should pass the access token and access_token_ttl values to the Office Online iframe using a form :http:method:`POST`.
+This technique is illustrated, along with :ref:`dynamic iframe creation<iframe behavior>`, in
+:numref:`code sample %s <secure-tokens-sample>`.
+
+
+..  _iframe behavior:
+
+Working around browser iframe behavior
+--------------------------------------
+
+Some browsers exhibit strange behavior with iframes when using bookmarks or the browser forward/back buttons. In some
+cases, this will cause the Office Online iframe to be loaded twice in a single navigation. This in turn can cause
+'file locked' or 'access token expired' errors for users. In addition, sometimes the iframe is not recreated at all,
+which causes the Office Online application to load with the previous session's state. This may cause a session to
+ultimately fail for a variety of reasons, including an expired :abbr:`CSRF (Cross-Site Request Forgery)` token.
+
+In order to work around this behavior, hosts should dynamically create the Office Online iframe using JavaScript,
+then dynamically submit it. This technique is illustrated in the sample host page:
 
 ..  literalinclude:: ../../samples/SampleHostPage.html
-    :caption: Markup from `SampleHostPage.html`_ illustrating how to submit access tokens securely
+    :caption: Markup from `SampleHostPage.html`_ illustrating how to dynamically create the Office Online iframe and
+              pass access tokens securely
+    :name: secure-tokens-sample
     :language: html
     :linenos:
     :lineno-match:
-    :lines: 36-45
+    :lines: 36-51
 
-In an actual implementation, the ``<OFFICE_ONLINE_ACTION_URL>``, ``<ACCESS_TOKEN_VALUE>``, and
+Note that in an actual implementation, the ``<OFFICE_ONLINE_ACTION_URL>``, ``<ACCESS_TOKEN_VALUE>``, and
 ``<ACCESS_TOKEN_TTL_VALUE>`` strings should be replaced with appropriate values.
 
 
@@ -88,26 +106,6 @@ sample host page:
     :lineno-match:
     :lines: 3-33
     :emphasize-lines: 9, 11-29
-
-
-Working around browser iframe behavior
---------------------------------------
-
-Some browsers exhibit strange behavior with iframes when using bookmarks or the browser forward/back buttons. In some
-cases, this will cause the Office Online iframe to be loaded twice in a single navigation. This in turn can cause
-'file locked' or 'access token expired' errors for users. In addition, sometimes the iframe is not recreated at all,
-which causes the Office Online application to load with the previous session's state. This may cause a session to
-ultimately fail for a variety of reasons, including an expired :abbr:`CSRF (Cross-Site Request Forgery)` token.
-
-In order to work around this behavior, hosts should dynamically create the Office Online iframe using JavaScript,
-then dynamically submit it. This technique is illustrated in the sample host page:
-
-..  literalinclude:: ../../samples/SampleHostPage.html
-    :caption: Markup from `SampleHostPage.html`_ illustrating how to dynamically create the Office Online iframe
-    :language: html
-    :linenos:
-    :lineno-match:
-    :lines: 36-51
 
 
 ..  Hyperlinks
