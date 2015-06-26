@@ -186,7 +186,8 @@ implementation meets the requirements for a particular property.
         :ref:`ExecuteCellStorageRelativeRequest` operations for this file.
 
     SupportsFileCreation
-        A **Boolean** value that indicates that the host supports creating new files using Office Online.
+        A **Boolean** value that indicates that the host supports creating new files using Office Online. See
+        :ref:`Create New` for more information.
 
     SupportsFolders
         A **Boolean** value that indicates that the host supports :ref:`CheckFolderInfo`, :ref:`EnumerateChildren`,
