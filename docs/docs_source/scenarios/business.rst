@@ -23,11 +23,14 @@ business user. Doing this requires the following:
    business users.
 #. Include the :term:`LicenseCheckForEditIsEnabled` property in the :ref:`CheckFileInfo` response. This property
    must always be set to ``true`` for business users.
-#. Also include the :term:`HostEditUrl` and :term:`DownloadUrl` in the :ref:`CheckFileInfo` response. The
-   :term:`HostEditUrl` is used to redirect the user back to the host edit page after the subscription check is
-   completed. The :term:`DownloadUrl` is used to provide a direct download link to the file if the subscription check
-   fails.
+#. Include the :term:`HostEditUrl` and :term:`DownloadUrl` in the :ref:`CheckFileInfo` response. These properties
+   must be included in the :ref:`CheckFileInfo` response for business users. The :term:`HostEditUrl` is used to
+   redirect the user back to the host edit page after the subscription check is completed. The :term:`DownloadUrl`
+   is used to provide a direct download link to the file if the subscription check fails.
 
+..  important::
+    If any of the properties above are not set properly, the license check flow will fail. If the flow fails,
+    users will be directed to Office.com.
 
 Validating edit capabilities
 ----------------------------
