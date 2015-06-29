@@ -118,7 +118,8 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         A URI to the file location that the WOPI client uses to get the file. If this is provided, Office Online
         will use this URI to get the file instead of a :ref:`GetFile` request. A host might set this property if it is
         easier or provides better performance to serve files from a different domain than the one handling standard
-        WOPI requests.
+        WOPI requests. The FileUrl is used exactly as provided; no other parameters, including the :term:`access token`,
+        will be appended to the FileUrl before it is used.
 
     HostEditUrl
         A URI to the :term:`host page` that loads the :wopi:action:`edit` WOPI action. This URL is used by Office
