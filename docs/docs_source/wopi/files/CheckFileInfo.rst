@@ -91,13 +91,17 @@ Hosts can return a number of URLs that Office Online will navigate to in various
 
     CloseUrl
         A URI to a web page that Office Online will navigate to when the application closes, or in the event of an
-        unrecoverable error.
+        unrecoverable error. If provided, when the *Close* UI is activated, Office Online will navigate the outer
+        page (``window.top.location``) to the URI provided.
 
-        ..  seealso::
+        Hosts can also use the :term:`ClosePostMessage` property to indicate a PostMessage should be sent when
+        the *Close* UI is activated rather than navigate to a URL, or set the :term:`CloseButtonClosesWindow`
+        property to indicate that the *Close* UI should close the browser tab or window (``window.top.close``).
 
-            :term:`ClosePostMessage`
-                You can also use the ClosePostMessage property to indicate you'd like to receive a PostMessage when
-                the close button is clicked rather than navigate to a URL.
+        If the :term:`CloseUrl`, :term:`ClosePostMessage`, and :term:`CloseButtonClosesWindow` properties are all
+        omitted, the *Close* UI will be hidden in Office Online.
+
+        ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
 
     DownloadUrl
         A user-accessible URI to the file intended to allow the user to download a copy of the file.
@@ -106,13 +110,14 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         ..  note:: |future|
 
     FileSharingUrl
-        A URI to a location that allows the user to share the file.
+        A URI to a location that allows the user to share the file. If provided, when the *Share* UI is activated,
+        Office Online will open a new browser window to the URI provided.
 
-        ..  seealso::
+        Hosts can also use the :term:`FileSharingPostMessage` property to indicate a PostMessage should be sent when
+        the *Share* UI is activated rather than navigate to a URL.
 
-            :term:`FileSharingPostMessage`
-                You can also use the FileSharingPostMessage property to indicate you'd like to receive a PostMessage
-                when the share button is clicked rather than navigate to a URL.
+        If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the *Share*
+        UI will be hidden in Office Online.
 
     FileUrl
         A URI to the file location that the WOPI client uses to get the file. If this is provided, Office Online
@@ -276,7 +281,7 @@ User permissions properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Office Online always assumes that users have limited permissions to documents. If you do not set the appropriate
-**UserCan\*** properties, users will not be able to perform operations such as editing documents in Office Online.
+user permissions properties, users will not be able to perform operations such as editing documents in Office Online.
 
 Ultimately, the host has final control over whether WOPI operations attempted by Office Online should succeed or fail
 based on the :term:`access token` provided in the WOPI request. Thus, these properties do not act as an authorization
@@ -287,7 +292,7 @@ permissions, the WOPI :ref:`RenameFile` request would fail since the host would 
 permissible based on the :term:`access token` passed in the request.
 
 Note that there is no property that indicates the user has permission to read/view a file. This is because Office
-Online expects that the host will respond to any WOPI request, including :ref:`CheckFileInfo`, with an
+Online expects that the host will respond to any WOPI request, including :ref:`CheckFileInfo`, with a
 :http:statuscode:`404` if the access token is invalid or expired.
 
 ..  glossary::
@@ -333,24 +338,49 @@ you are using the PostMessage extensibility features of Office Online, you must 
 property to ensure that Office Online accepts messages from your outer frame. You can read more about PostMessage
 integration at :ref:`PostMessage`.
 
+In cases where a PostMessage is triggered by the user activating some Office Online UI, such as
+:term:`FileSharingPostMessage` or `EditModePostMessage`, Office Online will do nothing when the relevant UI is
+activated except send the appropriate PostMessage. Thus, hosts must accept and handle the relevant messages when
+the Office Online UI is triggered. Otherwise the Office Online UI will appear to do nothing when activated.
+
+If the PostMessage API is not supported (e.g. the user's browser does not support it, or the browser security
+settings prohibit it, etc.), Office Online UI that triggers a PostMessage will be hidden.
+
 ..  glossary::
     :sorted:
 
     ClosePostMessage
-        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
-        PostMessage.
+        A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
+        PostMessage when the *Close* UI in Office Online is activated.
+
+        Hosts can also use the :term:`CloseUrl` property to indicate that the outer frame should be navigated
+        (``window.top.location``) when the *Close* UI is activated rather than sending a PostMessage, or set the
+        :term:`CloseButtonClosesWindow` property to indicate that the *Close* UI should close the browser tab or
+        window (``window.top.close``).
+
+        If the :term:`CloseUrl`, :term:`ClosePostMessage`, and :term:`CloseButtonClosesWindow` properties are all
+        omitted, the *Close* UI will be hidden in Office Online.
+
+        ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
 
     EditModePostMessage
-        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the :js:data:`UI_Edit`
+        A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Edit`
         PostMessage.
 
     EditNotificationPostMessage
-        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the
+        A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
         :js:data:`Edit_Notification` PostMessage.
 
     FileSharingPostMessage
-        A **Boolean** value that, if set to ``true``, indicates the host expects to receive the
-        :js:data:`UI_Sharing` PostMessage.
+        A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
+        :js:data:`UI_Sharing` PostMessage when the *Share* UI in Office Online is activated.
+
+        Hosts can also use the :term:`FileSharingUrl` property to indicate that a new browser window should be opened
+        when the *Share* UI is activated rather than sending a PostMessage. Note that the :term:`FileSharingUrl`
+        property will be ignored completely if the FileSharingPostMessage property is set to ``true``.
+
+        If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the *Share*
+        UI will be hidden in Office Online.
 
     PostMessageOrigin
         A **string** value indicating the domain the :term:`host page` will be sending/receiving PostMessages
@@ -401,10 +431,20 @@ Other miscellaneous properties
 
     CloseButtonClosesWindow
         A **Boolean** value that, when set to ``true``, will cause Office Online to close the browser window or tab
-        when the user activates the close button.
+        (``window.top.close``) when the *Close* UI in Office Online is activated.
 
         If Office Online displays an error dialog when booting, dismissing the dialog is treated as a close button
-        activation with respect to this setting.
+        activation with respect to this property.
+
+        Hosts can also use the :term:`CloseUrl` property to indicate that the outer frame should be navigated
+        (``window.top.location``) when the *Close* UI is activated rather than closing the browser tab or window, or
+        set the :term:`ClosePostMessage` property to indicate a PostMessage should be sent when the *Close* UI is
+        activated.
+
+        If the :term:`CloseUrl`, :term:`ClosePostMessage`, and :term:`CloseButtonClosesWindow` properties are all
+        omitted, the *Close* UI will be hidden in Office Online.
+
+        ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
 
     DisableBrowserCachingOfUserContent
         A **Boolean** value that, when set to ``true``, will cause Office Online to disable caching of file contents
