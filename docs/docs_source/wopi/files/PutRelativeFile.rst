@@ -26,6 +26,14 @@ PutRelativeFile
     (indicates *specific* mode) or **X-WOPI-SuggestedTarget** (indicates *suggested* mode) request headers is used. The
     expected behavior for each mode is described in detail below.
 
+    The PutRelativeFile operation may be called on a file that is not locked, so the **X-WOPI-Lock** request header
+    is not included in this operation. An example of when this might occur is if a user uses the *Save As* feature
+    when viewing a document in read-only mode. The source file will not be locked in this case, but the
+    PutRelativeFile operation will be invoked on it.
+
+    Note, however, that a file matching the target name might be locked, and in *specific* mode, the host must
+    respond with a :statuscode:`409` and include a **X-WOPI-Lock** response header as described below.
+
     ..  admonition:: Excel Online Note
 
         Excel Online uses this operation as part of the *Save As* feature. If this operation is not supported, the
@@ -74,8 +82,9 @@ PutRelativeFile
     :reqheader X-WOPI-OverwriteRelativeTarget:
         A **Boolean** value that specifies whether the host must overwrite the file name if it exists.
 
-        This header will only be present if the **X-WOPI-RelativeTarget** is included on the request. If it is not
-        present, hosts should behave as though its value is ``false``.
+        This header will only be present if the **X-WOPI-RelativeTarget** is included on the request. If
+        **X-WOPI-OverwriteRelativeTarget** is not explicitly included on the request, hosts should behave as though its
+        value is ``false``.
 
     :reqheader X-WOPI-Size:
         An **integer** that specifies the size of the file in bytes.
