@@ -270,6 +270,7 @@ as long as the values meet the criteria above.
         A **Boolean** value indicating whether the user is a business user or not. This must be set to ``true``
         whenever the user is a business user. See :ref:`Business editing` for more information.
 
+..  _permissions:
 
 User permissions properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

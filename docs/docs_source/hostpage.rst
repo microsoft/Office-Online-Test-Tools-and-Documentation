@@ -16,8 +16,8 @@ benefits, including:
 
 The host page is typically very simple; it must meet only the following requirements:
 
-* It must use a ``form`` element and :http:method:`POST` the :term:`access token` and access_token_ttl values to the
-  Office Online iframe :ref:`for security purposes <Passing access tokens securely>`.
+* It must use a ``form`` element and :http:method:`POST` the :term:`access token` and :term:`access_token_ttl`
+  values to the Office Online iframe :ref:`for security purposes <Passing access tokens securely>`.
 * It must include any JavaScript needed to interact with the Office Online iframe using
   :ref:`PostMessage <PostMessage>`.
 * It must manage :ref:`wd* query string parameters <wd Parameters>`.
@@ -41,8 +41,8 @@ Passing access tokens securely
 
 It is important, for security purposes, that access tokens not be passed to the Office Online iframe as a query
 string parameter. Doing so would greatly increase the likelihood of token leakage. To avoid this problem, hosts
-should pass the access token and access_token_ttl values to the Office Online iframe using a form :http:method:`POST`.
-This technique is illustrated, along with :ref:`dynamic iframe creation<iframe behavior>`, in
+should pass the :term:`access token` and :term:`access_token_ttl` values to the Office Online iframe using a form
+:http:method:`POST`. This technique is illustrated, along with :ref:`dynamic iframe creation<iframe behavior>`, in
 :numref:`code sample %s <secure-tokens-sample>`.
 
 
