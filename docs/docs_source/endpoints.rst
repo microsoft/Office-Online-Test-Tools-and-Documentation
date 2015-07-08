@@ -67,9 +67,9 @@ Common WOPI request and response headers
         A **string** indicating the version of the Office Online server making the request. There is no standard
         for how this string is formatted, and it must not be used for anything other than logging.
 
-    :reqheader X-WOPI-CorrelationID:
+    :reqheader X-WOPI-CorrelationId:
         A **string** that the host should log when logging server activity to correlate that activity with Office Online
-        server logs.
+        server logs. See :ref:`Troubleshooting` for more information.
 
     :reqheader X-WOPI-MachineName:
         A **string** indicating the name of the Office Online server making the request. This string must not be

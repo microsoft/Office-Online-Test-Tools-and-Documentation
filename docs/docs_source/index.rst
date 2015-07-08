@@ -191,6 +191,7 @@ Contents:
     :glob:
     :caption: Reference
 
+    troubleshooting
     code_samples
     glossary
     contributing/build_docs

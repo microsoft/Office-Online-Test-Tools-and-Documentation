@@ -61,3 +61,8 @@ span.caption-number {
 span.caption-number:after {
     content: "- ";
 }
+
+span.menuselection,
+span.guilabel {
+    font-style: italic;
+}
