@@ -466,7 +466,9 @@ Other miscellaneous properties
         more details.
 
     HostName
-        A **string** provided by the host used to identify it for logging and other informational purposes.
+        A **string**, provided by the host, used to identify it. This property is not typically used since Office
+        Online already identifies hosts based on the URLs of their WOPI endpoints. This value is only used for logging
+        purposes.
 
     HostNotes
         A **string** that is used by the host to pass arbitrary information to Office Online. Office Online will
