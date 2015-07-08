@@ -346,10 +346,38 @@ The host page receives the following messages; all others are ignored:
             "Values": { }
         }
 
+..  data:: UI_Edit
+
+    The UI_Edit message is posted when the user activates the *Edit* UI in Office Online. This UI is only visible
+    when using the :wopi:action:`view` action.
+
+    To send this message, the :term:`EditModePostMessage` property in the :ref:`CheckFileInfo` response from the host
+    must be set to ``true``. Otherwise Office Online will not send this message and will redirect the inner iframe to
+    an edit action URL instead.
+
+    Hosts may choose to use this message in cases where they want more control over the user's transition to edit
+    mode. For example, a host may wish to prompt the user for some additional host-specific information before
+    navigating.
+
+    ..  attribute:: Values
+        :noindex:
+
+            *Empty.*
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: javascript
+
+        {
+            "MessageId": "UI_Edit",
+            "SendTime": 1329014075,
+            "Values": { }
+        }
+
 ..  data:: UI_FileVersions
 
-    The UI_FileVersions message is posted when the user chooses *Previous Versions* in Office Online. The host can use
-    this message to optionally navigate the outer frame to an appropriate URL.
+    The UI_FileVersions message is posted when the user activates the *Previous Versions* UI in Office Online. The host
+    can use this message to optionally navigate the outer frame to an appropriate URL.
 
     ..  attribute:: Values
         :noindex:
@@ -368,8 +396,8 @@ The host page receives the following messages; all others are ignored:
 
 ..  data:: UI_Sharing
 
-    The UI_Sharing message is posted when the user chooses *Share* in Office Online. The host should use this message
-    to trigger any custom sharing UI.
+    The UI_Sharing message is posted when the user activates the *Share* UI in Office Online. The host should use this
+    message to trigger any custom sharing UI.
 
     To send this message, the :term:`FileSharingPostMessage` property in the :ref:`CheckFileInfo` response from the
     host must be set to ``true``. Otherwise Office Online will not send this message.

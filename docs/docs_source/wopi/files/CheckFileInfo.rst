@@ -365,7 +365,10 @@ settings prohibit it, etc.), Office Online UI that triggers a PostMessage will b
 
     EditModePostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Edit`
-        PostMessage.
+        PostMessage when the *Edit* UI in Office Online is activated.
+
+        If this property is not set to ``true``, Office Online will navigate the inner iframe URL to an edit action
+        URL when the *Edit* UI is activated.
 
     EditNotificationPostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
