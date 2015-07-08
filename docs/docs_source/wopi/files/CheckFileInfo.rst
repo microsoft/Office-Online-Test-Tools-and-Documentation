@@ -17,14 +17,8 @@ CheckFileInfo
 
     ..  include:: /fragments/common_params.rst
 
-    :query string sc:
-        An optional :term:`Session Context` string that will be passed back to the host in subsequent
-        :ref:`CheckFileInfo` and :ref:`CheckFolderInfo` calls in the **X-WOPI-SessionContext** request
-        header. There is no defined limit for the length of this string; however, since it is passed on the query
-        string, it is subject to the overall Office Online URL length limit of 2047 bytes.
-
     :reqheader X-WOPI-SessionContext:
-        The value of the :term:`Session Context` URI parameter, if passed in the ``sc`` parameter.
+        The value of the :ref:`session context`, if provided on the initial WOPI action URL using the ``sc`` parameter.
 
     :code 200: Success
     :code 401: Invalid :term:`access token`

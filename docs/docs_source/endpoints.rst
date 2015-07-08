@@ -128,11 +128,3 @@ The ``token`` and ``id`` parameters are a core part of all WOPI requests. The UR
 described in the documentation for each WOPI operation. The host provides both ``token`` and ``id`` by transforming
 the **urlsrc** value for the action (provided in :ref:`discovery`) and appending parameters to the URL as described in
 :ref:`Action URLs`.
-
-The following URI parameters may also be included with all WOPI requests.
-
-=============  ===========
-URI Parameter  Description
-=============  ===========
-``sc``         A string representing the :term:`Session Context` for the request.
-=============  ===========
