@@ -59,7 +59,9 @@ Adding words to the ignore list
 You can add words to the ``docs_source/spelling_wordlist.txt`` file to globally ignore the word as misspelled. Add a
 single word per line in alphabetical order.
 
-Alternatively, you can use the ``spelling`` directive to add a list of known words to a specific file::
+Alternatively, you can use the ``spelling`` directive to add a list of known words to a specific file:
+
+..  code-block:: rest
 
     ..  spelling::
 
