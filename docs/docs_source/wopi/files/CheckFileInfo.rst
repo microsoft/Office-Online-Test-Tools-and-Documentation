@@ -147,9 +147,18 @@ Hosts can return a number of URLs that Office Online will navigate to in various
         ..  deprecated:: 2015.06.01
             This property is now ignored by Office Online.
 
+    SignInUrl
+        A URI that will allow the user to sign in using the host's authentication system. This property can be used
+        when supporting anonymous users. If this property is not provided, no sign in UI will be shown in Office
+        Online.
+
+        ..  seealso:: :term:`SignoutUrl`
+
     SignoutUrl
         A URI that will sign the current user out of the host's authentication system. If this property is not
         provided, no sign out UI will be shown in Office Online.
+
+        ..  seealso:: :term:`SignInUrl`
 
     TermsOfUseUrl
         A URI to a webpage that explains the terms of use policy of the host.
