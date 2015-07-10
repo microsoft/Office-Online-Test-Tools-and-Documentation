@@ -1,4 +1,3 @@
-
 /* override table width restrictions */
 .wy-table-responsive table td, .wy-table-responsive table th {
     /* !important prevents the common CSS stylesheets from
@@ -34,7 +33,7 @@
     color: #d9d9d9 !important;
 }
 
-.rst-content .admonition-onenote-online-note a:hover{
+.rst-content .admonition-onenote-online-note a:hover {
     color: #fff !important;
 }
 
@@ -65,4 +64,17 @@ span.caption-number:after {
 span.menuselection,
 span.guilabel {
     font-style: italic;
+}
+
+
+dl.glossary dt a.def-link {
+    font-size: small;
+    font-family: FontAwesome !important;
+    visibility: hidden !important;
+    margin-left: 5px !important;
+}
+
+dl.glossary dt:hover a.def-link,
+dl.glossary dt a.def-link:hover {
+    visibility: visible !important;
 }

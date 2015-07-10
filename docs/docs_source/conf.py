@@ -7,6 +7,7 @@ import sphinx.ext.extlinks
 
 def setup(app):
     app.add_stylesheet('custom.css')
+    app.add_javascript('custom.js')
 
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
