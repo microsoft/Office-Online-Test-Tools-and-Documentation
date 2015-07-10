@@ -7,4 +7,9 @@ $(document).ready(function() {
     $("a.def-link").attr('href', function() {
         return '#' + $(this).parent().attr('id');
     });
+
+    /* Highlight deprecated items */
+    $("div.deprecated p").addClass(
+        'label label-default'
+    );
 });
