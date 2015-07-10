@@ -1,4 +1,6 @@
 
+:orphan:
+
 ..  index:: WOPI requests; CheckFolderInfo, CheckFolderInfo
 
 ..  _CheckFolderInfo:

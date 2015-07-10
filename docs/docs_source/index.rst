@@ -148,16 +148,28 @@ Contents:
 ..  toctree::
     :maxdepth: 2
     :glob:
-    :caption: WOPI
+    :caption: Overview
 
     intro
     concepts
     discovery
     endpoints
-    wopi/files
-    wopi/file_contents
-    wopi/folders
-    wopi/folder_contents
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :caption: Core Operations
+
+    wopi/files/CheckFileInfo
+    wopi/file_contents/GetFile
+    wopi/files/Lock
+    wopi/files/RefreshLock
+    wopi/files/Unlock
+    wopi/files/UnlockAndRelock
+    wopi/file_contents/PutFile
+    wopi/files/PutRelativeFile
+    wopi/files/RenameFile
+    wopi/other
 
 ..  toctree::
     :maxdepth: 2
@@ -196,6 +208,7 @@ Contents:
     glossary
     contributing/build_docs
     contributing/style_guide
+
 
 Indices and tables
 ==================

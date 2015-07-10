@@ -21,14 +21,8 @@ The following table shows the structure of the REST API for each resource type.
 | Files          | HTTP://server/<...>/wopi*/files/<file_id>           | Provides access to information about a file   |
 |                |                                                     | and allows for file-level operations.         |
 +----------------+-----------------------------------------------------+-----------------------------------------------+
-| Folders        | HTTP://server/<...>/wopi*/folders/<file_id>         | Provides access to information about a folder |
-|                |                                                     | and allows for folder-level operations.       |
-+----------------+-----------------------------------------------------+-----------------------------------------------+
 | File contents  | HTTP://server/<...>/wopi*/files/<file_id>/contents  | Provides access to operations that get and    |
 |                |                                                     | update the contents of a file.                |
-+----------------+-----------------------------------------------------+-----------------------------------------------+
-| Folder contents| HTTP://server/<...>/wopi*/folder/<file_id>/children | Provides access to the files and folders in   |
-|                |                                                     | a folder.                                     |
 +----------------+-----------------------------------------------------+-----------------------------------------------+
 
 Not all operations and endpoints are required. The discovery XML describes which WOPI endpoints and operations are
@@ -128,3 +122,55 @@ The ``token`` and ``id`` parameters are a core part of all WOPI requests. The UR
 described in the documentation for each WOPI operation. The host provides both ``token`` and ``id`` by transforming
 the **urlsrc** value for the action (provided in :ref:`discovery`) and appending parameters to the URL as described in
 :ref:`Action URLs`.
+
+
+.. _Files endpoint:
+
+Files endpoint
+--------------
+
+The Files endpoint provides access to file-level operations.
+
+The following table lists the operations that are exposed through this endpoint.
+
++------------------------+------------------------------------------------------------------------+
+| Operation              | Description                                                            |
++========================+========================================================================+
+| :ref:`CheckFileInfo`   | Returns information about a file and the capabilities of the           |
+|                        | WOPI host.                                                             |
++------------------------+------------------------------------------------------------------------+
+| :ref:`PutRelativeFile` | Creates a copy of a file on the WOPI server.                           |
++------------------------+------------------------------------------------------------------------+
+| :ref:`Lock`            | Takes a lock for editing a file.                                       |
++------------------------+------------------------------------------------------------------------+
+| :ref:`Unlock`          | Releases a lock for editing a file.                                    |
++------------------------+------------------------------------------------------------------------+
+| :ref:`RefreshLock`     | Refreshes a lock for editing a file.                                   |
++------------------------+------------------------------------------------------------------------+
+| :ref:`UnlockAndRelock` | Releases and then retakes a lock for editing a file.                   |
++------------------------+------------------------------------------------------------------------+
+| :ref:`DeleteFile`      | Removes a file from the WOPI server.                                   |
++------------------------+------------------------------------------------------------------------+
+| :ref:`RenameFile`      | Renames a file on the WOPI server.                                     |
++------------------------+------------------------------------------------------------------------+
+
+
+.. _File contents endpoint:
+
+File contents endpoint
+----------------------
+
+The File contents endpoint provides access to retrieve and update the contents of a file.
+
+The following table lists the operations that are exposed through this endpoint.
+
++-----------------+-----------------------------------------+
+| Operation       | Description                             |
++=================+=========================================+
+| :ref:`GetFile`  | Returns the full binary contents of a   |
+|                 | file.                                   |
++-----------------+-----------------------------------------+
+| :ref:`PutFile`  | Sets the full binary contents of a      |
+|                 | file to the value passed.               |
++-----------------+-----------------------------------------+
+
