@@ -27,3 +27,5 @@ GetFile
     :code 404: File unknown/user unauthorized
     :code 412: File is larger than **X-WOPI-MaxExpectedSize**
     :code 500: Server error
+
+    ..  include:: /fragments/common_headers.rst

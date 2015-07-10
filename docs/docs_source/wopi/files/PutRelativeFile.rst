@@ -126,6 +126,8 @@ PutRelativeFile
     :code 500: Server error
     :code 501: Unsupported; the host should
 
+    ..  include:: /fragments/common_headers.rst
+
 Response
 --------
 

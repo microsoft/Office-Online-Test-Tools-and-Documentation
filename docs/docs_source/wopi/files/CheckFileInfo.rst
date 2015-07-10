@@ -25,6 +25,8 @@ CheckFileInfo
     :code 404: File unknown/user unauthorized
     :code 500: Server error
 
+    ..  include:: /fragments/common_headers.rst
+
 Response
 --------
 

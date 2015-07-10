@@ -44,3 +44,5 @@ PutFile
     :code 413: File is too large; the maximum file size is host-specific
     :code 500: Server error
     :code 501: Unsupported
+
+    ..  include:: /fragments/common_headers.rst

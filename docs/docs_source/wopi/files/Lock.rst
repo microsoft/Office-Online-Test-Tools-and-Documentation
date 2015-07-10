@@ -42,3 +42,5 @@ Lock
         the current lock on the file must always be included when using this response code
     :code 500: Server error
     :code 501: Unsupported
+
+    ..  include:: /fragments/common_headers.rst

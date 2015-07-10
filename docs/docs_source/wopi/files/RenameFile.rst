@@ -43,6 +43,8 @@ RenameFile
     :code 500: Server error
     :code 501: Unsupported
 
+    ..  include:: /fragments/common_headers.rst
+
 Required response properties
 ----------------------------
 
