@@ -46,6 +46,9 @@ the :wopi:req:`locks` and :wopi:req:`update` capabilities. To invoke the edit ac
 included in the **urlsrc** attribute. Note that you must parse the **urlsrc** value and add some parameters. For a full
 description of this process, see :ref:`Action URLs`.
 
+Note that some actions require specific permission from Microsoft to use in the Office Online cloud service; these
+actions are marked |need_permission|
+
 
 .. _WOPI Actions:
 
@@ -81,6 +84,8 @@ WOPI actions
 
 ..  action:: interactivepreview
 
+    |need_permission|
+
     An action that provides an interactive preview of the file type.
 
 
@@ -101,6 +106,8 @@ WOPI actions
 
 
 ..  action:: imagepreview
+
+    |need_permission|
 
     An action that provides a static image preview of the file type.
 
@@ -126,10 +133,14 @@ WOPI actions
 
 ..  action:: present
 
+    |need_permission|
+
     An action that presents a :term:`broadcast` of a document.
 
 
 ..  action:: presentservice
+
+    |need_permission|
 
     This action provides the location of a :term:`broadcast` endpoint for broadcast presenters. Interaction with the
     endpoint is described in `\[MS-OBPRS\] <https://msdn.microsoft.com/en-us/library/hh623172(v=office.12).aspx>`_.
@@ -137,25 +148,35 @@ WOPI actions
 
 ..  action:: attend
 
+    |need_permission|
+
     An action that attends a :term:`broadcast` of a document.
 
 
 ..  action:: attendservice
+
+    |need_permission|
 
     This action provides the location of a :term:`broadcast` endpoint for broadcast attendees. Interaction with the
     endpoint is described in `\[MS-OBPAS\] <https://msdn.microsoft.com/en-us/library/hh642267(v=office.12).aspx>`_.
 
 ..  action:: syndicate
 
+    |need_permission|
+
     ..  todo:: :issue:`7`
 
 
 ..  action:: legacywebservice
 
+    |need_permission|
+
     ..  todo:: :issue:`7`
 
 
 ..  action:: rtc
+
+    |need_permission|
 
     ..  todo:: :issue:`7`
 
