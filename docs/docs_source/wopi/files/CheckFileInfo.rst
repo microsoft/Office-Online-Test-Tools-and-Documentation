@@ -30,7 +30,7 @@ CheckFileInfo
 Response
 --------
 
-The response to a CheckFileInfo call is JSON (as specified in :rfc:`4627`) containing a number of parameters, most of
+The response to a CheckFileInfo call is JSON (as specified in :rfc:`4627`) containing a number of properties, most of
 which are optional.
 
 All optional values default to the following values based on their type:

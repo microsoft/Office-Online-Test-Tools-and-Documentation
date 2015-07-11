@@ -45,10 +45,10 @@ RenameFile
 
     ..  include:: /fragments/common_headers.rst
 
-Required response properties
-----------------------------
+Response
+--------
 
-The following properties must be present in all RenameFile responses:
+The response to a RenameFile call is JSON (as specified in :rfc:`4627`) containing a single required property:
 
 Name
     The **string** name of the renamed file without a path or file extension. **This is a required value in all
