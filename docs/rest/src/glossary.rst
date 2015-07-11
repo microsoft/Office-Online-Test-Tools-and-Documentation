@@ -7,7 +7,7 @@ Glossary
 
     WOPI client
         A WOPI client is an application or service that executes WOPI operations on a WOPI server by issuing HTTP
-        requests to the WOPI server's WOPI endpoints. Office Online is an example of a WOPI client.
+        requests to the WOPI server's WOPI endpoints. |wac| is an example of a WOPI client.
 
     WOPI host
     WOPI server

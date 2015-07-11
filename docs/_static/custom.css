@@ -100,16 +100,18 @@
 }
 
 /* Office Online Tip admonition styles */
-.rst-content .admonition-office-online-tip .admonition-title:before {
+.rst-content .admonition-wac-tip .admonition-title:before {
     content: '\f024';
 }
 
-.rst-content .admonition-office-online-tip .admonition-title {
-    background-color: #4e4a4a;
+.rst-content .admonition-wac-tip .admonition-title {
+    /*background-color: #4e4a4a;*/
+    background-color: #5bc0de;
 }
 
-.rst-content .admonition-office-online-tip {
-    background-color: rgba(0,0,0,0.05) !important;
+.rst-content .admonition-wac-tip {
+    /*background-color: rgba(0,0,0,0.05) !important;*/
+    background-color: rgba(91,192,222,0.25) !important;
 }
 
 .rst-content table.field-list td {

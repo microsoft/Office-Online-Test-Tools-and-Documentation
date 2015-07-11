@@ -113,6 +113,6 @@ a single setting per WOPI host and must be changed by Microsoft.
 Action settings
 ---------------
 
-Some :ref:`WOPI actions` require special arrangements with Microsoft in order to be used. These operations are marked
-|need_permission|. If you wish to use these actions, you must contact Microsoft and request that the appropriate
-settings be adjusted to allow you to use these actions.
+Some :ref:`WOPI actions` and ref:`CheckFileInfo` properties require special arrangements with Microsoft in order to be
+used. These operations are marked |need_permission|. If you wish to use these actions, you must contact Microsoft and
+request that the appropriate settings be adjusted to allow you to use these actions.

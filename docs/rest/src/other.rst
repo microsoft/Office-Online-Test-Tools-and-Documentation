@@ -4,7 +4,7 @@
 Other Operations
 ================
 
-The following WOPI operations are not required to integrate with Office Online at this time.
+The following WOPI operations are not required to integrate with |wac| or |Office iOS| at this time.
 
 ..  toctree::
     :glob:

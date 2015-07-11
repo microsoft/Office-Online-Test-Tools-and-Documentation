@@ -1,6 +1,8 @@
 
 ..  index:: WOPI requests; PutRelativeFile, PutRelativeFile
 
+..  |operation| replace:: PutRelativeFile
+
 ..  _PutRelativeFile:
 
 PutRelativeFile
@@ -11,25 +13,27 @@ PutRelativeFile
     Url
 
 
+:Required for: |web| |ios|
+
 ..  default-domain:: http
 
 ..  post:: /wopi*/files/(file_id)
 
-    The PutRelativeFile operation creates a new file on the host based on the current file. The host must use the
+    The |operation| operation creates a new file on the host based on the current file. The host must use the
     content in the :method:`post` body to create a new file.
 
-    The PutRelativeFile operation has two distinct modes: *specific* and *suggested*. The primary difference
-    between the two modes is whether Office Online expects the host to use the file name provided exactly (*specific*
+    The |operation| operation has two distinct modes: *specific* and *suggested*. The primary difference
+    between the two modes is whether the WOPI client expects the host to use the file name provided exactly (*specific*
     mode) or if the host can adjust the file name in order to make the request succeed (*suggested* mode).
 
     Hosts can determine the mode of the operation based on which of the mutually exclusive **X-WOPI-RelativeTarget**
     (indicates *specific* mode) or **X-WOPI-SuggestedTarget** (indicates *suggested* mode) request headers is used. The
     expected behavior for each mode is described in detail below.
 
-    The PutRelativeFile operation may be called on a file that is not locked, so the **X-WOPI-Lock** request header
+    The |operation| operation may be called on a file that is not locked, so the **X-WOPI-Lock** request header
     is not included in this operation. An example of when this might occur is if a user uses the *Save As* feature
     when viewing a document in read-only mode. The source file will not be locked in this case, but the
-    PutRelativeFile operation will be invoked on it.
+    |operation| operation will be invoked on it.
 
     Note, however, that a file matching the target name might be locked, and in *specific* mode, the host must
     respond with a :statuscode:`409` and include a **X-WOPI-Lock** response header as described below.
@@ -95,7 +99,7 @@ PutRelativeFile
         A header whose presence indicates that the request is being made in the context of a
         :ref:`binary document conversion<conversion>`. This header will only be included on the request in that case.
         Thus, if **X-WOPI-FileConversion** is not explicitly included on the request, hosts must behave as if the
-        PutRelativeFile request is not being made as part of a binary document conversion.
+        |operation| request is not being made as part of a binary document conversion.
 
         See :ref:`conversion` for more information on the conversion process and how this header can be used.
 
@@ -103,30 +107,23 @@ PutRelativeFile
         A UTF-7 encoded **string** that specifies a full file name including the file extension. This header may be
         used when responding with a :statuscode:`409` because a file with the requested name already exists, or when
         responding with a :statuscode:`400` because the requested name contained invalid characters. If this
-        response header is included, Office Online will automatically retry the PutRelativeFile operation using the
+        response header is included, the WOPI client should automatically retry the |operation| operation using the
         contents of this header as the **X-WOPI-RelativeTarget** value and will not display an error message to the
         user.
 
     :resheader X-WOPI-Lock:
-        A **string** value identifying the current lock on the file. This header must only be included when
-        responding to a request attempting to overwrite a currently locked file with a :statuscode:`409`.
+        ..  include:: /_fragments/headers/X-WOPI-Lock.rst
 
     :resheader X-WOPI-LockFailureReason:
-        An optional **string** value indicating the cause of a lock failure. This header may be included when
-        responding to the request with :http:statuscode:`409`. There is no standard for how this string is
-        formatted, and Office Online only uses it for logging purposes. However, we recommend hosts use small strings
-        that are consistent. This allows Office Online to easily report to hosts how often locks are failing due to
-        particular reasons.
+        ..  include:: /_fragments/headers/X-WOPI-LockFailureReason.rst
 
     :resheader X-WOPI-LockedByOtherInterface:
-        An optional **string** value indicating that the file is currently locked by someone other than Office Online.
-        This header is optional, and is only used by Office Online to provide more specific messages to users when
-        operations fail. If set, the value of this header must be the string ``true``.
+        ..  include:: /_fragments/headers/X-WOPI-LockedByOtherInterface.rst
 
     :code 200: Success
     :code 400: Specified name is illegal
     :code 401: Invalid :term:`access token`
-    :code 404: File unknown/user unauthorized
+    :code 404: Resource not found/user unauthorized
     :code 409: Target file already exists or the file is locked; if the target file is locked, an **X-WOPI-Lock**
         response header containing the value of the current lock on the file must always be included
     :code 413: File is too large; the maximum size is host-specific
@@ -138,7 +135,7 @@ PutRelativeFile
 Response
 --------
 
-The response to a PutRelativeFile call is JSON (as specified in :rfc:`4627`) containing a number of properties, some of
+The response to a |operation| call is JSON (as specified in :rfc:`4627`) containing a number of properties, some of
 which are optional.
 
 ..  include:: /_fragments/param_types.rst
@@ -147,18 +144,16 @@ which are optional.
 Required response properties
 ----------------------------
 
-The following properties must be present in all PutRelativeFile responses:
+The following properties must be present in all |operation| responses:
 
 Name
-    The **string** name of the newly created file without a path. **This is a required value in all PutRelativeFile
-    responses.**
+    The **string** name of the newly created file without a path.
 
 Url
     A **string** URI of the form ``http://server/<...>/wopi*/files/(file_id)?access_token=(access token)``, of the newly
     created file on the host. This URL is the :term:`WOPISrc` for the new file with an :term:`access token` appended.
     Or, stated differently, it is the URL to the host's :ref:`Files endpoint` for the new file, along with an
     :term:`access token`. A :method:`GET` request to this URL will invoke the :ref:`CheckFileInfo` operation.
-    **This is a required value in all PutRelativeFile responses.**
 
 Optional response properties
 ----------------------------

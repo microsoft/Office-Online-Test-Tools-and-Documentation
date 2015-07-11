@@ -1,11 +1,9 @@
 
 :orphan:
 
-..  index:: WOPI requests; EnumerateChildren, EnumerateChildren
+..  _EnumerateChildren (folders):
 
-..  _EnumerateChildren:
-
-EnumerateChildren
-=================
+EnumerateChildren (folders)
+===========================
 
 ..  include:: /_fragments/deprecated_operation.rst

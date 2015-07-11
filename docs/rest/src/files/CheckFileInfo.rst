@@ -1,10 +1,14 @@
 
 ..  index:: WOPI requests; CheckFileInfo, CheckFileInfo
 
+..  |future| replace:: This property should not be used by WOPI clients at this time. It is reserved for future use.
+
 ..  _CheckFileInfo:
 
 CheckFileInfo
 =============
+
+:Required for: |web| |ios|
 
 ..  default-domain:: http
 
@@ -22,7 +26,7 @@ CheckFileInfo
 
     :code 200: Success
     :code 401: Invalid :term:`access token`
-    :code 404: File unknown/user unauthorized
+    :code 404: Resource not found/user unauthorized
     :code 500: Server error
 
     ..  include:: /_fragments/common_headers.rst
@@ -209,6 +213,32 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports :ref:`ExecuteCellStorageRequest` and
         :ref:`ExecuteCellStorageRelativeRequest` operations for this file.
 
+    SupportsContainers
+        A **Boolean** value that indicates that the host supports the following WOPI operations:
+
+        * :ref:`CheckContainerInfo`
+        * :ref:`CreateChildContainer`
+        * :ref:`CreateChildFile`
+        * :ref:`DeleteContainer`
+        * :ref:`DeleteFile`
+        * :ref:`EnumerateAncestors (containers)`
+        * :ref:`EnumerateAncestors (files)`
+        * :ref:`EnumerateChildren`
+        * :ref:`GetEcosystem (containers)`
+        * :ref:`RenameContainer`
+
+    SupportsDeleteFile
+        A **Boolean** value that indicates that the host supports the :ref:`DeleteFile` operation.
+
+    SupportsEcosystem
+        A **Boolean** value that indicates that the host supports the following WOPI operations:
+
+        * :ref:`CheckEcosystem`
+        * :ref:`GetEcosystem (containers)`
+        * :ref:`GetEcosystem (files)`
+        * :ref:`GetFileWopiSrc`
+        * :ref:`GetRootContainer`
+
     SupportsExtendedLockLength
         A **Boolean** value that indicates that the host supports lock IDs up to 1024 ASCII characters long. If not
         provided, Office Online will assume that lock IDs are limited to 256 ASCII characters.
@@ -223,9 +253,9 @@ implementation meets the requirements for a particular property.
         :ref:`Create New` for more information.
 
     SupportsFolders
-        A **Boolean** value that indicates that the host supports :ref:`CheckFolderInfo`, :ref:`EnumerateChildren`,
-        :ref:`DeleteFile` operations for this file. This implies that the host can use :ref:`WOPI actions` that
-        require :wopi:req:`containers` support.
+        A **Boolean** value that indicates that the host supports :ref:`CheckFolderInfo`,
+        :ref:`EnumerateChildren (folders)`, :ref:`DeleteFile` operations for this file. This implies that the host can
+        use :ref:`WOPI actions` that require :wopi:req:`containers` support.
 
     SupportsGetLock
         A **Boolean** value that indicates that the host supports the :ref:`GetLock` operation.
@@ -259,7 +289,6 @@ implementation meets the requirements for a particular property.
 
         ..  versionadded:: 2015.08.03
             Support for this property was added to Office Online on August 3, 2015.
-
 
 
 .. _User identity properties:
@@ -589,6 +618,11 @@ Other miscellaneous properties
     IrmPolicyTitle
         A **string** that the Office Online will display to the user indicating the :abbr:`IRM (Information Rights
         Management)` policy for the file. This value should be combined with :term:`IrmPolicyDescription`.
+
+    LastModifiedTime
+        A **string** that represents the last time that the file was modified. This time must always be a must be
+        a :abbr:`UTC (Coordinated Universal Time)` time, and must be formatted in ISO 8601 round-trip format. For
+        example, ``"2009-06-15T13:45:30.0000000Z"``.
 
     PresenceProvider
         A **string** that identifies the provider of information that Office Online may use to discover

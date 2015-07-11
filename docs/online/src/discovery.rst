@@ -249,7 +249,7 @@ XML. The requirements themselves are groups of WOPI operations that must be supp
 
     ..  include:: /_fragments/deprecated_discovery_requirement.rst
 
-    :requires: :ref:`CheckFolderInfo`, :ref:`DeleteFile`, :ref:`EnumerateChildren`
+    :requires: :ref:`CheckFolderInfo`, :ref:`DeleteFile`, :ref:`EnumerateChildren (folders)`
 
 
 ..  _Action URLs:
