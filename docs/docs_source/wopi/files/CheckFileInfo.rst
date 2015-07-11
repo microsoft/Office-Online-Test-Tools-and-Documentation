@@ -33,14 +33,7 @@ Response
 The response to a CheckFileInfo call is JSON (as specified in :rfc:`4627`) containing a number of properties, most of
 which are optional.
 
-All optional values default to the following values based on their type:
-
-=======  ================
-Type     Default value
-=======  ================
-Boolean  ``false``
-String   The empty string
-=======  ================
+..  include:: /fragments/param_types.rst
 
 Required response properties
 ----------------------------
