@@ -48,6 +48,7 @@ Common WOPI request and response headers
 ..  default-domain:: http
 
 ..  get:: /wopi*/
+    :noindex:
 
     All WOPI requests from Office Online may contain the following request and response headers. Note that individual
     WOPI operations may send additional request headers or require additional response headers. These unique headers
