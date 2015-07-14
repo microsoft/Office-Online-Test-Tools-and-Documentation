@@ -189,6 +189,7 @@ Contents:
 
     security
     performance
+    guidelines
 
 ..  toctree::
     :maxdepth: 2
