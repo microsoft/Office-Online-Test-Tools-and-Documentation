@@ -107,24 +107,6 @@ Common WOPI request and response headers
         for how this string is formatted, and Office Online uses it only for logging purposes.
 
 
-Common query string parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following query string parameters will be included with all WOPI requests from Office Online.
-
-=============  ===========
-URI Parameter  Description
-=============  ===========
-``token``      A string representing the :term:`Access Token` for the request.
-``id``         A string representing the :term:`File ID` for the request.
-=============  ===========
-
-The ``token`` and ``id`` parameters are a core part of all WOPI requests. The URI syntax for using these parameters is
-described in the documentation for each WOPI operation. The host provides both ``token`` and ``id`` by transforming
-the **urlsrc** value for the action (provided in :ref:`discovery`) and appending parameters to the URL as described in
-:ref:`Action URLs`.
-
-
 .. _Files endpoint:
 
 Files endpoint
