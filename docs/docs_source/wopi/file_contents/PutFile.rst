@@ -8,7 +8,7 @@ PutFile
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(id)/contents
+..  post:: /wopi*/files/(file_id)/contents
 
     The PutFile operation updates a file's binary contents.
 

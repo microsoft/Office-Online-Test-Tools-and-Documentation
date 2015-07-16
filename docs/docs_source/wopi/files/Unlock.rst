@@ -8,7 +8,7 @@ Unlock
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(id)
+..  post:: /wopi*/files/(file_id)
 
     The Unlock operation releases the lock on a file.
 

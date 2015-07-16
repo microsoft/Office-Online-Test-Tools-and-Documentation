@@ -8,7 +8,7 @@ RefreshLock
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(id)
+..  post:: /wopi*/files/(file_id)
 
     The RefreshLock operation refreshes the lock on a file by resetting its automatic expiration timer to 30 minutes.
     The refreshed lock must expire automatically after 30 minutes unless it is modified by a subsequent WOPI

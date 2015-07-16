@@ -8,7 +8,7 @@ UnlockAndRelock
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(id)
+..  post:: /wopi*/files/(file_id)
 
     The UnlockAndRelock operation releases a lock on a file, and then immediately takes a new lock on the file.
     **This operation must be atomic.**

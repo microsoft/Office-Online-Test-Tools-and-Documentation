@@ -8,7 +8,7 @@ GetFile
 
 ..  default-domain:: http
 
-..  get:: /wopi*/files/(id)/contents
+..  get:: /wopi*/files/(file_id)/contents
 
     The GetFile operation retrieves a file from a host.
 

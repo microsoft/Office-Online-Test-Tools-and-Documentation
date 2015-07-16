@@ -8,7 +8,7 @@ RenameFile
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(id)
+..  post:: /wopi*/files/(file_id)
 
     The RenameFile operation renames an existing file. Office Online includes contains UI that enables users can use to
     rename files. In order to activate this UI in Office Online, you must implement the RenameFile operation, and

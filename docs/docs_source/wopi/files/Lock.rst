@@ -8,7 +8,7 @@ Lock
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(id)
+..  post:: /wopi*/files/(file_id)
 
     The Lock operation locks a file for editing by the Office Online application instance that requested the lock.
     To support editing files, Office Online requires that the WOPI host support locking files. When locked, a file
