@@ -21,7 +21,7 @@ understanding the requirements for Office Online integration.
         * Represent a single Office document.
         * Be a URL-safe string because IDs are passed in URLs, principally via the :term:`WOPISrc` parameter.
         * Remain the same when the file is edited.
-        * Remain the same when the file is moved, renamed, or edited.
+        * Remain the same when the file is moved or renamed.
         * In the case of shared documents, the ID for a given file must be the same for every user that accesses the
           file.
 
