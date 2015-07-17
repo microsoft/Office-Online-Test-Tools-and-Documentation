@@ -96,7 +96,7 @@ WOPI actions
 
     ..  tip::
 
-        Office Online automatically redirects :action:`view` to :action:`mobileview` when needed, so typically hosts
+        Office Online automatically redirects :action:`view` to :action:`mobileView` when needed, so typically hosts
         do not need to use this action directly.
 
 
