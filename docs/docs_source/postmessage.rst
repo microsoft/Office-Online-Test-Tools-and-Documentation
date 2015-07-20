@@ -277,8 +277,8 @@ The host page receives the following messages; all others are ignored:
     users are interacting with Office Online. In coauthoring sessions, hosts cannot use the WOPI calls for
     this purpose.
 
-    To send this message, the *EditNotificationPostMessage* property must be set to true in the **CheckFileInfo**
-    response from the host.
+    To send this message, the :term:`EditNotificationPostMessage` property in the :ref:`CheckFileInfo` response from
+    the host must be set to ``true``. Otherwise Office Online will not send this message.
 
     ..  attribute:: Values
         :noindex:
@@ -301,8 +301,8 @@ The host page receives the following messages; all others are ignored:
     message to optionally update the UI, such as the title of the page.
 
     ..  note::
-        If the host does not return the ``SupportsRename`` parameter in their ``CheckFileInfo`` response, then the
-        rename UI will not be available in Office Online.
+        If the host does not return the :term:`SupportsRename` parameter in their :ref:`CheckFileInfo` response, then
+        the rename UI will not be available in Office Online.
 
     ..  attribute:: Values
         :noindex:
