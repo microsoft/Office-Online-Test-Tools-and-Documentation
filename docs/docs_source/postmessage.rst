@@ -359,6 +359,11 @@ The host page receives the following messages; all others are ignored:
     mode. For example, a host may wish to prompt the user for some additional host-specific information before
     navigating.
 
+    ..  admonition:: Excel Online Note
+
+        Excel Online does not send this message. When the user activates the *Edit* UI in Excel Online, the inner
+        iframe will always be navigated.
+
     ..  attribute:: Values
         :noindex:
 

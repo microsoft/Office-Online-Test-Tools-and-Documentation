@@ -30,7 +30,8 @@ PutFile
     :reqheader X-WOPI-Override:
         The **string** ``PUT``. Required.
     :reqheader X-WOPI-Lock:
-        A **string** provided by Office Online in a previous :ref:`Lock` request.
+        A **string** provided by Office Online in a previous :ref:`Lock` request. Note that this header will not be
+        included during :ref:`document creation<Create New>`.
 
     :resheader X-WOPI-Lock:
         A **string** value identifying the current lock on the file. This header should always be included when
