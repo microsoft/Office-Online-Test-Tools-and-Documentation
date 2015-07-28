@@ -205,6 +205,7 @@ Contents:
 
     troubleshooting
     code_samples
+    faq
     glossary
     contributing/build_docs
     contributing/style_guide
