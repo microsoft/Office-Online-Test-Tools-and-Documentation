@@ -502,9 +502,8 @@ Other miscellaneous properties
         the file. This is intended to help enforce :abbr:`IRM (Information Rights Management)` in Office Online.
 
     SHA256
-        A 256 bit SHA-2-encoded [`FIPS 180-2`_] hash
-        of the file contents, as a **string**. Used for caching purposes in Office Online. See :ref:`View performance`
-        for more details.
+        A 256 bit SHA-2-encoded [`FIPS 180-2`_] hash of the file contents, as a Base64-encoded **string**. Used for
+        caching purposes in Office Online. See :ref:`View performance` for more details.
 
     TimeZone
         A **string** that is used to pass time zone information to Office Online in a format chosen by the host.
