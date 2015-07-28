@@ -58,6 +58,11 @@ Common WOPI request and response headers
         The **string** value ``Bearer <token>`` where ``<token>`` is the :term:`access token` for the request. Note that
         Office Online also passes the access token as a query parameter.
 
+    :reqheader X-WOPI-AppEndpoint:
+        A **string** used to indicate the endpoint of the Office Online application sending the request. This is
+        typically used to indicate geographic location, datacenter, etc. This string must not be used for anything
+        other than logging.
+
     :reqheader X-WOPI-ClientVersion:
         A **string** indicating the version of the Office Online server making the request. There is no standard
         for how this string is formatted, and it must not be used for anything other than logging.
@@ -89,6 +94,11 @@ Common WOPI request and response headers
 
         ..  seealso::
             `DateTime.Ticks Property <https://msdn.microsoft.com/en-us/library/cc319699.aspx>`_
+
+    :resheader X-WOPI-HostEndpoint:
+        A **string** used to indicate the endpoint of the WOPI host handling the request. This is analogous to the
+        **X-WOPI-AppEndpoint** request header and is typically used to indicate geographic location, datacenter, etc.
+        Office Online only uses this string for logging purposes.
 
     :resheader X-WOPI-MachineName:
         A **string** indicating the name of the WOPI host server handling the request. Office Online only uses this string
