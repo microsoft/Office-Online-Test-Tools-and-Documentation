@@ -46,7 +46,7 @@ All messages posted to and from the Office Online application frame are posted u
 
 The following example shows the msg parameter for the :data:`Host_PerfTiming` message.
 
-..  code-block:: javascript
+..  code-block:: JSON
 
     {
         "MessageId": "Host_PerfTiming",
@@ -92,13 +92,12 @@ You can send the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "Blur_Focus",
             "SendTime": 1329014075,
             "Values": { }
-            }
         }
 
 ..  data:: Grab_Focus
@@ -116,13 +115,12 @@ You can send the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "Grab_Focus",
             "SendTime": 1329014075,
             "Values": { }
-            }
         }
 
 ..  data:: Host_PerfTiming
@@ -155,7 +153,7 @@ You can send the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "Host_PerfTiming",
@@ -204,7 +202,7 @@ You can send the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "Host_PostmessageReady",
@@ -260,7 +258,7 @@ The host page receives the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "App_LoadingStatus",
@@ -287,7 +285,7 @@ The host page receives the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "Edit_Notification",
@@ -312,7 +310,7 @@ The host page receives the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "File_Rename",
@@ -338,7 +336,7 @@ The host page receives the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "UI_Close",
@@ -371,7 +369,7 @@ The host page receives the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "UI_Edit",
@@ -391,7 +389,7 @@ The host page receives the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "UI_FileVersions",
@@ -414,7 +412,7 @@ The host page receives the following messages; all others are ignored:
 
     ..  rubric:: Example Message:
 
-    ..  code-block:: javascript
+    ..  code-block:: JSON
 
         {
             "MessageId": "UI_Sharing",
