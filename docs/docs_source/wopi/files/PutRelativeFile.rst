@@ -95,7 +95,8 @@ PutRelativeFile
 
     :resheader X-WOPI-ValidRelativeTarget:
         A UTF-7 encoded **string** that specifies a full file name including the file extension. This header may be
-        used when responding with a :statuscode:`409` because a file with the requested name already exists. If this
+        used when responding with a :statuscode:`409` because a file with the requested name already exists, or when
+        responding with a :statuscode:`400` because the requested name contained invalid characters. If this
         response header is included, Office Online will automatically retry the PutRelativeFile operation using the
         contents of this header as the **X-WOPI-RelativeTarget** value and will not display an error message to the
         user.
