@@ -50,6 +50,10 @@ The following properties must be present in all CheckFileInfo responses:
         A string that uniquely identifies the owner of the file.
         **This is a required value in all CheckFileInfo responses.**
 
+        ..  note::
+            This ID is subject to the same uniqueness and consistency requirements as all
+            :ref:`User identity properties`.
+
     Size
         The size of the file in bytes, expressed as an **int**.
         **This is a required value in all CheckFileInfo responses.**
@@ -217,10 +221,11 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports :ref:`PutFile` and :ref:`PutRelativeFile` operations
         for this file.
 
-.. _User properties:
 
-User properties
-~~~~~~~~~~~~~~~
+.. _User identity properties:
+
+User identity properties
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are several properties hosts can use to provide user ID data to Office Online. Any ID value in the following
 properties must meet the following requirements:
@@ -232,6 +237,10 @@ properties must meet the following requirements:
 Office Online will record these User ID values, but they will be hashed and encrypted in such a way that their
 uniqueness is maintained, but the raw values are not. Hosts can opt to pass values that are already hashed/encrypted
 as long as the values meet the criteria above.
+
+User identity properties are not shown in any Office Online UI.
+
+..  seealso:: :term:`OwnerId`
 
 ..  glossary::
     :sorted:
@@ -258,10 +267,6 @@ as long as the values meet the criteria above.
             User properties are expected to be unique *per user* and consistent over time regardless of the presence
             of a :term:`TenantId`.
 
-    UserFriendlyName
-        A **string** that is the name of the user. If blank, Office Online will use a placeholder string in some
-        scenarios, or show no name at all.
-
     UserId
         A **string** value uniquely identifying the user currently accessing the file.
 
@@ -270,9 +275,26 @@ as long as the values meet the criteria above.
 
         ..  note:: |future|
 
+
+..  _User metadata properties:
+
+User metadata properties
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the :ref:`User identity properties`, hosts can provide additional user metadata using the following
+properties.
+
+..  glossary::
+    :sorted:
+
+    UserFriendlyName
+        A **string** that is the name of the user, suitable for displaying in UI. If blank, Office Online will use a
+        placeholder string in some scenarios, or show no name at all.
+
     LicenseCheckForEditIsEnabled
         A **Boolean** value indicating whether the user is a business user or not. This must be set to ``true``
         whenever the user is a business user. See :ref:`Business editing` for more information.
+
 
 ..  _permissions:
 
