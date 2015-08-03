@@ -14,7 +14,8 @@ Integrating with Office Online by using PostMessage
 You can integrate your UI into Office Online applications. This way, you can use your UI for actions on Office
 documents, such as sharing.
 
-To integrate with Office Online in this way, implement the HTML5 Web Messaging protocol. The Web Messaging protocol,
+To integrate with Office Online in this way, implement the
+`HTML5 Web Messaging protocol <http://www.w3.org/TR/webmessaging/>`_. The Web Messaging protocol,
 also known as PostMessage, allows the Office Online frame to communicate with its parent :term:`host page`, and
 vice-versa. The following example shows the general syntax for PostMessage. In this example, ``otherWindow`` is a
 reference to another window that ``msg`` will be posted to.
