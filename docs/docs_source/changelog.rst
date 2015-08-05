@@ -25,4 +25,4 @@ Commits
 ~~~~~~~
 
 ..  git_changelog::
-    :rev-list: 6d6128a..74420e6
+    :rev-list: 918ef79..6771d9a
