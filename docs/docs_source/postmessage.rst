@@ -245,6 +245,20 @@ The host page receives the following messages; all others are ignored:
 * :data:`UI_FileVersions`
 * :data:`UI_Sharing`
 
+Common Values
+-------------
+
+In addition to message-specific values passed with each message, Office Online sends the following common values on every outgoing PostMessage:
+
+    .. attribute:: Common Values
+        :noindex:
+
+            **ui-language** **(string)**
+            The language Office Online was loaded in. Can be used to draw host UI (e.g. Share dialog) in correct language.
+
+            **wdUserSession** **(guid)**
+            Id of the Office Online session. Can be logged by host and used when troubleshooting issues with particular Office Online session.
+
 ..  data:: App_LoadingStatus
 
     The App_LoadingStatus message is posted after the Office Online application frame has loaded. Until the host
