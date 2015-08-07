@@ -89,7 +89,7 @@ You can send the following messages; all others are ignored:
     ..  attribute:: Values
         :noindex:
 
-            *Empty.*
+        *Empty.*
 
     ..  rubric:: Example Message:
 
@@ -112,7 +112,7 @@ You can send the following messages; all others are ignored:
     ..  attribute:: Values
         :noindex:
 
-            *Empty.*
+        *Empty.*
 
     ..  rubric:: Example Message:
 
@@ -132,19 +132,19 @@ You can send the following messages; all others are ignored:
     ..  attribute:: Values
         :noindex:
 
-            **Click** *(integer)*
+        **Click** *(integer)*
             The timestamp, in ticks, when the user selected a link that launched the Office Online application. For
             example, if the host exposed a link in its UI that launches an Office Online application, this timestamp
             is the time the user originally selected that link.
 
-            **Iframe** *(integer)*
+        **Iframe** *(integer)*
             The timestamp, in ticks, when the host created the Office Online iframe when the user selected the link.
 
-            **HostFrameFetchStart** *(integer)*
+        **HostFrameFetchStart** *(integer)*
             The result of the `PerformanceTiming.fetchStart`_ attribute, if the browser supports the
             `W3C NavigationTiming API`_. If the NavigationTiming API is not supported by the browser, this is 0.
 
-            **RedirectCount** *(integer)*
+        **RedirectCount** *(integer)*
             The result of the `PerformanceNavigation.redirectCount`_ attribute, if the browser supports the
             `W3C NavigationTiming API`_. If the NavigationTiming API is not supported by the browser, this is 0.
 
@@ -199,7 +199,7 @@ You can send the following messages; all others are ignored:
     ..  attribute:: Values
         :noindex:
 
-            *Empty.*
+        *Empty.*
 
     ..  rubric:: Example Message:
 
@@ -210,6 +210,7 @@ You can send the following messages; all others are ignored:
             "SendTime": 1329014075,
             "Values": { }
         }
+
 
 Listening to messages from the Office Online iframe
 ---------------------------------------------------
@@ -245,19 +246,31 @@ The host page receives the following messages; all others are ignored:
 * :data:`UI_FileVersions`
 * :data:`UI_Sharing`
 
+
+..  _outgoing postmessage common values:
+
 Common Values
--------------
+~~~~~~~~~~~~~
 
-In addition to message-specific values passed with each message, Office Online sends the following common values on every outgoing PostMessage:
+In addition to message-specific values passed with each message, Office Online sends the following common values with
+every outgoing PostMessage:
 
-    .. attribute:: Common Values
-        :noindex:
+..  glossary::
+    :sorted:
 
-            **ui-language** **(string)**
-            The language Office Online was loaded in. Can be used to draw host UI (e.g. Share dialog) in correct language.
+    ui-language *(string)*
+        The language Office Online was loaded in. See the :term:`UI_LLCC` placeholder value for more information
+        about the format of this value.
 
-            **wdUserSession** **(guid)**
-            Id of the Office Online session. Can be logged by host and used when troubleshooting issues with particular Office Online session.
+        This value may be needed in the event that Office Online renders using a language different than the one
+        requested by the host, which may occur if Office Online is not localized in the language requested. In that
+        case, the host may choose to draw its own UI in the same language that Office Online used.
+
+    wdUserSession *(string)*
+        The ID of the Office Online session. This value can be logged by host and used when
+        :ref:`troubleshooting <troubleshooting>` issues with Office Online. See :ref:`session id` for more
+        information about this value.
+
 
 ..  data:: App_LoadingStatus
 
@@ -265,10 +278,14 @@ In addition to message-specific values passed with each message, Office Online s
     receives this message, it must assume that the Office Online frame cannot react to any incoming messages except
     :data:`Host_PostmessageReady`.
 
+    ..  admonition:: Excel Online Note
+
+        Excel Online does not send this message.
+
     ..  attribute:: Values
         :noindex:
 
-            **DocumentLoadedTime** *(long)*
+        DocumentLoadedTime *(long)*
             The time that the frame was loaded.
 
     ..  rubric:: Example Message:
@@ -279,7 +296,9 @@ In addition to message-specific values passed with each message, Office Online s
             "MessageId": "App_LoadingStatus",
             "SendTime": 1329014075,
             "Values": {
-                "DocumentLoadedTime": 1329014073
+                "DocumentLoadedTime": 1329014073,
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
             }
         }
 
@@ -293,10 +312,14 @@ In addition to message-specific values passed with each message, Office Online s
     To send this message, the :term:`EditNotificationPostMessage` property in the :ref:`CheckFileInfo` response from
     the host must be set to ``true``. Otherwise Office Online will not send this message.
 
+    ..  admonition:: Excel Online Note
+
+        Excel Online does not send this message.
+
     ..  attribute:: Values
         :noindex:
 
-            *Empty.*
+        :ref:`Common values <outgoing postmessage common values>` only.
 
     ..  rubric:: Example Message:
 
@@ -305,7 +328,10 @@ In addition to message-specific values passed with each message, Office Online s
         {
             "MessageId": "Edit_Notification",
             "SendTime": 1329014075,
-            "Values": { }
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
         }
 
 ..  data:: File_Rename
@@ -320,7 +346,7 @@ In addition to message-specific values passed with each message, Office Online s
     ..  attribute:: Values
         :noindex:
 
-            **NewName** *(string)*
+        NewName *(string)*
             The new name of the file.
 
     ..  rubric:: Example Message:
@@ -331,7 +357,9 @@ In addition to message-specific values passed with each message, Office Online s
             "MessageId": "File_Rename",
             "SendTime": 1329014075,
             "Values": {
-                "NewName": "Renamed Document"
+                "NewName": "Renamed Document",
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
             }
         }
 
@@ -347,7 +375,7 @@ In addition to message-specific values passed with each message, Office Online s
     ..  attribute:: Values
         :noindex:
 
-                *Empty.*
+        :ref:`Common values <outgoing postmessage common values>` only.
 
     ..  rubric:: Example Message:
 
@@ -356,7 +384,10 @@ In addition to message-specific values passed with each message, Office Online s
         {
             "MessageId": "UI_Close",
             "SendTime": 1329014075,
-            "Values": { }
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
         }
 
 ..  data:: UI_Edit
@@ -380,7 +411,7 @@ In addition to message-specific values passed with each message, Office Online s
     ..  attribute:: Values
         :noindex:
 
-            *Empty.*
+        :ref:`Common values <outgoing postmessage common values>` only.
 
     ..  rubric:: Example Message:
 
@@ -389,7 +420,10 @@ In addition to message-specific values passed with each message, Office Online s
         {
             "MessageId": "UI_Edit",
             "SendTime": 1329014075,
-            "Values": { }
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
         }
 
 ..  data:: UI_FileVersions
@@ -400,7 +434,7 @@ In addition to message-specific values passed with each message, Office Online s
     ..  attribute:: Values
         :noindex:
 
-            *Empty.*
+        :ref:`Common values <outgoing postmessage common values>` only.
 
     ..  rubric:: Example Message:
 
@@ -409,7 +443,10 @@ In addition to message-specific values passed with each message, Office Online s
         {
             "MessageId": "UI_FileVersions",
             "SendTime": 1329014075,
-            "Values": { }
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
         }
 
 ..  data:: UI_Sharing
@@ -423,7 +460,7 @@ In addition to message-specific values passed with each message, Office Online s
     ..  attribute:: Values
         :noindex:
 
-            *Empty.*
+        :ref:`Common values <outgoing postmessage common values>` only.
 
     ..  rubric:: Example Message:
 
@@ -432,5 +469,8 @@ In addition to message-specific values passed with each message, Office Online s
         {
             "MessageId": "UI_Sharing",
             "SendTime": 1329014075,
-            "Values": { }
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
         }

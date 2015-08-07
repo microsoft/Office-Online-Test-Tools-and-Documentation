@@ -57,6 +57,8 @@ Using Fiddler to trace HTTP activity is straightforward:
    (:menuselection:`File --> Save --> All sessions...`). The resulting file should have the file extension ``.saz``.
 
 
+..  _session id:
+
 Session IDs
 -----------
 
@@ -64,7 +66,9 @@ Whenever an :ref:`action URL <Action URLs>` is navigated to, Office Online creat
 ID allows Microsoft engineers to quickly retrieve all server logs related to that session, including information
 about the WOPI calls that were made to the host. The session ID is passed back in the WOPI action URL HTTP response in
 the **X-UserSessionId** response header. It is also passed on every subsequent request made by the browser to Office
-Online in the **X-UserSessionId** request header.
+Online in the **X-UserSessionId** request header, and it is included in all PostMessages
+:ref:`sent from Office Online to the host page <outgoing postmessage common values>` in the
+:term:`wdUserSession <wdUserSession (string)>` value.
 
 The easiest way to retrieve the session ID is to use Fiddler, as described previously. However, you can also use the
 request tracking features in the Chrome and Internet Explorer developer tools to capture HTTP requests and determine
