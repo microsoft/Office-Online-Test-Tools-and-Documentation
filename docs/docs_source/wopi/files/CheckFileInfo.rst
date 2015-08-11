@@ -192,6 +192,15 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports :ref:`ExecuteCellStorageRequest` and
         :ref:`ExecuteCellStorageRelativeRequest` operations for this file.
 
+    SupportsExtendedLockLength
+        A **Boolean** value that indicates that the host supports lock IDs up to 1024 ASCII characters long. If not
+        provided, Office Online will assume that lock IDs are limited to 256 ASCII characters.
+
+        ..  important::
+            While the 256 ASCII character lock length is currently sufficient, longer lock IDs will likely be
+            required to support future scenarios, so we recommend hosts support extended lock lengths as soon as
+            possible. See :ref:`lock ID lengths <lock length>` for more information.
+
     SupportsFileCreation
         A **Boolean** value that indicates that the host supports creating new files using Office Online. See
         :ref:`Create New` for more information.
@@ -200,6 +209,9 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports :ref:`CheckFolderInfo`, :ref:`EnumerateChildren`,
         :ref:`DeleteFile` operations for this file. This implies that the host can use :ref:`WOPI actions` that
         require :wopi:req:`containers` support.
+
+    SupportsGetLock
+        A **Boolean** value that indicates that the host supports the :ref:`GetLock` operation.
 
     SupportsLocks
         A **Boolean** value that indicates that the host supports :ref:`Lock`, :ref:`Unlock`, :ref:`RefreshLock`, and
@@ -496,6 +508,15 @@ Other miscellaneous properties
     DisableTranslation
         A **Boolean** value that, when set to ``true``, will disable all machine translation functionality provided by
         Office Online.
+
+    FileExtension
+        A **string** value representing the file extension for the file. This value must begin with a ``.``. If
+        provided, Office Online will use this value as the file extension. Otherwise the extension will be parsed
+        from the :term:`BaseFileName`.
+
+        ..  tip::
+            While this property is not required, we recommend that it be set rather than relying on the
+            :term:`BaseFileName` parsing.
 
     FileNameMaxLength
         An **integer** value that indicates the maximum length for file names that the WOPI host supports, excluding
