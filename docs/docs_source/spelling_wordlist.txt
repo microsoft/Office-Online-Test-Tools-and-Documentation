@@ -1,6 +1,8 @@
 apps
 blog
 cmd
+datacenter
+datacenters
 domaintools
 gauge
 iframe

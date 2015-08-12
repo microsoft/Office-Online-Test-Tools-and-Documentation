@@ -9,6 +9,8 @@ Integrating with Office Online by using PostMessage
 ..  spelling::
 
     msg
+    ui
+    wdUserSession
 
 
 You can integrate your UI into Office Online applications. This way, you can use your UI for actions on Office
