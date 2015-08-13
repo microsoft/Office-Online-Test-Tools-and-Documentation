@@ -280,10 +280,6 @@ every outgoing PostMessage:
     receives this message, it must assume that the Office Online frame cannot react to any incoming messages except
     :data:`Host_PostmessageReady`.
 
-    ..  admonition:: Excel Online Note
-
-        Excel Online does not send this message.
-
     ..  attribute:: Values
         :noindex:
 
@@ -313,10 +309,6 @@ every outgoing PostMessage:
 
     To send this message, the :term:`EditNotificationPostMessage` property in the :ref:`CheckFileInfo` response from
     the host must be set to ``true``. Otherwise Office Online will not send this message.
-
-    ..  admonition:: Excel Online Note
-
-        Excel Online does not send this message.
 
     ..  attribute:: Values
         :noindex:
@@ -404,11 +396,6 @@ every outgoing PostMessage:
     Hosts may choose to use this message in cases where they want more control over the user's transition to edit
     mode. For example, a host may wish to prompt the user for some additional host-specific information before
     navigating.
-
-    ..  admonition:: Excel Online Note
-
-        Excel Online does not send this message. When the user activates the *Edit* UI in Excel Online, the inner
-        iframe will always be navigated.
 
     ..  attribute:: Values
         :noindex:
