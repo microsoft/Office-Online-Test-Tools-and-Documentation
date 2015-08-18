@@ -12,7 +12,22 @@ use the following URL: https://onenote.officeapps.live.com/hosting/discovery.
 
 WOPI hosts use the discovery XML to determine how to interact with Office Online. The WOPI host should cache the
 data in the discovery XML. Although this XML does not change often, we recommend that you issue a request for the
-XML periodically to ensure that you always have the most up-to-date version.
+XML periodically to ensure that you always have the most up-to-date version. 12 hours is a good cadence to refresh
+although in practice it is updated much less frequently.
+
+Another more dynamic option is to re-run discovery when :ref:`proof key validation <proof keys>` fails, or when it
+succeeds using the old key. That implies that the keys have been rotated, so discovery should definitely be re-run to
+obtain the new public key.
+
+Finally, another option is to run discovery whenever one of your machines restarts. All of these approaches, as well
+as combinations of them, have been used by hosts in the past; which approach makes the most sense depends on your
+infrastructure.
+
+..  important::
+    Hosts should not rely on the :http:header:`Expires` HTTP header on the WOPI discovery URL in order to know when
+    to re-run WOPI discovery. While this may change in the future, currently the value in the :http:header:`Expires`
+    header is not appropriate for this purpose.
+
 
 WOPI discovery actions
 ----------------------
@@ -47,7 +62,8 @@ included in the **urlsrc** attribute. Note that you must parse the **urlsrc** va
 description of this process, see :ref:`Action URLs`.
 
 Note that some actions require specific permission from Microsoft to use in the Office Online cloud service; these
-actions are marked |need_permission|
+actions are marked |need_permission|. If you wish to use these actions you must contact Microsoft to have them
+enabled for your WOPI host.
 
 
 .. _WOPI Actions:
