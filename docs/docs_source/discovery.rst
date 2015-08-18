@@ -6,14 +6,11 @@
 WOPI discovery
 ==============
 
-WOPI discovery is the process by which your application identifies Office Online capabilities, and how to initialize
-Office Online applications within your site. To retrieve the discovery XML for the Office Online production service,
-use the following URL: https://onenote.officeapps.live.com/hosting/discovery.
-
-WOPI hosts use the discovery XML to determine how to interact with Office Online. The WOPI host should cache the
-data in the discovery XML. Although this XML does not change often, we recommend that you issue a request for the
-XML periodically to ensure that you always have the most up-to-date version. 12 hours is a good cadence to refresh
-although in practice it is updated much less frequently.
+WOPI discovery is the process by which a WOPI host identifies Office Online capabilities and how to initialize
+Office Online applications within a site. WOPI hosts use the discovery XML to determine how to interact with
+Office Online. The WOPI host should cache the data in the discovery XML. Although this XML does not change often, we
+recommend that you issue a request for the XML periodically to ensure that you always have the most up-to-date
+version. 12-24 hours is a good cadence to refresh although in practice it is updated much less frequently.
 
 Another more dynamic option is to re-run discovery when :ref:`proof key validation <proof keys>` fails, or when it
 succeeds using the old key. That implies that the keys have been rotated, so discovery should definitely be re-run to
