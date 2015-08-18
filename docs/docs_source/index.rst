@@ -164,6 +164,7 @@ Contents:
     wopi/files/CheckFileInfo
     wopi/file_contents/GetFile
     wopi/files/Lock
+    wopi/files/GetLock
     wopi/files/RefreshLock
     wopi/files/Unlock
     wopi/files/UnlockAndRelock

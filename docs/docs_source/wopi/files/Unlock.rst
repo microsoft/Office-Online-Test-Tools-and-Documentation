@@ -27,7 +27,7 @@ Unlock
         The **string** ``UNLOCK``. Required.
     :reqheader X-WOPI-Lock:
         A **string** provided by Office Online that the host must use to identify the lock on
-        the file. The maximum length of a lock ID is 256 ASCII characters.
+        the file.
 
     ..  include:: /fragments/common_lock_responses.rst
 

@@ -37,8 +37,7 @@ RenameFile
     :reqheader X-WOPI-Override:
         The **string** ``RENAME_FILE``. Required.
     :reqheader X-WOPI-Lock:
-        A **string** provided by Office Online that the host must use to identify the lock on the file. The maximum
-        length of a lock ID is 256 ASCII characters.
+        A **string** provided by Office Online that the host must use to identify the lock on the file.
     :reqheader X-WOPI-RequestedName:
         A UTF-7 encoded **string** that is a file name, not including the file extension.
 

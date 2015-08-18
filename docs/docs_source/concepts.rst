@@ -102,14 +102,15 @@ understanding the requirements for Office Online integration.
            lock files prior to editing them to prevent other entities from changing the file while Office Online is
            also editing them.
         2. A lock is also used by Office Online to store a small bit of temporary data associated with a file. This
-           metadata is called the *lock ID* and is a string with a maximum length of 256 ASCII characters. Office
-           Online uses this metadata for a variety of purposes, but hosts do not need any knowledge or understanding
-           of the contents of the lock ID. Hosts must treat it as an opaque string.
+           metadata is called the *lock ID* and is a string with a maximum length of 1024 ASCII characters (see
+           :ref:`note on lock ID lengths<lock length>`). Office Online uses this metadata for a variety of
+           purposes, but hosts do not need any knowledge or understanding of the contents of the lock ID. Hosts must
+           treat it as an opaque string.
 
         Therefore, Office Online locks must:
 
         * Be associated with a single file.
-        * Contain a lock ID of maximum length 256 ASCII characters.
+        * Contain a lock ID of maximum length 1024 ASCII characters.
         * Prevent all changes to that file unless a proper lock ID is provided.
         * Expire after 30 minutes unless refreshed (see :ref:`RefreshLock`).
 
@@ -121,10 +122,13 @@ understanding the requirements for Office Online integration.
         back the current lock ID in the **X-WOPI-Lock** response header. This behavior is critical, because Office
         Online will use the current lock ID in order to determine what further WOPI calls to make to the host.
 
-        WOPI does not currently define a GetLock operation. Instead, Office Online will often execute lock-related
-        operations on files with missing or known incorrect lock IDs and expects the host to provide the current lock
-        ID in its WOPI response. Typically the :ref:`Unlock` and :ref:`RefreshLock` operations are used for this
-        purpose, but other lock-related operations may be used.
+        WOPI now defines a :ref:`GetLock` operation. However, it is not currently called by Office Online. Instead,
+        Office Online will often execute lock-related operations on files with missing or known incorrect lock IDs
+        and expects the host to provide the current lock ID in its WOPI response. Typically the :ref:`Unlock` and
+        :ref:`RefreshLock` operations are used for this purpose, but other lock-related operations may be used.
+
+        In the future, Office Online will call :ref:`GetLock` for this purpose if the host sets the
+        :term:`SupportsGetLock` property in :ref:`CheckFileInfo`.
 
         The specific conditions for each response are covered in the documentation for each of the
         following lock-related WOPI operations:
@@ -134,6 +138,15 @@ understanding the requirements for Office Online integration.
         * :ref:`Unlock`
         * :ref:`UnlockAndRelock`
         * :ref:`PutFile`
+
+        ..  _lock length:
+
+        ..  note::
+            Lock ID lengths are currently less than 256 ASCII characters. However, we anticipate requiring longer
+            lock IDs to support future Office Online integration scenarios, so we have increased the limit to 1024
+            ASCII characters. Hosts must indicate that they support lock IDs of this length using the
+            :term:`SupportsExtendedLockLength` property in :ref:`CheckFileInfo`.
+
 
     WOPISrc
         The WOPISrc (*WOPI Source*) is the URL used to execute WOPI operations on a file. It is a combination of the
