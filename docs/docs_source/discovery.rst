@@ -336,7 +336,7 @@ Session context parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to the :ref:`placeholder values` listed above, hosts can optionally append an ``sc`` query string
-parameter to the action URLs. This parameter is called the session context and if provided, will be passed back to
+parameter to the action URLs. This parameter is called the session context and, if provided, will be passed back to
 the host in subsequent :ref:`CheckFileInfo` and :ref:`CheckFolderInfo` calls in the **X-WOPI-SessionContext** request
 header. There is no defined limit for the length of this string; however, since it is passed on the query string, it
 is subject to the overall Office Online URL length limit of 2047 bytes.
