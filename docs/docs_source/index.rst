@@ -151,6 +151,7 @@ Contents:
     :caption: Overview
 
     intro
+    start
     concepts
     discovery
     endpoints
