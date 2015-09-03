@@ -59,3 +59,13 @@ string as an opaque string.
 
 This approach helps ensure that users are required to sign in to validate their Office 365 subscription as
 infrequently as possible.
+
+
+..  _business user testing:
+
+|stub-icon| Testing the business user flow
+------------------------------------------
+
+..  include:: /fragments/stub.rst
+
+.. |issue| issue:: 118
