@@ -6,8 +6,10 @@ Example code
 Sample WOPI host
 ----------------
 
-The `Office Online GitHub repository <repo>`_ contains a `sample implementation of a WOPI host <sample>`_ written
-in C#. This sample implementation illustrates many of the concepts necessary to implement a WOPI server, including:
+The `Office Online GitHub repository <repo>`_ contains a
+`sample implementation of a WOPI host <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/tree/master/samples/SampleWopiHandler>`_
+written in C#. This sample implementation illustrates many of the concepts necessary to implement a WOPI server,
+including:
 
 * Handling requests at particular :ref:`Endpoints`
 * Handling WOPI operations such as :ref:`CheckFileInfo`, :ref:`GetFile`, and :ref:`PutFile`
