@@ -208,6 +208,7 @@ Contents:
     :caption: Reference
 
     troubleshooting
+    build_test_ship/validator
     code_samples
     faq
     glossary
