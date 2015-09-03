@@ -1,6 +1,7 @@
 
 ..  default-domain:: wopi
 
+..  _WOPI discovery:
 ..  _Discovery:
 
 WOPI discovery

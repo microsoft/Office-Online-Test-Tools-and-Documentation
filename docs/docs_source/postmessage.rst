@@ -1,8 +1,8 @@
 
 ..  _PostMessage:
 
-Integrating with Office Online by using PostMessage
-===================================================
+Using PostMessage to interact with the Office Online UI
+=======================================================
 
 ..  default-domain:: js
 

@@ -9,7 +9,7 @@ application. The WOPI protocol enables Office Online to access and change files 
 
 To integrate your application with Office Online, you need to do the following:
 
-#. Be a member of the *Office 365 - Cloud Storage Partner Program*. Currently integration with the Office Onlince cloud
+#. Be a member of the *Office 365 - Cloud Storage Partner Program*. Currently integration with the Office Online cloud
    service is available to cloud storage partners. You can learn more about the program, as well as how to apply,
    at http://dev.office.com/programs/officecloudstorage.
 

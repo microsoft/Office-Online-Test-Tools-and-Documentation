@@ -7,4 +7,4 @@ Frequently Asked Questions
 ..  toctree::
     :glob:
 
-    faq/*
+    /faq/*

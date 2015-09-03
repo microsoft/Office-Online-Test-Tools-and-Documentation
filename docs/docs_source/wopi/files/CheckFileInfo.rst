@@ -166,6 +166,8 @@ Hosts can return a number of URLs that Office Online will navigate to in various
             This property is now ignored by Office Online.
 
 
+..  _supports properties:
+
 WOPI capabilities properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
