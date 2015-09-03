@@ -150,71 +150,79 @@ Contents:
     :glob:
     :caption: Overview
 
-    intro
-    start
-    concepts
-    discovery
-    endpoints
-    changelog
+    /intro
+    /build_test_ship/shipping
+    /guidelines
+    /changelog
 
 ..  toctree::
     :maxdepth: 2
     :glob:
-    :caption: Core Operations
+    :caption: Building & Testing
 
-    wopi/files/CheckFileInfo
-    wopi/file_contents/GetFile
-    wopi/files/Lock
-    wopi/files/GetLock
-    wopi/files/RefreshLock
-    wopi/files/Unlock
-    wopi/files/UnlockAndRelock
-    wopi/file_contents/PutFile
-    wopi/files/PutRelativeFile
-    wopi/files/RenameFile
-    wopi/files/PutUserInfo
-    wopi/other
+    /build_test_ship/environments
+    /build_test_ship/settings
+    /build_test_ship/validator
+    /build_test_ship/troubleshooting
+    /build_test_ship/code_samples
 
 ..  toctree::
     :maxdepth: 2
     :glob:
-    :caption: UI Integration
+    :caption: Getting Started
 
-    hostpage
-    postmessage
-
-..  toctree::
-    :maxdepth: 2
-    :glob:
-    :caption: Other Considerations
-
-    security
-    performance
-    guidelines
+    /concepts
+    /discovery
+    /hostpage
 
 ..  toctree::
     :maxdepth: 2
     :glob:
     :caption: Scenarios
 
-    scenarios/createnew
-    scenarios/business
-    scenarios/email
-    scenarios/embedding
-    scenarios/proofkeys
+    /scenarios/postmessage
+    /scenarios/createnew
+    /scenarios/business
+    /scenarios/email
+    /scenarios/embedding
+    /scenarios/proofkeys
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :caption: Core WOPI Operations
+
+    /wopi/endpoints
+    /wopi/files/CheckFileInfo
+    /wopi/file_contents/GetFile
+    /wopi/files/Lock
+    /wopi/files/GetLock
+    /wopi/files/RefreshLock
+    /wopi/files/Unlock
+    /wopi/files/UnlockAndRelock
+    /wopi/file_contents/PutFile
+    /wopi/files/PutRelativeFile
+    /wopi/files/RenameFile
+    /wopi/files/PutUserInfo
+    /wopi/other
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :caption: Other Considerations
+
+    /security
+    /performance
 
 ..  toctree::
     :maxdepth: 2
     :glob:
     :caption: Reference
 
-    troubleshooting
-    build_test_ship/validator
-    code_samples
-    faq
-    glossary
-    contributing/build_docs
-    contributing/style_guide
+    /faq
+    /glossary
+    /contributing/build_docs
+    /contributing/style_guide
 
 
 Indices and tables
