@@ -33,15 +33,13 @@ PutFile
         A **string** provided by Office Online in a previous :ref:`Lock` request. Note that this header will not be
         included during :ref:`document creation<Create New>`.
 
-    :resheader X-WOPI-Lock:
-        A **string** value identifying the current lock on the file. This header should always be included when
-        responding to the request with :http:statuscode:`409`.
+    ..  include:: /fragments/common_lock_responses.rst
 
     :code 200: Success
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
     :code 409: Lock mismatch/locked by another interface; an **X-WOPI-Lock** response header containing the value of
-        the current lock on the file should always be included when using this response code
+        the current lock on the file must always be included when using this response code
     :code 413: File is too large; the maximum file size is host-specific
     :code 500: Server error
     :code 501: Unsupported
