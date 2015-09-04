@@ -183,9 +183,9 @@ Contents:
     /scenarios/postmessage
     /scenarios/createnew
     /scenarios/business
+    /scenarios/proofkeys
     /scenarios/email
     /scenarios/embedding
-    /scenarios/proofkeys
 
 ..  toctree::
     :maxdepth: 2
