@@ -27,6 +27,57 @@ To integrate your application with Office Online, you need to do the following:
    :ref:`PostMessage`.
 
 
+How to read this documentation
+------------------------------
+
+This documentation contains an immense amount of information about how to integrate with Office Online,
+including details about how to implement the WOPI protocol, how Office Online uses the protocol, how you can test
+your integration, the :ref:`process for shipping your integration <shipping>`, and much more. It can be difficult to
+know where to begin. The following guidelines can help you find the specific sections in this documentation that will
+be most helpful to you.
+
+
+**If you want to know why Office Online integration may be useful to you,** and what capabilities it provides, you
+should read the following sections:
+
+* :doc:`/index` - A high level overview of the scenarios enabled by Office Online integration, as well as a brief
+  description of some of the key technical elements in a successful integration.
+* :ref:`intro` - A brief description of the technical pieces that you must implement to integrate with Office Online.
+
+
+**If you are an engineer** about to begin implementing a WOPI host, you should first read the :ref:`key concepts`
+section. When designing your WOPI implementation, you must keep in mind the expectations around
+:term:`file IDs <file ID>`, :term:`access tokens <access token>`, and :term:`locks <lock>`. These concepts are
+critical to a successful integration with Office Online. You should also read the following sections:
+
+* :ref:`validator`
+* :ref:`troubleshooting`
+* :ref:`environments`
+
+**If you are a back-end engineer,** you should begin with the following sections in addition to the :ref:`key concepts`
+section and other general sections listed above:
+
+* :ref:`discovery`
+* :ref:`endpoints`
+* :ref:`CheckFileInfo`
+* :ref:`Lock`
+
+Once you have read those sections, any of the other core WOPI operations are useful to read through, such as
+:ref:`GetFile`, :ref:`PutFile`, :ref:`PutRelativeFile`, :ref:`UnlockAndRelock`, etc.
+
+
+**If you are a front-end engineer,** you should begin with the following sections in addition to the
+:ref:`key concepts` section and other general sections listed above:
+
+* :ref:`host page`
+* :ref:`postmessage`
+* :ref:`discovery`, specifically the :ref:`WOPI actions` section
+
+
+Finally, **if you are looking for more details about the process for shipping your integration,** see the
+:ref:`shipping` section.
+
+
 ..  Hyperlinks
 
 ..  _[MS-WOPI]\: Web Application Open Platform Interface API:

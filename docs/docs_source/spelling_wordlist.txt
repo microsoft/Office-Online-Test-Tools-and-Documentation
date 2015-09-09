@@ -1,6 +1,8 @@
 apps
 blog
 cmd
+contoso
+Contoso
 datacenter
 datacenters
 domaintools

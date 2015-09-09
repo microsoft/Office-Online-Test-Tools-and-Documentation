@@ -96,6 +96,12 @@ WOPI actions
     :requires: :req:`update`, :req:`locks`
 
 
+..  action:: getinfo
+
+    An action that returns a set of URLs that can be used to execute automated test cases. This action is only used
+    by the :ref:`validator` and is meant to be used in an :ref:`automated fashion <automated validation>`.
+
+
 ..  action:: interactivepreview
 
     |need_permission|
