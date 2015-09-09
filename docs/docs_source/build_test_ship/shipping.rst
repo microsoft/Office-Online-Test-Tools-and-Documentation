@@ -32,7 +32,7 @@ The 'go live' process consists of three phases:
 
 #. **Sign off and roll out** - Once Microsoft has signed off on your integration, you can begin to roll out to your
    users. Depending on your traffic estimates, Microsoft may request that you roll out over a period of several days
-   to ensure you do not overload Office Online.
+   to ensure you do not overload Office Online or your WOPI servers.
 
 You will need to provide some things to Microsoft as part of the 'go live' process. These are covered in detail in
 the sections below.

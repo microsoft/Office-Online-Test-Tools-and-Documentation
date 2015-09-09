@@ -31,7 +31,9 @@ The simplest way to use the validation application is to use the *view* action. 
 treat ``.wopitest`` files the same way other Office documents are treated. In other words, hosts should do the
 following:
 
-#. Launch a :term:`host page` pointed at the ``.wopitest`` file.
+#. Launch a :term:`host page` pointed at the ``.wopitest`` file. Ideally, this should be the same host page used to
+   host regular Office Online sessions. This will allow the validation application to test things like PostMessage and
+   do some validation on the way the Office Online iframe was loaded.
 #. The host page will create and navigate the Office Online iframe to the *view* action URL provided in
    :ref:`WOPI discovery`. The :term:`WOPIsrc` and :term:`access token` should be provided just like with all other
    actions.
