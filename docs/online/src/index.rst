@@ -140,6 +140,7 @@ Finally, **if you are looking for more details about the process for shipping yo
     :caption: Scenarios
 
     PostMessage: interact with Office Online </scenarios/postmessage>
+    /scenarios/coauth
     /scenarios/createnew
     /scenarios/business
     /scenarios/conversion

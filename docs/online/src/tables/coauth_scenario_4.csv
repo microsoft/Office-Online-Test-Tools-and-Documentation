@@ -1,0 +1,4 @@
+Application,PutFile access token used,Additional notes
+Word Online,"User A, since User B is not editing.","After no more than 5 minutes, Word Online will call CheckFileInfo with User B's access token. That call will indicate that User B no longer has edit permissions, so User B will be kicked out of the editing session. User A can continue editing the document."
+Excel Online,User A,"After no more than 15 minutes, Excel Online will call RefreshLock with User B's access token. That call will fail since User B no longer has edit permissions, so User B will be kicked out of the editing session. User A can continue editing the document."
+PowerPoint Online,"User A, since User B is not editing.","After no more than 5 minutes, PowerPoint Online will call CheckFileInfo with User B's access token. That call will indicate that User B no longer has edit permissions, so User B will be kicked out of the editing session. User A can continue editing the document."
