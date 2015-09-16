@@ -67,6 +67,10 @@ The following properties must be present in all CheckFileInfo responses:
 Other response properties
 -------------------------
 
+Some properties require special arrangements with Microsoft in order to be used. These properties are marked
+|need_permission|. If you wish to use these properties, you must contact Microsoft and request that the appropriate
+settings be adjusted to allow you to use these properties. Otherwise these properties will be ignored.
+
 
 Navigation URL properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -573,6 +577,8 @@ Other miscellaneous properties
         A **string** that is used to pass time zone information to Office Online in a format chosen by the host.
 
     UniqueContentId
+        |need_permission|
+
         In special cases, a host may choose to not provide a :term:`SHA256`, but still have some mechanism for
         identifying that two different files contain the same content in the same manner as the :term:`SHA256` is used.
 
