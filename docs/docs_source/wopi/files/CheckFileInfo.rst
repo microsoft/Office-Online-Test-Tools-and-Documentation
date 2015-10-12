@@ -454,6 +454,14 @@ settings prohibit it, etc.), Office Online UI that triggers a PostMessage will b
         to/from. Office Online will only send outgoing PostMessages to this domain, and will only listen to
         PostMessages from this domain.
 
+        ..  important::
+
+            This value will be used as the *targetOrigin* when Office Online uses the
+            `HTML5 Web Messaging protocol <http://www.w3.org/TR/webmessaging/>`_. Therefore, it must include the
+            scheme and hostname. If you are serving your pages on a non-standard port, you must include the port as
+            wel;. The literal string ``*``, while supported in the PostMessage protocol, is not allowed by Office
+            Online.
+
 Breadcrumb properties
 ~~~~~~~~~~~~~~~~~~~~~
 

@@ -26,10 +26,9 @@ reference to another window that ``msg`` will be posted to.
 
     :param string msg: A string (or JSON object) that contains the message
         data.
-    :param string targetOrigin: Specifies what the origin of ``otherWindow``
-        must be for the event to be dispatched.  Office Online requires an
-        actual domain to be specified.  The literal string ``*``, while supported
-        in the PostMessage protocol, is not allowed by Office Online.
+    :param string targetOrigin: Specifies what the origin of ``otherWindow`` must be for the event to be dispatched.
+        This value will be set to the :term:`PostMessageOrigin` property provided in :ref:`CheckFileInfo`. The literal
+        string ``*``, while supported in the PostMessage protocol, is not allowed by Office Online.
 
 Message format
 --------------
