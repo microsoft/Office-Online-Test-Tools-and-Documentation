@@ -245,7 +245,6 @@ The host page receives the following messages; all others are ignored:
 * :data:`File_Rename`
 * :data:`UI_Close`
 * :data:`UI_Edit`
-* :data:`UI_FileVersions`
 * :data:`UI_Sharing`
 
 
@@ -408,29 +407,6 @@ every outgoing PostMessage:
 
         {
             "MessageId": "UI_Edit",
-            "SendTime": 1329014075,
-            "Values": {
-                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
-            }
-        }
-
-..  data:: UI_FileVersions
-
-    The UI_FileVersions message is posted when the user activates the *Previous Versions* UI in Office Online. The host
-    can use this message to optionally navigate the outer frame to an appropriate URL.
-
-    ..  attribute:: Values
-        :noindex:
-
-        :ref:`Common values <outgoing postmessage common values>` only.
-
-    ..  rubric:: Example Message:
-
-    ..  code-block:: JSON
-
-        {
-            "MessageId": "UI_FileVersions",
             "SendTime": 1329014075,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
