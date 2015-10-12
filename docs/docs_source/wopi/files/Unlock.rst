@@ -27,7 +27,7 @@ Unlock
         The **string** ``UNLOCK``. Required.
     :reqheader X-WOPI-Lock:
         A **string** provided by Office Online that the host must use to identify the lock on
-        the file.  Required.
+        the file. Required.
 
     ..  include:: /fragments/common_lock_responses.rst
 

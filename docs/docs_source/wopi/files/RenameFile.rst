@@ -66,4 +66,4 @@ The response to a RenameFile call is JSON (as specified in :rfc:`4627`) containi
 
 Name
     The **string** name of the renamed file without a path or file extension. **This is a required value in all
-    successful RenameFile responses (responses with a :code 200:).**
+    successful RenameFile responses (responses with a 200 status code).**
