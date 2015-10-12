@@ -381,7 +381,8 @@ Online expects that the host will respond to any WOPI request, including :ref:`C
         users who have permission to broadcast or view a broadcast of this file.
 
     UserCanRename
-        A **Boolean** value that indicates the user has permission to rename the current file. If set to ``false``,
+        A **Boolean** value that indicates the user has permission to rename the current file. Setting this to
+        ``true`` enables Office Online to call :ref:`RenameFile` on behalf of the user. If set to ``false``,
         Office Online will hide UI related to renaming files.
 
     UserCanWrite
