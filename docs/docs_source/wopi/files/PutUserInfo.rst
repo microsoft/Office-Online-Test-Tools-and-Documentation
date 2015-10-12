@@ -14,6 +14,8 @@ PutUserInfo
     associated with a particular user, and should be passed back to Office Online in subsequent :ref:`CheckFileInfo`
     responses in the :term:`UserInfo` property.
 
+    The UserInfo string is provided in the body of the request, and has a maximum size of 1024 ASCII characters.
+
     Note that Office Online will only call this WOPI operation if the host sets the :term:`SupportsUserInfo` property
     to ``true`` in the :ref:`CheckFileInfo` response.
 
@@ -22,9 +24,6 @@ PutUserInfo
 
 
     ..  include:: /fragments/common_params.rst
-
-    :form userinfo:
-        The UserInfo string. The UserInfo string has a maximum size of 1024 ASCII characters.
 
     :reqheader X-WOPI-Override:
         The **string** ``PUT_USER_INFO``. Required.
