@@ -63,6 +63,8 @@ The following properties must be present in all CheckFileInfo responses:
         must change when the file changes, and version values must never repeat for a given file.
         **This is a required value in all CheckFileInfo responses.**
 
+        ..  important:: This value must be a **string**.
+
 
 Other response properties
 -------------------------
