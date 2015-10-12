@@ -127,6 +127,11 @@ Hosts can return a number of URLs that Office Online will navigate to in various
             The FileUrl is meant as a performance enhancement. The :ref:`GetFile` operation must still be supported
             for the file even when the FileUrl property is provided.
 
+        ..  note::
+            Requests to the :term:`FileUrl` will not be signed. The FileUrl is used exactly as provided by the host,
+            so it does not necessarily include the access token, which is required to construct the expected proof.
+
+
     HostEditUrl
         A URI to the :term:`host page` that loads the :wopi:action:`edit` WOPI action. This URL is used by Office
         Online to navigate between view and edit mode. In addition, the HostEditUrl property contains the URL that is

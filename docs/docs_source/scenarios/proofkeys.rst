@@ -19,6 +19,10 @@ request. To verify that a request came from Office Online, you must:
 * Compare the expected proof to the decrypted proof. If they match, the request originated from Office Online.
 * Ensure that the **X-WOPI-TimeStamp** header is no more than 20 minutes old.
 
+..  note::
+    Requests to the :term:`FileUrl` will not be signed. The FileUrl is used exactly as provided by the host, so it does
+    not necessarily include the access token, which is required to construct the expected proof.
+
 ..  tip::
     The `Office Online GitHub repository <repo>`_ contains a set of unit tests that hosts can adapt to verify proof
     key validation implementations. See :ref:`Proof key unit tests` for more information.
