@@ -23,4 +23,27 @@ $(document).ready(function() {
         'label label-primary'
     );
 
+    var issues_div = $("#gh_known_issues");
+    if(issues_div) {
+        $.getJSON(
+            "https://api.github.com/repos/Microsoft/Office-Online-Test-Tools-and-Documentation/issues?state=open&labels=known%20issue",
+            function(data) {
+                var converter = new showdown.Converter();
+                var issues = [];
+                $.each(data, function(key, issue) {
+                    var issue_html = "<div class='issue' id='issue" + issue['number'] + "'>";
+                    issue_html += "<div class='title'><a href='" + issue['html_url'] + "'>#" + issue['number'] + "</a>: ";
+                    issue_html += issue['title'] + "</div>";
+                    issue_html += "<div class='last_updated'>Last updated: <time class='timeago' datetime='"+ issue['updated_at'] + "'>" + issue['updated_at'] + "</time></div>";
+                    issue_html += "<div class='details'>"+ converter.makeHtml(issue['body']) + "</div>";
+                    issue_html += "</div>";
+                    issue_html += "<hr />";
+                    issues.push(issue_html);
+                });
+                issues.reverse();
+                $(issues.join("")).appendTo(issues_div);
+                $("time.timeago").timeago();
+            }
+        );
+    }
 });

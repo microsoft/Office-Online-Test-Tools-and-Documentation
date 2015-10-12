@@ -220,6 +220,7 @@ Contents:
     :caption: Reference
 
     /faq
+    /known_issues
     /glossary
     /contributing/build_docs
     /contributing/style_guide

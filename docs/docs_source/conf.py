@@ -8,6 +8,8 @@ import sphinx.ext.extlinks
 def setup(app):
     app.add_stylesheet('custom.css')
     app.add_javascript('custom.js')
+    app.add_javascript('https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.js')
+    app.add_javascript('https://cdn.rawgit.com/showdownjs/showdown/1.2.3/dist/showdown.min.js')
 
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'

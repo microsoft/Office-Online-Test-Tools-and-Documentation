@@ -81,6 +81,21 @@ div.deprecated {
     margin-bottom: 24px;
 }
 
+/* known issue styles */
+#gh_known_issues div {
+    margin-bottom: 24px;
+    line-height: 24px;
+}
+
+#gh_known_issues div.title {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#gh_known_issues div.last_updated {
+    font-style: italic;
+}
+
 /* label styles */
 .label {
     display: inline;
