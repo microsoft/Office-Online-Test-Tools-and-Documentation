@@ -1,15 +1,11 @@
-pyenchant
 Sphinx>=1.3.1
 sphinx-rtd-theme>=0.1.9
+sphinxcontrib-httpdomain>=1.4.0
 sphinxcontrib-spelling
 sphinx-git
 
-# The behavior of auto-titlecasing 'X-' HTTP headers has been fixed,
-# but the PyPI released version (1.3.0) doesn't have the fix yet.
-# To work around this, I published a new version of the lib under a
-# different name on PyPI, so until the official package is updated,
-# use this one
-sphinxcontrib-httpdomain-update>=1.3.1
+# pyenchant is required by sphinxcontrib-spelling, but is not auto-installed with that package for some reason
+pyenchant
 
 # Bug in installer, so have to install this manually
 # sphinxcontrib-domaintools>=0.1
