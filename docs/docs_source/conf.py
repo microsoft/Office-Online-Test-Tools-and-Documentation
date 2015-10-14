@@ -42,6 +42,9 @@ extensions = [
     'wopi_domain',
 ]
 
+http_strict_mode = True
+http_headers_ignore_prefixes = ['X-WOPI-']
+
 extlinks = {
     'issue': ('https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/issues/%s',
               'issue #')
