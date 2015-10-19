@@ -39,13 +39,13 @@ UnlockAndRelock
         the file. The maximum length of a lock ID is 1024 ASCII characters. Required.
     :reqheader X-WOPI-OldLock:
         A **string** provided by Office Online that is the existing lock on the file. Required.
-        Note that if X-WOPI-OldLock is not provided, the request is identical to a :term:`Lock` request.
+        Note that if **X-WOPI-OldLock** is not provided, the request is identical to a :term:`Lock` request.
 
     ..  include:: /fragments/common_lock_responses.rst
 
 
     :code 200: Success
-    :code 400: X-WOPI-Lock was not provided or was empty
+    :code 400: **X-WOPI-Lock** was not provided or was empty
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
     :code 409: Lock mismatch/locked by another interface; an **X-WOPI-Lock** response header containing the value of

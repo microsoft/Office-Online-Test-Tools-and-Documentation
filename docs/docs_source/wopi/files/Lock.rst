@@ -40,7 +40,7 @@ Lock
 
 
     :code 200: Success
-    :code 400: X-WOPI-Lock was not provided or was empty
+    :code 400: **X-WOPI-Lock** was not provided or was empty
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
     :code 409: Lock mismatch/locked by another interface; an **X-WOPI-Lock** response header containing the value of
