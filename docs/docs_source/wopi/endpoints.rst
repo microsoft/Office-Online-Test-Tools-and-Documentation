@@ -95,6 +95,12 @@ Common WOPI request and response headers
         ..  seealso::
             `DateTime.Ticks Property <https://msdn.microsoft.com/en-us/library/cc319699.aspx>`_
 
+    :resheader Content-Type:
+        This header should be set to a value appropriate to the type of data being included in the response. For
+        example, when responding to a WOPI request with JSON-encoded data in the response body, the
+        :http:header:`Content-Type` header should be set to ``application/json``. WOPI clients such as Office Online
+        may ignore a response with a :http:header:`Content-Type` header that does not match the expected type.
+
     :resheader X-WOPI-HostEndpoint:
         A **string** used to indicate the endpoint of the WOPI host handling the request. This is analogous to the
         **X-WOPI-AppEndpoint** request header and is typically used to indicate geographic location, datacenter, etc.
