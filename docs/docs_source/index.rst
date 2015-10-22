@@ -5,8 +5,7 @@ Integrating with Office Online
 ..  note::
 
     This documentation is a work in progress. Topics marked with a |stub-icon| are placeholders that have not been
-    written yet. You can track the status of these topics through our public documentation `issue tracker`_. Learn how
-    you can contribute on GitHub.
+    written yet. You can track the status of these topics through our public documentation `issue tracker`_.
 
 ..  _issue tracker: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/issues
 
