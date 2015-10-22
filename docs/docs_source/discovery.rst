@@ -340,6 +340,11 @@ Placeholder values
         This value can be set to either ``1`` or ``2`` to designate the a specific user interface appearance.
         ``1`` denotes a light-colored theme and ``2`` denotes a darker colored theme.
 
+    PERFSTATS
+        ..  include:: /fragments/stub.rst
+
+        ..  |issue| issue:: 52
+
 
 ..  _Appending WOPISrc:
 
