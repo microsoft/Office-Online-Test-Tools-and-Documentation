@@ -260,8 +260,9 @@ every outgoing PostMessage:
     :sorted:
 
     ui-language *(string)*
-        The language Office Online was loaded in. See the :term:`UI_LLCC` placeholder value for more information
-        about the format of this value.
+        The LCID of the language Office Online was loaded in. This value will not match the value provided using the
+        :term:`UI_LLCC` placeholder. Instead, this value will be the numeric LCID value (as a *string*) that
+        corresponds to the language used. See :ref:`languages` for more information.
 
         This value may be needed in the event that Office Online renders using a language different than the one
         requested by the host, which may occur if Office Online is not localized in the language requested. In that

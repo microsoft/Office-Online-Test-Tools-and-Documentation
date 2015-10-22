@@ -291,16 +291,22 @@ Placeholder values
     :sorted:
 
     UI_LLCC
-        This value represents the language the Office Online application UI should use. Any language can be supplied
-        provided it is in the format described in :rfc:`1766`. Note that Office Online does not support all
-        languages, and may use a substitute language if the language requested is not supported. If no value is
-        provided for this placeholder, Office Online will try to use the browser language setting
-        (`navigator.language`). If no valid language can be determined Office Online will default to English.
+        This value represents the language the Office Online application UI should use. Note that Office Online does
+        not support all languages, and may use a substitute language if the language requested is not supported. For
+        a list of currently supported languages, see :ref:`languages`
+
+        In addition to the values provided in the Locale ID column, any language can be supplied provided it is in
+        the format described in :rfc:`1766`. If no value is provided for this placeholder, Office Online will try to
+        use the browser language setting (``navigator.language``). If no valid language can be determined Office Online
+        will default to English (US).
 
     DC_LLCC
-        This value represents the language that Office Online should use for the purposes of data calculation. Any
-        language can be supplied provided it is in the format described in :rfc:`1766`. Typically this value
-        should be the same as the value provided for :term:`UI_LLCC`.
+        This value represents the language that Office Online should use for the purposes of data calculation. For
+        a list of currently supported languages, see :ref:`languages`
+
+        In addition to the values provided in the Locale ID column, any language can be supplied provided it is in
+        the format described in :rfc:`1766`. Typically this value should be the same as the value provided for
+        :term:`UI_LLCC`, and will default to that value if not provided.
 
     EMBEDDED
         ..  note:: This value is used in :term:`broadcast` related actions only.
