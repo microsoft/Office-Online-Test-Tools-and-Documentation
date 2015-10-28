@@ -95,6 +95,9 @@ your specific WOPI implementation. These questions are included below.
 
 #. What :ref:`supports properties` are you passing in :ref:`CheckFileInfo`?
 
+#. WOPI access tokens are currently provided in both the :http:header:`Authorization` header and on the WOPI URL in the
+   ``access_token`` parameter. Which of these are you using?
+
 
 Production settings check
 -------------------------
