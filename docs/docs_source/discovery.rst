@@ -345,6 +345,10 @@ Placeholder values
 
         ..  |issue| issue:: 52
 
+    BUSINESS_USER
+        This value can be set to ``1`` to indicate that the current user is a business user. This placeholder value
+        must be used by hosts that support the business user flow. See :ref:`Business editing` for more information.
+
 
 ..  _Appending WOPISrc:
 
