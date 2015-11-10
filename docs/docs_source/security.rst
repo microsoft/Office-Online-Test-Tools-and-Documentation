@@ -18,7 +18,7 @@ User metadata
 
 User metadata consists of URLs, email addresses, user IDs, etc. This data lives in memory and travels back and forth
 between Office Online and the WOPI host through HTTPS. Office Online goes to great lengths to scrub all personally
-identifying information (PII) from its logs. The is regularly audited to ensure Office Online is compliant with
+identifying information (PII) from its logs. This is regularly audited to ensure Office Online is compliant with
 several different privacy standards (such as FedRamp in the USA).
 
 
