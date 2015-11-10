@@ -276,6 +276,13 @@ as long as the values meet the criteria above.
 
 User identity properties are not shown in any Office Online UI.
 
+..  important::
+
+    Hosts should avoid the following characters in in user identity properties in order to support the widest range
+    of WOPI clients:
+
+    ``<>"#{}^[]`\/``
+
 ..  seealso:: :term:`OwnerId`
 
 ..  glossary::
