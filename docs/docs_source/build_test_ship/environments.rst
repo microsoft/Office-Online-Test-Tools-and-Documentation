@@ -11,8 +11,8 @@ Office Online environments
 Office Online provides two environments for use by cloud storage partners. The :ref:`discovery URLs` for each
 environment are provided below.
 
-Initially you'll be given access to the the test environment (also called 'Dogfood'), and you should use that
-environment when building and testing your integration.
+Initially you'll be given access to the test environment (also called 'Dogfood'), and you should use that environment
+ when building and testing your integration.
 
 Once you believe you're ready to release your integration, you can start the :ref:`'Go Live' process <go live>`. As
 part of that process, your application will be given access to the production environment.
