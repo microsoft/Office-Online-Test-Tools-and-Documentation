@@ -89,9 +89,7 @@ PutRelativeFile
     :reqheader X-WOPI-Size:
         An **integer** that specifies the size of the file in bytes.
 
-    :formparam body:
-        The request body should be the full binary contents of the file.
-
+    :body: The request body must be the full binary contents of the file.
 
     :resheader X-WOPI-ValidRelativeTarget:
         A UTF-7 encoded **string** that specifies a full file name including the file extension. This header may be

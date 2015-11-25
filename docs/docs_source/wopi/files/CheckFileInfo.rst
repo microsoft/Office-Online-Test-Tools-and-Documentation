@@ -405,7 +405,7 @@ property to ensure that Office Online accepts messages from your outer frame. Yo
 integration at :ref:`PostMessage`.
 
 In cases where a PostMessage is triggered by the user activating some Office Online UI, such as
-:term:`FileSharingPostMessage` or ``EditModePostMessage``, Office Online will do nothing when the relevant UI is
+:term:`FileSharingPostMessage` or :term:`EditModePostMessage`, Office Online will do nothing when the relevant UI is
 activated except send the appropriate PostMessage. Thus, hosts must accept and handle the relevant messages when
 the Office Online UI is triggered. Otherwise the Office Online UI will appear to do nothing when activated.
 

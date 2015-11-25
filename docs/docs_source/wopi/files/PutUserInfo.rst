@@ -28,6 +28,8 @@ PutUserInfo
     :reqheader X-WOPI-Override:
         The **string** ``PUT_USER_INFO``. Required.
 
+    :body: The request body must be the full UserInfo string.
+
     :code 200: Success
     :code 401: Invalid :term:`access token`
     :code 404: File unknown/user unauthorized
