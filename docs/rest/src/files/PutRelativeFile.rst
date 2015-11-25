@@ -91,6 +91,14 @@ PutRelativeFile
 
     :body: The request body must be the full binary contents of the file.
 
+    :reqheader X-WOPI-FileConversion:
+        A header whose presence indicates that the request is being made in the context of a
+        :ref:`binary document conversion<conversion>`. This header will only be included on the request in that case.
+        Thus, if **X-WOPI-FileConversion** is not explicitly included on the request, hosts must behave as if the
+        PutRelativeFile request is not being made as part of a binary document conversion.
+
+        See :ref:`conversion` for more information on the conversion process and how this header can be used.
+
     :resheader X-WOPI-ValidRelativeTarget:
         A UTF-7 encoded **string** that specifies a full file name including the file extension. This header may be
         used when responding with a :statuscode:`409` because a file with the requested name already exists, or when

@@ -100,6 +100,14 @@ WOPI actions
     :requires: :req:`update`, :req:`locks`
 
 
+..  action:: convert
+
+    An action that converts a document in a binary format, such as ``doc``, into a modern format, like ``docx``, so
+    that it can be edited in Office Online. See :ref:`conversion` for more information about this action.
+
+    :requires: :req:`update`, :req:`locks`
+
+
 ..  action:: getinfo
 
     An action that returns a set of URLs that can be used to execute automated test cases. This action is only used
