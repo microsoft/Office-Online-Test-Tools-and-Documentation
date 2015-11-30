@@ -547,7 +547,7 @@ namespace SampleWopiHandler
                         // There is a valid lock on the file and the existing lock matches the provided one
 
                         // Remove the current lock
-                        Locks.Remove(requestData.FullPath);
+                        Locks.Remove(requestData.Id);
                         ReturnSuccess(context.Response);
                     }
                     else
@@ -598,7 +598,7 @@ namespace SampleWopiHandler
                         // There is a valid lock on the file and the existing lock matches the provided one
 
                         // Replace the existing lock with the new one
-                        Locks[requestData.FullPath] = new LockInfo() { DateCreated = DateTime.UtcNow, Lock = newLock };
+                        Locks[requestData.Id] = new LockInfo() { DateCreated = DateTime.UtcNow, Lock = newLock };
                         context.Response.Headers[WopiHeaders.OldLock] = newLock;
                         ReturnSuccess(context.Response);
                     }
