@@ -23,12 +23,15 @@ GetLock
     If the file is currently not locked, the host must return a :http:statuscode:`200` and include an **X-WOPI-Lock**
     response header set to the empty string.
 
-    If the file is currently locked, the host must return either a :http:statuscode:`200` or a
-    :http:statuscode:`409`. In both cases, the host must include an **X-WOPI-Lock** response header containing the
-    value of the current lock on the file. Note that hosts must respond with a :http:statuscode:`409` if they wish to
-    include an **X-WOPI-LockFailureReason** or **X-WOPI-LockedByOtherInterface** response header.
+    If the file is currently locked, the host should return a :http:statuscode:`200` and include an **X-WOPI-Lock**
+    response header containing the value of the current lock on the file. If the current lock ID is not representable
+    as a WOPI lock (for example, it is longer than the :ref:`maximum lock length <lock length>`), the host should
+    return a :http:statuscode:`409` and set the **X-WOPI-Lock** response header to the empty string or omit
+    it completely.
 
-    ..  include:: /_fragments/no_lock_id.rst
+    ..  tip::
+        While a :http:statuscode:`409` is technically a valid response to this operation, it is rarely needed in
+        practice, and hosts should respond with a :http:statuscode:`200` in most cases.
 
     See :term:`Lock` for more general information regarding locks.
 
