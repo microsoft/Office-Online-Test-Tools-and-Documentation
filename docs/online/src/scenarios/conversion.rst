@@ -178,55 +178,12 @@ frictionless experience possible.
 Example 3
 ~~~~~~~~~
 
-In the following example, the host helps the user understand the conversion process by maintaining links between the
-original binary file and the converted file.
-
-#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
-#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
-    content.
-#.  The host creates a new file as part of the PutRelativeFile request, and also creates a link between the two files
-    using the hosts own file metadata system.
-#.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
-#.  Later, the user returns and opens the original binary file in the Office Online viewer a second time, and then
-    attempts to edit it again by clicking the in-application :guilabel:`Edit` button.
-#.  The host handles the :js:data:`UI_Edit` PostMessage when the :guilabel:`Edit` button is clicked, and detects that
-    the file has previously been converted.
-#.  The host navigates the user to the edit page for the converted file, rather than converting it a second time.
-
-Variant 3.1: Prompt the user when they attempt to open a previously converted file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When the user attempts to open the original binary file in the Office Online viewer a second time (step 5), the host
-displays a notification message with the following text:
-
-    This file was previously converted to a modern file format so it could be edited in Office Online. If any edits
-    were made to the file in Office Online, they will be in the converted document, not this one.
-
-    Would you like to open the converted document instead?
-
-..  figure:: ../images/conversion_previously_done_dialog.*
-    :alt: An image that shows a sample notification dialog.
-
-    Example message prompting the user to open the converted document instead of the original document
-
-The user can choose to open the converted document or the original document.
-
-Variant 3.2: Move converted document detection to host page
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In order to support step 6, the host could also add the logic that determines if the file was previously converted to
-their :term:`host page`. In that case, the host page would simply invoke the :wopi:action:`edit` action instead of the
-:wopi:action:`convert` action.
-
-Example 4
-~~~~~~~~~
-
 In the following example, the host helps the user understand the conversion process by naming the converted file such
 that it is clear that it was converted from a binary file.
 
 #.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
 #.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
     content.
-#.  The host creates a new file as part of the PutRelativeFile request and appends ``(Converted)`` to the name of the
+#.  The host creates a new file as part of the PutRelativeFile request and appends ``(Editable)`` to the name of the
     file.
 #.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
