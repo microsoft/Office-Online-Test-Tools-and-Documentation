@@ -301,14 +301,15 @@ User identity properties are not shown in any Office Online UI.
         ..  note:: |future|
 
     TenantId
-        A **string** value uniquely identifying the user's 'tenant,' or group/organization to which they belong. This
-        property is useful for hosts
+        A **string** value uniquely identifying the user's 'tenant,' or group/organization to which they belong.
 
         ..  caution::
 
             The presence of this property does not remove the uniqueness and consistency requirements listed above.
             User properties are expected to be unique *per user* and consistent over time regardless of the presence
             of a :term:`TenantId`.
+
+        ..  note:: |future|
 
     UserId
         A **string** value uniquely identifying the user currently accessing the file.
