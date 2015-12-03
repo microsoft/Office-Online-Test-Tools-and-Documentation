@@ -291,7 +291,7 @@ User identity properties are not shown in any Office Online UI.
     HostAuthenticationId
         A **string** value uniquely identifying the user currently accessing the file.
 
-        ..  note::
+        ..  warning::
 
             This property should not be used. Hosts should use the :term:`UserId` property instead.
 
