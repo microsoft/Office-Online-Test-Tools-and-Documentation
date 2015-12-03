@@ -242,9 +242,13 @@ implementation meets the requirements for a particular property.
         A **Boolean** value that indicates that the host supports scenarios where users can operate on files in
         limited ways via restricted URLs.
 
+        ..  note:: |future|
+
     SupportsSecureStore
         A **Boolean** value that indicates that the host supports calls to a secure data store utilizing credentials
         stored in the file.
+
+        ..  note:: |future|
 
     SupportsUpdate
         A **Boolean** value that indicates that the host supports :ref:`PutFile` and :ref:`PutRelativeFile` operations
