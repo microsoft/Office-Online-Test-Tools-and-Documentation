@@ -12,7 +12,7 @@ Office Online provides two environments for use by cloud storage partners. The :
 environment are provided below.
 
 Initially you'll be given access to the test environment (also called 'Dogfood'), and you should use that environment
- when building and testing your integration.
+when building and testing your integration.
 
 Once you believe you're ready to release your integration, you can start the :ref:`'Go Live' process <go live>`. As
 part of that process, your application will be given access to the production environment.
@@ -36,6 +36,10 @@ in that environment prior to release.
 Because builds are deployed frequently to this environment, you may see regressions in behavior. However, the
 deployment cadence also allows us to push out changes quickly, so contact Microsoft if you experience any strange or
 unexpected behavior when using the test environment.
+
+..  important::
+    End users should not use the test environment. If you are making Office Online integration available to end-users,
+    you must use the production environment.
 
 
 ..  _production:
