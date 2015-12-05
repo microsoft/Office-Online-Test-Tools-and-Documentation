@@ -55,7 +55,7 @@ The following properties must be present in all CheckFileInfo responses:
             :ref:`User identity properties`.
 
     Size
-        The size of the file in bytes, expressed as an **int**.
+        The size of the file in bytes, expressed as a **long**, a 64 bit signed integer.
         **This is a required value in all CheckFileInfo responses.**
 
     Version
