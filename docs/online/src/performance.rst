@@ -1,13 +1,8 @@
 
 ..  _Performance:
 
-|stub-icon| Performance
-=======================
-
-..  include:: ../../_shared/stub.rst
-
-..  |issue| issue:: 5
-
+Performance
+===========
 
 ..  _Preloading static content:
 
@@ -34,4 +29,6 @@ should be replaced with an appropriate language for the user so that the proper 
 |stub-icon| Optimizing document viewing for high volume
 -------------------------------------------------------
 
-..  todo:: :issue:`5`
+..  include:: ../../_shared/stub.rst
+
+..  |issue| issue:: 5
