@@ -13,6 +13,8 @@ Indices
 metadata
 online
 Online
+pre
+Pre
 preload
 preloading
 reStructuredText
@@ -20,6 +22,7 @@ SHA
 smartphones
 sphinxcontrib
 timestamp
+Trello
 ttl
 urlsrc
 wd
