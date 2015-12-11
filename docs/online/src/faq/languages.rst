@@ -1,4 +1,7 @@
 
+..  include:: /_fragments/languages_spelling_words_ignorelist.rst
+
+
 ..  _languages:
 
 What languages does Office Online support?
