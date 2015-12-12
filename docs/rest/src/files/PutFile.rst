@@ -14,15 +14,18 @@ PutFile
 
     ..  include:: /_fragments/priorlock.rst
 
-    ..  include:: /_fragments/lock409.rst
-
-    ..  include:: /_fragments/no_lock_id.rst
-
     During :ref:`document creation<Create New>`, Office Online will make a PutFile request without a prior
     :ref:`Lock` request. Thus, when a host receives a PutFile request on a file that is not locked, the host must
     check the current size of the file. If it is 0 bytes, the PutFile request should be considered valid and should
     proceed. If it is any value other than 0 bytes, or is missing altogether, the host should respond with a
     :http:statuscode:`409`. For more information, see :ref:`Create New`.
+
+    If the file is currently locked and the **X-WOPI-Lock** value does not match the lock currently on the file the
+    host must return a "lock mismatch" response (:http:statuscode:`409`) and include an **X-WOPI-Lock** response
+    header containing the value of the current lock on the file. In the case where the file is unlocked, the host
+    must set **X-WOPI-Lock** to the empty string.
+
+    ..  include:: /_fragments/no_lock_id.rst
 
 
     ..  include:: /_fragments/common_params.rst
