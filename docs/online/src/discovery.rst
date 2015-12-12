@@ -26,6 +26,10 @@ infrastructure.
     to re-run WOPI discovery. While this may change in the future, currently the value in the :http:header:`Expires`
     header is not appropriate for this purpose.
 
+..  tip::
+    See :ref:`discovery URLs` for URLs you should use to retrieve discovery XML for the Office Online test and
+    production environments.
+
 
 WOPI discovery actions
 ----------------------
