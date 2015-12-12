@@ -27,6 +27,7 @@ server intends to integrate with. To learn more about the specific requirements 
 |Office iOS|, see the sections below:
 
 * :ref:`officeonline:intro`
+* :ref:`native:intro`
 
 
 ..  Navigation/TOC
@@ -38,7 +39,7 @@ server intends to integrate with. To learn more about the specific requirements 
     :caption: Microsoft Office WOPI Integrations
 
     Office Online <https://wopi.readthedocs.org/>
-
+    Office for iOS <https://wopi.readthedocs.org/projects/officewopi>
 
 ..  toctree::
     :maxdepth: 2
