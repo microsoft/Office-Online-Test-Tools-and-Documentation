@@ -33,10 +33,17 @@ Entries in the WOPI domain allow list are implicitly wild-carded. In other words
 equivalent to ``*.wopi.contoso.com``. This entry will allow WOPI requests to be made to any subdomain under
 wopi.contoso.com.
 
-As a general rule, we prefer hosts to use a dedicated subdomain for handling WOPI traffic. While not necessary for
+..  tip::
+    If you ever generate :term:`WopiSrc` values that point to a subdomain, then it needs to be on the allow list. The
+    :term:`WopiSrc` represents the domain that a WOPI client will use to execute WOPI operations against.
+
+    If you don't ever generate :term:`WopiSrc` values that point to a subdomain, then that subdomain does not need to
+     be on the WOPI domain allow list (but it may need to be on the :ref:`redirect domains`).
+
+As a general rule, hosts should use a dedicated subdomain for handling WOPI traffic. While not necessary for
 testing and development, this is required in production. This subdomain is typically something like
 ``wopi.hostdomain.com``, though that is just a name convention and hosts can use other names if needed. This approach
-ensures that Office Online cannot make requests to arbitrary domains.
+ensures that Office Online cannot make WOPI requests to arbitrary domains.
 
 When you are first given access to the test environment, Microsoft will add the domains you provide to the test-only
 WOPI domain allow list. For test purposes you can use broadly-scoped domains such as your top-level domain (e.g.
