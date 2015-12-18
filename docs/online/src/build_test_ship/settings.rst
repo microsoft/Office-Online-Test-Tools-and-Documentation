@@ -38,7 +38,7 @@ wopi.contoso.com.
     :term:`WopiSrc` represents the domain that a WOPI client will use to execute WOPI operations against.
 
     If you don't ever generate :term:`WopiSrc` values that point to a subdomain, then that subdomain does not need to
-     be on the WOPI domain allow list (but it may need to be on the :ref:`redirect domains`).
+    be on the WOPI domain allow list (but it may need to be on the :ref:`redirect domains`).
 
 As a general rule, hosts should use a dedicated subdomain for handling WOPI traffic. While not necessary for
 testing and development, this is required in production. This subdomain is typically something like

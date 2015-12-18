@@ -12,7 +12,7 @@ project = u'Office Online Integration Documentation'
 # Configure sphinx.ext.intersphinx
 # noinspection PyUnresolvedReferences
 intersphinx_mapping = {
-    'wopirest': ('https://wopi.readthedocs.org/projects/wopirest/',
+    'wopirest': ('https://wopi.readthedocs.org/projects/wopirest/en/latest',
                  (
                      # Try to load from the locally built docs first
                      rest_doc_path / local_object_inventory_path,
