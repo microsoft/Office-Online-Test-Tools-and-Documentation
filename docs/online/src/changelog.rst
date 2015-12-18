@@ -4,6 +4,24 @@
 What's New
 ==========
 
+..  _2015.12.18:
+
+Version 2015.12.18
+------------------
+
+*December 18, 2015*
+
+The documentation of the WOPI REST operations has been split from the Office Online integration documentation. This
+was done to prepare for the expansion of the WOPI REST API that will come in a future commit.
+
+
+Commits
+~~~~~~~
+
+..  git_changelog::
+    :rev-list: b624ab9..c6a8b86
+
+
 ..  _2015.08.03:
 
 Version 2015.08.03
