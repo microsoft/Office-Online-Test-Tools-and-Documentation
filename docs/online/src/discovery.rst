@@ -376,6 +376,8 @@ it is a URL of the form ``http://server/<...>/wopi*/files/(file_id)``, where ``f
 file. The ``WOPISrc`` parameter value must be encoded to a URL-safe string, then the parameter is appended to the
 action URL.
 
+..  seealso:: See :term:`WOPISrc` for more information about the ``WOPISrc`` value.
+
 
 ..  _session context:
 
