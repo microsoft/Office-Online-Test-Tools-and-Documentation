@@ -570,6 +570,10 @@ Other miscellaneous properties
         Online already identifies hosts based on the URLs of their WOPI endpoints. This value is only used for logging
         purposes.
 
+        ..  deprecated:: 2016.01.12
+            This property is now ignored by Office Online.
+
+
     HostNotes
         A **string** that is used by the host to pass arbitrary information to Office Online. Office Online will
         ignore this string if it does not recognize its contents. A host must not require that Office Online
