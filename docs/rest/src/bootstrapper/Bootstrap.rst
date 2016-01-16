@@ -80,7 +80,7 @@ The following properties must be present in all :statuscode:`200` |operation| re
 UserId
     A **string** value uniquely identifying the user making the request. This value should match the :term:`UserId`
     value provided in :ref:`CheckFileInfo`. This ID is expected to be unique per user and consistent over time. See
-    :ref:`User identity properties` for more information.
+    :ref:`User identity requirements` for more information.
 
 SignInName
     A **string** value identifying the user making the request. This value is used to distinguish a user's
