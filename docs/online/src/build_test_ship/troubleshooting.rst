@@ -4,8 +4,29 @@
 Troubleshooting interactions with Office Online
 ===============================================
 
+..  spelling::
+
+    validator
+
 When integrating with Office Online, it may be necessary to work with Microsoft engineers to diagnose problems.
 Following the steps below will help both you and Microsoft diagnose problems more quickly.
+
+Before reporting issues
+-----------------------
+
+Before reporting any issues to Microsoft, ensure that you have done the following:
+
+#. Check that the :ref:`validator` tests are passing. Most common issues are easily diagnosed using the validator,
+   and passing tests are a pre-requisite for any investigations into issues you're encountering.
+
+   ..  tip::
+       In cases where the validator tests are not consistent with the documentation, assume that the validator is
+       correct. Also please `file an issue`__ so that we can address the gaps in the documentation.
+#. Check the :ref:`known issues` to see if what you're encountering is already known. When possible, workarounds will
+   be provided in the issue notes.
+
+..  __: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/issues
+
 
 Fiddler traces
 --------------
