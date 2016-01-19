@@ -24,8 +24,9 @@ request. To verify that a request came from Office Online, you must:
     not necessarily include the access token, which is required to construct the expected proof.
 
 ..  tip::
-    The `Office Online GitHub repository <repo>`_ contains a set of unit tests that hosts can adapt to verify proof
-    key validation implementations. See :ref:`Proof key unit tests` for more information.
+    The `Office Online GitHub repository <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation>`_
+    contains a set of unit tests that hosts can adapt to verify proof key validation implementations. See
+    :ref:`Proof key unit tests` for more information.
 
 
 Constructing the expected proof

@@ -27,10 +27,11 @@ The host page is typically very simple; it must meet only the following requirem
 Host page example
 -----------------
 
-The `Office Online GitHub repository <repo>`_ contains a `minimal example host page`__. Note
+The `Office Online GitHub repository`__ contains a `minimal example host page`__. Note
 that it does not illustrate managing :ref:`wd* query string parameters <wd Parameters>` or :ref:`PostMessage`. The
 sections below will refer to it in more detail.
 
+__  https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation
 __  https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/SampleHostPage.html
 
 

@@ -1,3 +1,4 @@
+
 ..  _Code samples:
 
 Example code
@@ -6,7 +7,8 @@ Example code
 Sample WOPI host
 ----------------
 
-The `Office Online GitHub repository <repo>`_ contains a
+The `Office Online GitHub repository <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation>`_
+contains a
 `sample implementation of a WOPI host <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/tree/master/samples/SampleWopiHandler>`_
 written in C#. This sample implementation illustrates many of the concepts necessary to implement a WOPI server,
 including:
@@ -14,9 +16,6 @@ including:
 * Handling requests at particular :ref:`Endpoints`
 * Handling WOPI operations such as :ref:`CheckFileInfo`, :ref:`GetFile`, and :ref:`PutFile`
 * Example :ref:`proof key verification <Proof Keys>` (also see :ref:`Proof key unit tests`)
-
-..  _sample:
-    https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/tree/master/samples/SampleWopiHandler
 
 
 ..  _Proof key unit tests:

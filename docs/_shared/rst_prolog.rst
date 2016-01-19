@@ -8,7 +8,6 @@
 ..  Global links
 
 ..  _FIPS 180-2: http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf
-..  _repo: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/
 
 ..  |need_permission| replace::
     :html:`<span class="tag label label-warning"><i class="fa fa-lock"></i> Permitted hosts only</span>`
