@@ -122,18 +122,34 @@ div.deprecated {
 }
 
 /* known issue styles */
-#gh_known_issues div {
+#gh_known_issues div:not(:last-child),
+#validator_issues div:not(:last-child) {
     margin-bottom: 24px;
     line-height: 24px;
 }
 
-#gh_known_issues div.title {
+#gh_known_issues hr,
+#validator_issues hr {
+    margin-top: 24px;
+}
+
+#gh_known_issues div.title,
+#validator_issues div.title {
     font-size: 100%;
     font-weight: bold;
 }
 
-#gh_known_issues div.last_updated {
+#gh_known_issues div.last_updated,
+#validator_issues div.last_updated {
     font-style: italic;
+}
+
+.details p:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-title .label {
+    margin-left: 5px;
 }
 
 /* label styles */
