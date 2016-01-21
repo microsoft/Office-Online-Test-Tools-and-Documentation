@@ -4,11 +4,9 @@
 WOPI Validation application
 ===========================
 
-..  sidebar:: Validator Status:
+..  admonition:: Status
 
-    ..  raw:: html
-
-        <div id="validator_issues"></div>
+    :html:`<div id="validator_issues"></div>`
 
 To assist hosts in verifying their WOPI implementation, Office Online provides a WOPI Validation application that
 executes a test suite against a host's WOPI implementation. The test suite verifies a variety of things, including that

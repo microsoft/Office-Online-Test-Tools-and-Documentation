@@ -64,10 +64,37 @@
     content:url('images/Excel-white_16x16x32.png');
 }
 
+/* Validator status styles */
+
+.rst-content .admonition-status .admonition-title:before {
+    content: '\f058';
+}
+
+.rst-content .admonition-status .admonition-title {
+    background-color: #207144 !important;
+}
+
+.rst-content .admonition-status:empty {
+    padding-bottom: 0 !important;
+}
+
+.rst-content .admonition-status.error .admonition-title:before {
+    content: '\f06a';
+}
+
+.rst-content .admonition-status.error .admonition-title {
+    background-color: #e74c3c !important;
+}
+
+.rst-content .admonition-status.error {
+    background-color: rgba(0,0,0,0.05) !important;
+}
+
 /* Pre-release Content admonition styles */
 .rst-content .admonition-pre-release-content .admonition-title {
     background-color: #e74c3c !important;
 }
+
 .rst-content .admonition-pre-release-content {
     background-color: #faa !important;
 }

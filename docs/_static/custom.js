@@ -60,14 +60,16 @@ $(document).ready(function() {
             function(data) {
                 var converter = new showdown.Converter();
                 var issues = [];
-                var status_html = "";
+                var status = $('.admonition-status .admonition-title').first();
                 if(data.length == 0) {
-                    status_html = "<span class='tag label label-success'><i class='fa fa-check-circle'></i> Operational</span>";
+                    status.text('Current status: Operational');
+                    $('.admonition-status *:not(:first-child)').remove();
+                    status.parent().attr('style', "margin-bottom: 0 !important");
                 } else {
-                    status_html = "<span class='tag label label-danger'><i class='fa fa-exclamation-circle'></i> Down</span>";
+                    status.text('Current status: Down');
+                    $('.admonition-status').first().addClass('error');
                 }
 
-                validator_div.closest('.last').prev().append(status_html);
                 $.each(data, function(key, issue) {
                     var issue_html = "<div class='issue' id='issue" + issue['number'] + "'>";
                     issue_html += "<div class='title'><a href='" + issue['html_url'] + "'>#" + issue['number'] + "</a>: ";
