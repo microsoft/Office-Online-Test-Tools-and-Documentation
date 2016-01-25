@@ -21,7 +21,7 @@ The 'go live' process consists of three phases:
    assuming there are no major issues uncovered. However, we recommend allowing at least a month unless your
    integration is very simple.
 
-   ..  tip::
+   ..  important::
        You can avoid delays in validation by ensuring that your implementation is consistent with this documentation
        and that the :ref:`validator` tests are passing before beginning the 'go live' process.
 
@@ -44,6 +44,32 @@ and issues that you may need to address during the process.
 
 Preparing for the 'go live' process
 -----------------------------------
+
+WOPI validation
+~~~~~~~~~~~~~~~
+
+As part of the validation process, Microsoft will test your WOPI implementation using the :ref:`validator`. All of
+the tests in the following categories should be passing.
+
+* HostFrameIntegrationTests
+* BaseWopi
+* WopiEdit
+* LockTests
+* AccessTokenTests
+
+..  note::
+
+    If you are implementing :ref:`Proof key validation<proof keys>`, you should also check that the tests in the
+    ProofKeys category are passing.
+
+
+Manual testing
+~~~~~~~~~~~~~~
+
+In addition to checking the WOPI validation results, Microsoft will do some manual validation of scenarios that
+cannot currently be tested using the WOPI validator. You should follow the steps in the :ref:`testing guide<testing>`
+and fully test these scenarios prior to starting the 'go live' process.
+
 
 Test accounts
 ~~~~~~~~~~~~~
@@ -82,26 +108,6 @@ your specific WOPI implementation. These questions are included below.
 
     This list of questions is subject to change. Microsoft will provide you with a specific list of questions as part
     of the 'go live' process that may differ from the list below.
-
-#. Are all of the :ref:`validator` tests in the following categories passing?
-
-   * HostFrameIntegrationTests
-   * BaseWopi
-   * WopiEdit
-   * LockTests
-   * AccessTokenTests
-
-   ..  note::
-
-       :ref:`Proof key validation<proof keys>` is optional so the proof key-related tests can be ignored if you are
-       not implementing them. All proof key-related tests are in the BaseWopi category:
-
-       * ProofKeyCurrentOldGarbage
-       * ProofKeyCurrentValidOldGarbage
-       * ProofKeyWacAheadOfHost
-       * ProofKeyWacBehindHost
-       * WopiTimestampOlderThan20Min
-       * ProofKeyCurrentGarbageValidOldFromOldKey
 
 #. Please confirm that your File IDs meet the :term:`criteria listed in the documentation <file id>`. Office Online
    expects file IDs to be unique and consistent over time, as well as when accessed by different users or via

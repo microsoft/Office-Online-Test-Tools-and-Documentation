@@ -9,11 +9,13 @@ Contoso
 datacenter
 datacenters
 domaintools
+favicon
 gauge
 iframe
 iframes
 iOS
 Indices
+IP
 metadata
 OAuth
 online
@@ -24,6 +26,7 @@ preload
 preloading
 reStructuredText
 SHA
+siloed
 smartphones
 sphinxcontrib
 timestamp
@@ -31,6 +34,7 @@ Trello
 ttl
 Url
 urlsrc
+validator
 wd
 wdPreviousCorrelation
 wdPreviousSession

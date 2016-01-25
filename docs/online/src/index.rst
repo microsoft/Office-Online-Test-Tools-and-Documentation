@@ -103,7 +103,6 @@ Finally, **if you are looking for more details about the process for shipping yo
 
     /overview
     WOPI REST API Reference <https://wopi.readthedocs.org/projects/wopirest/>
-    /guidelines
     /changelog
 
 
@@ -122,15 +121,26 @@ Finally, **if you are looking for more details about the process for shipping yo
     :maxdepth: 2
     :glob:
     :hidden:
-    :caption: Building & Testing
+    :caption: Building
 
     /discovery
     /hostpage
-    /build_test_ship/validator
     /build_test_ship/environments
     /build_test_ship/settings
-    /build_test_ship/troubleshooting
     /build_test_ship/code_samples
+
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Testing
+    :name: testingtoc
+
+    /build_test_ship/validator
+    /build_test_ship/testing
+    /build_test_ship/ui_guidelines
+    /build_test_ship/troubleshooting
 
 
 ..  toctree::
