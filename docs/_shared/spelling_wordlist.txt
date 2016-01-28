@@ -1,5 +1,8 @@
+app
 apps
 blog
+bootstrapper
+Bootstrapper
 cmd
 contoso
 Contoso
@@ -9,8 +12,10 @@ domaintools
 gauge
 iframe
 iframes
+iOS
 Indices
 metadata
+OAuth
 online
 Online
 pre
@@ -24,6 +29,7 @@ sphinxcontrib
 timestamp
 Trello
 ttl
+Url
 urlsrc
 wd
 wdPreviousCorrelation

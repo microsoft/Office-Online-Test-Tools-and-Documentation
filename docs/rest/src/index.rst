@@ -17,16 +17,17 @@ access and change files stored by a server. WOPI is a REST-based protocol. It de
 :ref:`REST endpoints<endpoints>` as well as operations that can be executed by issuing HTTP requests to those
 endpoints.
 
-The WOPI protocol is used by Office applications, such as Office Online, to view and edit files that are stored in
-a cloud service. Thus, Office Online is a :term:`WOPI client`, while the cloud service that stores the files is a
+The WOPI protocol is used by Office applications, such as |wac|, to view and edit files that are stored in
+a cloud service. Thus, |wac| is a :term:`WOPI client`, while the cloud service that stores the files is a
 :term:`WOPI server`, often referred to as a *host*.
 
 This documentation is a reference for all of the defined WOPI operations. However, not all operations must be
 implemented. WOPI is modular and a WOPI server need only implement the operations required by the WOPI client(s) the
-server intends to integrate with. To learn more about the specific requirements for integrating with Office Online,
-see the sections below:
+server intends to integrate with. To learn more about the specific requirements for integrating with |wac| or
+|Office iOS|, see the sections below:
 
 * :ref:`officeonline:intro`
+* :ref:`native:intro`
 
 
 ..  Navigation/TOC
@@ -35,10 +36,10 @@ see the sections below:
     :maxdepth: 2
     :hidden:
     :glob:
-    :caption: Office WOPI Integrations
+    :caption: Microsoft Office WOPI Integrations
 
     Office Online <https://wopi.readthedocs.org/>
-
+    Office for iOS <https://wopi.readthedocs.org/projects/officewopi>
 
 ..  toctree::
     :maxdepth: 2
@@ -48,6 +49,8 @@ see the sections below:
 
     /concepts
     /endpoints
+    /common_headers
+    /native_apps
 
 
 ..  toctree::
@@ -66,7 +69,48 @@ see the sections below:
     /files/PutFile
     /files/PutRelativeFile
     /files/RenameFile
+    /files/DeleteFile
+    /files/EnumerateAncestors
     /files/PutUserInfo
+
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Container Operations
+
+    /containers/CheckContainerInfo
+    /containers/CreateChildContainer
+    /containers/CreateChildFile
+    /containers/DeleteContainer
+    /containers/EnumerateAncestors
+    /containers/EnumerateChildren
+    /containers/RenameContainer
+
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Ecosystem Operations
+
+    /ecosystem/CheckEcosystem
+    /files/GetEcosystem
+    /containers/GetEcosystem
+    /ecosystem/GetFileWopiSrc
+    /ecosystem/GetRootContainer
+
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Bootstrapper
+
+    /bootstrapper/Bootstrap
+    /bootstrapper/GetNewAccessToken
+    /bootstrapper/shortcuts
 
 
 ..  toctree::
@@ -76,3 +120,4 @@ see the sections below:
     :caption: Reference
 
     /glossary
+

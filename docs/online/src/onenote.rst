@@ -27,5 +27,5 @@ Folder contents endpoint
 
 ..  include:: /_fragments/deprecated_endpoint.rst
 
-The Folder contents endpoint provides access to folder contents. This endpoint exposes the :ref:`EnumerateChildren`
-operation, which returns the contents of a folder on the WOPI server.
+The Folder contents endpoint provides access to folder contents. This endpoint exposes the
+:ref:`EnumerateChildren (folders)` operation, which returns the contents of a folder on the WOPI server.

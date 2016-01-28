@@ -110,12 +110,10 @@ your specific WOPI implementation. These questions are included below.
    Otherwise users will see unexpected behavior when they access the same file via different UI paths).
 
 #. Please confirm you're providing a user ID using the :term:`UserId` field and that the ID is unique and consistent
-   over time :ref:`as described here <User identity properties>`.
+   over time :ref:`as described here <User identity requirements>`.
 
 #. Please confirm that the value in the :term:`OwnerId` field represents the user who owns the document and is unique
-   and consistent over time :ref:`as described here <User identity properties>`.
-
-#. Are you setting any :ref:`User identity properties` other than :term:`UserId` and :term:`OwnerId`?
+   and consistent over time :ref:`as described here <User identity requirements>`.
 
 #. Are you sending the :term:`SHA256` value in :ref:`CheckFileInfo`? If not, please confirm that your version numbers
    change for each file version.

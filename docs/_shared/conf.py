@@ -20,6 +20,7 @@ sys.path.insert(0, Path('../../_wopi_sphinx/').abspath())
 
 # Path setup
 shared_content_path = Path('../../_shared/').abspath()
+native_doc_path = Path('../../native/').abspath()
 officeonline_doc_path = Path('../../online/').abspath()
 rest_doc_path = Path('../../rest/').abspath()
 
@@ -104,3 +105,4 @@ http_headers_ignore_prefixes = ['X-WOPI-']
 
 # Configure sphinxcontrib.spelling
 spelling_show_suggestions = True
+spelling_word_list_filename = (shared_content_path / 'spelling_wordlist.txt').abspath().normpath()

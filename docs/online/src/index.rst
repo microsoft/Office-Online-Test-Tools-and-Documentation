@@ -137,9 +137,18 @@ Finally, **if you are looking for more details about the process for shipping yo
     :maxdepth: 2
     :glob:
     :hidden:
+    :caption: Customization
+
+    /scenarios/customization
+    PostMessage: interact with Office Online </scenarios/postmessage>
+
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
     :caption: Scenarios
 
-    PostMessage: interact with Office Online </scenarios/postmessage>
     /scenarios/coauth
     /scenarios/createnew
     /scenarios/business
