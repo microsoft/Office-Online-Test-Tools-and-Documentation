@@ -65,7 +65,7 @@ The following properties must be present in all |operation| responses:
             more information.
 
     Size
-        The size of the file in bytes, expressed as an **int**.
+        The size of the file in bytes, expressed as a **long**, a 64-bit signed integer.
 
     UserId
         A **string** value uniquely identifying the user currently accessing the file.
