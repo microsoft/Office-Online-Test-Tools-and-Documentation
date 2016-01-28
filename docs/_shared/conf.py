@@ -35,9 +35,9 @@ html_extra_path = [Path('../../_extra/').abspath()]
 needs_sphinx = '1.2'
 
 # The short X.Y version.
-version = '1.1'
+version = '2016.01.27'
 # The full version, including alpha/beta/rc tags.
-release = '1.1'
+release = '2016.01.27'
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if not on_rtd:  # only import and set the theme if we're building docs locally

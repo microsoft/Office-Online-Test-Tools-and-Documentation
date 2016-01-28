@@ -1,6 +1,4 @@
 
-:orphan:
-
 ..  _coauth:
 
 Co-authoring using Office Online

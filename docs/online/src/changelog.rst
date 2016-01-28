@@ -4,6 +4,25 @@
 What's New
 ==========
 
+..  _2016.01.27:
+
+Version 2016.01.27
+------------------
+
+*January 27, 2016*
+
+* Office Online co-authoring is now supported across all WOPI hosts. See :ref:`coauth` for more information.
+* Several new endpoints and operations have been added to WOPI to support |Office iOS|. Some documentation is
+  still in progress. See :ref:`wopirest:index` for more information.
+
+
+Commits
+~~~~~~~
+
+..  git_changelog::
+    :rev-list: e4d1a90..105ef26
+
+
 ..  _2015.12.18:
 
 Version 2015.12.18
