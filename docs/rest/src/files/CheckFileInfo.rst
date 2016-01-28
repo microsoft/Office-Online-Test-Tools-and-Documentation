@@ -461,10 +461,6 @@ because they are pending deprecation or they are designated for future features 
         (:rfc:`5323`), but may be any URL that can be handled by a client that can open a file of the given
         type.
 
-    SupportsCoauth
-        A **Boolean** value that indicates that the host supports multiple users making changes to this file
-        simultaneously. This value must always be ``false``.
-
     SupportsFileCreation
         A **Boolean** value that indicates that the host supports creating new files using the WOPI client. See
         :ref:`Create New` for more information.
@@ -564,3 +560,6 @@ The following properties are deprecated and should no longer be used by WOPI cli
 
     TermsOfUseUrl
         ..  deprecated:: 2015.06.01
+
+    SupportsCoauth
+        ..  deprecated:: 2016.01.27
