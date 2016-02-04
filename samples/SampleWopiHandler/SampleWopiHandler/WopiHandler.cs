@@ -224,7 +224,7 @@ namespace SampleWopiHandler
                     // rawId ends with /children, so it's an EnumerateChildren request.
 
                     // remove /children from the end of rawId
-                    requestData.Id = rawId.Substring(0, ChildrenRequestPath.Length);
+                    requestData.Id = rawId.Substring(0, rawId.Length - ChildrenRequestPath.Length);
                     requestData.Type = RequestType.EnumerateChildren;
                 }
                 else
