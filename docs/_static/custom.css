@@ -90,12 +90,12 @@
     background-color: rgba(0,0,0,0.05) !important;
 }
 
-/* Pre-release Content admonition styles */
-.rst-content .admonition-pre-release-content .admonition-title {
+/* Pre-release Feature admonition styles */
+.rst-content .admonition-pre-release-feature .admonition-title {
     background-color: #e74c3c !important;
 }
 
-.rst-content .admonition-pre-release-content {
+.rst-content .admonition-pre-release-feature {
     background-color: #faa !important;
 }
 

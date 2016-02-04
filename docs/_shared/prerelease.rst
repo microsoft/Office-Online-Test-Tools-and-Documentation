@@ -1,4 +1,5 @@
 
-..  admonition:: Pre-release Content
+..  admonition:: Pre-release Feature
 
-    This content is pre-release and will undergo dramatic changes prior to final publication.
+    This documentation is for an upcoming feature and may undergo dramatic changes prior to final release.
+    Pre-release features are available in the :ref:`test environment` only.
