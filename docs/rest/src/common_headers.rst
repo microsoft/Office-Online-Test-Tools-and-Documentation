@@ -17,9 +17,7 @@ Standard WOPI request and response headers
     :reqheader Authorization:
         The **string** value ``Bearer <token>`` where ``<token>`` is the :term:`access token` for the request.
 
-        ..  admonition:: |wac| Tip
-
-            Note that |wac| also passes the access token as a query parameter.
+        ..  include:: /_fragments/access_token_handling_warning.rst
 
     :reqheader X-WOPI-AppEndpoint:
         A **string** used to indicate the endpoint of the WOPI client sending the request. This is typically used to

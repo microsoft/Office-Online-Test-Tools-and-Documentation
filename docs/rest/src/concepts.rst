@@ -81,6 +81,7 @@ understanding the requirements for integration with WOPI clients such as |wac| a
             There are a number of cases like this, and WOPI clients regularly make such assumptions. For this reason,
             access tokens should remain valid until their expiry.
 
+        ..  include:: /_fragments/access_token_handling_warning.rst
 
     access_token_ttl
         The access_token_ttl property tells a WOPI client when an access token expires, represented as the
