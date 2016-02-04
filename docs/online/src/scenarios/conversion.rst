@@ -101,7 +101,46 @@ the conversion process and flow in ways not described here.
 Example 1
 ~~~~~~~~~
 
-In the following scenario, the host has deemed it important to inform users explicitly about the conversion process
+In the following example, the host helps the user understand the conversion process by naming the converted file such
+that it is clear that it was converted from a binary file.
+
+#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
+#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
+    content.
+#.  The host creates a new file as part of the PutRelativeFile request and appends ``(Editable)`` to the name of the
+    file.
+#.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
+
+
+Example 2
+~~~~~~~~~
+
+In the following example, the host wishes to hide the conversion process from the user to provide the most
+frictionless experience possible.
+
+#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
+#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
+    content.
+#.  Rather than create a new file, the host chooses to add the converted file as a new version to the existing binary
+    file.
+#.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
+#.  The user can restore the binary version of the file by using the 'version history' features within the host.
+
+..  note::
+
+    This approach may not be feasible for all hosts, depending on how file metadata and versions are handled within
+    their system. However, it does offer the following benefits:
+
+    * The user only ever sees a single document both before and after the document is converted.
+    * Since there is always only a single document, the user always finds the 'right' document. That is, if the user
+      edited the file - which is likely since they invoked the conversion process by attempting to edit a binary
+      document - then when they open the file a second time, their previous edits will be there, just as they expect.
+
+
+Example 3
+~~~~~~~~~
+
+In the following example, the host has deemed it important to inform users explicitly about the conversion process
 and its possible side effects.
 
 #.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
@@ -136,7 +175,7 @@ and its possible side effects.
 #.  Once the user clicks :guilabel:`OK`, they're navigated to a page that invokes the :wopi:action:`edit` action on
     the converted file.
 
-Variant 1.1: Display post-conversion message in the Office Online UI
+Variant 3.1: Display post-conversion message in the Office Online UI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In steps 5 and 6, rather than navigating the user to an interstitial page, the host may choose to append some
@@ -150,40 +189,3 @@ can display that notification above the Office Online editor frame. This is simi
     drawing UI over the Office Online frame.
 
 
-Example 2
-~~~~~~~~~
-
-In the following scenario, the host wishes to hide the conversion process from the user to provide the most
-frictionless experience possible.
-
-#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
-#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
-    content.
-#.  Rather than create a new file, the host chooses to add the converted file as a new version to the existing binary
-    file.
-#.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
-#.  The user can restore the binary version of the file by using the 'version history' features within the host.
-
-..  note::
-
-    This approach may not be feasible for all hosts, depending on how file metadata and versions are handled within
-    their system. However, it does offer the following benefits:
-
-    * The user only ever sees a single document both before and after the document is converted.
-    * Since there is always only a single document, the user always finds the 'right' document. That is, if the user
-      edited the file - which is likely since they invoked the conversion process by attempting to edit a binary
-      document - then when they open the file a second time, their previous edits will be there, just as they expect.
-
-
-Example 3
-~~~~~~~~~
-
-In the following example, the host helps the user understand the conversion process by naming the converted file such
-that it is clear that it was converted from a binary file.
-
-#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
-#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
-    content.
-#.  The host creates a new file as part of the PutRelativeFile request and appends ``(Editable)`` to the name of the
-    file.
-#.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
