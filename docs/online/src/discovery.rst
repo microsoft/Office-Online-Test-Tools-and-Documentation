@@ -255,7 +255,7 @@ XML. The requirements themselves are groups of WOPI operations that must be supp
 ..  _Action URLs:
 
 Action URLs
----------------
+-----------
 
 The URI values provided in the **urlsrc** attribute in the discovery XML are not in a valid format. Simply navigating to
 them will result in errors. A WOPI host must transform the URIs provided in order to make them valid action URLs that
