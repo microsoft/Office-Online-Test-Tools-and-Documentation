@@ -20,22 +20,27 @@ Indicating that a user is a business user
 The first requirement in order to support document editing for business users is to indicate that the user is a
 business user. Doing this requires the following:
 
-#. Set the :term:`BUSINESS_USER` placeholder value on the Office Online action URL. This parameter must always be on
-   the action URL for business users.
-#. Include the :term:`LicenseCheckForEditIsEnabled` property in the :ref:`CheckFileInfo` response. This property
-   must always be set to ``true`` for business users.
-#. Include the :term:`HostEditUrl` and :term:`DownloadUrl` in the :ref:`CheckFileInfo` response. These properties
-   must be included in the :ref:`CheckFileInfo` response for business users. The :term:`HostEditUrl` is used to
-   redirect the user back to the host edit page after the subscription check is completed. The :term:`DownloadUrl`
-   is used to provide a direct download link to the file if the subscription check fails.
+#.  Set the :term:`BUSINESS_USER` placeholder value on the Office Online action URL. This parameter must always be on
+    the action URL for business users.
+#.  Include the :term:`LicenseCheckForEditIsEnabled` property in the :ref:`CheckFileInfo` response. This property
+    must always be set to ``true`` for business users.
+#.  Include the :term:`HostEditUrl` in the :ref:`CheckFileInfo` response. This property must be included in the
+    :ref:`CheckFileInfo` response for business users. The :term:`HostEditUrl` is used to redirect the user back to the
+    host edit page after the subscription check is completed.
+#.  *(Optional)* You may also optionally include the :term:`DownloadUrl` in the :ref:`CheckFileInfo` response. If
+    provided, the :term:`DownloadUrl` is used to provide a direct download link to the file if the user's subscription
+    check fails.
 
-   For security purposes, both of these URLs must be served from domains that are on the :ref:`redirect domains`. If
-   either of the URLs is not on the redirect domain allow list, the flow aborts and the user is directed to Office.com.
+    ..  important::
+        For security purposes, both of these URLs must be served from domains that are on the :ref:`redirect domains`.
+        If either of the URLs is not on the redirect domain allow list, the flow aborts and the user is directed to
+        Office.com.
 
 ..  important::
     If any of the properties above are not set properly, or if the URL values provided are not on the
     :ref:`redirect domains`, then the license check flow will fail. If the flow fails, users will be redirected to
     Office.com.
+
 
 Validating edit capabilities
 ----------------------------
