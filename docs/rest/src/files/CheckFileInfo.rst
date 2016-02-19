@@ -352,6 +352,16 @@ Hosts can return a number of URLs for the file that WOPI clients may navigate to
         ..  seealso:: :term:`SignInUrl`
 
 
+PostMessage properties for web-based WOPI clients
+-------------------------------------------------
+
+CheckFileInfo supports a number of properties that can be used by web-based WOPI clients such as |wac| to
+customize the user interface and experience when using those clients. See :ref:`postmessage properties` for more
+information on these properties and how to use them.
+
+
+..  _Breadcrumb properties:
+
 Breadcrumb properties
 ---------------------
 

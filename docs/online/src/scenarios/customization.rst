@@ -23,8 +23,12 @@ CloseUrl
 
     ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
 
+    .. seealso:: :term:`CloseUrl` in the WOPI REST documentation.
+
 DownloadUrl
     If a DownloadUrl is not provided, |wac| will hide all UI to download the file.
+
+    .. seealso:: :term:`DownloadUrl` in the WOPI REST documentation.
 
 FileSharingUrl
     If provided, when the *Share* UI is activated, |wac| will open a new browser window to the URI provided.
@@ -35,14 +39,22 @@ FileSharingUrl
     If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the *Share*
     UI will be hidden in |wac|.
 
+    .. seealso:: :term:`FileSharingUrl` in the WOPI REST documentation.
+
 HostEditUrl
     This URL is used by |wac| to navigate between view and edit mode.
+
+    .. seealso:: :term:`HostEditUrl` in the WOPI REST documentation.
 
 HostViewUrl
     This URL is used by |wac| to navigate between view and edit mode.
 
+    .. seealso:: :term:`HostViewUrl` in the WOPI REST documentation.
+
 SignoutUrl
      If this property is not provided, no sign out UI will be shown in |wac|.
+
+    .. seealso:: :term:`SignoutUrl` in the WOPI REST documentation.
 
 CloseButtonClosesWindow
     If set to ``true``, |wac| will close the browser window or tab (``window.top.close``) when the *Close* UI
@@ -61,6 +73,14 @@ CloseButtonClosesWindow
 
     ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
 
+    .. seealso:: :term:`CloseButtonClosesWindow` in the WOPI REST documentation.
+
+Breadcrumb properties
+    |wac| displays all of the :ref:`breadcrumb properties` if they are provided.
+
+
+
+..  _postmessage properties:
 
 PostMessage properties
 ----------------------
