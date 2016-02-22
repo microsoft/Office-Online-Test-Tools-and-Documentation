@@ -12,7 +12,7 @@ Lock
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(file_id)
+..  post:: /wopi/files/(file_id)
 
     The |operation| operation locks a file for editing by the WOPI client application instance that requested the
     lock. To support editing files, WOPI clients require that the WOPI host support locking files. When locked, a file

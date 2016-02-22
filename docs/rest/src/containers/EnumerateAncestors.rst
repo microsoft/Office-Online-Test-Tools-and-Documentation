@@ -12,7 +12,7 @@ EnumerateAncestors (containers)
 
 ..  default-domain:: http
 
-..  get:: /wopi*/containers/(container_id)/ancestry
+..  get:: /wopi/containers/(container_id)/ancestry
 
     The |operation| operation enumerates all the parents of a given :term:`container`, up to and including the
     :term:`root container`.

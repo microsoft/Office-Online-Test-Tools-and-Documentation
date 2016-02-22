@@ -12,7 +12,7 @@ CheckContainerInfo
 
 ..  default-domain:: http
 
-..  get:: /wopi*/containers/(container_id)
+..  get:: /wopi/containers/(container_id)
 
     The |operation| operation is similar to the the :ref:`CheckFileInfo` operation, but operates on
     :term:`containers<container>` instead of files. |operation| returns information about a container and a user's

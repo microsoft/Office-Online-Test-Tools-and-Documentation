@@ -25,12 +25,30 @@ values with the request.
     :ref:`Common headers`
 
 
+Endpoint URLs
+-------------
+
+All WOPI host endpoints must be located at a URL that *starts* with ``/wopi``. For example, all of the following
+URLs are **valid** URLs for the :ref:`file contents endpoint` for a file with the ID ``abc123``:
+
+* ``https://api.contoso.com/modules/wopi/files/abc123/contents``
+* ``https://test.wopi.contoso.com/wopi_test/files/abc123/contents``
+
+However, the following URLs are **not valid**:
+
+* ``https://api.contoso.com/api_wopi/files/abc123/contents``
+* ``https://test.wopi.contoso.com/officeonline/files/abc123/contents``
+* ``https://wopi.contoso.com/wopi/files/ids/abc123/contents``
+
+
 .. _Files endpoint:
 
 Files endpoint
 --------------
 
 The Files endpoint provides access to file-level operations.
+
+:URL: ``/wopi/files/(file_id)``
 
 The following operations are exposed through this endpoint:
 
@@ -51,6 +69,8 @@ File contents endpoint
 
 The File contents endpoint provides access to retrieve and update the contents of a file.
 
+:URL: ``/wopi/files/(file_id)/contents``
+
 The following operations are exposed through this endpoint:
 
 * :ref:`GetFile`
@@ -64,6 +84,18 @@ The following operations are exposed through this endpoint:
 
 ..  todo:: Write this...
 
+:URL: ``/wopi/containers/(container_id)``
+
+The following operations are exposed through this endpoint:
+
+* :ref:`CheckContainerInfo`
+* :ref:`CreateChildContainer`
+* :ref:`CreateChildFile`
+* :ref:`DeleteContainer`
+* :ref:`EnumerateAncestors`
+* :ref:`EnumerateChildren`
+* :ref:`RenameContainer`
+
 
 .. _Ecosystem endpoint:
 
@@ -72,6 +104,8 @@ The following operations are exposed through this endpoint:
 
 The Ecosystem endpoint serves as a bridge for WOPI clients that do not have a File or Container ID that they are
 operating on.
+
+:URL: ``/wopi/ecosystem``
 
 The following operations are exposed through this endpoint:
 

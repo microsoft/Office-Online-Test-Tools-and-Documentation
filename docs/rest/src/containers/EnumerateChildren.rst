@@ -13,7 +13,7 @@ EnumerateChildren (containers)
 
 ..  default-domain:: http
 
-..  get:: /wopi*/containers/(container_id)/children
+..  get:: /wopi/containers/(container_id)/children
 
     ..  todo:: Add note explaining that paging is deliberately not supported.
 

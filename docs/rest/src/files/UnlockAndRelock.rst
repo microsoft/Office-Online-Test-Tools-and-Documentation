@@ -12,7 +12,7 @@ UnlockAndRelock
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(file_id)
+..  post:: /wopi/files/(file_id)
 
     The |operation| operation releases a lock on a file, and then immediately takes a new lock on the file.
 

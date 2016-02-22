@@ -18,7 +18,7 @@ GetEcosystem (files)
 
 ..  default-domain:: http
 
-..  get:: /wopi*/files/(file_id)/ecosystem_pointer
+..  get:: /wopi/files/(file_id)/ecosystem_pointer
 
     The |operation| operation returns the URI for the WOPI server's :ref:`Ecosystem endpoint`, given a
     file ID.

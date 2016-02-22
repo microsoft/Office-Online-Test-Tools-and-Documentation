@@ -12,7 +12,7 @@ CreateChildContainer
 
 ..  default-domain:: http
 
-..  post:: /wopi*/containers/(container_id)
+..  post:: /wopi/containers/(container_id)
 
     The |operation| operation creates a new child :term:`container` in the provided parent container.
 

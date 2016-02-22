@@ -10,7 +10,7 @@ GetLock
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(file_id)
+..  post:: /wopi/files/(file_id)
 
     ..  admonition:: |wac| Tip
 

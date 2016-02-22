@@ -10,7 +10,7 @@ RenameFile
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(file_id)
+..  post:: /wopi/files/(file_id)
 
     The |operation| operation renames a file.
 

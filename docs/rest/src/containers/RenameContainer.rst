@@ -12,7 +12,7 @@
 
 ..  default-domain:: http
 
-..  post:: /wopi*/containers/(container_id)
+..  post:: /wopi/containers/(container_id)
 
     The |operation| operation renames a container.
 

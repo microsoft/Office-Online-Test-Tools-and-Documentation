@@ -13,7 +13,7 @@ GetRootContainer (ecosystem)
 
 ..  default-domain:: http
 
-..  get:: /wopi*/ecosystem/root_container_pointer
+..  get:: /wopi/ecosystem/root_container_pointer
 
     The |operation| operation returns the :term:`root container`. A WOPI client can use this operation to get a
     reference to the root container, from which the client can call :ref:`EnumerateChildren` to navigate a container

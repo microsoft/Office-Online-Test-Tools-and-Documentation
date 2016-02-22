@@ -17,7 +17,7 @@ PutRelativeFile
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(file_id)
+..  post:: /wopi/files/(file_id)
 
     The |operation| operation creates a new file on the host based on the current file. The host must use the
     content in the :method:`post` body to create a new file.
@@ -150,7 +150,7 @@ Name
     The **string** name of the newly created file without a path.
 
 Url
-    A **string** URI of the form ``http://server/<...>/wopi*/files/(file_id)?access_token=(access token)``, of the newly
+    A **string** URI of the form ``http://server/<...>/wopi/files/(file_id)?access_token=(access token)``, of the newly
     created file on the host. This URL is the :term:`WOPISrc` for the new file with an :term:`access token` appended.
     Or, stated differently, it is the URL to the host's :ref:`Files endpoint` for the new file, along with an
     :term:`access token`. A :method:`GET` request to this URL will invoke the :ref:`CheckFileInfo` operation.

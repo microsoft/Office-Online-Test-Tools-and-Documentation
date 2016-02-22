@@ -11,7 +11,7 @@ GetFileWopiSrc (ecosystem)
 
 ..  default-domain:: http
 
-..  post:: /wopi*/ecosystem
+..  post:: /wopi/ecosystem
 
     ..  include:: /_fragments/future_operation.rst
 

@@ -12,7 +12,7 @@ PutFile
 
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(file_id)/contents
+..  post:: /wopi/files/(file_id)/contents
 
     The |operation| operation updates a file's binary contents.
 

@@ -11,7 +11,7 @@ GetEcosystem (containers)
 
 ..  default-domain:: http
 
-..  get:: /wopi*/containers/(container_id)/ecosystem_pointer
+..  get:: /wopi/containers/(container_id)/ecosystem_pointer
 
     The |operation| operation returns the URI for the WOPI server's :ref:`Ecosystem endpoint`, given a
     :term:`container` ID.

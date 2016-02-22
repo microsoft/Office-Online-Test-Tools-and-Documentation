@@ -17,7 +17,7 @@ EnumerateAncestors (files)
 
 ..  default-domain:: http
 
-..  get:: /wopi*/files/(file_id)/ancestry
+..  get:: /wopi/files/(file_id)/ancestry
 
     ..  include:: /_fragments/common_params.rst
 

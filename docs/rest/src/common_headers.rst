@@ -7,7 +7,7 @@ Standard WOPI request and response headers
 
 ..  default-domain:: http
 
-..  get:: /wopi*/
+..  get:: /wopi/
     :noindex:
 
     All WOPI requests may contain the following request and response headers. Note that individual WOPI operations

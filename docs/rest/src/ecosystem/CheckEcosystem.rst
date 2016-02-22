@@ -12,7 +12,7 @@ CheckEcosystem
 
 ..  default-domain:: http
 
-..  get:: /wopi*/ecosystem
+..  get:: /wopi/ecosystem
 
     The |operation| operation is similar to the the :ref:`CheckFileInfo` operation, but does not require a file or
     :term:`container` ID.

@@ -12,7 +12,7 @@ GetFile
 
 ..  default-domain:: http
 
-..  get:: /wopi*/files/(file_id)/contents
+..  get:: /wopi/files/(file_id)/contents
 
     The |operation| operation retrieves a file from a host.
 

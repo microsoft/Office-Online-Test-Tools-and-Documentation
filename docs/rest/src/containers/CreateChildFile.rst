@@ -12,7 +12,7 @@ CreateChildFile
 
 ..  default-domain:: http
 
-..  post:: /wopi*/containers/(container_id)
+..  post:: /wopi/containers/(container_id)
 
     The |operation| operation creates a new file in the provided :term:`container`. **The resulting file must be
     zero bytes in length.**
@@ -100,7 +100,7 @@ Name
     The **string** name of the newly created file without a path.
 
 Url
-    A **string** URI of the form ``http://server/<...>/wopi*/files/(file_id)?access_token=(access token)``, of the
+    A **string** URI of the form ``http://server/<...>/wopi/files/(file_id)?access_token=(access token)``, of the
     newly created file on the host. This URL is the :term:`WOPISrc` for the new file with an :term:`access token`
     appended. Or, stated differently, it is the URL to the host's :ref:`Files endpoint` for the new file, along with an
     :term:`access token`. A :method:`GET` request to this URL will invoke the :ref:`CheckFileInfo` operation.

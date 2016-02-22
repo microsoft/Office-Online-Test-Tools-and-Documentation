@@ -9,7 +9,7 @@ PutUserInfo
 ===========
 ..  default-domain:: http
 
-..  post:: /wopi*/files/(id)
+..  post:: /wopi/files/(id)
 
     The |operation| operation stores some basic user information on the host. When a host receives this request, they
     must store the UserInfo string which is contained in the body of the request. The UserInfo string should be
