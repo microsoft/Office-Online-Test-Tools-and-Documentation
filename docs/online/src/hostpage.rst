@@ -68,7 +68,7 @@ then dynamically submit it. This technique is illustrated in the sample host pag
     :language: html
     :linenos:
     :lineno-match:
-    :lines: 36-59
+    :lines: 36-61
 
 Note that in an actual implementation, the ``<OFFICE_ONLINE_ACTION_URL>``, ``<ACCESS_TOKEN_VALUE>``, and
 ``<ACCESS_TOKEN_TTL_VALUE>`` strings should be replaced with appropriate :ref:`action URL<Action URLs>`,
