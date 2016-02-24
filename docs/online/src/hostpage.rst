@@ -68,7 +68,7 @@ then dynamically submit it. This technique is illustrated in the sample host pag
     :language: html
     :linenos:
     :lineno-match:
-    :lines: 36-61
+    :lines: 39-64
 
 Note that in an actual implementation, the ``<OFFICE_ONLINE_ACTION_URL>``, ``<ACCESS_TOKEN_VALUE>``, and
 ``<ACCESS_TOKEN_TTL_VALUE>`` strings should be replaced with appropriate :ref:`action URL<Action URLs>`,
@@ -98,16 +98,19 @@ Applying appropriate CSS styles
 
 To ensure that the Office Online applications behave appropriately when displayed through the host page, the host page
 must apply some specific CSS styles to the Office Online iframe (lines 22-33) and the ``body`` element (lines 15-20) as
-well as set a ``viewport`` meta tag for mobile browsers (lines 11-12). All of these requirements are illustrated in the
+well as set a ``viewport`` meta tag for mobile browsers (lines 11-12). In addition, the host page should set an
+appropriate favicon for the page using the :ref:`favicon URL provided in WOPI discovery <favicons>`.
+
+All of these requirements are illustrated in the
 `sample host page <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/SampleHostPage.html>`_:
 
 ..  literalinclude:: ../../../samples/SampleHostPage.html
-    :caption: Markup from `SampleHostPage.html`_ illustrating appropriate styles in a host page
+    :caption: Markup from `SampleHostPage.html`_ illustrating appropriate styles and favicons in a host page
     :language: html
     :linenos:
     :lineno-match:
-    :lines: 3-34
-    :emphasize-lines: 9-10, 13-18, 20-31
+    :lines: 3-38
+    :emphasize-lines: 9-10, 12-13, 16-21, 23-34
 
 
 ..  Hyperlinks

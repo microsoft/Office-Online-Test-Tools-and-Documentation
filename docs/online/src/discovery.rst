@@ -397,3 +397,24 @@ Additional notes
 Depending on the specific scenario where action URLs are invoked, there are additional relevant components to action
 URLs. Since action URLs are typically invoked from the host page, these are covered in the
 :ref:`Host page` section.
+
+
+..  _favicons:
+
+Favicon URLs
+------------
+
+The discovery XML includes a URL to an appropriate `favicon <https://en.wikipedia.org/wiki/Favicon>`_ for all |wac|
+applications in the ``favIconUrl`` attribute of the ``app`` element. For example:
+
+..  code-block:: xml
+    :emphasize-lines: 2
+
+    <app name="Excel"
+         favIconUrl="https://excel.officeapps.live.com/x/_layouts/resources/FavIcon_Excel.ico"
+         checkLicense="true">
+        ...
+    </app>
+
+Hosts should use this URL as the favicon for their host page, so that the appropriate application icon is shown when
+|wac| is used.
