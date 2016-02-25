@@ -28,6 +28,22 @@ CloseUrl
 DownloadUrl
     If a DownloadUrl is not provided, |wac| will hide all UI to download the file.
 
+    If provided, Word and PowerPoint Online will display UI to download the file. When a user attempts to download
+    the file, Word and PowerPoint will ensure that the latest document content is saved back to the WOPI host before
+    navigating the user to the DownloadUrl to download the file.
+
+    ..  admonition:: Excel Online Note
+
+        Excel Online does not use the DownloadUrl when users click the :guilabel:`Download a Copy` button. Excel Online
+        always downloads the file directly from the |wac| server. This has the following side effects:
+
+        #.  Any content that Excel Online does not currently support, such as diagrams, are stripped from the
+            downloaded file.
+        #.  Excel Online does not guarantee that the latest document content is saved back to the WOPI host before
+            downloading the file.
+        #.  :guilabel:`Download a Copy` contains all the most recent document edits, even when the DownloadUrl is
+            implemented incorrectly and does not point to the latest version of the document.
+
     .. seealso:: :term:`DownloadUrl` in the WOPI REST documentation.
 
 FileSharingUrl

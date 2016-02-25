@@ -308,7 +308,12 @@ Hosts can return a number of URLs for the file that WOPI clients may navigate to
     DownloadUrl
         A user-accessible URI to the file intended to allow the user to download a copy of the file.
 
-        ..  tip::
+        ..  important::
+            This URI should directly download the file. In other words, WOPI clients expect that when directing users
+            to this URL, the file will be immediately downloaded. This URL should not direct the user to some
+            separate UI to download the file.
+
+        ..  important::
             This URI should always provide the most recent version of the file.
 
     FileSharingUrl
