@@ -13,6 +13,27 @@ co-authoring. However, the guidelines around file IDs and locks, as described in
 very important in order to enable co-authoring.
 
 
+..  _coauth benefits:
+
+Benefits from co-authoring support
+----------------------------------
+
+Editing documents requires that |wac| take a :term:`lock` on the file to ensure that only |wac| is writing to the
+file. In cases where co-authoring is not supported, this causes two problems.
+
+First, users are unable to make changes to the file while someone else is editing it. This problem is avoided when
+co-authoring is supported. With co-authoring in |wac|, users are never locked out of editing a document.
+
+Second, while |wac| makes every attempt to unlock files after users have finished editing documents, there are
+circumstances where this may not happen. If :ref:`Unlock` is not called successfully, then the file will stay locked
+until the lock times out. This can mean that a user can be locked out of editing a file even if they were the one
+that originally locked it. When co-authoring is supported, the fact that the file is locked is not a problem; |wac|
+will allow the user to edit the document as if he or she is 'co-authoring with him/herself'.
+
+Thus, in addition to the obvious benefits for multi-user editing that come along with real-time co-authoring,
+co-authoring in |wac| provides benefits for single-user editing as well.
+
+
 How co-authoring works in Office Online
 ---------------------------------------
 
