@@ -36,9 +36,13 @@ URLs are **valid** URLs for the :ref:`file contents endpoint` for a file with th
 
 However, the following URLs are **not valid**:
 
-* ``https://api.contoso.com/api_wopi/files/abc123/contents``
-* ``https://test.wopi.contoso.com/officeonline/files/abc123/contents``
-* ``https://wopi.contoso.com/wopi/files/ids/abc123/contents``
+* ``https://api.contoso.com/api_wopi/files/abc123/contents`` (invalid because the endpoint URL does not *start* with
+  ``/wopi``)
+* ``https://api.contoso.com/files/abc123/contents`` (invalid because the endpoint URL does not *start* with ``/wopi``)
+* ``https://test.wopi.contoso.com/officeonline/files/abc123/contents`` (invalid because the endpoint URL does not
+  *start* with ``/wopi``)
+* ``https://wopi.contoso.com/wopi/files/ids/abc123/contents`` (invalid because the endpoint URL contains ``/ids``,
+  which is not permitted)
 
 
 .. _Files endpoint:
