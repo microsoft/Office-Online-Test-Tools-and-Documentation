@@ -9,20 +9,25 @@ Opening files from your app in |Office iOS|
 In order to invoke |Office iOS| when opening an Office file from your app, you must use the URL schemes that Word,
 Excel, and PowerPoint for iOS register when they are installed.
 
-General information on the Office URL schemes can be found here:
-https://msdn.microsoft.com/en-us/library/office/dn906146.aspx#sectionSection1
+URL Schemes for Invoking Office
+-------------------------------
 
-In order to open files on your WOPI host, you must do the following:
+The following is the list of scheme names used to invoke Office:
 
-* Pass the :term:`WOPISrc` to the file via the URL schemes
-* Along with the WOPISrc of the file, you must include:
+* ms-word:
+* ms-powerpoint:
+* ms-excel:
 
-  * The service identifier, denoted by the ``|d|`` parameter
-  * The user identifier, denoted by the ``|e|`` parameter
-  * The file name, with extension, denoted by the ``|n|`` parameter
+The following information must be included along with the URL scheme: 
 
+* The mode to open the file in. Valid values are:
+  * ``ofv`` for opening as read-only
+  * ``ofe`` for opening for editing. 
+* The :term:`WOPISrc` to the file, denoted by the ``|u|`` parameter 
+* The service identifier, denoted by the ``|d|`` parameter
+* The user identifier, denoted by the ``|e|`` parameter
+* The file name, with extension, denoted by the ``|n|`` parameter
 * The source of the open action with ``|a|``. The value of this parameter can be either:
-
   * ``Web`` – to be used in the case where a website is invoking the protocol handler
   * ``App`` – to be used in the case where a native app is invoking the protocol handler
 
@@ -30,21 +35,19 @@ Example::
 
     ms-word:ofe|u|https://contoso/wopi/file/12312|d|Contoso|e|a3243d|n|document1.docx|a|App
 
+The URL used should be URL encoded. 
+
 Note that the file is opened directly against your service. Your app essentially passes the URL to the file to
 Office without passing the actual file. The Office app then opens the file directly using the WOPI protocol.
-
-In addition to the parameters described above, you may also include the passback parameters described in
-https://msdn.microsoft.com/EN-US/library/office/dn911482.aspx. This enables an in-app back button in Office that
-takes the user back to your app. This is in addition to the iOS9 platform-provided back button.
-
 
 Identifying supported Office versions
 -------------------------------------
 
-Before using the above URL schemes to invoke Office, you must do the following:
+Before using the URL schemes specified above to invoke Office, you must do the following:
 
-#.  Check that Office is installed. This can be done by verifying whether the Office URL schemes are registered. See
-    https://msdn.microsoft.com/EN-US/library/office/dn911482.aspx for more information.
+#.  Verify the particular Office application (Word, Excel, or PowerPoint) are installed. 
+
+ Use the iOS canOpenURL method to determine whether your application can open the resource. This method takes the URL for the resource as a parameter, and returns No if the application that accepts the URL is not available. If canOpenURL returns No, you’ll need to prompt the user to install Office. Contact Microsoft to obtain links to install Office specific to you. 
 
 #.  Check the version of Office installed is a supported version. This is done by verifying whether the following
     Office URL schemes are registered:
@@ -56,5 +59,25 @@ Before using the above URL schemes to invoke Office, you must do the following:
     ..  important::
 
         These URL schemes are only used to check if the currently installed Office supports opening files from a WOPI
-        host and not for invoking the Office apps. Invoking the apps is done using the URL schemes described at
-        https://msdn.microsoft.com/en-us/library/office/dn906146.aspx#sectionSection3.
+        host and not for invoking the Office apps. 
+
+(Optional) Passback protocol
+----------------------------
+If you want Office to return users to your iOS application when they choose the in app back arrow (distinct from the iOS back control), you will need to include the passback parameter when invoking Office. This is denoted by ``|p|`` followed by your app's registered URL scheme (without a colon). 
+
+You'll need to ensure that your application can properly handle the response from Office.
+
+Please provide your app's registered URL scheme as part of onboarding with Microsoft. 
+
+For security reasons, Office only returns users to the referring application if the file opened successfully. When the user chooses the back arrow, Office responds to the invoking application with the passback protocol, open mode, URL, upload pending status, and ``document context``. The upload pending status uses the descriptor ``|z|``, and is either yes or no. 
+
+``document context`` is a string you provide via the ``|c|`` parameter when invoking Office. Office doesn't use this parameter; it is purely for your use, as needed by your app.  Office does not limit the length of the string, beyond any limits imposed by the operating system. 
+
+Schema format invoking your app when user choses back::
+
+    <app protocol>:ofe|u|<URL>|z|<yes or no>|c|<doc context> 
+
+Example::
+
+    contosodrive:ofe|u|https://contoso/Q4/budget.docx|z|no|c|folderviewQ4
+
