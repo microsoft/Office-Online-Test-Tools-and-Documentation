@@ -336,6 +336,9 @@ Placeholder values
         This value can be set to ``true`` to load a view of a document that does not start or join a :term:`broadcast`
         session. This view looks and behaves like a regular broadcast frame.
 
+    DISABLE_CHAT
+        This value can be set to ``1`` to disable in-document chat functionality.
+
     FULLSCREEN
         ..  note:: This value is used in :term:`broadcast` related actions only.
 
