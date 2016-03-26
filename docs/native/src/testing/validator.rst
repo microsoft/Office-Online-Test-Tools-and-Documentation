@@ -1,3 +1,3 @@
 
-|stub-icon| Using the Validator App Without |wac| Integration
-----------------------------------------------------------------------
+|stub-icon| Using the validator app without |wac| integration
+=============================================================

@@ -1,3 +1,3 @@
 
-|stub-icon| Launch Requirements
-------------------------------------------------------
+|stub-icon| Launch requirements
+===============================

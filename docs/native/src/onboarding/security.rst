@@ -1,3 +1,3 @@
 
-|stub-icon| Security and Operational Compliance
-------------------------------------------------------
+|stub-icon| Security and operational compliance
+===============================================

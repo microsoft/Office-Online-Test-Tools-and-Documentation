@@ -1,6 +1,6 @@
 
-|stub-icon| Onboarding Information
-------------------------------------------------------
+|stub-icon| Onboarding information
+==================================
 
 ..  spelling::
 

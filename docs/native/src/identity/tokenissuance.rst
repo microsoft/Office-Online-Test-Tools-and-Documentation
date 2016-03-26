@@ -1,3 +1,3 @@
 
-|stub-icon| Token Issuance URL Requirements
-------------------------------------------------------
+|stub-icon| Token Issuance URL requirements
+===========================================

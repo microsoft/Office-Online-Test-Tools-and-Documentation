@@ -1,3 +1,3 @@
 
-|stub-icon| Partner Test Cases
-------------------------------------------------------
+|stub-icon| Partner test cases
+==============================

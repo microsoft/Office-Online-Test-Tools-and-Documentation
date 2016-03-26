@@ -1,3 +1,3 @@
 
-|stub-icon| |Office iOS| specific Url Parameters for OAuth2 Sign-in Page
-------------------------------------------------------------------------
+|stub-icon| |Office iOS| specific url parameters for OAuth2 sign-in page
+========================================================================
