@@ -48,3 +48,52 @@ To integrate your application with |Office iOS|, you need to do the following:
 
     /scenarios/browse
     /scenarios/from_app
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Onboarding
+
+    /onboarding/onboarding
+    /onboarding/security
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Identity
+
+    /identity/bootstrapper
+    /identity/tokenissuance
+    /identity/specifytokenissuance
+    /identity/sessioncontext
+    /identity/oauthparams
+    /identity/clientsecret
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Testing
+    
+    /testing/testcases
+    /testing/validator
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Shipping
+
+    /shipping/launchrequirements
+
+..  toctree::
+    :maxdepth: 2
+    :glob:
+    :hidden:
+    :caption: Reference
+
+    /reference/faq
+    /reference/knownissues
+
