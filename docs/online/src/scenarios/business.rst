@@ -52,6 +52,8 @@ Once signed in, Office Online will verify that the user has a valid Office 365 s
 Office Online will redirect the user back to the :term:`HostEditUrl` and the user can edit documents.
 
 
+..  _implement PutUserInfo:
+
 Tracking users' subscription status
 -----------------------------------
 

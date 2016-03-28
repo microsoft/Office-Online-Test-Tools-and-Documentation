@@ -36,8 +36,8 @@ Editing Office files
 --------------------
 
 Editing is a core part of Office Online integration. When you integrate with Office Online, your users can edit
-Excel, PowerPoint, and Word files directly in the browser. Right now, one user at a time can edit files; in the
-future, collaborative editing scenarios will be available. Here are the key points to note about editing.
+Excel, PowerPoint, and Word files directly in the browser. In addition, users can :ref:`edit documents collaboratively
+with other users using Office Online <coauth>`. Here are the key points to note about editing.
 
 ===========================================  ==============
 Consumers                                    Business users
@@ -45,6 +45,11 @@ Consumers                                    Business users
 Do not need an Office 365 subscription.      Do need an Office 365 subscription to edit files, but not to view files.
 Do not have to log on to use Office Online.  Are prompted to authenticate with an Office 365 or a Microsoft account to edit.
 ===========================================  ==============
+
+..  seealso::
+
+    :ref:`coauth`
+    :ref:`Business editing`
 
 
 Integration process
@@ -55,10 +60,10 @@ few simple REST endpoints. If you are familiar with existing Office protocols, n
 the [MS-FSSHTTP]: File Synchronization via SOAP over HTTP Protocol (Cobalt). At a high level, to integrate with
 Office Online, you:
 
-* Read XML from Office Online that describes the capabilities of Office Online.
-* Implement REST endpoints that Office Online uses to learn about, fetch, and update files. To do this, you use the
-  WOPI protocol.
-* Provide an HTML page (or pages) that wrap Office Online.
+* Read XML from Office Online that describes the capabilities of Office Online. This is called :ref:`WOPI discovery`.
+* Implement :ref:`REST endpoints <endpoints>` that Office Online uses to learn about, fetch, and update files. To do
+  this, you implement the server side of the WOPI protocol.
+* Provide an HTML page (or pages) that wrap Office Online. This page is called the :ref:`host page`.
 
 The following figure shows the WOPI protocol workflow.
 
@@ -81,10 +86,9 @@ the risk of token leaks.
 Conflict resolution
 ~~~~~~~~~~~~~~~~~~~
 
-Although Office Online does not support multiuser authoring scenarios, you are responsible for managing conflicts
-either with some form of file locking, or by using another type of conflict resolution.
-
-..  todo:: :issue:`8`
+Office Online does support multiuser authoring scenarios if all users are using Office Online. However, you are
+responsible for managing conflicts that may come from applications other than Office Online, either with some form of
+file locking, or by using another type of conflict resolution.
 
 File IDs
 ~~~~~~~~
@@ -95,7 +99,7 @@ uninterrupted editing experience for your users.
 
 ..  seealso:: :term:`File ID`
 
-File Versions
+File versions
 ~~~~~~~~~~~~~
 
 You should have a mechanism by which users can clearly identify file versions through the REST APIs. Because files
@@ -120,10 +124,10 @@ integration is as secure as possible, ensure that:
 * Initial requests to Office Online are made by using POST, where the access token is in the body of the POST request.
 
 Office Online identity can be established by using a public :ref:`proof key <Proof Keys>` to decrypt part of the WOPI
-requests. Also, the Office Online file cache indexes stored file contents by using a SHA256 hash. You can pass in
-the hash using the :term:`SHA256` property in the :ref:`CheckFileInfo` response. The hash is usually generated from
-the file itself, but it might also be generated from the file ID and version. To ensure that users can't force a
-cache collision and view the wrong file, no user-provided information is used to generate the hash.
+requests. Also, the Office Online file cache indexes stored file contents by using a SHA256 hash as the cache key. You
+can pass Office Online the hash value using the :term:`SHA256` property in the :ref:`CheckFileInfo` response. If
+not provided, Office Online will generate a cache key from the file ID and version. To ensure that users can't force a
+cache collision and view the wrong file, no user-provided information is used to generate the cache key.
 
 
 Managing Office 365 subscriptions
@@ -133,9 +137,8 @@ Business users require an Office 365 subscription to edit files in Office Online
 is to have users sign in with a Microsoft account or other valid identity. This establishes that they have the
 correct subscription. To limit the number of times a user needs to sign in, Office Online first checks for a cookie.
 
-We are currently working with partners to develop different models for establishing that users have permission to
-edit files. These models might involve passing some information back to the partner so that users only have to sign
-in occasionally.
+To provide a better experience for users with Office 365 subscriptions, hosts can optionally implement the
+:ref:`PutUserInfo` WOPI operation. See :ref:`implement PutUserInfo` for more information.
 
 
 Interested?
