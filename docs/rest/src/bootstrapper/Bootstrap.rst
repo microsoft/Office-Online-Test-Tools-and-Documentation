@@ -132,7 +132,7 @@ returned in a :statuscode:`401` response to an unauthenticated request is as fol
 |                   | code can be redeemed for an access and |          |                                          |
 |                   | (optionally) refresh token.            |          |                                          |
 +-------------------+----------------------------------------+----------+------------------------------------------+
-| providerId        | A well-known string (as registered     | No       | ``ContosoService``                       |
+| providerId        | A well-known string (as registered     | No       | ``tp_contoso``                           |
 |                   | with Microsoft Office) that uniquely   |          |                                          |
 |                   | identifies the host.                   |          |                                          |
 |                   |                                        |          |                                          |
@@ -154,6 +154,6 @@ Sample response:
 
     HTTP/1.1 401 Unauthorized
     <removed for brevity>
-    WWW-Authenticate: Bearer authorization_uri="https://foo.com/api/oauth2/authorize",tokenIssuance_uri="https://foo.com/api/oauth2/token",providerId="ContosoProvider"
+    WWW-Authenticate: Bearer authorization_uri="https://contoso.com/api/oauth2/authorize",tokenIssuance_uri="https://contoso.com/api/oauth2/token",providerId="tp_contoso"
     Date: Wed, 24 Jun 2015 21:52:44 GMT
 
