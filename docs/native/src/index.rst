@@ -97,4 +97,5 @@ To integrate your application with |Office iOS|, you need to do the following:
 
     /reference/faq
     /reference/knownissues
+    /reference/glossary
 
