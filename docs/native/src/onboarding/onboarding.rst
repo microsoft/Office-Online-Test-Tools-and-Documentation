@@ -45,18 +45,9 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 | BootstrapUrl   | String      | \https://contoso.com/wopibootstrapper      | The full path to the Bootstrapper endpoint. Must |
 |                |             |                                            | end in wopibootstrapper.                         |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| Provider       | String      | Examples:                                  | Used to show more information about the service. |
-| Description    |             |                                            |                                                  |
-|                |             | * Twitter: "Find out what’s happening,     | *Needs maximum length restriction.*              |
-|                |             |   right now, with the people and           |                                                  |
-|                |             |   organizations you care about."           |                                                  |
-|                |             | * Flickr: "Share your life in photos."     |                                                  |
-|                |             | * Facebook: "Facebook helps you            |                                                  |
-|                |             |   connect and share with the people in     |                                                  |
-|                |             |   your life."                              |                                                  |
-|                |             | * OneDrive: "Free online storage.          |                                                  |
-|                |             |   Store, access and share thousands of     |                                                  |
-|                |             |   documents on OneDrive."                  |                                                  |
+| Provider       | String      | Contoso- "Free online storage.             | Used to show more information about the service. |
+| Description    |             | Store, access and share thousands          |                                                  |
+|                |             | of documents."                             |                                                  |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | Client ID      | String      | s6BhdRkqt3                                 | OAuth2 Client ID (for Office)                    |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+

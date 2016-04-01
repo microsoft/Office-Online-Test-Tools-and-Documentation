@@ -57,7 +57,6 @@ To integrate your application with |Office iOS|, you need to do the following:
     :caption: Onboarding
 
     /onboarding/onboarding
-    /onboarding/security
 
 ..  toctree::
     :maxdepth: 2
