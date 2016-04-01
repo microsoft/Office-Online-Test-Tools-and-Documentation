@@ -9,8 +9,11 @@ Contoso
 datacenter
 datacenters
 domaintools
+Facebook
 favicon
+Flickr
 gauge
+ID
 iframe
 iframes
 iOS
@@ -18,6 +21,9 @@ Indices
 IP
 metadata
 OAuth
+onboard
+onboarding
+Onboarding
 online
 Online
 pre
@@ -32,6 +38,7 @@ sphinxcontrib
 timestamp
 Trello
 ttl
+URI
 Url
 urlsrc
 validator
