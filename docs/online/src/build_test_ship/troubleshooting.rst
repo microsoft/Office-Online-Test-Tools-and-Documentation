@@ -93,7 +93,7 @@ Online in the **X-UserSessionId** request header, and it is included in all Post
 
 The easiest way to retrieve the session ID is to use Fiddler, as described previously. However, you can also use the
 request tracking features in the Chrome and Internet Explorer developer tools to capture HTTP requests and determine
-the value of the **X-WOPI-UserSessionId** response header.
+the value of the **X-UserSessionId** response header.
 
 ..  figure:: /images/chrome_session_id.png
     :alt: An image showing the Chrome developer tools.
