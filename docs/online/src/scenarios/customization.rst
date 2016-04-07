@@ -164,3 +164,48 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
             `HTML5 Web Messaging protocol <http://www.w3.org/TR/webmessaging/>`_. Therefore, it must include the
             scheme and host name. If you are serving your pages on a non-standard port, you must include the port as
             well. The literal string ``*``, while supported in the PostMessage protocol, is not allowed by |wac|.
+
+
+.. _viewer customization:
+
+Customizing the Office Online viewer UI using CheckFileInfo
+-----------------------------------------------------------
+
+The following table describes all available buttons and UI in the Office Online viewer and what :ref:`CheckFileInfo`
+properties can be used to remove them.
+
+===========================  ==========================================================================================
+Button                       How to disable
+===========================  ==========================================================================================
+Edit in Browser              Two options:
+
+                             #. Omit the :term:`HostEditUrl` and :term:`EditModePostMessage` properties from the
+                                CheckFileInfo response
+                             #. Set :term:`UserCanWrite` to ``false`` in the CheckFileInfo response (or omit it since
+                                the default for all boolean properties in CheckFileInfo is ``false``)
+Share                        Omit the :term:`FileSharingUrl` and :term:`FileSharingPostMessage` properties from the
+                             CheckFileInfo response
+Download / Download as PDF   Omit the :term:`DownloadUrl` property from the CheckFileInfo response
+Print                        Set the :term:`DisablePrint` property to ``true`` in the CheckFileInfo response
+Exit / Close                 Omit the :term:`CloseUrl` and :term:`ClosePostMessage` properties from the CheckFileInfo
+                             response
+Comments                     For Word only, set the :term:`UserCanWrite` property to ``false`` in the CheckFileInfo
+                             response (or omit it since the default for all boolean properties in CheckFileInfo is
+                             ``false``)
+
+                             Can't be hidden in PowerPoint
+Find                         Can't be hidden
+Translate                    Can't be hidden
+Help                         Can't be hidden
+Give Feedback                Can't be hidden
+Terms of Use                 Can't be hidden
+Privacy and Cookies          Can't be hidden
+Accessibility Mode           Can't be hidden
+Start Slide Show             Can't be hidden
+Embed                        Omit the :term:`HostEmbeddedViewUrl` and :term:`HostEmbeddedEditUrl` properties from the
+                             CheckFileInfo response
+Refresh Selected Connection  Can't be hidden
+Refresh All Connections      Can't be hidden
+Calculate Workbook           Can't be hidden
+Save a Copy                  Set the :term:`UserCanNotWriteRelative` property to ``true`` in the CheckFileInfo response
+===========================  ==========================================================================================
