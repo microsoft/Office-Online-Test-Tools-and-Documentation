@@ -24,6 +24,7 @@ To integrate your application with |Office iOS|, you need to do the following:
    view or edit in |Office iOS|. The set of WOPI operations that must be supported is described
    in the section titled :ref:`requirements`.
 
+#. Provide the required on-boarding information as described in the section titled :ref:`onboarding`.
 
 ..  Navigation/TOC
 
@@ -56,7 +57,6 @@ To integrate your application with |Office iOS|, you need to do the following:
     :caption: Onboarding
 
     /onboarding/onboarding
-    /onboarding/security
 
 ..  toctree::
     :maxdepth: 2
@@ -96,4 +96,5 @@ To integrate your application with |Office iOS|, you need to do the following:
 
     /reference/faq
     /reference/knownissues
+    /reference/glossary
 
