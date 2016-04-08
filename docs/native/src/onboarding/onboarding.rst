@@ -1,3 +1,6 @@
+
+..  _onboarding:
+
 Onboarding information
 ======================
 
