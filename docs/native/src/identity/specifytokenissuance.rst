@@ -21,10 +21,10 @@ described at :ref:`ClientBootstrapper`.
 If the token endpoint URL cannot be determined before the end-user has completed the sign-in process, 
 an alternative token endpoint URL may be supplied.
 
-This is done via a tk= URL parameter appended to the value of the
+This is done via a ``tk=`` URL parameter appended to the value of the
 :http:header:`Location` header from the :http:statuscode:`302` response at the end of the sign-in flow.
 
-    ..  important:: The contents of the tk= parameter must be URL encoded.
+    ..  important:: The contents of the ``tk=`` parameter must be URL encoded.
 
 For example, to return the following information:
 
