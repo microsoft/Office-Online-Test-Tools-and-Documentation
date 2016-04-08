@@ -52,6 +52,9 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 | Client ID      | String      | s6BhdRkqt3                                 | OAuth2 Client ID (for Office)                    |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | Client Secret  | String      | 7FjfpZBr1K3tDRbnfVdmIw98                   | OAuth2 Client Secret (for Office).               |
+|                |             |                                            |                                                  |
+|                |             |                                            | Please do not provide this in email. This needs  |
+|                |             |                                            | to be transferred securely.                      |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | Client App     | String      | Office                                     | Please set this as the app name.                 |
 | Name           |             |                                            |                                                  |
