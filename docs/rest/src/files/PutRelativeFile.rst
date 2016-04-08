@@ -13,7 +13,7 @@ PutRelativeFile
     Url
 
 
-:Required for: |web| |ios|
+:Required for: |web|
 
 ..  default-domain:: http
 
