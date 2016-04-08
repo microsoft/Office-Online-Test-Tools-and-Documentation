@@ -124,13 +124,16 @@ returned in a :statuscode:`401` response to an unauthenticated request is as fol
 +===================+========================================+==========+==========================================+
 | Bearer            | n/a                                    | Yes      | ``Bearer``                               |
 +-------------------+----------------------------------------+----------+------------------------------------------+
-| authorization_uri | The URL of the OAUTH endpoint          | Yes      | https://contoso.com/api/oauth2/authorize |
-|                   | to begin authentication                |          |                                          |
-|                   | against.                               |          |                                          |
+| authorization_uri | The URL of the OAuth2 Authorization    | Yes      | https://contoso.com/api/oauth2/authorize |
+|                   | Endpoint to begin authentication       |          |                                          |
+|                   | against as described at:               |          |                                          |
+|                   | :rfc:`6749#section-3.1`                |          |                                          |
 +-------------------+----------------------------------------+----------+------------------------------------------+
-| tokenIssuance_uri | The URL of the where the authorization | Yes      | https://contoso.com/api/oauth2/token     |
-|                   | code can be redeemed for an access and |          |                                          |
-|                   | (optionally) refresh token.            |          |                                          |
+| tokenIssuance_uri | The URL of the OAuth2 Token Endpoint   | Yes      | https://contoso.com/api/oauth2/token     |
+|                   | where authentication code can be       |          |                                          |
+|                   | redeemed for an access and             |          |                                          |
+|                   | (optional) refresh token. See Token    |          |                                          |
+|                   | Endpoint at: :rfc:`6749#section-3.2`   |          |                                          |
 +-------------------+----------------------------------------+----------+------------------------------------------+
 | providerId        | A well-known string (as registered     | No       | ``tp_contoso``                           |
 |                   | with Microsoft Office) that uniquely   |          |                                          |
