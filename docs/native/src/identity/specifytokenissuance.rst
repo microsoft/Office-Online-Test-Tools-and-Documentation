@@ -2,6 +2,19 @@
 Post-Authorization token endpoint
 =================================
 
+..  spelling::
+
+    abcdefg
+    api
+    Dstuff
+	Fapi
+    Fcontoso
+    Fextra
+    Ftoken
+    https
+    localhost
+    tk
+
 The token endpoint URL (:rfc:`6749#section-3.2`) is normally obtained from the initial unauthenticated call 
 described at :ref:`ClientBootstrapper`.
 
@@ -16,7 +29,7 @@ This is done via a tk= URL parameter appended to the value of the
 For example, to return the following information:
 
 * Redirection URI is \https://localhost
-* Authorization code (:rfc:`6749#section-4.1.2`) is “abcdefg”
+* Authorization code (:rfc:`6749#section-4.1.2`) is "abcdefg"
 * Token endpoint URL is \https://contoso.com/api/token/?extra=stuff
 
 The :http:header:`Location` header in the :http:statuscode:`302` response would be:
