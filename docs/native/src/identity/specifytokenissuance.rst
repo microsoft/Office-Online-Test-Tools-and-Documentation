@@ -7,7 +7,7 @@ Post-Authorization token endpoint
     abcdefg
     api
     Dstuff
-	Fapi
+    Fapi
     Fcontoso
     Fextra
     Ftoken
