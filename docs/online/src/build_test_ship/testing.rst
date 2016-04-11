@@ -34,6 +34,13 @@ value is supposed to be a **string**, you can return an **int** and the tests wi
 Office Online applications that are difficult to diagnose. For this reason, check that your return types are accurate.
 
 
+Non-empty response body
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Most WOPI operations do not return a response body. You should not return a response body unless the operation
+specifically requires it. For example, successful :ref:`PutFile` responses should not have a body.
+
+
 |wac| feature verification
 --------------------------
 
@@ -74,6 +81,14 @@ the rename operation behaves as expected. To test this:
 If you are displaying the document name in the browser window/tab using the HTML ``title`` tag, you should check that
 the document name is updated after the file is renamed. If it is not, check that you are properly handling the
 :js:data:`File_Rename` PostMessage.
+
+
+Save As in Excel Online
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Excel Online supports saving an open document as a new copy of that document using the
+:menuselection:`File --> Save As --> Save As` button. This feature uses the :ref:`PutRelativeFile` WOPI operation.
+You should test that this feature works as expected.
 
 
 Co-authoring
