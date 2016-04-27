@@ -338,14 +338,9 @@ Hosts can return a number of URLs for the file that WOPI clients may navigate to
     HostEditUrl
         A URI to a :term:`host page` that loads the :wopi:action:`edit` WOPI action.
 
-    HostEmbeddedEditUrl
-        A URI to a web page that provides access to an editing experience for the file that can be embedded in
-        another HTML page. For example, a page that provides an HTML snippet that can be inserted into the HTML of a
-        blog.
-
     HostEmbeddedViewUrl
         A URI to a web page that provides access to a viewing experience for the file that can be embedded in another
-        HTML page. For example, a page that provides an HTML snippet that can be inserted into the HTML of a blog.
+        HTML page. This is typically a URI to a :term:`host page` that loads the :wopi:action:`embedview` WOPI action.
 
     HostViewUrl
         A URI to a :term:`host page` that loads the :wopi:action:`view` WOPI action. This URL is used by Office
@@ -551,6 +546,11 @@ because they are pending deprecation or they are designated for future features 
     ProtectInClient
         A **Boolean** value that indicates that the WOPI client should take measures to prevent copying and printing of
         the file. This is intended to help enforce :abbr:`IRM (Information Rights Management)`.
+
+    HostEmbeddedEditUrl
+        A URI to a web page that provides access to an editing experience for the file that can be embedded in
+        another HTML page. For example, a page that provides an HTML snippet that can be inserted into the HTML of a
+        blog.
 
 
 Deprecated properties
