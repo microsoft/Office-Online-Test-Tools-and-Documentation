@@ -38,6 +38,12 @@ Application and file type icons
 As part of the Cloud Storage Partner Program, Microsoft will provide a 'branding toolkit' that includes proper file
 type and application icons in various sizes, as well as vector-based image formats for re-sizing.
 
+..  tip::
+
+    The branding toolkit can be found in the Office 365 Cloud Storage Partner Program Yammer group, in the
+    *Network Resources* section in the right sidebar. All O365 Cloud Storage partners should have access to this
+    Yammer group.
+
 You should use these icons as follows:
 
 #.  When displaying an Office file, either individually or as part of a list of files, use the file type icons. Do
