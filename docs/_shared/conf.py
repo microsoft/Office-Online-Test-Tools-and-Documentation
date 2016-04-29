@@ -105,4 +105,4 @@ http_headers_ignore_prefixes = ['X-WOPI-']
 
 # Configure sphinxcontrib.spelling
 spelling_show_suggestions = True
-spelling_word_list_filename = (shared_content_path / 'spelling_wordlist.txt').abspath().normpath()
+spelling_word_list_filename = str((shared_content_path / 'spelling_wordlist.txt').abspath().normpath())
