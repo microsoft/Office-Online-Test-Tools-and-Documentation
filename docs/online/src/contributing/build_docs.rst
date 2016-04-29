@@ -7,7 +7,7 @@ Building this documentation locally
 ..  spelling::
 
     exe
-
+    virtualenv
 
 If you want to build this documentation locally, use the following steps:
 
