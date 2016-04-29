@@ -185,6 +185,7 @@ Finally, **if you are looking for more details about the process for shipping yo
     /faq
     /known_issues
     /glossary
+    /legal
 
 ..  toctree::
     :maxdepth: 2
