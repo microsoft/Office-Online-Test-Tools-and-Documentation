@@ -78,6 +78,44 @@ Using Fiddler to trace HTTP activity is straightforward:
    (:menuselection:`File --> Save --> All sessions...`). The resulting file should have the file extension ``.saz``.
 
 
+Using Fiddler in Linux or OS X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fiddler works very well in Windows, but can also be used in Linux and OS X using Mono. See
+http://fiddler.wikidot.com/mono for more information on installing and configuring it.
+
+
+..  _har:
+
+Alternatives to Fiddler: HTTP Archives (HAR)
+--------------------------------------------
+
+If you cannot use Fiddler to get session traces, you can also use the Chrome browser developer tools to save HTTP
+Archive (HAR) files containing the HTTP requests made by the browser. To do this, do the following:
+
+#.  Open the Chrome developer tools and select the :guilabel:`Network` tab.
+#.  Check the :guilabel:`Preserve log` check box if you wish to retain the request log across multiple page
+    navigations. This makes the network tracing behave more like Fiddler, and makes it less likely that you'll lose
+    your request log by accidentally refreshing the page or navigating away before you save the log. Office Online
+    applications are single-page applications, so you don't *need* to check this if you're only planning to trace a
+    single session.
+
+    ..  figure:: /images/chrome_network_tab.png
+        :alt: An image showing the :guilabel:`Network` tab in the Chrome developer tools.
+
+#.  After you are done reproducing the issue, right-click in the network view and select the
+    :guilabel:`Save as HAR with Content` option.
+
+    ..  figure:: /images/chrome_save_as_har.png
+        :alt: An image showing the :guilabel:`Save as HAR with Content` option in Chrome.
+
+#.  Zip the resulting HAR file, since they can be quite large and generally compress well.
+
+..  tip::
+    Other browsers' developer tools have similar capabilities to Chrome to save session HTTP requests as an HTTP
+    Archive.
+
+
 ..  _session id:
 
 Session IDs
@@ -107,6 +145,41 @@ the value of the **X-UserSessionId** response header.
 
 Full Fiddler traces are always preferred, but in cases where they're not available, session IDs can still be used by
 Microsoft engineers to retrieve Office Online server logs.
+
+
+..  _fiddler not running:
+
+Getting session IDs after an error has occurred
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In some cases, you may not be running Fiddler or browser developer tools when your session encounters an error. In
+these cases, the |wac| application will display an error either in a modal dialog or in a yellow bar at the top of
+the document below the ribbon.
+
+Sometimes the error dialog will include the session ID in the dialog itself:
+
+..  figure:: /images/error_with_session_id_and_exit_button.png
+    :alt: An image of an error dialog in Word Online that includes a session ID.
+
+In such cases, you can copy the session ID from the error dialog.
+
+..  tip::
+    **Please do not simply send a screen shot of the error dialog.** Copy the session ID as text and send the
+    session ID itself to Microsoft engineers. If you send a screen shot, the Microsoft engineer will be forced to
+    transcribe the session ID from the image, which is error-prone and tedious. Always provide the session ID as text.
+
+In other cases, the session ID might not be available in the UI.
+
+..  figure:: /images/error_bizbar.png
+    :alt: An image of an error in Word Online displayed in a yellow bar under the ribbon.
+
+At this point, it is still often possible to get the session ID by using the following steps:
+
+#.  Before closing the browser, refreshing the page, or clicking any buttons in the dialog or notification bar,
+    start Fiddler or open the browser developer tools.
+#.  Navigate away from the Office Online application or click a button in the dialog or notification bar.
+#.  You should see a request to either `WsaUpload.ashx` or `RemoteUls.ashx`. The response to those requests should
+    include the **X-UserSessionId** header with the session ID.
 
 
 Correlation IDs
