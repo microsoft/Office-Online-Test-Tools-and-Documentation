@@ -103,11 +103,15 @@ Archive (HAR) files containing the HTTP requests made by the browser. To do this
     ..  figure:: /images/chrome_network_tab.png
         :alt: An image showing the :guilabel:`Network` tab in the Chrome developer tools.
 
+        :guilabel:`Network` tab in the Chrome developer tools
+
 #.  After you are done reproducing the issue, right-click in the network view and select the
     :guilabel:`Save as HAR with Content` option.
 
     ..  figure:: /images/chrome_save_as_har.png
-        :alt: An image showing the :guilabel:`Save as HAR with Content` option in Chrome.
+        :alt: An image showing the :guilabel:`Save as HAR with Content` option in the Chrome developer tools.
+
+        :guilabel:`Save as HAR with Content` option in the Chrome developer tools
 
 #.  Zip the resulting HAR file, since they can be quite large and generally compress well.
 
