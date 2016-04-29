@@ -11,7 +11,7 @@ DeleteFile
 
 ..  default-domain:: http
 
-..  post:: /wopi/files/(container_id)
+..  post:: /wopi/files/(file_id)
 
     The |operation| operation deletes a file from a host.
 
