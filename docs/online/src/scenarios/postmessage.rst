@@ -42,8 +42,11 @@ All messages posted to and from the Office Online application frame are posted u
     **MessageId** *(string)*
         The name of the message being posted.
     **SendTime** *(long)*
-        The time the message was sent, in Unix time (milliseconds since
-        midnight 1 January 1970 UTC).
+        The time the message was sent, expressed as milliseconds since
+        midnight 1 January 1970 UTC.
+
+        ..  tip:: You can get this value in most modern browsers using the ``Date.now()`` method in JavaScript.
+                  
     **Values** *(JSON-formatted object)*
         The data associated with the message. This varies per message.
 
@@ -53,11 +56,11 @@ The following example shows the msg parameter for the :data:`Host_PerfTiming` me
 
     {
         "MessageId": "Host_PerfTiming",
-        "SendTime": 1329014075,
+        "SendTime": 1329014075000,
         "Values": {
-            "Click": 1329014073,
-            "Iframe": 1329014080,
-            "HostFrameFetchStart": 1329014173,
+            "Click": 1329014074800,
+            "Iframe": 1329014074950,
+            "HostFrameFetchStart": 1329014074970,
             "RedirectCount": 1
         }
     }
@@ -99,7 +102,7 @@ You can send the following messages; all others are ignored:
 
         {
             "MessageId": "Blur_Focus",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": { }
         }
 
@@ -122,7 +125,7 @@ You can send the following messages; all others are ignored:
 
         {
             "MessageId": "Grab_Focus",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": { }
         }
 
@@ -160,11 +163,11 @@ You can send the following messages; all others are ignored:
 
         {
             "MessageId": "Host_PerfTiming",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": {
-                "Click": 1329014073,
-                "Iframe": 1329014080,
-                "HostFrameFetchStart": 1329014173,
+                "Click": 1329014074800,
+                "Iframe": 1329014074950,
+                "HostFrameFetchStart": 1329014074970,
                 "RedirectCount": 1
             }
         }
@@ -209,7 +212,7 @@ You can send the following messages; all others are ignored:
 
         {
             "MessageId": "Host_PostmessageReady",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": { }
         }
 
@@ -292,9 +295,9 @@ every outgoing PostMessage:
 
         {
             "MessageId": "App_LoadingStatus",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": {
-                "DocumentLoadedTime": 1329014073,
+                "DocumentLoadedTime": 1329014074983,
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "en-us"
             }
@@ -321,7 +324,7 @@ every outgoing PostMessage:
 
         {
             "MessageId": "Edit_Notification",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "en-us"
@@ -349,7 +352,7 @@ every outgoing PostMessage:
 
         {
             "MessageId": "File_Rename",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": {
                 "NewName": "Renamed Document",
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
@@ -377,7 +380,7 @@ every outgoing PostMessage:
 
         {
             "MessageId": "UI_Close",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "en-us"
@@ -408,7 +411,7 @@ every outgoing PostMessage:
 
         {
             "MessageId": "UI_Edit",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "en-us"
@@ -434,7 +437,7 @@ every outgoing PostMessage:
 
         {
             "MessageId": "UI_Sharing",
-            "SendTime": 1329014075,
+            "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "en-us"
