@@ -179,10 +179,10 @@ Button                       How to disable
 ===========================  ==========================================================================================
 Edit in Browser              Two options:
 
+                             #. **(preferred)** Set :term:`UserCanWrite` to ``false`` in the CheckFileInfo response (or
+                                omit it since the default for all boolean properties in CheckFileInfo is ``false``)
                              #. Omit the :term:`HostEditUrl` and :term:`EditModePostMessage` properties from the
                                 CheckFileInfo response
-                             #. Set :term:`UserCanWrite` to ``false`` in the CheckFileInfo response (or omit it since
-                                the default for all boolean properties in CheckFileInfo is ``false``)
 Share                        Omit the :term:`FileSharingUrl` and :term:`FileSharingPostMessage` properties from the
                              CheckFileInfo response
 Download / Download as PDF   Omit the :term:`DownloadUrl` property from the CheckFileInfo response
