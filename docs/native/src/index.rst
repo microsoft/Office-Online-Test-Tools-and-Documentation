@@ -38,7 +38,7 @@ To integrate your application with |Office iOS|, you need to do the following:
     /overview
     /differences
     /wopi_requirements
-    WOPI REST API Reference <https://wopi.readthedocs.org/projects/wopirest/>
+    WOPI REST API Reference <https://wopi.readthedocs.io/projects/wopirest/>
 
 
 ..  toctree::

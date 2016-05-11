@@ -13,21 +13,21 @@ project = u'Office Online Integration Documentation'
 # noinspection PyUnresolvedReferences
 intersphinx_mapping = {
     'wopirest':
-        ('https://wopi.readthedocs.org/projects/wopirest/en/latest/',
+        ('https://wopi.readthedocs.io/projects/wopirest/en/latest/',
          (
              # Try to load from the locally built docs first
              (rest_doc_path / local_object_inventory_path).normpath(),
 
              # Fall back to loading from the built docs on readthedocs
-             'https://wopirest.readthedocs.org/' + rtd_object_inventory_path
+             'https://wopirest.readthedocs.io/' + rtd_object_inventory_path
          )),
     'native':
-        ('https://wopi.readthedocs.org/projects/officewopi/en/latest/',
+        ('https://wopi.readthedocs.io/projects/officewopi/en/latest/',
          (
              # Try to load from the locally built docs first
              (native_doc_path / local_object_inventory_path).normpath(),
 
              # Fall back to loading from the built docs on readthedocs
-             'https://officewopi.readthedocs.org/' + rtd_object_inventory_path
+             'https://officewopi.readthedocs.io/' + rtd_object_inventory_path
          )),
 }

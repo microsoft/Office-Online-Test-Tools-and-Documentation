@@ -102,7 +102,7 @@ Finally, **if you are looking for more details about the process for shipping yo
     :name: overviewtoc
 
     /overview
-    WOPI REST API Reference <https://wopi.readthedocs.org/projects/wopirest/>
+    WOPI REST API Reference <https://wopi.readthedocs.io/projects/wopirest/>
     /changelog
 
 

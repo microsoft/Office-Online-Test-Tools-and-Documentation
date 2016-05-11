@@ -21,21 +21,21 @@ project = u'WOPI REST Documentation'
 # noinspection PyUnresolvedReferences
 intersphinx_mapping = {
     'officeonline':
-        ('https://wopi.readthedocs.org/en/latest/',
+        ('https://wopi.readthedocs.io/en/latest/',
          (
              # Try to load from the locally built docs first
              (officeonline_doc_path / local_object_inventory_path).normpath(),
 
              # Fall back to loading from the built docs on readthedocs
-             'https://wopi.readthedocs.org/' + rtd_object_inventory_path
+             'https://wopi.readthedocs.io/' + rtd_object_inventory_path
          )),
     'native':
-        ('https://wopi.readthedocs.org/projects/officewopi/en/latest/',
+        ('https://wopi.readthedocs.io/projects/officewopi/en/latest/',
          (
              # Try to load from the locally built docs first
              (native_doc_path / local_object_inventory_path).normpath(),
 
              # Fall back to loading from the built docs on readthedocs
-             'https://officewopi.readthedocs.org/' + rtd_object_inventory_path
+             'https://officewopi.readthedocs.io/' + rtd_object_inventory_path
          )),
 }

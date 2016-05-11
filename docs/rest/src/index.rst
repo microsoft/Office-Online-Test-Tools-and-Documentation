@@ -38,8 +38,8 @@ server intends to integrate with. To learn more about the specific requirements 
     :glob:
     :caption: Microsoft Office WOPI Integrations
 
-    Office Online <https://wopi.readthedocs.org/>
-    Office for iOS <https://wopi.readthedocs.org/projects/officewopi>
+    Office Online <https://wopi.readthedocs.io/>
+    Office for iOS <https://wopi.readthedocs.io/projects/officewopi>
 
 ..  toctree::
     :maxdepth: 2

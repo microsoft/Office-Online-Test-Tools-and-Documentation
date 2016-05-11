@@ -250,7 +250,8 @@ namespace SampleWopiHandler
         /// Processes a CheckFileInfo request
         /// </summary>
         /// <remarks>
-        /// For full documentation on CheckFileInfo, see https://wopi.readthedocs.org/en/latest/wopi/files/CheckFileInfo.html
+        /// For full documentation on CheckFileInfo, see
+        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/CheckFileInfo.html
         /// </remarks>
         private void HandleCheckFileInfoRequest(HttpContext context, WopiRequest requestData)
         {
@@ -276,7 +277,8 @@ namespace SampleWopiHandler
                     return;
                 }
 
-                // For more info on CheckFileInfoResponse fields, see https://wopi.readthedocs.org/en/latest/wopi/files/CheckFileInfo.html#response
+                // For more info on CheckFileInfoResponse fields, see
+                // https://wopi.readthedocs.io/projects/wopirest/en/latest/files/CheckFileInfo.html#response
                 CheckFileInfoResponse responseData = new CheckFileInfoResponse()
                 {
                     // required CheckFileInfo properties
@@ -315,7 +317,8 @@ namespace SampleWopiHandler
         /// Processes a GetFile request
         /// </summary>
         /// <remarks>
-        /// For full documentation on GetFile, see https://wopi.readthedocs.org/en/latest/wopi/file_contents/GetFile.html
+        /// For full documentation on GetFile, see
+        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/GetFile.html
         /// </remarks>
         private void HandleGetFileRequest(HttpContext context, WopiRequest requestData)
         {
@@ -351,7 +354,8 @@ namespace SampleWopiHandler
         /// Processes a PutFile request
         /// </summary>
         /// <remarks>
-        /// For full documentation on PutFile, see https://wopi.readthedocs.org/en/latest/wopi/file_contents/PutFile.html
+        /// For full documentation on PutFile, see
+        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/PutFile.html
         /// </remarks>
         private void HandlePutFileRequest(HttpContext context, WopiRequest requestData)
         {
@@ -418,7 +422,8 @@ namespace SampleWopiHandler
         /// Processes a Lock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on Lock, see https://wopi.readthedocs.org/en/latest/wopi/files/Lock.html
+        /// For full documentation on Lock, see
+        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/Lock.html
         /// </remarks>
         private void HandleLockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -444,7 +449,7 @@ namespace SampleWopiHandler
                     // There is a valid existing lock on the file
 
                     // Regardless of whether the new lock matches the existing lock, this should be treated as a lock mismatch
-                    // per the documentation: https://wopi.readthedocs.org/en/latest/wopi/files/Lock.html
+                    // per the documentation: https://wopi.readthedocs.io/projects/wopirest/en/latest/files/Lock.html
 
                     // This is a fairly common case and shouldn't be tracked as an error.  Office Online can store
                     // information about a current session in the lock value and expects to conflict when there's
@@ -469,7 +474,8 @@ namespace SampleWopiHandler
         /// Processes a RefreshLock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on RefreshLock, see https://wopi.readthedocs.org/en/latest/wopi/files/RefreshLock.html
+        /// For full documentation on RefreshLock, see
+        /// ttps://wopi.readthedocs.io/projects/wopirest/en/latest/files/RefreshLock.html
         /// </remarks>
         private void HandleRefreshLockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -519,7 +525,8 @@ namespace SampleWopiHandler
         /// Processes a Unlock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on Unlock, see https://wopi.readthedocs.org/en/latest/wopi/files/Unlock.html
+        /// For full documentation on Unlock, see
+        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/Unlock.html
         /// </remarks>
         private void HandleUnlockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -569,7 +576,8 @@ namespace SampleWopiHandler
         /// Processes a UnlockAndRelock request
         /// </summary>
         /// <remarks>
-        /// For full documentation on UnlockAndRelock, see https://wopi.readthedocs.org/en/latest/wopi/files/UnlockAndRelock.html
+        /// For full documentation on UnlockAndRelock, see
+        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/UnlockAndRelock.html
         /// </remarks>
         private void HandleUnlockAndRelockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -628,10 +636,10 @@ namespace SampleWopiHandler
         {
             // TODO: WOPI proof key validation is not implemented in this sample.
             // For more details on proof keys, see the documentation
-            // https://wopi.readthedocs.org/en/latest/scenarios/proofkeys.html
+            // https://wopi.readthedocs.io/en/latest/scenarios/proofkeys.html
 
             // The proof keys are returned by WOPI Discovery. For more details, see
-            // https://wopi.readthedocs.org/en/latest/discovery.html
+            // https://wopi.readthedocs.io/en/latest/discovery.html
 
             return true;
         }
@@ -646,7 +654,7 @@ namespace SampleWopiHandler
         {
             // TODO: Access token validation is not implemented in this sample.
             // For more details on access tokens, see the documentation
-            // https://wopi.readthedocs.org/en/latest/concepts.html#term-access-token
+            // https://wopi.readthedocs.io/projects/wopirest/en/latest/concepts.html#term-access-token
             return !String.IsNullOrWhiteSpace(requestData.AccessToken);
         }
 
