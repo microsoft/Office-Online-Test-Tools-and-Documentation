@@ -49,18 +49,19 @@ WOPI validation
 ~~~~~~~~~~~~~~~
 
 As part of the validation process, Microsoft will test your WOPI implementation using the :ref:`validator`. All of
-the tests in the following categories should be passing.
+the tests in the following categories must be passing.
 
-* HostFrameIntegrationTests
+* HostFrameIntegration
 * BaseWopi
-* WopiEdit
-* LockTests
-* AccessTokenTests
+* EditFlows
+* Locks
+* AccessTokens
+* PutRelativeFile **or** PutRelativeFileUnsupported
 
 ..  note::
 
-    If you are implementing :ref:`Proof key validation<proof keys>`, you should also check that the tests in the
-    ProofKeys category are passing.
+    If you are implementing :ref:`proof key validation<proof keys>`, you should also check that the tests in the
+    :guilabel:`ProofKeys` group are passing.
 
 
 Manual testing

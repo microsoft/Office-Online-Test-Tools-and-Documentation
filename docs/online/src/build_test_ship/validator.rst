@@ -27,6 +27,17 @@ XML just like all other Office Online applications.
 The validation application provides two :ref:`WOPI Actions`, :wopi:action:`view` and :wopi:action:`getinfo`, which
 can be used to trigger the test suite.
 
+..  warning::
+
+    The test suite will test operations like :ref:`PutFile`, so the contents of the ``.wopitest`` file will be
+    destroyed.
+
+    In addition, some tests create new files or containers using the :ref:`PutRelativeFile`, :ref:`CreateChildFile`,
+    and :ref:`CreateChildContainer` operations. While the validation application attempts to clean up these files, if
+    there are errors in the WOPI implementation, these clean up actions may fail, leaving behind these test files.
+
+    If that should happen, you must clean up these test files manually.
+
 
 Interactive WOPI validation
 ---------------------------
@@ -41,26 +52,43 @@ following:
 #. The host page will create and navigate the Office Online iframe to the *view* action URL provided in
    :ref:`WOPI discovery`. The :term:`WOPIsrc` and :term:`access token` should be provided just like with all other
    actions.
-#. Office Online will do some basic validation (e.g. confirm the file really has the ``.wopitest`` extension) and then
-   will start the WOPI test suite.
-#. The test suite will test operations like :ref:`PutFile`, so the contents of the file will be destroyed.
-#. Each test and its results will be listed on the page. The tests can be executed again simply by refreshing the page.
+#. The WOPI validation application will load and display a number of test groups. Each test group can be expanded to
+   reveal the individual tests that it contains. You can run tests individually, by test group, or run all tests
+   using the :guilabel:`Run All` button.
 
 ..  figure:: /images/validator.png
-    :alt: An image showing WOPI validation results.
+    :alt: An image showing the WOPI validation application user interface.
+
+    WOPI validation application UI
+
+Tests can either pass, fail, or be skipped. Before executing any tests, Office Online will do some basic validation
+(e.g. confirm the file really has the ``.wopitest`` file extension) and check any applicable pre-requisites. Any test
+whose pre-requisites are not met will simply be skipped. For example, the tests in the :guilabel:`EditFlows` test
+group require the :term:`SupportsUpdate` property to be set to ``true``. If it is not, the tests in that group will
+all be skipped.
+
+..  figure:: /images/validator_used.png
+    :alt: An image showing the WOPI validation application after the entire test suite has been run.
+
+    Tests can pass, fail, or be skipped
+
+Once a test has been run, you can click on it to see the each request that was issued by the test and the response
+data. If the test failed or was skipped, the reason will be displayed just under the test name. You can click on the
+specific request that failed and see more information about what the test was expecting. If you are implementing
+:ref:`proof key validation <proof keys>`, you can use the :guilabel:`Current Proof Key Data` and
+:guilabel:`Old Proof Key Data` buttons to see the intermediate data on how the request was signed, which is extremely
+useful when debugging a proof key validation implementation.
+
+..  figure:: /images/validator_error.png
+    :alt: An image showing WOPI validation results for a particular test.
 
     Example WOPI validation results
-
 
 ..  tip::
 
     For ease of testing, we strongly recommend that hosts support the ``.wopitest`` file extension just like all other
     file extensions supported by Office Online and included in :ref:`WOPI discovery`. This is especially important
     while testing, since it provides any user a quick and easy way to execute the validation test suite.
-
-..  warning::
-
-    As part of the WOPI validation test suite, the contents of the ``.wopitest`` file will be destroyed.
 
 
 ..  _automated validation:
