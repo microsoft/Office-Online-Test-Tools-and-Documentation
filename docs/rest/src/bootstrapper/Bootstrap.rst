@@ -153,7 +153,7 @@ These parameters and their values must be formatted as follows:
 
 Sample response:
 
-..  code-block:: http
+..  code-block:: text
 
     HTTP/1.1 401 Unauthorized
     <removed for brevity>
