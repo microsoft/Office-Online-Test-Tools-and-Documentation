@@ -38,10 +38,26 @@ PutRelativeFile
     Note, however, that a file matching the target name might be locked, and in *specific* mode, the host must
     respond with a :statuscode:`409` and include a **X-WOPI-Lock** response header as described below.
 
+    ..  important::
+
+        If a WOPI host sets the :term:`SupportsUpdate` property in :ref:`CheckFileInfo` to ``true``, then the host is
+        expected to implement the |operation| operation. However, a host may choose not to implement this operation
+        even though :term:`SupportsUpdate` is ``true``, but they must do the following:
+
+        #.  Set the :term:`UserCanNotWriteRelative` property to ``true`` always.
+        #.  Return a :statuscode:`501` to all |operation| requests.
+
     ..  admonition:: Excel Online Note
 
-        Excel Online uses this operation as part of the *Save As* feature. If this operation is not supported, the
-        *Save As* feature will not work in Excel Online.
+        Excel Online uses this operation in the following two ways:
+
+        #.  As part of the *Save As* feature. If |operation| is not supported, the *Save As* feature will not work
+            in Excel Online.
+        #.  To support editing of some Excel files in Excel Online. Some files may contain content that is not
+            currently supported in Excel Online. In this case, Excel Online will prompt the user to save
+            an editable copy of the document, removing all unsupported content so that the file can be edited in
+            Excel Online. If |operation| is not supported, files with unsupported content will not be editable in Excel
+            Online.
 
     ..  include:: /_fragments/common_params.rst
 
@@ -128,7 +144,8 @@ PutRelativeFile
         response header containing the value of the current lock on the file must always be included
     :code 413: File is too large; the maximum size is host-specific
     :code 500: Server error
-    :code 501: Unsupported; the host should
+    :code 501: Operation not supported; if the host sets the :term:`SupportsUpdate` and :term:`UserCanNotWriteRelative`
+        properties to ``true`` in :ref:`CheckFileInfo`, this response code must be used when this operation is called
 
     ..  include:: /_fragments/common_headers.rst
 

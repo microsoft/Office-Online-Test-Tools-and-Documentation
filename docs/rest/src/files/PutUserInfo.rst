@@ -35,4 +35,4 @@ PutUserInfo
     :code 401: Invalid :term:`access token`
     :code 404: Resource not found/user unauthorized
     :code 500: Server error
-    :code 501: Unsupported
+    :code 501: Operation not supported

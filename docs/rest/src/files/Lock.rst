@@ -60,6 +60,6 @@ Lock
     :code 409: Lock mismatch/locked by another interface; an **X-WOPI-Lock** response header containing the value of
         the current lock on the file must always be included when using this response code
     :code 500: Server error
-    :code 501: Unsupported
+    :code 501: Operation not supported
 
     ..  include:: /_fragments/common_headers.rst

@@ -34,7 +34,7 @@
     :code 404: Resource not found/user unauthorized
     :code 409: Target container already exists
     :code 500: Server error
-    :code 501: Unsupported
+    :code 501: Operation not supported
 
     ..  include:: /_fragments/common_headers.rst
 

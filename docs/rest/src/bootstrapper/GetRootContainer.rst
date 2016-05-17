@@ -36,7 +36,7 @@ GetRootContainer (bootstrapper)
                :header:`WWW-Authenticate` response header with values as described in :ref:`WWW-Authenticate header`
     :code 404: Resource not found/user unauthorized
     :code 500: Server error
-    :code 501: Unsupported
+    :code 501: Operation not supported
 
 
 Response

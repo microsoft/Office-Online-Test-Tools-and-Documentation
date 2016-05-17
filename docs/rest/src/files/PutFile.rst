@@ -60,6 +60,6 @@ PutFile
         the current lock on the file must always be included when using this response code
     :code 413: File is too large; the maximum file size is host-specific
     :code 500: Server error
-    :code 501: Unsupported
+    :code 501: Operation not supported
 
     ..  include:: /_fragments/common_headers.rst
