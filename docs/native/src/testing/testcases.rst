@@ -1,29 +1,16 @@
 Partner test cases
 ======================
 
-..  spelling::
-
-    BhdRkqt
-    Bool
-    editdocs
-    FjfpZBr
-    https
-    localhost
-    png
-    px
-    qa
-    tDRbnfVdmIw
-    userprofile
-    wopibootstrapper
-
 The following test cases must be passing at 100% to continue with Office for iOS integration.
 
+
 Notes
--------------------------------
-* "Company app/application" refers to your app
-* "Company service" refers to your service
-* Where it refers to "Office", please substitute Word, Excel and PowerPoint app. The tests should be re-run against each Office application.
+----
+* "Company app/application" refers to your app. 
+* "Company service" refers to your service. 
+* Where it refers to "Office", please substitute Word, Excel and PowerPoint app. The tests should be re-run against each Office application. 
 * Please note the version of the Office app you tested against. This information can be found under Settings -> [App] -> Version
+
 
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | ID | Title                                    | Test Case                                                                                     | Pass/Fail?     | Notes                             |
@@ -114,11 +101,22 @@ Notes
 |    |                                          | This test changes based on how the Company Service handles authentication and refresh/access  |                |                                   |
 |    |                                          | tokens. If you invalidate the access and refresh token after the user changes password, run   |                |                                   |
 |    |                                          | this test. You can adapt this test to ensure the Office app is handling refresh and access    |                |                                   |
+|    |                                          | tokens correctly.                                                                             |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
+|    |                                          | #. Launch a fresh install of Office.                                                          |                |                                   |
+|    |                                          | #. Go through the First Run Experience.                                                       |                |                                   |
+|    |                                          | #. Skip Sign In.                                                                              |                |                                   |
+|    |                                          | #. Go to Open -> Add a Place                                                                  |                |                                   |
+|    |                                          | #. Select your Company Service.                                                               |                |                                   |
+|    |                                          | #. Enter credentials.                                                                         |                |                                   |
+|    |                                          | #. Browse around the folder structure in your service.                                        |                |                                   |
+|    |                                          | #. Open a file from Browse.                                                                   |                |                                   |
+|    |                                          | #. Click sign in and  sign in with a free Microsoft Account.                                  |                |                                   |
+|    |                                          | #. Make changes (you will need to sign in with a subscription account for testing commercial  |                |                                   |
+|    |                                          |    user)                                                                                      |                |                                   |
+|    |                                          | #. Click Back                                                                                 |                |                                   |
+|    |                                          | #. On the Company Service app, change the password of the user.                               |                |                                   |
+|    |                                          | #. Open the Office app and browse to the Company Service and Open a file.                     |                |                                   |
+|    |                                          | #. **RESULT: You should be prompted to enter credentials again.**                             |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
