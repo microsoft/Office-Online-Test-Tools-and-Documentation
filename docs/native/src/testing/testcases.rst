@@ -18,7 +18,7 @@ Partner test cases
 
 The following test cases must be passing at 100% to continue with Office for iOS integration.
 
-Please note
+Notes
 -------------------------------
 * "Company app/application" refers to your app
 * "Company service" refers to your service
@@ -34,23 +34,24 @@ Please note
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          | #. Start with a fresh install of Company app. Ensure Office is not installed.                 |                |                                   |
 |    |                                          | #. Boot up company app and login.                                                             |                |                                   |
-|    |                                          | #. RESULT: General promotion for Office should be shown (after first upgrade of Company app)  |                |                                   |
+|    |                                          | #. RESULT: General promotion for Office should be shown  after first upgrade of Company app   |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          | #. Browse to a supported file type                                                            |                |                                   |
-|    |                                          | #. RESULT: "Open with Microsoft [app]" promotion, drawing attention to control and enabling   |                |                                   |
-|    |                                          |          open with Office (once per first open for each supported file type.                  |                |                                   |
-|    |                                          |         "Open with Microsoft [app]" should be top choice if multiple choices are available.   |                |                                   |
-|    |                                          |         If a list is not shown, Office should be the default app for opening the file.        |                |                                   |
+|    |                                          | #. **RESULT:** "Open with Microsoft [app]" promotion, drawing attention to control and        |                |                                   |
+|    |                                          |    enabling open with Office once per first open for each supported file type. "Open with     |                |                                   |
+|    |                                          |    Microsoft should be top choice if multiple choices are available. If a list is not shown   |                |                                   |
+|    |                                          |    Office should be the default app for opening the file.                                     |                |                                   |
+|    |                                          |                                                                                               |                |                                   |
 |    |                                          | #. Activate control to open in Office                                                         |                |                                   |
-|    |                                          | #. RESULT: User should be sent to app store page for the corresponding app.                   |                |                                   |
+|    |                                          | #. *RESULT:* User should be sent to app store page for the corresponding app.                 |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          | #. Install the Office app.                                                                    |                |                                   |
 |    |                                          | #. After installation, go back to the Company app and activate the control to open in Office  |                |                                   |
-|    |                                          |     again.                                                                                    |                |                                   |
-|    |                                          | #. RESULT: Office should start. User should be prompted for credentials to Company Service.   |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
+|    |                                          |    again.                                                                                     |                |                                   |
+|    |                                          | #. *RESULT:* Office should start. User should be prompted for credentials to Company          |                |                                   |
+|    |                                          |    Service.                                                                                   |                |                                   |
 |    |                                          | #. Enter credentials for company service.                                                     |                |                                   |
-|    |                                          | #. RESULT: File should open in read only mode                                                 |                |                                   |
+|    |                                          | #. *RESULT:* File should open in read only mode                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
