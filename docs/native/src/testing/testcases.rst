@@ -89,9 +89,9 @@ Notes
 |    |                                          | restarting Office before doing this test.                                                     |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 8  | OAuth login page                         | Verify there is a link to the company's privacy statement on the company's login page when the|                |                                   |
-|    |                                          | user adds the company service as a place. Verify login page fits in window for various iPad   |                |                                   |
-|    |                                          | and iPhone sizes.                                                                             |                |                                   |
+|    |                                          | user adds the company service as a place.                                                     |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
+|    |                                          | Verify login page fits in window for various iPad and iPhone sizes.                           |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 9  | Verify file properties                   | Verify file properties from Recent and from opened file. When opening the properties from the |                |                                   |
 |    |                                          | Recent tab or the Open tab, the fields Author, Created, Modified By and Company will be empty.|                |                                   |
