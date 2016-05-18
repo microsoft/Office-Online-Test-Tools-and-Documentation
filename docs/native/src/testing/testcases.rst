@@ -87,38 +87,37 @@ Notes
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 3  | Open from Company App - repeat usage     | Repeat test #1 except with company service already added (i.e. from previous usage).          |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-
-
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 4  | Open from Office - repeat usage          | Repeat test #2 except with company service already added (i.e. from previous usage).          |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 5  | Save As [duplicate]                      |                                                                                               |                |                                   |
+| 5  | Save As [duplicate]                      | Verify ability to duplicate to Company Service, both by adding a new place and using an       |                |                                   |
+|    |                                          | existing place.                                                                               |                |                                   |
++----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
+| 6  | Create New [name]                        | Verify ability to duplicate to Company Service, both by adding a new place and using an       |                |                                   |
+|    |                                          | existing place.                                                                               |                |                                   |
++----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
+| 7  | Verify licensing                         | Verify editing a file for a commercial user requires O365 subscription or else it opens read  |                |                                   |
+|    |                                          | only.                                                                                         |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
+|    |                                          | Please go to Settings -> [Microsoft App] -> Reset Word -> Delete Sign-In Credentials and      |                |                                   |
+|    |                                          | restarting Office before doing this test.                                                     |                |                                   |
++----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
+| 8  | OAuth login page                         | Verify there is a link to the company's privacy statement on the company's login page when the|                |                                   |
+|    |                                          | user adds the company service as a place. Verify login page fits in window for various iPad   |                |                                   |
+|    |                                          | and iPhone sizes.                                                                             |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 6  | Create New [name]                        |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
+| 9  | Verify file properties                   | Verify file properties from Recent and from opened file. When opening the properties from the |                |                                   |
+|    |                                          | Recent tab or the Open tab, the fields Author, Created, Modified By and Company will be empty.|                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 7  | Verify licensing                         |                                                                                               |                |                                   |
+| 10 | Test changing passwords                  | This test verifies the flow of using Company Service after the user changed passwords.        |                |                                   |
+|    |                                          |                                                                                               |                |                                   |
+|    |                                          | This test changes based on how the Company Service handles authentication and refresh/access  |                |                                   |
+|    |                                          | tokens. If you invalidate the access and refresh token after the user changes password, run   |                |                                   |
+|    |                                          | this test. You can adapt this test to ensure the Office app is handling refresh and access    |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 8  | OAuth login page                         |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 9  | Verify file properties                   |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 10 | Test changing passwords                  |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
