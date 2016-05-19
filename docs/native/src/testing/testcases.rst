@@ -12,6 +12,13 @@ Notes
 * Please note the version of the Office app you tested against. This information can be found under Settings -> [App] -> Version
 
 
+.. |Duplicate| image:: PartnerTestCases_Duplicate.png  
+    :alt: A screenshot that shows the document actions in Office for iOS. 
+.. |ImageProps1| image:: PartnerTestCases_Properties1.png 
+    :alt: A screenshot that shows document properties in the Office outspace. 
+.. |ImageProps2| image:: PartnerTestCases_Properties2.png
+    :alt: A screenshot that shows the document properties within the opened file. 
+
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | ID | Title                                    | Test Case                                                                                     | Pass/Fail?     | Notes                             |
 +====+==========================================+===============================================================================================+================+===================================+
@@ -44,7 +51,7 @@ Notes
 |    |                                          |    the user is a commercial user.**                                                           |                |                                   |
 |    |                                          | #. Make changes [you will need to sign in with a subscription account for testing commercial  |                |                                   |
 |    |                                          |    user]                                                                                      |                |                                   |
-|    |                                          | #. Click Back                                                                                 |                |                                   |
+|    |                                          | #. Click Back (<-)                                                                            |                |                                   |
 |    |                                          | #. Click "Open"                                                                               |                |                                   |
 |    |                                          | #. **RESULT: Confirm company service is shown as a place.**                                   |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
@@ -67,7 +74,7 @@ Notes
 |    |                                          |    the user is a commercial user.**                                                           |                |                                   |
 |    |                                          | #. Make changes [you will need to sign in with a subscription account for testing commercial  |                |                                   |
 |    |                                          |    user]                                                                                      |                |                                   |
-|    |                                          | #. Click Back                                                                                 |                |                                   |
+|    |                                          | #. Click Back (<-)                                                                            |                |                                   |
 |    |                                          | #. Click "Open"                                                                               |                |                                   |
 |    |                                          | #. **RESULT: File should have the previously saved changes. Ensure changes are being saved on |                |                                   |
 |    |                                          |    Company service.**                                                                         |                |                                   |
@@ -78,6 +85,7 @@ Notes
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 5  | Save As [duplicate]                      | Verify ability to duplicate to Company Service, both by adding a new place and using an       |                |                                   |
 |    |                                          | existing place.                                                                               |                |                                   |
+|    |                                          | |duplicate|                                                                                   |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 6  | Create New [name]                        | Verify ability to duplicate to Company Service, both by adding a new place and using an       |                |                                   |
 |    |                                          | existing place.                                                                               |                |                                   |
@@ -95,6 +103,11 @@ Notes
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 9  | Verify file properties                   | Verify file properties from Recent and from opened file. When opening the properties from the |                |                                   |
 |    |                                          | Recent tab or the Open tab, the fields Author, Created, Modified By and Company will be empty.|                |                                   |
+|    |                                          |                                                                                               |                |                                   |
+|    |                                          | |ImageProps1|                                                                                 |                |                                   |
+|    |                                          |  Properties View from Recent                                                                  |                |                                   |
+|    |                                          | |ImageProps2|                                                                                 |                |                                   |
+|    |                                          |  Properties View from within document                                                         |                |                                   |
 +----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
 | 10 | Test changing passwords                  | This test verifies the flow of using Company Service after the user changed passwords.        |                |                                   |
 |    |                                          |                                                                                               |                |                                   |
