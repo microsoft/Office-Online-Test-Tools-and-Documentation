@@ -75,9 +75,11 @@ infrequently as possible.
 
 ..  _business user testing:
 
-|stub-icon| Testing the business user flow
-------------------------------------------
+Testing the business user flow
+------------------------------
 
-..  include:: ../../../_shared/stub.rst
+In order to test the business user flow in the :ref:`test environment`, you must use test Office 365 user accounts
+provided by Microsoft. These accounts are provided in the Cloud Storage Partner Program Yammer group.
 
-.. |issue| issue:: 118
+These test accounts are periodically rotated. If you have trouble signing in while testing the business user flow,
+check that the accounts you're using are the most recent ones provided.
