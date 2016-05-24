@@ -3,9 +3,9 @@ Partner test cases
 
 The following test cases must be passing at 100% to continue with Office for iOS integration. Please download the :file:'PartnerTestCasesReport.docx' Partner Test Cases document and send it to the Office for iOS integration contacts when your testing is complete.
 
- * See :download:`Report <PartnerTestCasesReport.docx>`
- * See :download:'Report <PartnerTestCasesReport.docx>'
- * See :download:'Report </docs/native/src/testing/PartnerTestCasesReport.docx>'
+ * See :download:`Report <PartnerTestCasesReport.docx>`.
+ * See :download:'Report <PartnerTestCasesReport.docx>'.
+ * See :download:'Report </docs/native/src/testing/PartnerTestCasesReport.docx>'.
 
 -------------------------------------
 Notes
@@ -15,13 +15,15 @@ Notes
 * Where it refers to "Office", please substitute Word, Excel and PowerPoint app. The tests should be re-run against each Office application. 
 * Please note the version of the Office app you tested against. This information can be found under Settings -> [App] -> Version
 
+:download: `Report <PartnerTestCasesReport.docx>`.
 
 
-.. |Duplicate| image:: /images/PartnerTestCases_Duplicate.png  
+
+.. |Duplicate| image:: ../images/PartnerTestCases_Duplicate.png  
     :alt: A screenshot that shows the document actions in Office for iOS. 
-.. |ImageProps1| image:: /images/PartnerTestCases_Properties1.png 
+.. |ImageProps1| image:: ../images/PartnerTestCases_Properties1.png 
     :alt: A screenshot that shows document properties in the Office outspace. 
-.. |ImageProps2| image:: /images/PartnerTestCases_Properties2.png
+.. |ImageProps2| image:: ../images/PartnerTestCases_Properties2.png
     :alt: A screenshot that shows the document properties within the opened file. 
 
 -------------------------------------
