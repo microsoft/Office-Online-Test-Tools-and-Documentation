@@ -3,10 +3,6 @@ Partner test cases
 
 The following test cases must be passing at 100% to continue with Office for iOS integration. Please download the :download:`Report <PartnerTestCasesReport.docx>` document and send it to the Office for iOS integration contacts when your testing is complete.
 
- * See :download:`Report <PartnerTestCasesReport.docx>`.
- * See :download:'Report <PartnerTestCasesReport.docx>'.
- * See :download:'Report </docs/native/src/testing/PartnerTestCasesReport.docx>'.
-
 -------------------------------------
 Notes
 -------------------------------------
@@ -69,60 +65,69 @@ Notes
 #. Click "Open"
 #. **RESULT: File should have the previously saved changes. Ensure changes are being saved on Company service.**
 
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| ID | Title                                    | Test Case                                                                                     | Pass/Fail?     | Notes                             |
-+====+==========================================+===============================================================================================+================+===================================+
-| 3  | Open from Company App - repeat usage     | Repeat test #1 except with company service already added (i.e. from previous usage).          |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 4  | Open from Office - repeat usage          | Repeat test #2 except with company service already added (i.e. from previous usage).          |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 5  | Save As [duplicate]                      | Verify ability to duplicate to Company Service, both by adding a new place and using an       |                |                                   |
-|    |                                          | existing place.                                                                               |                |                                   |
-|    |                                          | |duplicate|                                                                                   |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 6  | Create New [name]                        | Verify ability to duplicate to Company Service, both by adding a new place and using an       |                |                                   |
-|    |                                          | existing place.                                                                               |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 7  | Verify licensing                         | Verify editing a file for a commercial user requires O365 subscription or else it opens read  |                |                                   |
-|    |                                          | only.                                                                                         |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          | Please go to Settings -> [Microsoft App] -> Reset Word -> Delete Sign-In Credentials and      |                |                                   |
-|    |                                          | restarting Office before doing this test.                                                     |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 8  | OAuth login page                         | Verify there is a link to the company's privacy statement on the company's login page when the|                |                                   |
-|    |                                          | user adds the company service as a place.                                                     |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          | Verify login page fits in window for various iPad and iPhone sizes.                           |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 9  | Verify file properties                   | Verify file properties from Recent and from opened file. When opening the properties from the |                |                                   |
-|    |                                          | Recent tab or the Open tab, the fields Author, Created, Modified By and Company will be empty.|                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          | |ImageProps1|                                                                                 |                |                                   |
-|    |                                          |  Properties View from Recent                                                                  |                |                                   |
-|    |                                          | |ImageProps2|                                                                                 |                |                                   |
-|    |                                          |  Properties View from within document                                                         |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
-| 10 | Test changing passwords                  | This test verifies the flow of using Company Service after the user changed passwords.        |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          | This test changes based on how the Company Service handles authentication and refresh/access  |                |                                   |
-|    |                                          | tokens. If you invalidate the access and refresh token after the user changes password, run   |                |                                   |
-|    |                                          | this test. You can adapt this test to ensure the Office app is handling refresh and access    |                |                                   |
-|    |                                          | tokens correctly.                                                                             |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-|    |                                          | #. Launch a fresh install of Office.                                                          |                |                                   |
-|    |                                          | #. Go through the First Run Experience.                                                       |                |                                   |
-|    |                                          | #. Skip Sign In.                                                                              |                |                                   |
-|    |                                          | #. Go to Open -> Add a Place                                                                  |                |                                   |
-|    |                                          | #. Select your Company Service.                                                               |                |                                   |
-|    |                                          | #. Enter credentials.                                                                         |                |                                   |
-|    |                                          | #. Browse around the folder structure in your service.                                        |                |                                   |
-|    |                                          | #. Open a file from Browse.                                                                   |                |                                   |
-|    |                                          | #. Click sign in and  sign in with a free Microsoft Account.                                  |                |                                   |
-|    |                                          | #. Make changes (you will need to sign in with a subscription account for testing commercial  |                |                                   |
-|    |                                          |    user)                                                                                      |                |                                   |
-|    |                                          | #. Click Back                                                                                 |                |                                   |
-|    |                                          | #. On the Company Service app, change the password of the user.                               |                |                                   |
-|    |                                          | #. Open the Office app and browse to the Company Service and Open a file.                     |                |                                   |
-|    |                                          | #. **RESULT: You should be prompted to enter credentials again.**                             |                |                                   |
-|    |                                          |                                                                                               |                |                                   |
-+----+------------------------------------------+-----------------------------------------------------------------------------------------------+----------------+-----------------------------------+
+-------------------------------
+3 - Open from Company App - Repeat Usage
+-------------------------------
+Repeat test 1 except with company service already added (i.e. from previous usage).
+
+-------------------------------
+4 - Open from Office - Repeat Usage
+-------------------------------
+Repeat test 2 except with company service already added (i.e. from previous usage).
+
+-------------------------------
+5 - Save As [duplicate]
+-------------------------------
+Verify ability to duplicate to Company Service, both by adding a new place and using an existing place.
+|Duplicate|
+
+------------------------------
+6 - Create New [name]
+------------------------------
+Verify ability to duplicate to Company Service, both by adding a new place and using an existing place.
+
+------------------------------
+7 - Verify Licensing
+------------------------------
+Verify editing a file for a commercial user requires O365 subscription or else it opens read only.
+
+Please go to Settings -> [Microsoft App] -> Reset Word -> Delete Sign-In Credentials and restarting Office before doing this test.
+
+------------------------------
+8 - OAuth Login Page
+------------------------------
+Verify there is a link to the company's privacy statement on the company's login page when the user adds the company service as a place.
+
+Verify login page fits in window for various iPad and iPhone sizes.
+
+------------------------------
+9 - Verify File Properties 
+------------------------------
+Verify file properties from Recent and from opened file. When opening the properties from the Recent tab or the Open tab, the fields Author, Created, Modified By and Company will be empty.
+
+|ImageProps1|
+*Properties view from Recent*
+|ImageProps2|
+*Properties view from within Document*
+
+----------------------------
+10 - Change Passwords
+----------------------------
+  This test verifies the flow of using Company Service after the user changed passwords.
+
+This test changes based on how the Company Service handles authentication and refresh/access tokens. If you invalidate the access and refresh token after the user changes password, run this test. You can adapt this test to ensure the Office app is handling refresh and access tokens correctly.
+#. Launch a fresh install of Office.
+#. Go through the First Run Experience.
+#. Skip Sign In.
+#. Go to Open -> Add a Place
+#. Select your Company Service.
+#. Enter credentials.
+#. Browse around the folder structure in your service.
+#. Open a file from Browse.
+#. Click sign in and sign in with a free Microsoft Account.
+#. Make changes (you will need to sign in with a subscription account for testing commercial user)
+#. Click Back
+#. On the Company Service app, change the password of the user.
+#. Open the Office app and browse to the Company Service and Open a file.
+#. **RESULT: You should be prompted to enter credentials again.**
+	
