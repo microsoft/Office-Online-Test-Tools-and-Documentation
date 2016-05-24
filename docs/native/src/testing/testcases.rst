@@ -107,9 +107,9 @@ Verify login page fits in window for various iPad and iPhone sizes.
 Verify file properties from Recent and from opened file. When opening the properties from the Recent tab or the Open tab, the fields Author, Created, Modified By and Company will be empty.
 
 |ImageProps1|
-*Properties view from Recent*
+	*Properties view from Recent*
 |ImageProps2|
-*Properties view from within Document*
+	*Properties view from within Document*
 
 ----------------------------
 10 - Change Passwords
