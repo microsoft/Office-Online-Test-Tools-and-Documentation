@@ -3,7 +3,8 @@ Partner test cases
 
 The following test cases must be passing at 100% to continue with Office for iOS integration. Please download the :file:'PartnerTestCasesReport.docx' Partner Test Cases document and send it to the Office for iOS integration contacts when your testing is complete.
 
-See :download:`Report <../PartnerTestCasesReport.docx>`
+See :download:`Report <PartnerTestCasesReport.docx>`
+See :download:'Report <PartnerTestCasesReport.docx>'
 
 -------------------------------------
 Notes
