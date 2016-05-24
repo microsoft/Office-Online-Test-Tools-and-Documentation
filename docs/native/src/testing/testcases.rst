@@ -21,7 +21,7 @@ Notes
 -------------------------------------
 1 - Open from Company App - First Install
 -------------------------------------
- This test verifies the flow of using Office for the first time from the Company app. Repeat for each supported file type and each Office app.
+*This test verifies the flow of using Office for the first time from the Company app. Repeat for each supported file type and each Office app.*
 
 #. Start with a fresh install of Company app. Ensure Office is not installed.
 #. Boot up company app and login.
@@ -45,7 +45,8 @@ Notes
 -----------------------------------
 2 - Open from Office - Fresh Install
 -----------------------------------
-    This test verifies the flow of using Company Service for the first time from Office.
+*This test verifies the flow of using Company Service for the first time from Office.*
+
 #. Launch a fresh install of Office.
 #. Go through the First Run Experience.
 #. Skip Sign In.
@@ -113,9 +114,10 @@ Verify file properties from Recent and from opened file. When opening the proper
 ----------------------------
 10 - Change Passwords
 ----------------------------
- This test verifies the flow of using Company Service after the user changed passwords.
+*This test verifies the flow of using Company Service after the user changed passwords.*
 
- This test changes based on how the Company Service handles authentication and refresh/access tokens. If you invalidate the access and refresh token after the user changes password, run this test. You can adapt this test to ensure the Office app is handling refresh and access tokens correctly.
+*This test changes based on how the Company Service handles authentication and refresh/access tokens. If you invalidate the access and refresh token after the user changes password, run this test. You can adapt this test to ensure the Office app is handling refresh and access tokens correctly.*
+
 #. Launch a fresh install of Office.
 #. Go through the First Run Experience.
 #. Skip Sign In.
