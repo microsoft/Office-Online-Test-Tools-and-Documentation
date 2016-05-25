@@ -6,6 +6,8 @@ However, the validator app will not be able to test the end to end experience 10
 
 Please contact Microsoft for directions to set the Office for iOS aps into a test mode that can be used for testing the below scenarios. 
 
+:ref:`Validator app`
+
 
 -------------------------------------
 Notes
