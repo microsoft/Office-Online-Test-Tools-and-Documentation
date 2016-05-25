@@ -1,7 +1,13 @@
-Partner test cases
+..  _Manual Validation:
+Manual Validation
 ======================
+Your WOPI integration can be tested following :ref:`validator app testing <Validator app>` [missing].
+However, the validator app will not be able to test the end to end experience 100%. You must run the following tests manually to verify the integration works correctly. After both the validator and manual tests are passing 100%, please provide Microsoft with a link to your validator app and manual test results. Microsoft will complete a final test pass before launch. 
+Please contact Microsoft for directions to set the Office for iOS aps into a test mode that can be used for testing the below scenarios. 
 
 The following test cases must be passing at 100% to continue with Office for iOS integration. Please download the :download:`Report <PartnerTestCasesReport.docx>` document and send it to the Office for iOS integration contacts when your testing is complete.
+
+See :ref:`test 1 <test1>`.
 
 -------------------------------------
 Notes
@@ -18,6 +24,7 @@ Notes
 .. |ImageProps2| image:: ../images/PartnerTestCases_Properties2.png
     :alt: A screenshot that shows the document properties within the opened file. 
 
+..  _test1:
 -------------------------------------
 1 - Open from Company App - First Install
 -------------------------------------
