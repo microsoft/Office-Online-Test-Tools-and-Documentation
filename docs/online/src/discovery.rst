@@ -302,15 +302,6 @@ Placeholder values
 ..  glossary::
     :sorted:
 
-    VALIDATOR_TEST_CATEGORY
-        ..  note:: This value is used to run the :ref:`validator` in different modes.
-
-        This value can be set to either ``All``, ``OfficeOnline`` or ``OfficeNativeClient``.
-        Its default value is set to ``All``.
-            * Setting this value to ``All`` will fetch the tests in all categories.
-            * Setting this value to ``OfficeOnline`` will fetch the tests specific to OfficeOnline and the client agnostic tests.
-            * Setting this value to ``OfficeNativeClient`` will fetch the tests specific to Native clients and the client agnostic tests.   
-
     UI_LLCC
         This value represents the language the Office Online application UI should use. Note that Office Online does
         not support all languages, and may use a substitute language if the language requested is not supported. For
@@ -372,6 +363,16 @@ Placeholder values
     BUSINESS_USER
         This value can be set to ``1`` to indicate that the current user is a business user. This placeholder value
         must be used by hosts that support the business user flow. See :ref:`Business editing` for more information.
+
+    VALIDATOR_TEST_CATEGORY
+        ..  note:: This value is used to run the :ref:`validator` in different modes.
+
+        This value can be set to ``All``, ``OfficeOnline`` or ``OfficeNativeClient`` to activate tests specific to
+        |wac| and |Office iOS|. If omitted, the default value is ``All``.
+
+        * ``All``: activates all :ref:`validator` tests.
+        * ``OfficeOnline``: activates all tests necessary for |wac| integration.
+        * ``OfficeNativeClient``: activates all tests necessary for |Office iOS| integration.
 
 
 ..  _Appending WOPISrc:
