@@ -60,9 +60,9 @@ Before using the URL schemes specified above to invoke |Office iOS|, you must do
 #.  Check the version of |Office iOS| installed is a supported version. This is done by verifying whether the following
     URL schemes are registered:
 
-    * ``ms-word-wopi-support``
-    * ``ms-powerpoint-wopi-support``
-    * ``ms-excel-wopi-support``
+    * ``ms-word-wopi-support-1605``
+    * ``ms-powerpoint-wopi-support-1605``
+    * ``ms-excel-wopi-support-1605``
 
     ..  important::
 
