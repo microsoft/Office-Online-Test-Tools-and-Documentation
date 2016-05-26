@@ -1,3 +1,3 @@
 
-|stub-icon| Using the validator app without |wac| integration
-=============================================================
+|stub-icon| Using the validator app to validate your WOPI implementation
+========================================================================
