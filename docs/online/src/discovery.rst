@@ -364,6 +364,16 @@ Placeholder values
         This value can be set to ``1`` to indicate that the current user is a business user. This placeholder value
         must be used by hosts that support the business user flow. See :ref:`Business editing` for more information.
 
+    VALIDATOR_TEST_CATEGORY
+        ..  note:: This value is used to run the :ref:`validator` in different modes.
+
+        This value can be set to ``All``, ``OfficeOnline`` or ``OfficeNativeClient`` to activate tests specific to
+        |wac| and |Office iOS|. If omitted, the default value is ``All``.
+
+        * ``All``: activates all :ref:`validator` tests.
+        * ``OfficeOnline``: activates all tests necessary for |wac| integration.
+        * ``OfficeNativeClient``: activates all tests necessary for |Office iOS| integration.
+
 
 ..  _Appending WOPISrc:
 

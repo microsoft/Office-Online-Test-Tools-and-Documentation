@@ -8,18 +8,18 @@ namespace SampleWopiHandler
 {
     public struct KeyInfo
     {
-        private string _key;
+        private string _cspBlob;
         private string _exponent;
         private string _modulus;
 
-        public KeyInfo(string key, string modulus, string exponent)
+        public KeyInfo(string cspBlob, string modulus, string exponent)
         {
-            _key = key;
+            _cspBlob = cspBlob;
             _exponent = exponent;
             _modulus = modulus;
         }
 
-        public string Key { get { return _key; } }
+        public string CspBlob { get { return _cspBlob; } }
         public string Exponent { get { return _exponent; } }
         public string Modulus { get { return _modulus; } }
     }
@@ -84,9 +84,9 @@ namespace SampleWopiHandler
 
             // validate it against current and old keys in proper combinations
             bool validationResult =
-                TryVerification(expectedProofArray, testCase.Proof, _currentKey) ||
-                TryVerification(expectedProofArray, testCase.OldProof, _currentKey) ||
-                TryVerification(expectedProofArray, testCase.Proof, _oldKey);
+                TryVerification(expectedProofArray, testCase.Proof, _currentKey.CspBlob) ||
+                TryVerification(expectedProofArray, testCase.OldProof, _currentKey.CspBlob) ||
+                TryVerification(expectedProofArray, testCase.Proof, _oldKey.CspBlob);
 
             // TODO:
             // in real code you should also check that TimeStamp header is no more than 20 minutes old
@@ -105,20 +105,24 @@ namespace SampleWopiHandler
             return BitConverter.GetBytes(value).Reverse().ToArray();
         }
 
-        private static bool TryVerification(byte[] expectedProof, string signedProof, KeyInfo keyToTry)
+        private static bool TryVerification(byte[] expectedProof,
+            string signedProof,
+            string publicKeyCspBlob)
         {
-            using (RSACryptoServiceProvider rsaAlg = new RSACryptoServiceProvider())
+            using(RSACryptoServiceProvider rsaAlg = new RSACryptoServiceProvider())
             {
+                byte[] publicKey = Convert.FromBase64String(publicKeyCspBlob);
+                byte[] signedProofBytes = Convert.FromBase64String(signedProof);
                 try
                 {
-                    rsaAlg.ImportCspBlob(Convert.FromBase64String(keyToTry.Key));
-                    return rsaAlg.VerifyData(expectedProof, "SHA256", Convert.FromBase64String(signedProof));
+                    rsaAlg.ImportCspBlob(publicKey);
+                    return rsaAlg.VerifyData(expectedProof, "SHA256", signedProofBytes);
                 }
-                catch (FormatException)
+                catch(FormatException)
                 {
                     return false;
                 }
-                catch (CryptographicException)
+                catch(CryptographicException)
                 {
                     return false;
                 }
