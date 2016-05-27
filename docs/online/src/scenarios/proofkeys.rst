@@ -104,24 +104,13 @@ The steps to import these values differ based on the language, platform, and cry
 The following example shows how to import the public key by using the modulus and exponent in a Python program using
 the PyCrypto library.
 
-..  code-block:: python
+..  literalinclude:: ../../../../samples/python/proof_keys/__init__.py
+    :caption: Generating a public key from a modulus and exponent in Python
+    :language: python
     :linenos:
+    :lineno-match:
+    :lines: 38-51
 
-    from base64 import b64decode
-    from Crypto.PublicKey import RSA
-    from Crypto.Util import asn1
-
-    def generate_key(modulus_b64, exp_b64):
-        mod = int(b64decode(modulus_b64).encode('hex'), 16)
-        exp = int(b64decode(exp_b64).encode('hex'), 16)
-        seq = asn1.DerSequence()
-        seq.append(mod)
-        seq.append(exp)
-        der = seq.encode()
-        return RSA.importKey(der)
-
-    # proof_key_attributes is from the discovery XML
-    key = generate_key(proof_key_attributes['modulus'], proof_key_attributes['exponent'])
 
 Verifying the proof keys
 ------------------------
@@ -136,41 +125,24 @@ have to check three combinations of proof key values:
 
 If any one of the values is valid, the request was signed by Office Online.
 
-The following example shows how to verify one of these combinations in .NET.
+The following example shows how to verify one of these combinations in .NET using C#.
 
-..  code-block:: csharp
+..  literalinclude:: ../../../../samples/SampleWopiHandler/SampleWopiHandler/ProofKeyHelper.cs
+    :caption: Sample proof key validation code in C#
+    :language: csharp
     :linenos:
-
-    private static bool TryVerification(byte[] expectedProof, byte[] signedProof, byte[] publicKeyToTry, int keySize)
-    {
-        using (RSACryptoServiceProvider rsaAlg = new RSACryptoServiceProvider(keySize))
-        {
-            try
-            {
-                rsaAlg.ImportCspBlob(publicKeyToTry);
-                bool result = rsaAlg.VerifyData(expectedProof, "SHA256", signedProof);
-                return result;
-            }
-            catch(Exception e)
-            {
-                return false;
-            }
-        }
-    }
+    :lineno-match:
+    :dedent: 8
+    :lines: 108-130
 
 The following example shows how to verify one of these combinations in Python using the PyCrypto library.
 
-..  code-block:: python
+..  literalinclude:: ../../../../samples/python/proof_keys/__init__.py
+    :caption: Sample proof key validation code in Python
+    :language: python
     :linenos:
-
-    from base64 import b64decode
-    from Crypto.Hash import SHA256
-    from Crypto.Signature import PKCS1_v1_5
-
-    def try_verification(expected_proof, signed_proof, public_key):
-        verifier = PKCS1_v1_5.new(public_key)
-        h = SHA256.new(expected_proof)
-        return verifier.verify(h, signed_proof)
+    :lineno-match:
+    :lines: 54-70
 
 
 ..  _Troubleshooting proof keys:
