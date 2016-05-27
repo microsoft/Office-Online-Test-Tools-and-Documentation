@@ -5,6 +5,10 @@ Integrating with Office for iOS
 ===============================
 You can integrate with Office for iOS to enable your users to view and edit Excel, PowerPoint, and Word files directly on the iPad and iPhone.
 
+.. image:: /images/ScenarioEdit.png
+   :alt: A screenshot that shows editing a file in Office for iOS.
+   :align: center
+
 If you deliver a iOS-based experience that allows your users to store Office files or includes Office files as a key part of your solution, you now have the opportunity to integrate Office for iOS into your experience. This integration works directly against files stored by you. Your users won't need a separate storage solution to view and edit Office files.
 
 Editing & Viewing Office files
@@ -60,7 +64,7 @@ Requirements
    * Using Office as the default app for opening Office documents within your app
 
 Security Considerations
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Office for iOS is designed to work for enterprises that have strict security requirements. To make sure your integration is as secure as possible, ensure that:
 	* All traffic is SSL encrypted.

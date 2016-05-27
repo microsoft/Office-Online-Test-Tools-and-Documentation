@@ -2,18 +2,18 @@
 Manual Validation
 ======================
 Your WOPI integration can be tested following :ref:`validator app testing <Validator app>`.
-However, the validator app will not be able to test the end to end experience 100%. You must run the following tests manually to verify the integration works correctly. Please download the :download:`Manual Validation <PartnerTestCasesReport.docx>` document and send it to the Office for iOS integration contacts when your testing is complete. After both the validator and manual tests are both 100% passing, please provide Microsoft with a link to your validator app and manual test results document. Microsoft will complete a final test pass before launch. 
+However, the validator app will not be able to test the complete end to end experience. You must run the following tests manually to verify the integration works correctly. 
 
-Please contact Microsoft for directions to set the Office for iOS aps into a test mode that can be used for testing the below scenarios. 
+Please download the :download:`Testing <ManualTestPass.docx>` document and fill it in as you perform your testing. After both the validator and manual tests are both 100% passing, please provide Microsoft with a link to your validator app, your test account information and manual test results document. Microsoft will complete a final test pass before launch. 
+
+Please contact Microsoft for directions to set the Office for iOS apps into a test mode that can be used for testing the below scenarios. 
 
 
--------------------------------------
-Notes
--------------------------------------
-* "Company app/application" refers to your app. 
-* "Company service" refers to your service. 
-* Where it refers to "Office", please substitute Word, Excel and PowerPoint app. The tests should be re-run against each Office application. 
-* Please note the version of the Office app you tested against. This information can be found under Settings -> [App] -> Version
+ ..  note::
+	 * "Company app/application" refers to your app. 
+	 * "Company service" refers to your service. 
+	 * Where it refers to "Office", please substitute Word, Excel and PowerPoint app. The tests should be re-run against each Office application. 
+	 * Please note the version of the Office app you tested against. This information can be found under Settings -> [App] -> Version
 
 .. |Duplicate| image:: ../images/PartnerTestCases_Duplicate.png  
     :alt: A screenshot that shows the document actions in Office for iOS. 
@@ -22,7 +22,6 @@ Notes
 .. |ImageProps2| image:: ../images/PartnerTestCases_Properties2.png
     :alt: A screenshot that shows the document properties within the opened file. 
 
-..  _test1:
 -------------------------------------
 1 - Open from Company App - First Install
 -------------------------------------
@@ -85,6 +84,7 @@ Repeat test 2 except with company service already added (i.e. from previous usag
 5 - Save As [duplicate]
 -------------------------------
 Verify ability to duplicate to Company Service, both by adding a new place and using an existing place.
+
 |Duplicate|
 
 ------------------------------
