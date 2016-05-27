@@ -33,7 +33,7 @@ Integration process
 You can use the Web Application Open Platform Interface (WOPI) protocol to integrate Office for iOS with your application. The WOPI protocol enables Office for iOS to access and change files that are stored in your service.
 
 To integrate your application with Office for iOS, you need to do the following:
- #. Become a member of the Office 365 - Cloud Storage Partner Program. Currently integration with Office for iOS using WOPI is only available to cloud storage partners. You can learn more about the program, as well as how to apply, at http://dev.office.com/programs/officecloudstorage.
+ #. Become a member of the Office 365 - Cloud Storage Partner Program. Currently integration with Office for iOS using WOPI is only available to cloud storage partners. You can learn more about the program, as well as how to apply, at `Office 365 Cloud Storage Partner Program. <http://dev.office.com/programs/officecloudstorage>`_
  #. Provide the required on-boarding information as described in the section titled :ref:`Onboarding information <onboarding>`.
  #. Obtain your ProviderId and app store URLs from Microsoft. The app store URLs are the URLs you should use to launch Office on a platform's app store. 
  #. Add your domain to the WOPI domain :ref:`allow list <allow list>`. This is required even if you do not integrate with Office Online so you can verify your WOPI integration with the :ref:`validator app <Validator app>`.
@@ -53,7 +53,7 @@ Requirements
 ~~~~~~~~~~~~
 
 * You need to ensure that files are represented by a unique ID. See the full list of :ref:`File ID requirements <Concepts>`.
-* You should have a mechanism for identifying file versions. See the :ref: `Version requirements. <http://officeonline.readthedocs.io/projects/wopirest/en/latest/files/CheckFileInfo.html#term-version>`
+* You should have a mechanism for identifying file versions. See the :ref:`Version requirements <CheckFileInfo>`.
 * In order to integrate with Office for iOS, there are also a few promotional requirements which include:
    * Promoting Office for iOS integration somewhere within your app
    * Promoting Office for iOS integration in the context of editing & viewing Office documents
@@ -69,4 +69,4 @@ Office for iOS is designed to work for enterprises that have strict security req
 	
 Interested?
 -----------
-If you're interested in integrating your solution with Office for iOS, take a moment to register at :ref:`Office 365 Cloud Storage Partner Program<http://dev.office.com/programs/officecloudstorage>. `
+If you're interested in integrating your solution with Office for iOS, take a moment to register at `Office 365 Cloud Storage Partner Program. <http://dev.office.com/programs/officecloudstorage>`_
