@@ -12,4 +12,8 @@ Office for iOS has two WOPI implementation requirements which are not relevant t
 Office Online has the following WOPI implementation requirements which are not relevant to Office for iOS: 
  * Proof keys
  * Breadcrumbs
+<<<<<<< HEAD
  * File Operations: UnlockAndRelock, PutRelativeFile, PutUserInfo 
+=======
+ * File Operations: UnlockAndRelock, PutRelativeFile, PutUserInfo 
+>>>>>>> origin/master
