@@ -1,4 +1,5 @@
 ..  _Manual Validation:
+
 Manual Validation
 ======================
 Your WOPI integration can be tested following :ref:`validator app testing <Validator app>`.
