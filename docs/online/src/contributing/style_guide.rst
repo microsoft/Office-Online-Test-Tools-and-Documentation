@@ -1,8 +1,8 @@
 
 .. _style guide:
 
-|stub-icon| Office Online Documentation Style Guide
-===================================================
+Office Online Documentation Style Guide
+=======================================
 
 ..  spelling::
 
@@ -13,6 +13,15 @@
 ..  include:: ../../../_shared/stub.rst
 
 .. |issue| issue:: 1
+
+
+Whitespace guidelines
+---------------------
+
+* Use spaces everywhere for whitespace. Do not use tabs.
+* Use a single space in between sentences.
+* Tab length: 4 spaces
+
 
 Heading styles
 --------------
