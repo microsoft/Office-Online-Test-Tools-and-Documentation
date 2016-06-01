@@ -1,4 +1,4 @@
-..  _OpenFilesiOSOffice:
+..  _open files:
 
 Opening files from your app in |Office iOS|
 ===========================================

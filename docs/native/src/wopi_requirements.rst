@@ -1,4 +1,3 @@
-
 ..  _requirements:
 
 WOPI implementation requirements for |Office iOS| integration
