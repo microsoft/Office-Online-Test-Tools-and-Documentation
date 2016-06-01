@@ -8,5 +8,4 @@ Unlike |wac|, partners need to implement all Container, Ecosystem and Bootstrapp
 |wac| has the following WOPI implementation requirements are not needed for |Office iOS| integration: 
  * :ref:`Proof keys <Proof Keys>`
  * :ref:`Breadcrumbs <breadcrumbs>`
- * File Operations: :ref:`UnlockAndRelock <UnlockAndRelock>`, :ref:`PutRelativeFile <PutRelativeFile>`, :ref:`PutUserInfo <PutUserInfo>` 
 
