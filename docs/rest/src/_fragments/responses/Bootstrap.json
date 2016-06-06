@@ -1,0 +1,8 @@
+{
+  "Bootstrap": {
+    "EcosystemUrl": "http://.../wopi*/ecosystem?access_token=<ecosystem_token>",
+    "UserId": "User ID",
+    "SignInName": "user@contoso.com",
+    "UserFriendlyName": "User Name"
+  }
+}
