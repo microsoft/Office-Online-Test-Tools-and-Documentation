@@ -55,6 +55,7 @@ To integrate your application with |Office iOS|, you need to do the following:
     :glob:
     :hidden:
     :caption: Onboarding
+    :name: onboardingtoc
 
     /onboarding/onboarding
 
