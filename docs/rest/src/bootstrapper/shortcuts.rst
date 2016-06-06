@@ -18,6 +18,16 @@ For example, in order to get the root container, a WOPI client might execute the
 However, using the :ref:`GetRootContainer (bootstrapper)` shortcut operation, the WOPI client can skip calling
 :ref:`Bootstrap`, and instead get the root container directly using an OAuth 2.0 token.
 
+..  important::
+
+    Implementing shortcut operations is optional. If a host does not implement them, they should simply respond to
+    the request as though it is a standard :ref:`Bootstrap` request. In other words, a host that doesn't implement
+    shortcut operations can simply ignore the **X-WOPI-EcosystemOperation** header and treat the request as a
+    standard :ref:`Bootstrap` request.
+
+    WOPI clients must thus expect that some shortcut operations will not include the data expected, and should fall
+    back to calling the appropriate operation on the :ref:`Ecosystem endpoint` in such cases.
+
 With this in mind, the responses for each 'shortcut' operation are a combination of the :ref:`Bootstrap` response
 and the response for the corresponding operation on the :ref:`Ecosystem endpoint`. The Bootstrapper response is
 contained in the ``Bootstrap`` property, and the operation's response is contained in a separate property with a name
