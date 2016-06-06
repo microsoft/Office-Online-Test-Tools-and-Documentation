@@ -12,7 +12,7 @@ You can integrate with |Office iOS| to enable your users to view and edit Excel,
 
 If you deliver a iOS-based experience that allows your users to store Office files or includes Office files as a key part of your solution, you now have the opportunity to integrate |Office iOS| into your experience. This integration works directly against files stored by you. Your users won't need a separate storage solution to view and edit Office files.
 
-Editing and Viewing Office files
+Editing and viewing Office files
 --------------------------------
 When you integrate with |Office iOS|, your users can view and edit Excel, PowerPoint, and Word files directly on the iOS device. The level of editing support is determined by the type of user and whether they have an O365 subscription. 
 
