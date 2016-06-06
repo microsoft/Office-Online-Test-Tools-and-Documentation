@@ -64,12 +64,14 @@ Authenticated response
 
 When an **authenticated** request (i.e. a valid OAuth 2.0 access token is included in the :header:`Authorization` HTTP
 header) is made to this endpoint, it returns a :statuscode:`200` response with a JSON (as specified in :rfc:`4627`)
-response body.
+response body. The response must include a single ``Bootstrap`` property, with the following properties nested within
+it as needed.
+
 
 Required response properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following properties must be present in all :statuscode:`200` |operation| responses:
+The following properties must be present in the ``Bootstrap`` property in all :statuscode:`200` |operation| responses:
 
 ..  glossary::
 
@@ -94,6 +96,13 @@ Optional response properties
 UserFriendlyName
     A **string** that is the name of the user. This value should match the :term:`UserFriendlyName` value provided in
     :ref:`CheckFileInfo`.
+
+
+Sample response
+^^^^^^^^^^^^^^^
+
+..  literalinclude:: /_fragments/responses/Bootstrap.json
+    :language: JSON
 
 
 ..  _unauthenticated response:
@@ -151,7 +160,8 @@ These parameters and their values must be formatted as follows:
   request to the Bootstrapper endpoint.  However, there must be exactly one instance of the :header:`WWW-Authenticate`
   header with the ``Bearer`` qualifier.
 
-Sample response:
+Sample unauthenticated response
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ..  code-block:: text
 
