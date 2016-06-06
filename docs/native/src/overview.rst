@@ -25,7 +25,7 @@ To integrate your application with |Office iOS|, you need to do the following:
  #. Become a member of the Office 365 - Cloud Storage Partner Program. You can learn more about the program, as well as how to apply, at `Office 365 Cloud Storage Partner Program. <http://dev.office.com/programs/officecloudstorage>`_
  #. Provide the required on-boarding information as described in the section titled :ref:`Onboarding information <onboarding>`.
  #. Obtain your ProviderId and app store URLs from Microsoft. The app store URLs are the URLs you should use to launch Office on a platform's app store. 
- #. Add your domain to the WOPI domain :ref:`allow list <allow list>`. This is required even if you do not integrate with Office Online so you can verify your WOPI integration with the :ref:`validator app <Validator app>`.
+ #. Add your domain to the WOPI domain :ref:`allow list <allow list>`. This is required even if you do not integrate with |wac| so you can verify your WOPI integration with the :ref:`validator app <Validator app>`.
  #. Implement the WOPI protocol. The set of WOPI operations that must be supported is described in the section titled :ref:`WOPI implementation requirements for |Office iOS| integration <requirements>`.
  #. Implement required changes to your app. Contact your |Office iOS| integration contacts to receive directions to run |Office iOS| in test mode, to enable testing. 
  #. Run the :ref:`validator app <Validator app>` and fix any issues until the validator reports a 100% pass rate. 
