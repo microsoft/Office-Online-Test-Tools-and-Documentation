@@ -15,17 +15,19 @@ Please contact Microsoft for directions to set the |Office iOS| apps into a test
      * Where it refers to "Office", please substitute Word, Excel and PowerPoint app. The tests should be re-run against each Office application. 
      * Please note the version of the Office app you tested against. This information can be found under :menuselection:`Settings --> [App] --> Version`
 	 
-1 - Open from Company App - First Install
+1 - Open from company app - first install
 -----------------------------------------
 *This test verifies the flow of using Office for the first time from the Company app. Repeat for each supported file type and each Office app.*
 
 #. Start with a fresh install of Company app. Ensure Office is not installed.
 #. Boot up company app and login.
- **RESULT: General promotion for Office should be shown the first time after upgrading the company app.**
+
+**RESULT: General promotion for Office should be shown the first time after upgrading the company app.**
 
 
 #. Browse to a supported file type
- **RESULT: "Open with Microsoft [app]" promotion, drawing attention to control and enabling open with Office once per first open for each supported file type. "Open with Microsoft should be top choice if multiple choices are available. If a list is not shown Office should be the default app for opening the file.**
+
+**RESULT: "Open with Microsoft [app]" promotion, drawing attention to control and enabling open with Office once per first open for each supported file type. "Open with Microsoft should be top choice if multiple choices are available. If a list is not shown Office should be the default app for opening the file.**
 
 #. Activate control to open in Office
 
@@ -50,7 +52,7 @@ Please contact Microsoft for directions to set the |Office iOS| apps into a test
 
 **RESULT: Confirm company service is shown as a place.**
 
-2 - Open from Office - Fresh Install
+2 - Open from |Office iOS| - fresh install
 ------------------------------------
 *This test verifies the flow of using Company Service for the first time from Office.*
 
@@ -80,50 +82,50 @@ Please contact Microsoft for directions to set the |Office iOS| apps into a test
 
 #. Make changes [you will need to sign in with a subscription account for testing commercial user]
 #. Click :guilabel:`Back (<-)`
-#. Click "Open"
+#. Click :guilabel: 'Open'
 
 **RESULT: File should have the previously saved changes. Ensure changes are being saved on Company service.**
 
 
-3 - Open from Company App - Repeat Usage
+3 - Open from company app - repeat usage
 ----------------------------------------
 Repeat test 1 except with company service already added (i.e. from previous usage).
 
 
-4 - Open from Office - Repeat Usage
+4 - Open from |Office iOS| - repeat usage
 -----------------------------------
 Repeat test 2 except with company service already added (i.e. from previous usage).
 
 
-5 - Save As [duplicate]
+5 - Save as [duplicate]
 -----------------------
 Verify ability to duplicate to Company Service, both by adding a new place and using an existing place.
 
 ..  figure:: ../images/test_dupe.png  
     :alt: A screenshot that shows the document actions in |Office iOS|. 
 
-    :guilabel: A screenshot that shows the document actions in |Office iOS|. 
+    A screenshot that shows the document actions in |Office iOS|. 
 
-6 - Create New [name]
+6 - Create new [name]
 ---------------------
 Verify ability to duplicate to Company Service, both by adding a new place and using an existing place.
 
 
-7 - Verify Licensing
+7 - Verify licensing
 --------------------
 Verify editing a file for a commercial user requires O365 subscription or else it opens read only.
 
 Please go to :menuselection:`Settings --> [Microsoft App] --> Reset Word --> Delete Sign-In Credentials` and restart Office before doing this test.
 
 
-8 - OAuth Login Page
+8 - OAuth login page
 --------------------
 Verify there is a link to the company's privacy statement on the company's login page when the user adds the company service as a place.
 
 Verify login page fits in window for various iPad and iPhone sizes.
 
 
-9 - Verify File Properties 
+9 - Verify file properties 
 --------------------------
 Verify file properties from :guilabel:`Recent` and from opened file. When opening the properties from the :guilabel:`Recent` tab or the :guilabel:`Open` tab, the fields Author, Created, Modified By and Company will be empty.
 
@@ -139,7 +141,7 @@ Verify file properties from :guilabel:`Recent` and from opened file. When openin
 	
 
 
-10 - Change Passwords
+10 - Change passwords
 ---------------------
 *This test verifies the flow of using Company Service after the user changed passwords.*
 
@@ -155,9 +157,9 @@ Verify file properties from :guilabel:`Recent` and from opened file. When openin
 #. Open a file from Browse.
 #. Click sign in and sign in with a free Microsoft Account.
 #. Make changes (you will need to sign in with a subscription account for testing commercial user)
-#. Click Back
+#. Click :guilabel: Back
 #. On the Company Service app, change the password of the user.
-#. Open the Office app and browse to the Company Service and Open a file.
+#. Open the |Office iOS| app and browse to the Company Service and Open a file.
 
 **RESULT: You should be prompted to enter credentials again.**
 	
