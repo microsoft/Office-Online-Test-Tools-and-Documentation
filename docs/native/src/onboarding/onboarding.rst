@@ -83,11 +83,6 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 | SiteUrl        | String      | http://www.contoso.com                     | Fully qualified address to your website.         |
 |                |             |                                            |                                                  |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| BetaOnly       | Bool        | True                                       | Internal use by Microsoft. All services will be  |
-|                |             |                                            | set to True until they are ready to go live.     |
-|                |             |                                            | True means the service will only show up in the  |
-|                |             |                                            | Beta catalog.                                    |
-+----------------+-------------+--------------------------------------------+--------------------------------------------------+
 
 Additional information required
 -------------------------------
