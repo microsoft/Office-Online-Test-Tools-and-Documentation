@@ -17,6 +17,8 @@ ID
 iframe
 iframes
 iOS
+iPad
+iPhone
 Indices
 IP
 metadata

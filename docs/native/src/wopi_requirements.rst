@@ -1,10 +1,12 @@
+
 ..  _requirements:
 
 WOPI implementation requirements for |Office iOS| integration
-=========================================================================
+=============================================================
 
 This section documents specific requirements for your WOPI implementation for integration with |Office iOS| beyond
 what is documented in general for WOPI.
+
 
 Required WOPI Operations for |Office iOS|
 -----------------------------------------
@@ -15,6 +17,7 @@ currently called by |Office iOS|.
 If some operations are not supported for a specific user/file/container, just make sure to return the correct values 
 in :ref:`CheckFileInfo` and :ref:`CheckContainerInfo`.
 
+
 File Operations
 ~~~~~~~~~~~~~~~
 
@@ -24,8 +27,10 @@ File Operations
 * :ref:`GetLock`
 * :ref:`RefreshLock`
 * :ref:`Unlock`
+* :ref:`UnlockAndRelock`
 * :ref:`PutFile`
-* :ref:`EnumerateAncestors`
+* :ref:`EnumerateAncestors (files)`
+
 
 Container Operations
 ~~~~~~~~~~~~~~~~~~~~
@@ -33,7 +38,15 @@ Container Operations
 * :ref:`CheckContainerInfo`
 * :ref:`CreateChildFile`
 * :ref:`EnumerateAncestors (containers)`
-* :ref:`EnumerateChildren`
+* :ref:`EnumerateChildren (containers)`
+
+
+Ecosystem Operations
+~~~~~~~~~~~~~~~~~~~~
+
+* :ref:`CheckEcosystem`
+* :ref:`GetRootContainer (ecosystem)`
+
 
 Bootstrapper
 ~~~~~~~~~~~~
@@ -42,16 +55,21 @@ Bootstrapper
 * :ref:`GetNewAccessToken`
 * :ref:`Shortcut operations` (Of these, only :ref:`GetRootContainer (bootstrapper)` is required)
 
+
 Future Support
 ~~~~~~~~~~~~~~
 
-It is recommended the following operations also be implemented - it is expected the |Office iOS| integration will use these in the future.
+While these WOPI operations are not current used by |Office iOS|, they must be implemented. |Office iOS| will use
+these operations in the future.
 
 * :ref:`RenameFile`
 * :ref:`DeleteFile`
 * :ref:`CreateChildContainer`
 * :ref:`DeleteContainer`
 * :ref:`RenameContainer`
+* :ref:`GetEcosystem (files)`
+* :ref:`GetEcosystem (containers)`
+
 
 Other Requirements
 ~~~~~~~~~~~~~~~~~~
@@ -59,4 +77,3 @@ Other Requirements
 * The **X-WOPI-ItemVersion** header must be included on :ref:`PutFile`, :ref:`Lock`, and :ref:`Unlock` responses
 * For the :ref:`Bootstrap` operation, the :http:header:`Content-Type` response header must be set to
   ``application/json``
-  
