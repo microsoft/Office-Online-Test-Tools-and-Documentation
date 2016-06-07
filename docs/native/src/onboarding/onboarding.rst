@@ -45,12 +45,14 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 |                |             |                                            | * icons must have at least a 1px white border    |
 |                |             |                                            |   to avoid bleed                                 |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| BootstrapUrl   | String      | \https://contoso.com/wopibootstrapper      | The full path to the Bootstrapper endpoint. Must |
+| BootstrapperUri| String      | \https://contoso.com/wopibootstrapper      | The full path to the Bootstrapper endpoint. Must |
 |                |             |                                            | end in wopibootstrapper.                         |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| Provider       | String      | Contoso- "Free online storage.             | Used to show more information about the service. |
+| English        | String      | Free online storage.                       | Used to show more information about the service. |
 | Description    |             | Store, access and share thousands          |                                                  |
-|                |             | of documents."                             |                                                  |
+|                |             | of documents.                              | Please specify which part of the string should   |
+|                |             |                                            | not be localized. E.g. your product or brand name|
+|                |             |                                            | if you include it in your description            |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | Client ID      | String      | s6BhdRkqt3                                 | OAuth2 Client ID (for Office)                    |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
@@ -68,20 +70,18 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | ProviderId     | String      | TP_CONTOSO                                 | Supplied by Microsoft                            |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| AuthUriDomains | String      | contoso.com, qa-contoso.com                | Known domains for authorization and token        |
+| TrustedDomain  | String      | contoso.com, qa-contoso.com                | Known domains for authorization and token        |
 |                |             |                                            | issuance endpoints.                              |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| AuthScopes     | String      | userprofile, editdocs                      | Set of comma-delimited scopes that are to be     |
+| Scope          | String      | userprofile, editdocs                      | Set of comma-delimited scopes that are to be     |
 | (optional)     |             |                                            | requested during authentication with the storage |
 |                |             |                                            | provider.                                        |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | SupportRefresh | Bool        | True                                       | Denotes whether you will issue a refresh token   |
 |                |             |                                            | that can be used to obtain a new access token.   |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| BetaOnly       | Bool        | True                                       | Internal use by Microsoft. All services will be  |
-|                |             |                                            | set to True until they are ready to go live.     |
-|                |             |                                            | True means the service will only show up in the  |
-|                |             |                                            | Beta catalog.                                    |
+| SiteUrl        | String      | http://www.contoso.com                     | Fully qualified address to your website.         |
+|                |             |                                            |                                                  |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 
 Additional information required
