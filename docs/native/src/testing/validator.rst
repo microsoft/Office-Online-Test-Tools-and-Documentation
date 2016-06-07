@@ -1,3 +1,4 @@
+..  _Validator app:
 
 Using the validator application to validate your WOPI implementation
 ====================================================================
