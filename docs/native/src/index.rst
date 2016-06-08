@@ -49,13 +49,13 @@ To integrate your application with |Office iOS|, you need to do the following:
 
     /scenarios/browse
     /scenarios/from_app
+    /scenarios/operational_flows
 
 ..  toctree::
     :maxdepth: 2
     :glob:
     :hidden:
     :caption: Onboarding
-    :name: onboardingtoc
 
     /onboarding/onboarding
 
