@@ -45,20 +45,29 @@ Other response properties
 -------------------------
 
 ..  glossary::
-    :sorted:
 
     HostUrl
         A URI to a webpage for the container.
+
+IsEduUser
+    A **Boolean** value indicating whether the user is an education user or not. This should match the value returned
+    in :term:`CheckFileInfo <IsEduUser>`.
+
+LicenseCheckForEditIsEnabled
+    A **Boolean** value indicating whether the user is a business user or not. This should match the value returned
+    in :term:`CheckFileInfo <LicenseCheckForEditIsEnabled>`.
+
+..  glossary::
 
     SharingUrl
         A URI to a webpage to allow the user to control sharing of the container. This is analogous to the
         :term:`FileSharingUrl` in :ref:`CheckFileInfo`.
 
-    UserCanCreateChildFile
-        A **Boolean** value that indicates the user has permission to create a new file in the container.
-
     UserCanCreateChildContainer
         A **Boolean** value that indicates the user has permission to create a new container in the container.
+
+    UserCanCreateChildFile
+        A **Boolean** value that indicates the user has permission to create a new file in the container.
 
     UserCanDelete
         A **Boolean** value that indicates the user has permission to delete the container.
