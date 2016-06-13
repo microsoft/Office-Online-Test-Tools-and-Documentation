@@ -50,12 +50,12 @@ Other response properties
         A URI to a webpage for the container.
 
 IsEduUser
-    A **Boolean** value indicating whether the user is an education user or not. This should match the value returned
-    in :term:`CheckFileInfo <IsEduUser>`.
+    A **Boolean** value indicating whether the user is an education user or not. This should match the
+    :term:`IsEduUser` value returned in :ref:`CheckFileInfo`.
 
 LicenseCheckForEditIsEnabled
-    A **Boolean** value indicating whether the user is a business user or not. This should match the value returned
-    in :term:`CheckFileInfo <LicenseCheckForEditIsEnabled>`.
+    A **Boolean** value indicating whether the user is a business user or not. This should match the
+    :term:`LicenseCheckForEditIsEnabled` value returned in :ref:`CheckFileInfo`.
 
 ..  glossary::
 
