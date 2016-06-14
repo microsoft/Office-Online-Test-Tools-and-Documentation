@@ -29,8 +29,8 @@ Storage provider
    Refers to a CSPP partner who has integrated their service into |Office iOS|
 
 ..  note::
-   * Any time during these flows that we try to hit the bootstrapper and have expired or invalid OAuth credentials we will ask the user to log in again.
-   * Any time during these flows that we have a missing, invalid, or expired WOPI access token we will attempt to get a valid WOPI access_token by calling :ref:`GetNewAccessToken`.
+   * Any time during these flows that |Office iOS| tries to hit the bootstrapper and have expired or invalid OAuth credentials, |Office iOS| will ask the user to log in again.
+   * Any time during these flows that |Office iOS| has a missing, invalid, or expired WOPI access token, |Office iOS| will attempt to get a valid WOPI access_token by calling :ref:`GetNewAccessToken`.
 
 Add a Place 
 ~~~~~~~~~~~
@@ -61,21 +61,21 @@ Here is the operational flow for browsing and opening files.
 
 #. *Get the RootContainerURL:* 
 
-    * Option 1: Call the :ref:`GetRootContainer (bootstrapper)` shortcut and provide all of the required Auth headers. 
-    * Option 2: If the :ref:`GetRootContainer (bootstrapper)` shortcut is not implemented, call :ref:`GetRootContainer (ecosystem)`. If this call doesn't contain ContainerInfo, use the WOPI URL to call :ref:`CheckContainerInfo`. 
+    * Option 1: |Office iOS| calls the :ref:`GetRootContainer (bootstrapper)` shortcut which provides all of the required Auth headers. 
+    * Option 2: If the :ref:`GetRootContainer (bootstrapper)` shortcut is not implemented, |Office iOS| calls :ref:`GetRootContainer (ecosystem)`. If this call doesn't contain ContainerInfo, use the WOPI URL to call :ref:`CheckContainerInfo`. 
 
-#. *Get the contents of the container:* Call :ref:`EnumerateChildren` on the RootContainerURL. Your results are a set of containers and files in the current container. If the user wants to browse to another container within the current container, call :ref:`CheckContainerInfo` on the other container URL. Repeat step 2 until the user navigates to the file they want to open.
-#. *Check the File:* Once you have the URL of the file the user wants to open, call :ref:`CheckFileInfo` on that file. If the user has permissions to open that file, continue.
+#. *Get the contents of the container:* |Office iOS| calls :ref:`EnumerateChildren` on the RootContainerURL. The results are a set of containers and files in the current container. If the user wants to browse to another container within the current container, |Office iOS| calls :ref:`CheckContainerInfo` on the other container URL. Repeat step 2 until the user navigates to the file they want to open.
+#. *Check the File:* Once you have the URL of the file the user wants to open, |Office iOS| calls :ref:`CheckFileInfo` on that file. If the user has permissions to open that file, continue.
 #. *Check File Lock:* 
 
-    * If the earlier :ref:`CheckFileInfo` call returned SupportsGetLock==true, call:ref:`GetLock`. If the :ref:`GetLock` response is a 409, the file is locked and we do not continue opening it. 
-    * If the earlier :ref:`CheckFileInfo <CheckFileInfo>` call returned SupportsGetLock==false, send a :ref:`RefreshLock` request with a fake lock token. If the :ref:`RefreshLock` response is a 409 with a lock token in the X-WOPI-Lock response header, the file is locked and we do not continue opening it. 
+    * If the earlier :ref:`CheckFileInfo` call returned SupportsGetLock==true, |Office iOS| calls :ref:`GetLock`. If the :ref:`GetLock` response is a 409, the file is locked and |Office iOS| does not continue opening it. 
+    * If the earlier :ref:`CheckFileInfo <CheckFileInfo>` call returned SupportsGetLock==false, |Office iOS| sends a :ref:`RefreshLock` request with a fake lock token. If the :ref:`RefreshLock` response is a 409 with a lock token in the X-WOPI-Lock response header, the file is locked and |Office iOS| does not continue opening it. 
 
-#. *Take a lock on the file:* Call :ref:`Lock` on the File's WOPI URL, which returns the lock token which will need to be attached to any PutRequest.
-#. *Download the file:* Make a :ref:`GetFile` request using the File's WOPI URL.
+#. *Take a lock on the file:* |Office iOS| calls :ref:`Lock` on the File's WOPI URL, which returns the lock token which will need to be attached to any PutRequest.
+#. *Download the file:* |Office iOS| makes a :ref:`GetFile` request using the File's WOPI URL.
 
 Saving and closing a file
 -------------------------
-#. *Save the File:* If the user has made changes to the file, update the file's contents using PutFile for the File URL. The :ref:`PutFile` request must contain the current WOPI Lock Token for the locked file or it will fail.
+#. *Save the File:* If the user has made changes to the file, |Office iOS| will update the file's contents using PutFile for the File URL. The :ref:`PutFile` request must contain the current WOPI Lock Token for the locked file or it will fail.
 #. *Unlock the File:* Make an :ref:`Unlock` request against the File URL to unlock the file. This :ref:`Unlock` request must contain the current WOPI Lock Token for the locked file or it will fail.
  
