@@ -53,7 +53,7 @@ Bootstrapper
 
 * :ref:`Bootstrap`
 * :ref:`GetNewAccessToken`
-* :ref:`GetRootContainer (bootstrapper)`, if :ref:`GetRootContainer (ecosystem)` isn't implemeneted
+* :ref:`GetRootContainer (bootstrapper)`
 
 
 Future Support
