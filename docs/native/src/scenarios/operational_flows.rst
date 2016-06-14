@@ -59,11 +59,7 @@ Browsing and opening files
 --------------------------
 Here is the operational flow for browsing and opening files.   
 
-#. *Get the RootContainerURL:* 
-
-    * Option 1: |Office iOS| calls the :ref:`GetRootContainer (bootstrapper)` shortcut which provides all of the required Auth headers. 
-    * Option 2: If the :ref:`GetRootContainer (bootstrapper)` shortcut is not implemented, |Office iOS| calls :ref:`GetRootContainer (ecosystem)`. If this call doesn't contain ContainerInfo, use the WOPI URL to call :ref:`CheckContainerInfo`. 
-
+#. *Get the RootContainerURL:* |Office iOS| calls the :ref:`GetRootContainer (bootstrapper)` shortcut which provides all of the required Auth headers. 
 #. *Get the contents of the container:* |Office iOS| calls :ref:`EnumerateChildren` on the RootContainerURL. The results are a set of containers and files in the current container. If the user wants to browse to another container within the current container, |Office iOS| calls :ref:`CheckContainerInfo` on the other container URL. Repeat step 2 until the user navigates to the file they want to open.
 #. *Check the File:* Once you have the URL of the file the user wants to open, |Office iOS| calls :ref:`CheckFileInfo` on that file. If the user has permissions to open that file, continue.
 #. *Check File Lock:* 
