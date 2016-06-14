@@ -5,7 +5,7 @@ WOPI implementation requirements for |Office iOS| integration
 =============================================================
 
 This section documents specific requirements for your WOPI implementation for integration with |Office iOS| beyond
-what is documented in general for WOPI.
+what is documented in general for WOPI. You can learn more about how |Office iOS| uses these operations in the :ref:`operational flows` section. 
 
 
 Required WOPI Operations for |Office iOS|
@@ -53,7 +53,7 @@ Bootstrapper
 
 * :ref:`Bootstrap`
 * :ref:`GetNewAccessToken`
-* :ref:`Shortcut operations` (Of these, only :ref:`GetRootContainer (bootstrapper)` is required)
+* :ref:`GetRootContainer (bootstrapper)`, if :ref:`GetRootContainer (ecosystem)` isn't implemeneted
 
 
 Future Support
