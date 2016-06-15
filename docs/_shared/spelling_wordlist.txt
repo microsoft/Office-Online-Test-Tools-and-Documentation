@@ -28,6 +28,7 @@ onboarding
 Onboarding
 online
 Online
+PowerPoint
 pre
 Pre
 preload
@@ -49,3 +50,4 @@ wdPreviousCorrelation
 wdPreviousSession
 webpage
 workflow
+WOPI
