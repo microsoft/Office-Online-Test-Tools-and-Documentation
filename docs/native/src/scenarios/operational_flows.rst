@@ -75,8 +75,8 @@ account with their |Office iOS| account.
 #. The Office Identity Service makes an authenticated :ref:`Bootstrap` call using the tokens to retrieve the user
    profile information.
 #. The Office Identity Service sends these tokens and the user profile information to |Office iOS|.
-#. The user is now able to see their files under the Storage Provider's Place and open the Storage Provider files
-   directly in their |Office iOS| app.
+#. The user has now added the Storage Provider as a place. For the operational flow on browsing, opening, and saving
+   files, see the next sections.
 
 
 Browsing and opening files
@@ -85,9 +85,7 @@ Browsing and opening files
 Here is the operational flow for browsing and opening files.   
 
 #. *Get the Root Container URL:* |Office iOS| calls :ref:`GetRootContainer (bootstrapper)` to obtain a Root Container
-   URL. If the :ref:`GetRootContainer (bootstrapper)` response does not include ``RootContainerInfo``, |Office iOS|
-   will fall back to calling :ref:`GetRootContainer` using the ``EcosystemUrl`` returned in the
-   :ref:`GetRootContainer (bootstrapper)` response.
+   URL.
 #. *Get the contents of the container:* |Office iOS| calls :ref:`EnumerateChildren` on the Root Container. The
    results are a set of containers and files in the root container. If the user wants to browse to another container
    within the current container, |Office iOS| calls :ref:`CheckContainerInfo` on the other container to check
