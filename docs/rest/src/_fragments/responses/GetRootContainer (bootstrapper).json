@@ -12,8 +12,8 @@
     },
     "ContainerInfo" : {
       "Name" : "Container Name",
-      "HostUrl" : "",
-      "SharingUrl" : "",
+      "HostUrl" : "http://contoso/324332",
+      "SharingUrl" : "http://contoso/323432/efewos",
       "UserCanCreateChildContainer" : false,
       "UserCanCreateChildFile" : false,
       "UserCanDelete" : false,
