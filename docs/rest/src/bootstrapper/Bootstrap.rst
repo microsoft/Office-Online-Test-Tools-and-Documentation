@@ -150,6 +150,13 @@ returned in a :statuscode:`401` response to an unauthenticated request is as fol
 |                   |                                        |          |                                          |
 |                   | Allowed characters: [a-z, A-Z, 0-9]    |          |                                          |
 +-------------------+----------------------------------------+----------+------------------------------------------+
+| UrlSchemes        | URL scheme your app uses. This is an   | No       | \{"iOS" : ["contoso","contoso-EMM"],     |
+|                   | ordered list by platform. Omit any     |          | \ "Android" : ["contoso","contoso-EMM"]  |
+|                   | platforms you do not support. Office   |          | "UWP": ["contoso","contoso-EMM"]}        |
+|                   | will attempt to invoke these URL       |          |                                          |
+|                   | schemes in order before falling back to|          | The value itself must be URL encoded     |
+|                   | the webview auth.                      |          |                                          |
++-------------------+----------------------------------------+----------+------------------------------------------+
 
 These parameters and their values must be formatted as follows:
 
@@ -167,6 +174,6 @@ Sample unauthenticated response
 
     HTTP/1.1 401 Unauthorized
     <removed for brevity>
-    WWW-Authenticate: Bearer authorization_uri="https://contoso.com/api/oauth2/authorize",tokenIssuance_uri="https://contoso.com/api/oauth2/token",providerId="tp_contoso"
+    WWW-Authenticate: Bearer authorization_uri="https://contoso.com/api/oauth2/authorize",tokenIssuance_uri="https://contoso.com/api/oauth2/token",providerId="tp_contoso", UrlSchemes="%7B%22iOS%22%20%3A%20%5B%22contoso%22%2C%22contoso-EMM%22%5D%2C%20%22Android%22%20%3A%20%5B%22contoso%22%2C%22contoso-EMM%22%5D%2C%20%22UWP%22%3A%20%5B%22contoso%22%2C%22contoso-EMM%22%5D%7D"
     Date: Wed, 24 Jun 2015 21:52:44 GMT
 

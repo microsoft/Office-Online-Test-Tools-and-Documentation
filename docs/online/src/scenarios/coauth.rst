@@ -92,12 +92,13 @@ Excel Online co-authoring behavior
 **Auto-save frequency**: Every 2 minutes.
 
 **PutFile access token**: Excel Online will always use the access token of the user who joined the editing session
-first. This user is called the *principal user*. If the principal user leaves the session, then the next user who
-joined the session becomes the principal user. In other words, if User A starts editing and then User B joins the
-session, User A is the principal user, and Excel Online will use User A's access token when calling :ref:`PutFile`.
-The file will have both users' changes, but the PutFile request will use User A's access token.
+most recently. This user is called the *principal user*. If the principal user leaves the session, then the last user
+who joined the session becomes the principal user. In other words, if User A starts editing, then User A is the
+principal user. If User B then joins the session, User B becomes the principal user, and Excel Online will use User B's
+access token when calling :ref:`PutFile`. The file will have both users' changes, but the PutFile request will use
+User B's access token. If User C then joins the session, User C becomes the principal user.
 
-If User A leaves the session, then User B becomes the principal user, and User B's access token will be used when
+If User C then leaves the session, then User B becomes the principal user, and User B's access token will be used when
 calling PutFile.
 
 **Permissions check frequency**: Excel Online will verify that a user has permissions by calling :ref:`RefreshLock` at

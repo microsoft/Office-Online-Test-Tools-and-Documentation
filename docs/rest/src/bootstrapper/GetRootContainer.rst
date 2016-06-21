@@ -47,7 +47,7 @@ Response
 Bootstrap
     The contents of this property should be the response to a :ref:`Bootstrap` call.
 
-AccessTokenInfo
+RootContainerInfo
     The contents of this property should be the response to a :ref:`GetRootContainer` call.
 
 
