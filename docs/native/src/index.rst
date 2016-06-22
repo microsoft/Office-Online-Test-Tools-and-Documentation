@@ -72,6 +72,7 @@ To integrate your application with |Office iOS|, you need to do the following:
     /identity/sessioncontext
     /identity/oauthparams
     /identity/clientsecret
+    /identity/apptoapp
 
 ..  toctree::
     :maxdepth: 2
