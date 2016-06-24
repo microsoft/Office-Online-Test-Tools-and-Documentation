@@ -2,14 +2,14 @@ What file types are supported in |Office iOS|?
 ============================================== 
 
 PPT
-   @"pptx", @"ppsx", @"ppt", @"pps", @"pptm", @"potm", @"potx", @"ppsm", @"pot", @"thmx"
+   @"pptx", @"ppsx", @"ppt", @"pps", @"pptm", @"potm", @"potx", @"ppsm", @"pot", @"thmx", @"odp"
  
 Excel
-   @"xlsx", @"xltx", @"xlsb", @"xlsm", @"xls", @"csv"
+   @"xlsx", @"xltx", @"xlsb", @"xlsm", @"xls", @"csv", @"ods"
  
 Word
-   @"docx", @"docm", @"dotm", @"dotx", @"doc", @"dot"
-
+   @"docx", @"docm", @"dotm", @"dotx", @"doc", @"dot, @"odt"
+   
 .. note:: 
 
    The modern formats (e.g. docx, docm) can be edited directly. For the legacy formats (e.g. doc, ppt), those can be opened, but must be converted to 
