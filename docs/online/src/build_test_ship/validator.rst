@@ -118,3 +118,19 @@ following:
 
 This is intended for automated use. For example, a host may wish to run this validation as part of rolling out new
 versions of their WOPI host.
+
+
+Automated WOPI validation using a CLI Tool
+------------------------------------------
+
+The host can use a Python based CLI tool at https://github.com/Microsoft/wopi-validator-cli-python instead of launching 
+a :term:`host page`. This tool also uses the :wopi:action:`getinfo` action URL provided in :ref:`WOPI discovery` to execute the 
+:ref:`validator`
+
+#. Create a ``.wopitest`` file on the host.
+#. Download and install the CLI tool by following the instructions at https://github.com/Microsoft/wopi-validator-cli-python
+#. Execute the tool by providing the :term:`WOPIsrc` and :term:`access token` of the ``.wopitest`` file.
+
+..  tip::
+	#. The tool executes all the tests based on the chosen :term:`VALIDATOR_TEST_CATEGORY` and displays the results.
+	#. To view the request and response details for each test, you can turn on verbose logging while executing the CLI tool.
