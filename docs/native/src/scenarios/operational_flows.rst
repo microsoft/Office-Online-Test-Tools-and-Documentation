@@ -72,9 +72,9 @@ account with their |Office iOS| account.
 #. |Office iOS| sends the auth code and token issue URI to the Office Identity Service.
 #. The Office Identity Service sends the auth code and the client secret to the Token endpoint.
 #. The Token Endpoint issues an access token and a refresh token (if available) back to the Office Identity Service.
-#. The Office Identity Service makes an authenticated :ref:`Bootstrap` call using the tokens to retrieve the user
+#. The Office Identity Service makes an authenticated :ref:`Bootstrap` call using the access token to retrieve the user
    profile information.
-#. The Office Identity Service sends these tokens and the user profile information to |Office iOS|.
+#. The Office Identity Service sends the access and refresh tokens and the user profile information to |Office iOS|.
 #. The user has now added the Storage Provider as a place. For the operational flow on browsing, opening, and saving
    files, see the next sections.
 
