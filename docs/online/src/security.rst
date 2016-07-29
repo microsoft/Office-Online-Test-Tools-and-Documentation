@@ -62,4 +62,6 @@ Documents live in the cache until they become unpopular. That is, the cache is n
 available space and usage. Unpopular files may expire out of the cache in only a few days while popular documents may
 remain in the cache for up to 30 days.
 
-Currently the information in disk is not encrypted but it will be by the beginning of 2016.
+As of May 2016 the contents of the cache is encrypted using a
+`FIPS 140-2 <http://csrc.nist.gov/publications/fips/fips140-2/fips1402.pdf>`_
+compliant encryption algorithm.
