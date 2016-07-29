@@ -19,8 +19,8 @@ XML just like all other Office Online applications.
 
 ..  important::
 
-	The hosts should use the ``Test/DogFood`` Environment's URL from :ref:`discovery URLs` to ensure that they 
-	are running the latest version of the :ref:`validator`.
+    WOPI hosts should use :ref:`test environment` to ensure that they are running the latest version of
+    the WOPI validation application.
 
 ..  code-block:: xml
 
