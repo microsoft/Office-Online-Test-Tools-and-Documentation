@@ -17,6 +17,11 @@ The WOPI Validation application is an Office Online application similar to Word 
 It uses the ``.wopitest`` file extension. The WOPI Validation application is included in the :ref:`discovery`
 XML just like all other Office Online applications.
 
+..  important::
+
+	The hosts should use the ``Test/DogFood`` Environment's URL from :ref:`discovery URLs` to ensure that they 
+	are running the latest version of the :ref:`validator`.
+
 ..  code-block:: xml
 
     <app name="WopiTest" checkLicense="true">
