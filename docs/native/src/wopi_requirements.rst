@@ -77,3 +77,4 @@ Other Requirements
 * The **X-WOPI-ItemVersion** header must be included on :ref:`PutFile`, :ref:`Lock`, and :ref:`Unlock` responses
 * For the :ref:`Bootstrap` operation, the :http:header:`Content-Type` response header must be set to
   ``application/json``
+* IsEduUser and LicenseCheckForEditIsEnabled are required on CheckFileInfo and CheckContainerInfo. The values from CheckFileInfo must match that of the parent folder.
