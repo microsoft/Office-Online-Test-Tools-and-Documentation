@@ -323,8 +323,8 @@ Hosts can return a number of URLs for the file that WOPI clients may navigate to
         A URI to the file location that the WOPI client uses to get the file. If this is provided, the WOPI client
         may use this URI to get the file instead of a :ref:`GetFile` request. A host might set this property if it is
         easier or provides better performance to serve files from a different domain than the one handling standard
-        WOPI requests. The FileUrl is used exactly as provided; no other parameters, including the :term:`access token`,
-        will be appended to the FileUrl before it is used.
+        WOPI requests. WOPI clients must not add or remove parameters from the URL; no other parameters, including
+        the :term:`access token`, should be appended to the FileUrl before it is used.
 
         ..  important::
             The FileUrl is meant as a performance enhancement. The :ref:`GetFile` operation must still be supported
