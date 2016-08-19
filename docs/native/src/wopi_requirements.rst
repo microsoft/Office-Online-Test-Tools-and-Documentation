@@ -5,7 +5,8 @@ WOPI implementation requirements for |Office iOS| integration
 =============================================================
 
 This section documents specific requirements for your WOPI implementation for integration with |Office iOS| beyond
-what is documented in general for WOPI. You can learn more about how |Office iOS| uses these operations in the :ref:`operational flows` section. 
+what is documented in general for WOPI. You can learn more about how |Office iOS| uses these operations in the
+:ref:`operational flows` section.
 
 
 Required WOPI Operations for |Office iOS|
@@ -77,4 +78,5 @@ Other Requirements
 * The **X-WOPI-ItemVersion** header must be included on :ref:`PutFile`, :ref:`Lock`, and :ref:`Unlock` responses
 * For the :ref:`Bootstrap` operation, the :http:header:`Content-Type` response header must be set to
   ``application/json``
-* :term:`IsEduUser` and :term:`LicenseCheckForEditIsEnabled` are required on CheckFileInfo and CheckContainerInfo. The values from CheckFileInfo must match that of the parent container.
+* :term:`IsEduUser` and :term:`LicenseCheckForEditIsEnabled` are required on :ref:`CheckFileInfo` and
+  :ref:`CheckContainerInfo`. The values from CheckFileInfo must match that of the file's parent container.
