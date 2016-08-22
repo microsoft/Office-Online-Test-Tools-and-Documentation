@@ -1,3 +1,9 @@
 
-|stub-icon| Known issues
-========================
+Known issues
+============
+
+..  toctree::
+    :maxdepth: 1
+    :glob:
+
+    /issues/*
