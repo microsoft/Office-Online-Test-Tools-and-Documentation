@@ -48,8 +48,23 @@ Validating edit capabilities
 When Office Online is loaded for business users, it will check that the user is signed in with an Office 365 business
 account. If the user is not signed in, they'll be prompted to sign in.
 
+..  figure:: /images/business_user_flow_start.png
+    :alt: An image showing the prompt business users will see if they are not signed in with an Office 365 business
+          account.
+
+    Business users will be prompted to sign in if they are not signed in with an Office 365 business account when
+    they attempt to edit a document using |wac|
+
 Once signed in, Office Online will verify that the user has a valid Office 365 subscription. After this is verified,
-Office Online will redirect the user back to the :term:`HostEditUrl` and the user can edit documents.
+Office Online will automatically redirect the user back to the :term:`HostEditUrl` and the user can edit documents.
+
+If the user has a valid Office 365 account but their subscription does not include |wac|, the user will see a message
+that their subscription is insufficient.
+
+..  figure:: /images/business_user_flow_unlicensed.png
+    :alt: An image showing the message business users will see if their Office 365 subscription does not include |wac|
+
+    Business users will see an error message if their Office 365 subscription does not include |wac|
 
 
 ..  _implement PutUserInfo:
