@@ -165,6 +165,22 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
             scheme and host name. If you are serving your pages on a non-standard port, you must include the port as
             well. The literal string ``*``, while supported in the PostMessage protocol, is not allowed by |wac|.
 
+    WorkflowPostMessage
+        |prerelease|
+
+        A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
+        :js:data:`UI_Workflow` PostMessage when the *Workflow* UI in |wac| is activated.
+
+        Hosts can also use the :term:`WorkflowUrl` property to indicate that a new browser window should be opened
+        when the *Workflow* UI is activated rather than sending a PostMessage. Note that the :term:`WorkflowUrl`
+        property will be ignored completely if the WorkflowPostMessage property is set to ``true``.
+
+        If neither the :term:`WorkflowUrl` nor the :term:`WorkflowPostMessage` properties are set, the *Workflow*
+        UI will be hidden in |wac|.
+
+        ..  important::
+            This value will be ignored if :term:`WorkflowType` is not provided.
+
 
 .. _viewer customization:
 
