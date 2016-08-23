@@ -5,8 +5,6 @@
 Editing binary document formats
 ===============================
 
-..  include:: ../../../_shared/prerelease.rst
-
 Office Online does not support editing files in binary formats such as ``doc``, ``ppt``, and ``xls``, directly.
 However, Office Online can convert documents in those formats to modern formats like ``docx``, ``pptx``, and
 ``xlsx``, so that users can then edit them in Office Online.
