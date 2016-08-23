@@ -22,6 +22,7 @@ Before reporting any issues to Microsoft, ensure that you have done the followin
    ..  tip::
        In cases where the validator tests are not consistent with the documentation, assume that the validator is
        correct. Also please `file an issue`__ so that we can address the gaps in the documentation.
+#. Check the :ref:`common issues` to see if you have made one of the more common mistakes in your WOPI implementation.
 #. Check the :ref:`known issues` to see if what you're encountering is already known. When possible, workarounds will
    be provided in the issue notes.
 

@@ -141,6 +141,7 @@ Finally, **if you are looking for more details about the process for shipping yo
     /build_test_ship/testing
     /build_test_ship/ui_guidelines
     /build_test_ship/troubleshooting
+    /build_test_ship/common_issues
 
 
 ..  toctree::
