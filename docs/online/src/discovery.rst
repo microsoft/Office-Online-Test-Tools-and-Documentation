@@ -192,6 +192,16 @@ WOPI actions
     This action provides the location of a :term:`broadcast` endpoint for broadcast attendees. Interaction with the
     endpoint is described in `\[MS-OBPAS\] <https://msdn.microsoft.com/en-us/library/hh642267(v=office.12).aspx>`_.
 
+..  action:: preloadedit
+
+    An action used to :ref:`preload static content<Preloading static content>` for Office Online edit applications.
+
+
+..  action:: preloadview
+
+    An action used to :ref:`preload static content<Preloading static content>` for Office Online view applications.
+
+
 ..  action:: syndicate
 
     |need_permission|
@@ -213,14 +223,19 @@ WOPI actions
     ..  todo:: :issue:`7`
 
 
-..  action:: preloadedit
+..  action:: collab
 
-    An action used to :ref:`preload static content<Preloading static content>` for Office Online edit applications.
+    |need_permission|
+
+    ..  todo:: :issue:`7`
 
 
-..  action:: preloadview
+..  action:: documentchat
 
-    An action used to :ref:`preload static content<Preloading static content>` for Office Online view applications.
+    |need_permission|
+
+    ..  todo:: :issue:`7`
+
 
 ..  _Action requirements:
 
