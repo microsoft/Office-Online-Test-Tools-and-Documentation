@@ -414,7 +414,7 @@ Other miscellaneous properties
                 |wac| will use Bing to power the `Smart Lookup`_ feature, which provides quick access to definitions,
                 Wiki articles, and top related searches from the web.
 
-            New features might be added in the future.
+            Additional features might be added in the future.
 
         .. _Bing Spell Check API: https://www.microsoft.com/cognitive-services/en-us/bing-spell-check-api
         .. _Smart Lookup: https://support.office.microsoft.com/article/Get-insights-into-what-you-re-working-on-with-Smart-Lookup-debf2083-5ac0-4739-8667-ae2467bec044
