@@ -168,6 +168,16 @@ understanding the requirements for integration with WOPI clients such as |wac| a
             :term:`SupportsExtendedLockLength` property in :ref:`CheckFileInfo`.
 
 
+    Share URL
+        A Share URL is a URL to a webpage that is suitable for viewing a shared WOPI file or container. The URL should be
+        appropriate for being launched in a web browser, but the experience is defined by the host. For example, 
+        the host may choose to have the URL navigate to the host's browse experience or to a preview of the file 
+        using Office Online or another file previewer. 
+
+        A host may support different types of Share URLs that may be used for different purposes. For example, a
+        particular Share URL type may not allow users to edit the file by using the Share URL. The list of possible
+        types are defined under the :term:`SupportedShareUrlTypes` property.
+
     WOPISrc
         The WOPISrc (*WOPI Source*) is the URL used to execute WOPI operations on a file. It is a combination of the
         :ref:`Files endpoint` URL for the host along with a particular :term:`file ID`. The WOPISrc does *not*

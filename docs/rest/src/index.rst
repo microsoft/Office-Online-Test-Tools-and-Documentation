@@ -71,6 +71,7 @@ server intends to integrate with. To learn more about the specific requirements 
     /files/RenameFile
     /files/DeleteFile
     /files/EnumerateAncestors
+    /files/GetShareUrl
     /files/PutUserInfo
 
 
@@ -86,6 +87,7 @@ server intends to integrate with. To learn more about the specific requirements 
     /containers/DeleteContainer
     /containers/EnumerateAncestors
     /containers/EnumerateChildren
+    /containers/GetShareUrl
     /containers/RenameContainer
 
 

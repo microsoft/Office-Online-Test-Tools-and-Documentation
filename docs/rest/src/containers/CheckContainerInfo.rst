@@ -63,6 +63,22 @@ LicenseCheckForEditIsEnabled
         A URI to a webpage to allow the user to control sharing of the container. This is analogous to the
         :term:`FileSharingUrl` in :ref:`CheckFileInfo`.
 
+    SupportedShareUrlTypes
+        An **array** of strings containing the :term:`Share URL` types supported by the host. The types
+        indicate the sharing options available for the container itself and not on the files in the container.
+
+        These types can be passed in the **X-WOPI-UrlType** request header to signify which Share URL type
+        to return for the :ref:`GetShareUrl (containers)` operation. 
+
+        Possible Values:
+
+        ReadOnly
+            This type of Share URL allows users to view the container using the URL, but does not give them
+            permission to make changes to the container. 
+
+        ReadWrite
+            This type of Share URL allows users to both view and make changes to the container using the URL.
+
     UserCanCreateChildContainer
         A **Boolean** value that indicates the user has permission to create a new container in the container.
 
