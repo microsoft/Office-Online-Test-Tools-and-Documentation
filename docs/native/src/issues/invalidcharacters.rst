@@ -1,9 +1,20 @@
 
-|Office iOS| will fail to load files with invalid characters in the file name, folder names or user ID. 
-=======================================================================================================
+|Office iOS| will fail to load files with invalid characters in the file name, folder names or user ID
+======================================================================================================
 
-If a file name, folder name or user ID contains the following characters, the file will not open properly in |Office iOS|:
+|Office iOS| will fail to load files if there are invalid characters in certain :ref:`CheckFileInfo` or
+:ref:`CheckContainerInfo` properties. The following characters are not allowed::
 
-\/:*?"<>|#{}^[]`%_
+    \/:*?"<>|#{}^[]`%_
 
-To work around this issue, please replace these characters with "-" when sending the file to Office. 
+These properties are affected:
+
+CheckFileInfo
+    * :term:`BaseFileName`
+    * :term:`UserId`
+    * :term:`OwnerId`
+
+CheckContainerInfo
+    * Name
+
+To work around this issue, hosts should replace these characters with ``-``.
