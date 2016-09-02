@@ -34,7 +34,7 @@ Submit                  Submit
     types should be set for a given document session.
 
 Much like :guilabel:`Share`, when clicked, the workflow button can either navigate to a URL in a new browser tab/window
-or send a message to the host frame.
+or send a message to the :term:`host frame`.
 
 To navigate to a URL, set the :term:`WorkflowUrl` property to the URL that |wac| should navigate to.
 
