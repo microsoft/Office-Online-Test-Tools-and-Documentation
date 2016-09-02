@@ -603,9 +603,10 @@ Workflow properties
             exclusive depending on the WOPI client. WOPI clients must use the following guidelines when handling
             values in the WorkflowType array:
 
-            * If multiple values are provided and the WOPI client does not support multiple values, the client must use
-              the first supported value provided in the array.
             * If no supported values are provided, the WOPI client must behave as though the WorkflowType property was
+              not provided.
+            * If multiple values are provided and the WOPI client does not support multiple values, the client may
+              use the first supported value provided in the array or behave as though the WorkflowType property was
               not provided.
 
     WorkflowUrl
