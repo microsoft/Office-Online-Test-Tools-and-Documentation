@@ -11,6 +11,9 @@
 ..  |need_permission| replace::
     :html:`<span class="tag label label-warning"><i class="fa fa-lock"></i> Special permission required for use in Office Online</span>`
 
+..  |prerelease| replace::
+    :html:`<span class="tag label label-danger"><i class="fa fa-exclamation-circle"></i> Pre-release property - not yet used by any WOPI client</span>`
+
 
 ..  Brand names
 
