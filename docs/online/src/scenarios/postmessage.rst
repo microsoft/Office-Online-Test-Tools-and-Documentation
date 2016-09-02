@@ -249,6 +249,7 @@ The host page receives the following messages; all others are ignored:
 * :data:`UI_Close`
 * :data:`UI_Edit`
 * :data:`UI_Sharing`
+* :data:`UI_Workflow`
 
 
 ..  _outgoing postmessage common values:
@@ -439,6 +440,36 @@ every outgoing PostMessage:
             "MessageId": "UI_Sharing",
             "SendTime": 1329014075000,
             "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
+        }
+
+..  data:: UI_Workflow
+
+    The UI_Workflow message is posted when the user activates the *Workflow* UI in Office Online. The host should use
+    this message to trigger any custom workflow UI.
+
+    To send this message, the :term:`WorkflowPostMessage` property in the :ref:`CheckFileInfo` response from the
+    host must be set to ``true``. Otherwise Office Online will not send this message.
+
+    ..  attribute:: Values
+        :noindex:
+
+        WorkflowType *(string)*
+            The :term:`WorkflowType` associated with the message. This will match one of the values provided by the
+            host in the :term:`WorkflowType` property in :ref:`CheckFileInfo`.
+
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "UI_Workflow",
+            "SendTime": 1329014075000,
+            "Values": {
+                "WorkflowType": "Submit",
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "en-us"
             }

@@ -576,6 +576,48 @@ because they are pending deprecation or they are designated for future features 
         blog.
 
 
+Workflow properties
+~~~~~~~~~~~~~~~~~~~
+..  include:: ../../../_shared/prerelease.rst
+
+..  glossary::
+    :sorted:
+
+    WorkflowType
+        |prerelease|
+
+        An **array of strings** containing the workflow types available for the document. Possible values are:
+
+        * ``Assign``
+        * ``Submit``
+
+        This property must always be specified if :term:`WorkflowUrl` or :term:`WorkflowPostMessage` are provided. If
+        this property is *not* supplied, then both :term:`WorkflowUrl` and :term:`WorkflowPostMessage` must be ignored
+        by the WOPI client.
+
+        Conversely, if the WorkflowType property is provided but neither :term:`WorkflowUrl` nor
+        :term:`WorkflowPostMessage` are provided, then the WorkflowType value must be ignored by the WOPI client.
+
+        ..  important::
+            While this property is an array of strings, note that specific values of WorkflowType may be mutually
+            exclusive depending on the WOPI client. WOPI clients must use the following guidelines when handling
+            values in the WorkflowType array:
+
+            * If no supported values are provided, the WOPI client must behave as though the WorkflowType property was
+              not provided.
+            * If multiple values are provided and the WOPI client does not support multiple values, the client may
+              use the first supported value provided in the array or behave as though the WorkflowType property was
+              not provided.
+
+    WorkflowUrl
+        |prerelease|
+
+        A URI to a location that allows the user to participate in a workflow for the file.
+
+        ..  important::
+            This value will be ignored if :term:`WorkflowType` is not provided.
+
+
 Deprecated properties
 ---------------------
 

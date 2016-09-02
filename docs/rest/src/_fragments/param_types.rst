@@ -7,6 +7,7 @@ Type           Default value
 Boolean        ``false``
 String         The empty string
 Integer/Long   Varies; see individual properties for details
+Array          Empty array
 ============   ================
 
 ..  important::

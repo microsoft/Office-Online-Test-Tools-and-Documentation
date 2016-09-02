@@ -51,4 +51,5 @@ wdPreviousSession
 webpage
 Wiki
 workflow
+workflows
 WOPI

@@ -165,6 +165,7 @@ Finally, **if you are looking for more details about the process for shipping yo
     /scenarios/business
     /scenarios/conversion
     /scenarios/proofkeys
+    /scenarios/workflow
 
 
 ..  toctree::
