@@ -8,9 +8,12 @@ Bootstrap
 
 ..  spelling::
 
+    auth
+    EMM
     providerId
     tokenIssuance
     uri
+    webview
 
 
 :Required for: |ios|

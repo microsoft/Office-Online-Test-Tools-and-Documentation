@@ -36,10 +36,12 @@ Standard WOPI request and response headers
             See :ref:`Troubleshooting` for more information on how this ID is used in |wac|.
 
     :reqheader X-WOPI-DeviceId:
-        A **string** that the host should log indicating the ID of the device making the request. This string must not be used for anything other than logging.
+        A **string** that the host should log indicating the ID of the device making the request.
+        This string must not be used for anything other than logging.
 
     :reqheader X-WOPI-SessionId:
-        A **string**  that the host should log to correlate WOPI client activity witin a session. This string must not be used for anything other than logging.
+        A **string**  that the host should log to correlate WOPI client activity within a session.
+        This string must not be used for anything other than logging.
     
     :reqheader X-WOPI-MachineName:
         A **string** indicating the name of the WOPI client machine making the request. This string must not be

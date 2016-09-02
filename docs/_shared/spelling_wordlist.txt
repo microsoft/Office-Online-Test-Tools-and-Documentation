@@ -49,5 +49,6 @@ wd
 wdPreviousCorrelation
 wdPreviousSession
 webpage
+Wiki
 workflow
 WOPI
