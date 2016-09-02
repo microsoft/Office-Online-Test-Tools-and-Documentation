@@ -4,7 +4,7 @@
 Creating new files using Office Online
 ======================================
 
-Hosts create new Office files using blank document templates from Office Online. In order to support this, hosts use
+Hosts can create new Office files using blank document templates from Office Online. In order to support this, hosts use
 the :wopi:action:`editnew` WOPI action as follows:
 
 #. Create a zero-byte file with the appropriate file extension (``docx`` for Word documents, ``pptx`` for PowerPoint
