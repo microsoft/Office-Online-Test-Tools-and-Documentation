@@ -11,7 +11,7 @@ Shipping your Office Online integration
     rollout
     Rollout
 
-Once you believe you are ready to ship your integration, you should contact Microsoft and ask to being the 'go live'
+Once you believe you are ready to ship your integration, you should contact Microsoft and ask to begin the 'go live'
 process. This process will prepare you to ship your Office Online integration.
 
 The 'go live' process consists of three phases:
