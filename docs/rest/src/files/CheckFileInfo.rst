@@ -119,6 +119,21 @@ WOPI implementation meets the requirements for a particular property.
 ..  glossary::
     :sorted:
 
+    SupportedShareUrlTypes
+        An **array** of strings containing the :term:`Share URL` types supported by the host.
+
+        These types can be passed in the **X-WOPI-UrlType** request header to signify which Share URL type
+        to return for the :ref:`GetShareUrl (files)` operation.
+
+        Possible Values:
+
+        ReadOnly
+            This type of Share URL allows users to view the file using the URL, but does not give them
+            permission to edit the file. 
+
+        ReadWrite
+            This type of Share URL allows users to both view and edit the file using the URL.
+
     SupportsCobalt
         A **Boolean** value that indicates that the host supports the following WOPI
         operations:
