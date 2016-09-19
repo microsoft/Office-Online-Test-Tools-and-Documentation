@@ -53,7 +53,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # noinspection PyShadowingBuiltins
-copyright = u'2015, Microsoft'
+copyright = u'2015-2016, Microsoft'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
