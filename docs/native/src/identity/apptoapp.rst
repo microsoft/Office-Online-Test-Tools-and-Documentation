@@ -53,7 +53,7 @@ The same parameters are passed via the URL Schemes, with the addition of "action
 
 Your app invoking |Office iOS| ("Back" URL)::
    
-    ms-word-tp:code=abcdefg&tk=http://contoso.com&sc=xyz&action=76d173ad-a43f-4e3c-a5e7-0e7276b4c624 
+    ms-word-tp:code=abcdefg&tk=https%3A%2F%2Fcontoso.com%2Fapi%2Ftoken%2F%3Fextra%3Dstuff&sc=xyz&action=76d173ad-a43f-4e3c-a5e7-0e7276b4c624 
 
 The values of the parameters should be URL encoded. 
 
