@@ -31,8 +31,8 @@ Bootstrap
 
     :reqheader Authorization:
         A **string** in the format ``Bearer: <TOKEN>`` where ``<TOKEN>`` is a Base64-encoded OAuth 2.0 token. If this
-        header is missing, or the token provided is invalid, the host must respond with a :statuscode:`401` response
-        and include the :header:`WWW-Authenticate` header as described below.
+        header is missing, if the value is missing, or if the token provided is invalid, the host must respond with 
+        a :statuscode:`401` response and include the :header:`WWW-Authenticate` header as described below.
 
     :resheader WWW-Authenticate:
         A **string** value formatted as described in :ref:`WWW-Authenticate header`.
