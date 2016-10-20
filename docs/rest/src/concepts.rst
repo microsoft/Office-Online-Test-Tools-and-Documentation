@@ -85,7 +85,7 @@ understanding the requirements for integration with WOPI clients such as |wac| a
 
     access_token_ttl
         The access_token_ttl property tells a WOPI client when an access token expires, represented as the
-        number of milliseconds since January 1, 1970 (the date epoch in JavaScript). Despite its misleading name,
+        number of milliseconds since January 1, 1970 UTC (the date epoch in JavaScript). Despite its misleading name,
         it does *not* represent a duration of time for which the access token is valid. The access_token_ttl is never
         used by itself; it is always attached to a specific access token.
 
