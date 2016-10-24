@@ -121,7 +121,7 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
         PostMessage when the *Close* UI in |wac| is activated.
 
-        Hosts can also use the :term:`CloseUrl` property to indicate that the outer frame should be navigated
+        Hosts should use the :term:`CloseUrl` property to indicate that the outer frame should be navigated
         (``window.top.location``) when the *Close* UI is activated rather than sending a PostMessage, or set the
         :term:`CloseButtonClosesWindow` property to indicate that the *Close* UI should close the browser tab or
         window (``window.top.close``).
@@ -130,6 +130,11 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
         omitted, the *Close* UI will be hidden in |wac|.
 
         ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
+        
+         ..  important::
+             The CloseUrl must always be specified if you want the Close UI to appear in Office Online, even if you're setting
+             ClosePostMessage to true. This is because there are some cases where Office Online uses the CloseUrl when it can't
+             send the UI_Close post message.
 
     EditModePostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Edit`
