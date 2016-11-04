@@ -38,10 +38,10 @@ wopi.contoso.com.
     If you don't ever generate :term:`WopiSrc` values that point to a subdomain, then that subdomain does not need to
     be on the WOPI domain allow list (but it may need to be on the :ref:`redirect domains`).
 
-As a general rule, hosts should use a WOPI-dedicated subdomain for handling WOPI traffic. While not necessary for
-testing and development, **this is required in production.** This subdomain is typically something like
-``wopi.hostdomain.com``, though that is just a name convention and hosts can use other names if needed. This approach
-ensures that Office Online cannot make WOPI requests to arbitrary domains.
+In the Office Online production environment, hosts must use a WOPI-dedicated subdomain for handling WOPI traffic.
+This subdomain is typically something like ``wopi.hostdomain.com``, though that is just a name convention and hosts
+can use other names if needed. This approach ensures that Office Online cannot make WOPI requests to arbitrary domains.
+For testing and development using the Office Online test environment, a WOPI-dedicated subdomain is not required.
 
 ..  important::
     A production WOPI subdomain shouldn't ever surface user-provided content. In other words, a user shouldn't be able
