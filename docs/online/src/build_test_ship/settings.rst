@@ -15,16 +15,14 @@ some Office Online settings that must be changed by Microsoft.
 
 ..  include:: /_fragments/settings_change_warning.rst
 
-The test environment, on the other hand, is generally updated with new settings within 24-48 hours.
-
 
 ..  _allow list:
 
 WOPI domain allow list
 ----------------------
 
-Office Online only makes WOPI requests to trusted partner domains. This domain list is called the WOPI domain allow
-list. It contains entries of the form:
+Office Online only makes WOPI requests to trusted partner domains. This domain list is called the *WOPI domain allow
+list.* It contains entries of the form:
 
 * wopi.contoso.com
 * qa-wopi.contoso.com
@@ -40,19 +38,24 @@ wopi.contoso.com.
     If you don't ever generate :term:`WopiSrc` values that point to a subdomain, then that subdomain does not need to
     be on the WOPI domain allow list (but it may need to be on the :ref:`redirect domains`).
 
-As a general rule, hosts should use a dedicated subdomain for handling WOPI traffic. While not necessary for
-testing and development, this is required in production. This subdomain is typically something like
+As a general rule, hosts should use a WOPI-dedicated subdomain for handling WOPI traffic. While not necessary for
+testing and development, **this is required in production.** This subdomain is typically something like
 ``wopi.hostdomain.com``, though that is just a name convention and hosts can use other names if needed. This approach
 ensures that Office Online cannot make WOPI requests to arbitrary domains.
-
-When you are first given access to the test environment, Microsoft will add the domains you provide to the test-only
-WOPI domain allow list. For test purposes you can use broadly-scoped domains such as your top-level domain (e.g.
-``contoso.com``); as part of the :ref:`'Go Live' process <go live>` you can provide different domains for production.
 
 ..  important::
     A production WOPI subdomain shouldn't ever surface user-provided content. In other words, a user shouldn't be able
     to upload something to the host and trick Office Online into making WOPI requests to the user-controlled content.
     That would represent a potential security hole.
+
+Office Online has different allow lists for the production and test environments. When you are first given access to
+the test environment, Microsoft will add the domains you provide to the test-only WOPI domain allow list. For test
+purposes you can use broadly-scoped domains such as your top-level domain (e.g. ``contoso.com``); as part of the
+:ref:`'Go Live' process <go live>` you can provide different or additional domains for production.
+
+..  tip::
+    All domains on the production allow list are automatically allowed in the test environment. The inverse is not
+    true.
 
 
 ..  _saved to:

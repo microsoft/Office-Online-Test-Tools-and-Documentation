@@ -110,23 +110,19 @@ your specific WOPI implementation. These questions are included below.
     This list of questions is subject to change. Microsoft will provide you with a specific list of questions as part
     of the 'go live' process that may differ from the list below.
 
-#. Please confirm that your File IDs meet the :term:`criteria listed in the documentation <file id>`. Office Online
+#. Confirm that your File IDs meet the :term:`criteria listed in the documentation <file id>`. Office Online
    expects file IDs to be unique and consistent over time, as well as when accessed by different users or via
    different UI paths (e.g. a given file might be available in two different parts of your UI, such as in a typical
    folder and also in search results. If the document is meant to be the same, then the file IDs should match.
    Otherwise users will see unexpected behavior when they access the same file via different UI paths).
 
-#. Please confirm you're providing a user ID using the :term:`UserId` field and that the ID is unique and consistent
+#. Confirm you're providing a user ID using the :term:`UserId` field and that the ID is unique and consistent
    over time :ref:`as described here <User identity requirements>`.
 
-#. Please confirm that the value in the :term:`OwnerId` field represents the user who owns the document and is unique
+#. Confirm that the value in the :term:`OwnerId` field represents the user who owns the document and is unique
    and consistent over time :ref:`as described here <User identity requirements>`.
 
-#. Are you sending the :term:`SHA256` value in :ref:`CheckFileInfo`? If not, please confirm that your version numbers
-   change for each file version.
-
-#. Under what conditions do you create new versions of files? Hosts often do this either when a file is unlocked or
-   whenever a :ref:`PutFile` is received - either of these options is appropriate.
+#. Are you sending the :term:`SHA256` value in :ref:`CheckFileInfo`?
 
 #. Are you using the :ref:`business user flow <Business editing>`?
 
@@ -145,11 +141,7 @@ Prior to enabling your integration in the :ref:`production environment <producti
 you to verify your current :ref:`settings`, including your entries in the :ref:`allow list` and
 :ref:`redirect domains`.
 
-..  important::
-
-    Remember that changes to production settings require time to make.
-
-    ..  include:: /_fragments/settings_change_warning.rst
+..  include:: /_fragments/settings_change_warning.rst
 
 
 Service management contacts
@@ -186,12 +178,3 @@ WOPI host will be enabled in the :ref:`production environment <production enviro
 basic testing against the production environment prior to rollout to ensure there are no unique issues using that
 environment. Once you have completed that testing, you can roll your integration out to users according the
 agreed-upon rollout schedule.
-
-
-..  ..  toctree::
-        :maxdepth: 2
-        :glob:
-        :hidden:
-
-        /build_test_ship/considerations
-        /build_test_ship/trello
