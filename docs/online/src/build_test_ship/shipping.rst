@@ -57,11 +57,9 @@ the tests in the following categories must be passing.
 * Locks
 * AccessTokens
 * PutRelativeFile **or** PutRelativeFileUnsupported
-
-..  note::
-
-    If you are implementing :ref:`proof key validation<proof keys>`, you should also check that the tests in the
-    :guilabel:`ProofKeys` group are passing.
+* RenameFileIfCreateChildFileIsNotSupported **or** RenameFileIfCreateChildFileIsSupported (applicable only if the
+  host supports :ref:`RenameFile`)
+* ProofKeys (applicable only for hosts implementing :ref:`proof key validation<proof keys>`)
 
 
 Manual testing
