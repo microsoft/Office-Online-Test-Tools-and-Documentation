@@ -25,10 +25,13 @@ CreateChildFile
     (indicates *specific* mode) or **X-WOPI-SuggestedTarget** (indicates *suggested* mode) request headers is used. The
     expected behavior for each mode is described in detail below.
 
-    The |operation| operation always creates a new zero-byte file, so the **X-WOPI-Lock** request header is not
-    included in this operation. However, a file matching the target name might exist and be locked, and in
-    *specific* mode, the host must respond with a :statuscode:`409` and include a **X-WOPI-Lock** response header as
-    described below.
+    The |operation| operation may be called on a file that is not locked, so the **X-WOPI-Lock** request header
+    is not included in this operation. An example of when this might occur is if a user uses the *Save As* feature
+    when viewing a document in read-only mode. The source file will not be locked in this case, but the
+    |operation| operation will be invoked on it.
+
+    Note, however, that a file matching the target name might be locked, and in *specific* mode, the host must
+    respond with a :statuscode:`409` and include a **X-WOPI-Lock** response header as described below.
 
     ..  include:: /_fragments/common_containers_params.rst
 
@@ -36,7 +39,7 @@ CreateChildFile
         The **string** ``CREATE_CHILD_FILE``. Required.
 
     :reqheader X-WOPI-SuggestedTarget:
-        A UTF-7 encoded **string** specifying either a file extension or a full file name, including the file
+            A UTF-7 encoded **string** specifying either a file extension or a full file name, including the file
         extension. Hosts can differentiate between full file names and extensions as follows:
 
         * If the string begins with a period (``.``), it is a file extension.
@@ -70,10 +73,29 @@ CreateChildFile
         This header must be present if **X-WOPI-SuggestedTarget** is not present; the two headers are mutually
         exclusive. If both headers are present the host should respond with a :statuscode:`501`.
 
+    :reqheader X-WOPI-OverwriteRelativeTarget:
+        A **Boolean** value that specifies whether the host must overwrite the file name if it exists. The default
+        value is ``false``. In other words, if **X-WOPI-OverwriteRelativeTarget** is not explicitly included on the
+        request, hosts must behave as though its value is ``false``.
+
+        This header is only valid if the **X-WOPI-RelativeTarget** is also included on the request. It must be ignored
+        in all other cases.
+
+        If the user is not authorized to overwrite the target file, the host must respond with a :statuscode:`501`.
+
+    :body: The request body must be the full binary contents of the file.
+
     :resheader X-WOPI-InvalidFileNameError:
         A **string** describing the reason the |operation| operation could not be completed. This header should only be
         included when the response code is :http:statuscode:`400`. This string is only used for logging purposes.
 
+    :resheader X-WOPI-ValidRelativeTarget:
+        A UTF-7 encoded **string** that specifies a full file name including the file extension. This header may be
+        used when responding with a :statuscode:`409` because a file with the requested name already exists, or when
+        responding with a :statuscode:`400` because the requested name contained invalid characters. If this
+        response header is included, the WOPI client should automatically retry the |operation| operation using the
+        contents of this header as the **X-WOPI-RelativeTarget** value and should not display an error message to the
+        user.
 
     :code 200: Success
     :code 400: Specified name is illegal
