@@ -39,7 +39,7 @@ CreateChildFile
         The **string** ``CREATE_CHILD_FILE``. Required.
 
     :reqheader X-WOPI-SuggestedTarget:
-            A UTF-7 encoded **string** specifying either a file extension or a full file name, including the file
+        A UTF-7 encoded **string** specifying either a file extension or a full file name, including the file
         extension. Hosts can differentiate between full file names and extensions as follows:
 
         * If the string begins with a period (``.``), it is a file extension.
