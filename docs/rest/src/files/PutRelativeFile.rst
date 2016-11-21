@@ -100,11 +100,14 @@ PutRelativeFile
         exclusive. If both headers are present the host should respond with a :statuscode:`501`.
 
     :reqheader X-WOPI-OverwriteRelativeTarget:
-        A **Boolean** value that specifies whether the host must overwrite the file name if it exists.
+        A **Boolean** value that specifies whether the host must overwrite the file name if it exists. The default
+        value is ``false``. In other words, if **X-WOPI-OverwriteRelativeTarget** is not explicitly included on the
+        request, hosts must behave as though its value is ``false``.
 
-        This header will only be present if the **X-WOPI-RelativeTarget** is included on the request. If
-        **X-WOPI-OverwriteRelativeTarget** is not explicitly included on the request, hosts should behave as though its
-        value is ``false``.
+        This header is only valid if the **X-WOPI-RelativeTarget** is also included on the request. It must be ignored
+        in all other cases.
+
+        If the user is not authorized to overwrite the target file, the host must respond with a :statuscode:`501`.
 
     :reqheader X-WOPI-Size:
         An **integer** that specifies the size of the file in bytes.
@@ -124,7 +127,7 @@ PutRelativeFile
         used when responding with a :statuscode:`409` because a file with the requested name already exists, or when
         responding with a :statuscode:`400` because the requested name contained invalid characters. If this
         response header is included, the WOPI client should automatically retry the |operation| operation using the
-        contents of this header as the **X-WOPI-RelativeTarget** value and will not display an error message to the
+        contents of this header as the **X-WOPI-RelativeTarget** value and should not display an error message to the
         user.
 
     :resheader X-WOPI-Lock:
