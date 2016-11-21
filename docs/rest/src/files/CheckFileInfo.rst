@@ -54,8 +54,8 @@ The following properties must be present in all |operation| responses:
 ..  glossary::
 
     BaseFileName
-        The **string** name of the file without a path. Used for display in user interface (UI), and determining
-        the extension of the file.
+        The **string** name of the file, including extension, without a path. Used for display in user interface (UI),
+        and determining the extension of the file.
 
     OwnerId
         A string that uniquely identifies the owner of the file.

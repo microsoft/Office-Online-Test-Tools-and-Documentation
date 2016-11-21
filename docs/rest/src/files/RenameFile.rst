@@ -44,7 +44,7 @@ RenameFile
     :reqheader X-WOPI-Lock:
         A **string** provided by the WOPI client that the host must use to identify the lock on the file.
     :reqheader X-WOPI-RequestedName:
-        A UTF-7 encoded **string** that is a file name, not including the file extension.
+        A UTF-7 encoded **string** that is a file name, *not including the file extension.*
 
     :resheader X-WOPI-InvalidFileNameError:
         A **string** describing the reason the rename operation could not be completed. This header should only be
@@ -77,4 +77,9 @@ Response
 The response to a |operation| call is JSON (as specified in :rfc:`4627`) containing a single required property:
 
 Name
-    The **string** name of the renamed file without a path or file extension.
+    The **string** name of the renamed file *without a path or file extension.*
+
+    ..  important::
+
+        The **Name** property returned must *not* include the file extension. This is different than other similar
+        WOPI operations such as :ref:`PutRelativeFile` and :ref:`CreateChildFile`.

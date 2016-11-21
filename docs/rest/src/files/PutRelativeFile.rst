@@ -167,7 +167,7 @@ Required response properties
 The following properties must be present in all |operation| responses:
 
 Name
-    The **string** name of the newly created file without a path.
+    The **string** name of the file, including extension, without a path.
 
 Url
     A **string** URI of the form ``http://server/<...>/wopi/files/(file_id)?access_token=(access token)``, of the newly
