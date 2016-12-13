@@ -26,7 +26,8 @@ GetFile
 
     :reqheader X-WOPI-MaxExpectedSize:
         An **integer** specifying the upper bound of the expected size of the file being requested. Optional. The
-        host should use the maximum value of a 4-byte integer if this value is not set in the request.
+        host should use the maximum value of a 4-byte integer if this value is not set in the request. If the file
+        requested is larger than this value, the host must respond with a :http:statuscode:`412`.
 
     :resheader X-WOPI-ItemVersion:
         ..  include:: /_fragments/headers/X-WOPI-ItemVersion.rst
