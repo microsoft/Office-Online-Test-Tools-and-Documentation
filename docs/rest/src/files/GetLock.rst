@@ -12,12 +12,6 @@ GetLock
 
 ..  post:: /wopi/files/(file_id)
 
-    ..  admonition:: |wac| Tip
-
-        This operation is not yet called by |wac|. It has been added to the WOPI protocol definition, and
-        |wac| will call it in the future, but it does not currently. As this operation is optional for |wac|
-        the host must indicate support for it via the :term:`SupportsGetLock` property in CheckFileInfo.
-
     The |operation| operation retrieves a lock on a file. Note that this operation *does not create a new lock.* Rather,
     this operation always returns the current lock value in the **X-WOPI-Lock** response header. Because of this, its
     semantics differ slightly from the other lock-related operations.
