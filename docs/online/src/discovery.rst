@@ -325,7 +325,7 @@ Placeholder values
         In addition to the values provided in the Locale ID column, any language can be supplied provided it is in
         the format described in :rfc:`1766`. If no value is provided for this placeholder, Office Online will try to
         use the browser language setting (``navigator.language``). If no valid language can be determined Office Online
-        will default to English (US).
+        will default to ``en-US`` (US English).
 
     DC_LLCC
         This value represents the language that Office Online should use for the purposes of data calculation. For
