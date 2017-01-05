@@ -19,7 +19,7 @@ XML just like all other Office Online applications.
 
 ..  important::
 
-    WOPI hosts should use :ref:`test environment` to ensure that they are running the latest version of
+    WOPI hosts should use the :ref:`test environment` to ensure that they are running the latest version of
     the WOPI validation application.
 
 ..  code-block:: xml
