@@ -58,7 +58,7 @@ The following properties must be present in all |operation| responses:
         and determining the extension of the file.
 
     OwnerId
-        A string that uniquely identifies the owner of the file.
+        A **string** that uniquely identifies the owner of the file.
 
         ..  important::
             This ID is subject to uniqueness and consistency requirements. See :ref:`User identity requirements` for
@@ -129,7 +129,7 @@ WOPI implementation meets the requirements for a particular property.
 
         ReadOnly
             This type of Share URL allows users to view the file using the URL, but does not give them
-            permission to edit the file. 
+            permission to edit the file.
 
         ReadWrite
             This type of Share URL allows users to both view and edit the file using the URL.
