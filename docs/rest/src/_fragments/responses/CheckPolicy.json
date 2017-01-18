@@ -1,0 +1,8 @@
+{
+  "Block": true,
+  "Warn": false,
+  "BlockedWords": [
+    "OffensiveWord1",
+    "OffensiveWord2"
+  ]
+}

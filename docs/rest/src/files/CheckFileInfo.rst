@@ -518,6 +518,9 @@ because they are pending deprecation or they are designated for future features 
         (:rfc:`5323`), but may be any URL that can be handled by a client that can open a file of the given
         type.
 
+    SupportsCheckPolicy
+        A **Boolean** value that indicates that the host supports the :ref:`CheckPolicy` operation.
+
     SupportsFileCreation
         A **Boolean** value that indicates that the host supports creating new files using the WOPI client.
 

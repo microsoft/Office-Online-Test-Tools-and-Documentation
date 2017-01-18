@@ -9,6 +9,7 @@ The following WOPI operations are not required to integrate with |wac| or |Offic
 ..  toctree::
     :glob:
 
+    /files/CheckPolicy
     /files/DeleteFile
     /files/ExecuteCellStorageRequest
     /files/ExecuteCellStorageRelativeRequest

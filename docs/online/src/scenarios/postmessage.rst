@@ -75,6 +75,7 @@ messages you send to its iframe.
 You can send the following messages; all others are ignored:
 
 * :data:`Blur_Focus`
+* :data:`CheckPolicyResponse`
 * :data:`Grab_Focus`
 * :data:`Host_PerfTiming`
 * :data:`Host_PostmessageReady`
@@ -104,6 +105,36 @@ You can send the following messages; all others are ignored:
             "MessageId": "Blur_Focus",
             "SendTime": 1329014075000,
             "Values": { }
+        }
+
+..  data:: CheckPolicyResponse
+
+    ..  include:: ../../../_shared/stub.rst
+
+    .. |issue| issue:: 288
+
+    ..  seealso:: :data:`CheckPolicy`
+
+    ..  attribute:: Values
+        :noindex:
+
+        Block *(bool)*
+            Not yet documented.
+
+        Warn *(bool)*
+            Not yet documented.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "CheckPolicy",
+            "SendTime": 1329014075000,
+            "Values": {
+                "Block": true,
+                "Warn": false
+            }
         }
 
 ..  data:: Grab_Focus
@@ -244,6 +275,7 @@ message being sent. The following code example shows how you might consume a mes
 The host page receives the following messages; all others are ignored:
 
 * :data:`App_LoadingStatus`
+* :data:`CheckPolicy`
 * :data:`Edit_Notification`
 * :data:`File_Rename`
 * :data:`UI_Close`
@@ -278,6 +310,32 @@ every outgoing PostMessage:
         :ref:`troubleshooting <troubleshooting>` issues with Office Online. See :ref:`session id` for more
         information about this value.
 
+
+..  data:: CheckPolicy
+
+    ..  include:: ../../../_shared/stub.rst
+
+    .. |issue| issue:: 288
+
+    ..  seealso:: :data:`CheckPolicyResponse`
+
+    ..  attribute:: Values
+        :noindex:
+
+        Fragments *(string[])*
+            Not yet documented.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "CheckPolicy",
+            "SendTime": 1329014075000,
+            "Values": {
+                "Fragments": ["WordToCheck", "AnotherWordToCheck"]
+            }
+        }
 
 ..  data:: App_LoadingStatus
 
