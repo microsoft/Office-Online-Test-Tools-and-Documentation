@@ -510,8 +510,7 @@ because they are pending deprecation or they are designated for future features 
         type.
 
     SupportsFileCreation
-        A **Boolean** value that indicates that the host supports creating new files using the WOPI client. See
-        :ref:`Create New` for more information.
+        A **Boolean** value that indicates that the host supports creating new files using the WOPI client.
 
     SupportsScenarioLinks
         A **Boolean** value that indicates that the host supports scenarios where users can operate on files in
