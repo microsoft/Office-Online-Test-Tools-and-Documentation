@@ -2,7 +2,7 @@
   "Block": true,
   "Warn": false,
   "BlockedWords": [
-    "OffensiveWord1",
-    "OffensiveWord2"
+    "BlockedWord1",
+    "BlockedWord2"
   ]
 }
