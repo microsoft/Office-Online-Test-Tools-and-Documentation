@@ -9,6 +9,12 @@ UI guidelines
     The guidelines here are not exhaustive. Hosts are expected to follow the terms of the Cloud Storage Partner
     Program contract with respect to |wac| integration.
 
+
+Requirements
+------------
+
+The following guidelines are required as part of |wac| integration.
+
 #.  **Do not display any UI on or around the Office Online editor.** The |wac| editors must always be displayed
     'edge-to-edge', with no surrounding UI. The editor cannot be 'light-boxed' or integrated as a component in host
     UI. The editor is a standalone application. Note that the |wac| viewer can be 'light-boxed' or otherwise embedded
@@ -20,14 +26,30 @@ UI guidelines
 #.  **Use Office Online application names in UI that activates Office Online.** For example, if you have UI in your
     application that reads, :guilabel:`Open`, this UI should read :guilabel:`Open in PowerPoint Online` or
     :guilabel:`Open in Office Online`.
+
+
+Other recommendations
+---------------------
+
+While the following guidelines are not required, |wac| strongly recommends partners
+
 #.  **Provide support for sharing within Office Online.** |wac| provides a mechanism to share documents with other
     users directly within the |wac| applications. You should take advantage of this capability so that users can access
     sharing controls directly within |wac|. See :term:`FileSharingPostMessage` and :term:`FileSharingUrl` for more
     information.
-#.  **Provide breadcrumb and breadcrumb URL values.** See :ref:`breadcrumbs` for more information.
+#.  **Provide breadcrumb and breadcrumb URL values.** Breadcrumbs are very helpful to users, because it helps them
+    understand where their document is, as well as how to get back to where they were. See :ref:`breadcrumbs` for
+    more information.
 #.  **Provide an in-app Edit in Browser button.** If you are using the |wac| viewer and the current user has
     permissions to edit the document, you should always provide a :term:`HostEditUrl` so that the
     :guilabel:`Edit in Browser` button is always displayed. This helps provide a more seamless transition for users.
+
+    ..  seealso::
+        You can also use the :term:`EditModePostMessage` property to receive a PostMessage when the
+        :guilabel:`Edit in Browser` button is clicked, so you can handle the transition to edit mode yourself.
+
+#.  **Include the document name in the HTML title tag so it displays in the browser tab/window text.** This is
+    especially important in cases where users may open multiple documents in different browser tabs/windows.
 
 
 ..  _icons:
