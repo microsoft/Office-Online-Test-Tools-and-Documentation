@@ -4,3 +4,5 @@ Name
 
 Url
     A URI to the container, including a valid :term:`access token`. Required.
+
+    ..  include:: /_fragments/token_trading.rst

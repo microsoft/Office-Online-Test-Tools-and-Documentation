@@ -4,7 +4,7 @@
 Considerations for security and privacy
 =======================================
 
-..  todo:: :issue:`6`
+..  seealso:: :ref:`wopirest:Security`
 
 
 Office Online and customer data
