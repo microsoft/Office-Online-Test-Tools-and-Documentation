@@ -1,5 +1,5 @@
 
-.. _Security:
+..  _Security:
 
 Considerations for security and privacy
 =======================================
@@ -40,8 +40,11 @@ their content will no longer live anywhere on Office Online servers once it has 
 exception here is the Office Online viewing cache.
 
 
-The Office Online viewing cache
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..  _Viewer Cache:
+..  _Cache:
+
+The |wac| viewing cache
+~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to optimize view performance for PowerPoint Online and Word Online, Office Online stores rendered documents
 in a local disk cache. This way, if more than one person wants to view a document, Office Online only has to fetch it
