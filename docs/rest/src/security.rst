@@ -17,7 +17,7 @@ WOPI deliberately does not define a means for a client to refresh a WOPI access 
 
 However, WOPI is also deliberately designed to support navigation from a file or container to the
 :ref:`Ecosystem endpoint`, then back to a container or file. This means that it is possible for a client
-to 'refresh' their WOPI tokens indefinitely unless the WOPI is careful when issuing new access tokens to
+to 'refresh' their WOPI tokens indefinitely unless the WOPI host is careful when issuing new access tokens to
 mitigate these threats. We refer to this threat as 'token trading.'
 
 To illustrate the token trading threat, consider the following scenario:
@@ -39,6 +39,10 @@ the container hierarchy, without actually authenticating with the server using a
 If unmitigated, this scenario greatly increases the potential damage caused by token leakage. If a malicious attacker
 gains access to ``TOKEN1``, then they can potentially access :file:`Document.docx` indefinitely, as long as User A
 still has access to it. In other words, the attacker can impersonate User A indefinitely.
+
+In addition, an attacker could use :ref:`EnumerateAncestors` and :ref:`EnumerateChildren` to trade ``TOKEN1`` for a
+token that is valid for any other document in the container hierarchy that the user has access to, then impersonate
+User A indefinitely to access those other documents and containers as well.
 
 
 Mitigation
