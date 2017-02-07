@@ -7,6 +7,8 @@ Size
 Url
     A URI to the file, including a valid :term:`access token`. Required.
 
+    ..  include:: /_fragments/token_trading.rst
+
 Version
     Should match the :term:`Version` property in :ref:`CheckFileInfo`. Required.
 
