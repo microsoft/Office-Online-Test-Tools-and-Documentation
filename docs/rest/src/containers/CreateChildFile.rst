@@ -127,6 +127,9 @@ Url
     appended. Or, stated differently, it is the URL to the host's :ref:`Files endpoint` for the new file, along with an
     :term:`access token`. A :method:`GET` request to this URL will invoke the :ref:`CheckFileInfo` operation.
 
+    ..  include:: /_fragments/token_trading.rst
+
+
 Optional response properties
 ----------------------------
 
