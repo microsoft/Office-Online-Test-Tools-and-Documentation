@@ -24,8 +24,8 @@ Standard WOPI request and response headers
         indicate geographic location, datacenter, etc. This string must not be used for anything other than logging.
 
     :reqheader X-WOPI-ClientVersion:
-        A **string**  that the host should log indicating the version of the WOPI client making the request. There is no standard
-        for how this string is formatted, and it must not be used for anything other than logging.
+        A **string**  that the host should log indicating the version of the WOPI client making the request. There is
+        no standard for how this string is formatted, and it must not be used for anything other than logging.
 
     :reqheader X-WOPI-CorrelationId:
         A **string** that the host should log when logging server activity to correlate that activity with WOPI
@@ -42,7 +42,7 @@ Standard WOPI request and response headers
     :reqheader X-WOPI-SessionId:
         A **string**  that the host should log to correlate WOPI client activity within a session.
         This string must not be used for anything other than logging.
-    
+
     :reqheader X-WOPI-MachineName:
         A **string** indicating the name of the WOPI client machine making the request. This string must not be
         used for anything other than logging.
@@ -86,9 +86,9 @@ Standard WOPI request and response headers
         This header is reserved for future use.
 
     :resheader X-WOPI-ServerError:
-        A **string** indicating that an error occurred while processing the WOPI request. This header should be included
-        in a WOPI response if the status code is :http:statuscode:`500`. The value should contain details about the
-        error. This string must not be used for anything other than logging.
+        A **string** indicating that an error occurred while processing the WOPI request. This header should be
+        included in a WOPI response if the status code is :http:statuscode:`500`. The value should contain details
+        about the error. This string must not be used for anything other than logging.
 
     :resheader X-WOPI-ServerVersion:
         A **string** indicating the version of the WOPI host server handling the request. There is no standard
