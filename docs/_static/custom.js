@@ -1,6 +1,6 @@
 $(document).ready(function() {
     /* Add 'hover' links to glossary definitions */
-    $("dl.glossary dt").append(
+    $("dl.glossary>dt").append(
         $("<a class='def-link'><i class='fa fa-link'></i></a>")
     );
 
