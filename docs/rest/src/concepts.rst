@@ -83,6 +83,20 @@ understanding the requirements for integration with WOPI clients such as |wac| a
 
         ..  include:: /_fragments/access_token_handling_warning.rst
 
+        **The anonymous access token**
+
+        WOPI operations always require an access token value. However, there are situations where a WOPI host may wish
+        to allow some operations to be anonymously callable. To accomodate such cases, the string ``anonymous``
+        is a reserved access token value in WOPI. Both hosts and clients can use this value in cases where an access
+        token is required, but the host does not actually care to verify the token.
+
+        Using the reserved ``anonymous`` token is always preferred over using random or known-invalid access tokens.
+        This applies to both WOPI hosts and to clients. In other words, clients should prefer to use the anonymous
+        token in cases where they do not have a host-issued WOPI access token, and hosts should prefer to use it when
+        returning URLs that are WopiSrc values with appended access tokens (for example, the *ShareUrl* property
+        returned in the :ref:`GetShareUrl` response).
+
+
     access_token_ttl
         The access_token_ttl property tells a WOPI client when an access token expires, represented as the
         number of milliseconds since January 1, 1970 UTC (the date epoch in JavaScript). Despite its misleading name,
