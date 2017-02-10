@@ -38,6 +38,9 @@ PutFile
     :reqheader X-WOPI-Lock:
         A **string** provided by the WOPI client in a previous :ref:`Lock` request. Note that this header will not be
         included during :ref:`document creation<Create New>`.
+    :reqheader X-WOPI-Editors:
+        A comma-delimited **string** of :term:`UserId` values representing all the users who contributed changes
+        to the document in this PutFile request.
 
     :request Body: The request body must be the full binary contents of the file.
 
