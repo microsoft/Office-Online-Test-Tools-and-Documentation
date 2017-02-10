@@ -5,8 +5,8 @@
 
 ..  _GetFileWopiSrc (bootstrapper):
 
-GetFileWopiSrc (bootstrapper)
-=============================
+|draft-icon| GetFileWopiSrc (bootstrapper)
+==========================================
 
 ..  include:: /_fragments/future_operation.rst
 

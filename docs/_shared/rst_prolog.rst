@@ -3,6 +3,8 @@
 
 ..  |stub-icon| replace:: 🔧
 
+..  |draft-icon| replace:: 🚧
+
 
 ..  Global links
 
