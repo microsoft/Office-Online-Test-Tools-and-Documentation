@@ -147,11 +147,11 @@ You can send the following messages; all others are ignored:
 
         **HostFrameFetchStart** *(integer)*
             The result of the `PerformanceTiming.fetchStart`_ attribute, if the browser supports the
-            `W3C NavigationTiming API`_. If the NavigationTiming API is not supported by the browser, this is 0.
+            `W3C NavigationTiming API`_. If the NavigationTiming API is not supported by the browser, this must be 0.
 
         **RedirectCount** *(integer)*
             The result of the `PerformanceNavigation.redirectCount`_ attribute, if the browser supports the
-            `W3C NavigationTiming API`_. If the NavigationTiming API is not supported by the browser, this is 0.
+            `W3C NavigationTiming API`_. If the NavigationTiming API is not supported by the browser, this must be 0.
 
 .. _W3C NavigationTiming API: http://www.w3.org/TR/navigation-timing/
 .. _PerformanceTiming.fetchStart: http://www.w3.org/TR/navigation-timing/#dom-performancetiming-fetchstart
