@@ -49,6 +49,12 @@ Other response properties
     HostUrl
         A URI to a webpage for the container.
 
+IsAnonymousUser
+    A **Boolean** value indicating whether the user is authenticated with the host or not. This should match the
+    :term:`IsAnonymousUser` value returned in :ref:`CheckFileInfo`.
+
+    ..  versionadded:: 2017.02.15
+
 IsEduUser
     A **Boolean** value indicating whether the user is an education user or not. This should match the
     :term:`IsEduUser` value returned in :ref:`CheckFileInfo`.
@@ -68,13 +74,13 @@ LicenseCheckForEditIsEnabled
         indicate the sharing options available for the container itself and not on the files in the container.
 
         These types can be passed in the **X-WOPI-UrlType** request header to signify which Share URL type
-        to return for the :ref:`GetShareUrl (containers)` operation. 
+        to return for the :ref:`GetShareUrl (containers)` operation.
 
         Possible Values:
 
         ReadOnly
             This type of Share URL allows users to view the container using the URL, but does not give them
-            permission to make changes to the container. 
+            permission to make changes to the container.
 
         ReadWrite
             This type of Share URL allows users to both view and make changes to the container using the URL.

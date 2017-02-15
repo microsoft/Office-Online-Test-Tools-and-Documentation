@@ -226,6 +226,15 @@ The following properties are used to provide additional information about users.
     UserFriendlyName
         A **string** that is the name of the user, suitable for displaying in UI.
 
+    IsAnonymousUser
+        A **Boolean** value indicating whether the user is authenticated with the host or not. Hosts should always set
+        this to ``true`` for unauthenticated users, so that clients are aware that the user is anonymous.
+
+        When setting this to ``true``, hosts can choose to omit the :term:`UserId` property, but must still set the
+        :term:`OwnerId` property.
+
+        ..  versionadded:: 2017.02.15
+
     LicenseCheckForEditIsEnabled
         A **Boolean** value indicating whether the user is a business user or not.
 
