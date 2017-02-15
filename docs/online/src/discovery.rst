@@ -359,6 +359,11 @@ Placeholder values
 
         This value can be set to ``true`` to load the file type in full-screen mode.
 
+    HOST_SESSION_ID
+        This value can be passed by hosts to associate an |wac| session with a host session identifier. This can help
+        |wac| engineers more quickly find logs for troubleshooting purposes based on a host-specific session
+        identifier.
+
     RECORDING
         ..  note:: This value is used in :term:`broadcast` related actions only.
 
