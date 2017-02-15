@@ -345,6 +345,11 @@ Hosts can return a number of URLs for the file that WOPI clients may navigate to
     FileSharingUrl
         A URI to a location that allows the user to share the file.
 
+    FileVersionUrl
+        A URI to a location that allows the user to view the version history for the file.
+
+        ..  versionadded:: 2017.02.15
+
     FileUrl
         A URI to the file location that the WOPI client uses to get the file. If this is provided, the WOPI client
         may use this URI to get the file instead of a :ref:`GetFile` request. A host might set this property if it is

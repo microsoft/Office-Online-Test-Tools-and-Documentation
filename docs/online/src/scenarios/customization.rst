@@ -153,6 +153,19 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
         If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the *Share*
         UI will be hidden in |wac|.
 
+    FileVersionPostMessage
+        A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
+        :js:data:`UI_FileVersions` PostMessage when the *Previous Versions* UI
+        (:menuselection:`File --> Info --> Previous Versions`) in |wac| is activated.
+
+        Hosts can also use the :term:`FileVersionUrl` property to indicate that a new browser window should be opened
+        when the *Previous Versions* UI is activated rather than sending a PostMessage. Note that the
+        :term:`FileVersionUrl` property will be ignored completely if the FileVersionPostMessage property is set to
+        ``true``.
+
+        If neither the :term:`FileVersionUrl` nor the :term:`FileVersionPostMessage` properties are set, the
+        *Previous Versions* UI will be hidden in |wac|.
+
     PostMessageOrigin
         A **string** value indicating the domain the :term:`host page` will be sending/receiving PostMessages
         to/from. |wac| will only send outgoing PostMessages to this domain, and will only listen to
