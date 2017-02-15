@@ -336,6 +336,9 @@ Hosts can return a number of URLs for the file that WOPI clients may navigate to
         ..  important::
             This URI should always provide the most recent version of the file.
 
+    FileEmbedCommandUrl
+        A URI to a location that allows the user to create an embeddable URI to the file.
+
     FileSharingUrl
         A URI to a location that allows the user to share the file.
 

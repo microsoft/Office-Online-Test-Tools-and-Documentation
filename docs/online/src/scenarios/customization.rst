@@ -160,6 +160,21 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
         :js:data:`Edit_Notification` PostMessage.
 
+    FileEmbedCommandPostMessage
+        A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
+        :js:data:`UI_FileEmbed` PostMessage when the *Embed* UI in |wac| is activated.
+
+        Hosts can also use the :term:`FileEmbedCommandUrl` property to indicate that a new browser window should be
+        opened when the *Embed* UI is activated rather than sending a PostMessage. Note that the
+        :term:`FileEmbedCommandUrl` property will be ignored completely if the FileEmbedCommandPostMessage property is
+        set to ``true``.
+
+        If neither the :term:`FileEmbedCommandUrl` and the :term:`FileSharingPostMessage` properties are set,
+        the *Embed* UI will be hidden in |wac| unless a :term:`HostEmbeddedViewUrl` is provided in
+        :ref:`CheckFileInfo`.
+
+        ..  seealso:: :ref:`embedding`
+
     FileSharingPostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
         :js:data:`UI_Sharing` PostMessage when the :guilabel:`Share` UI in |wac| is activated.

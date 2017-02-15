@@ -168,6 +168,7 @@ Finally, **if you are looking for more details about the process for shipping yo
     /scenarios/conversion
     /scenarios/proofkeys
     /scenarios/workflow
+    /scenarios/embedding
 
 
 ..  toctree::

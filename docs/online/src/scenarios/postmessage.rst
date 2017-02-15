@@ -69,6 +69,7 @@ You can send the following messages; all others are ignored:
 
 * :data:`App_PopState`
 * :data:`Blur_Focus`
+* :data:`CanEmbed`
 * :data:`Grab_Focus`
 * :data:`Host_PerfTiming`
 * :data:`Host_PostmessageReady`
@@ -130,6 +131,30 @@ You can send the following messages; all others are ignored:
             "MessageId": "Blur_Focus",
             "SendTime": 1329014075000,
             "Values": { }
+        }
+
+..  data:: CanEmbed
+
+    The CanEmbed message is sent by the host in response to a request to create a :term:`HostEmbeddedViewUrl` using the
+    :js:data:`UI_FileEmbed` message.
+
+    ..  attribute:: Values
+        :noindex:
+
+        **HostEmbeddedViewUrl** *(string)*
+            A URI to a web page that provides access to a viewing experience for the file that can be embedded
+            in another HTML page. This is equivalent to the :term:`HostEmbeddedViewUrl` in :ref:`CheckFileInfo`.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "CanEmbed",
+            "SendTime": 1329014075000,
+            "Values": {
+                "HostEmbeddedViewUrl": "https://www.contosodrive.com/documents/1234/embedded/"
+            }
         }
 
 ..  data:: Grab_Focus
@@ -276,6 +301,7 @@ The host page receives the following messages; all others are ignored:
 * :data:`File_Rename`
 * :data:`UI_Close`
 * :data:`UI_Edit`
+* :data:`UI_FileEmbed`
 * :data:`UI_FileVersions`
 * :data:`UI_Sharing`
 * :data:`UI_Workflow`
@@ -486,6 +512,38 @@ every outgoing PostMessage:
             }
         }
 
+..  data:: UI_FileEmbed
+
+    The UI_FileEmbed message is posted when the user activates the *Embed* UI in Office Online. The host should use
+    this message to trigger the creation of a :term:`HostEmbeddedViewUrl`, which the host then passes back to the WOPI
+    client using the :js:data:`CanEmbed` message.
+
+    To send this message, the :term:`FileEmbedCommandPostMessage` property in the :ref:`CheckFileInfo` response from
+    the host must be set to ``true``, and :term:`FileEmbedCommandUrl` must be provided. Otherwise |wac| will not send
+    this message.
+
+    |wac| will also not send the message if a :term:`HostEmbeddedViewUrl` is provided in the :ref:`CheckFileInfo`
+    response. In this case, since a :term:`HostEmbeddedViewUrl` is already provided, there is no need to retrieve it
+    from the host via PostMessage. See :ref:`embedding` for more details.
+
+    ..  attribute:: Values
+        :noindex:
+
+        :ref:`Common values <outgoing postmessage common values>` only.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "UI_FileEmbed",
+            "SendTime": 1329014075000,
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
+        }
+
 ..  data:: UI_FileVersions
 
     The UI_FileVersions message is posted when the user activates the :guilabel:`Previous Versions` UI in |wac|. The
@@ -511,6 +569,7 @@ every outgoing PostMessage:
                 "ui-language": "1033"
             }
         }
+
 
 ..  data:: UI_Sharing
 

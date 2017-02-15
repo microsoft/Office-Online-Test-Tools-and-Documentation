@@ -1,6 +1,5 @@
 
-:orphan:
-
+..  _embedding:
 ..  _Embedding Office documents:
 
 |stub-icon| Embedding Office documents
