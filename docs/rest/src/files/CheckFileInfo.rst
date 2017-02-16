@@ -168,7 +168,6 @@ WOPI implementation meets the requirements for a particular property.
         * :ref:`CheckEcosystem`
         * :ref:`GetEcosystem (containers)`
         * :ref:`GetEcosystem (files)`
-        * :ref:`GetFileWopiSrc`
         * :ref:`GetRootContainer`
 
     SupportsExtendedLockLength
@@ -186,6 +185,9 @@ WOPI implementation meets the requirements for a particular property.
         * :ref:`CheckFolderInfo`,
         * :ref:`EnumerateChildren (folders)`
         * :ref:`DeleteFile`
+
+    SupportsGetFileWopiSrc
+        A **Boolean** value that indicates that the host supports the :ref:`GetFileWopiSrc` operation.
 
     SupportsGetLock
         A **Boolean** value that indicates that the host supports the :ref:`GetLock` operation.
