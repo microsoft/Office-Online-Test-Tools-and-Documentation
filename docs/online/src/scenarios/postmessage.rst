@@ -46,7 +46,7 @@ All messages posted to and from the Office Online application frame are posted u
         midnight 1 January 1970 UTC.
 
         ..  tip:: You can get this value in most modern browsers using the ``Date.now()`` method in JavaScript.
-                  
+
     **Values** *(JSON-formatted object)*
         The data associated with the message. This varies per message.
 
@@ -248,6 +248,7 @@ The host page receives the following messages; all others are ignored:
 * :data:`File_Rename`
 * :data:`UI_Close`
 * :data:`UI_Edit`
+* :data:`UI_FileVersions`
 * :data:`UI_Sharing`
 * :data:`UI_Workflow`
 
@@ -412,6 +413,32 @@ every outgoing PostMessage:
 
         {
             "MessageId": "UI_Edit",
+            "SendTime": 1329014075000,
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "en-us"
+            }
+        }
+
+..  data:: UI_FileVersions
+
+    The UI_FileVersions message is posted when the user activates the *Previous Versions* UI in |wac|. The host should
+    use this message to trigger any custom file version history UI.
+
+    To send this message, the :term:`FileVersionPostMessage` property in the :ref:`CheckFileInfo` response from the
+    host must be set to ``true``. Otherwise |wac| will not send this message.
+
+    ..  attribute:: Values
+        :noindex:
+
+        :ref:`Common values <outgoing postmessage common values>` only.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "UI_FileVersions",
             "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
