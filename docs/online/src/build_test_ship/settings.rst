@@ -43,10 +43,22 @@ This subdomain is typically something like ``wopi.hostdomain.com``, though that 
 can use other names if needed. This approach ensures that Office Online cannot make WOPI requests to arbitrary domains.
 For testing and development using the Office Online test environment, a WOPI-dedicated subdomain is not required.
 
-..  important::
+..  danger::
     A production WOPI subdomain shouldn't ever surface user-provided content. In other words, a user shouldn't be able
     to upload something to the host and trick Office Online into making WOPI requests to the user-controlled content.
     That would represent a potential security hole.
+
+    For example, consider a service that uses the URL https://www.contosodrive.com for their main website. Users can
+    upload and control content that is served out of the ``www.contosodrive.com`` domain. If the |wac| allow list
+    contains ``contosodrive.com``, then a nefarious user could upload content and then create a :term:`WOPISrc`
+    pointing to it, like this: ``?WOPISrc=https://www.contosodrive.com/my_content/wopi/files/attack.json``. They could
+    then provide an arbitrary CheckFile and possibly GetFile response (by using the :term:`FileUrl` property). This
+    means that an attacker can abuse the trust between the |wac| service and the host.  In one possible example, the
+    attacker could change links in the |wac| UI (like the button controlled by the :term:`FileSharingUrl` property) to lead
+    to malicious sites. 
+
+    This threat is mitigated by requiring a dedicated subdomain for WOPI traffic that is separate from the domain used
+    when serving user content.
 
 Office Online has different allow lists for the production and test environments. When you are first given access to
 the test environment, Microsoft will add the domains you provide to the test-only WOPI domain allow list. For test
