@@ -53,7 +53,9 @@ For testing and development using the Office Online test environment, a WOPI-ded
     contains ``contosodrive.com``, then a nefarious user could upload content and then create a :term:`WOPISrc`
     pointing to it, like this: ``?WOPISrc=https://www.contosodrive.com/my_content/wopi/files/attack.json``. They could
     then provide an arbitrary CheckFile and possibly GetFile response (by using the :term:`FileUrl` property). This
-    means that an attacker can abuse the trust between the |wac| service and the host.
+    means that an attacker can abuse the trust between the |wac| service and the host.  In one possible example, the
+    attacker could change links in the |wac| UI (like the button controlled by the :term:`FileSharingUrl` property) to lead
+    to malicious sites. 
 
     This threat is mitigated by requiring a dedicated subdomain for WOPI traffic that is separate from the domain used
     when serving user content.
