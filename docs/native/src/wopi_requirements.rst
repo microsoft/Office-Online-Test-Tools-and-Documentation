@@ -12,10 +12,10 @@ what is documented in general for WOPI. You can learn more about how |Office iOS
 Required WOPI Operations for |Office iOS|
 -----------------------------------------
 
-The following WOPI operations are required for integration on |Office iOS|. Operations not listed here are not 
-currently called by |Office iOS|. 
+The following WOPI operations are required for integration on |Office iOS|. Operations not listed here are not
+currently called by |Office iOS|.
 
-If some operations are not supported for a specific user/file/container, just make sure to return the correct values 
+If some operations are not supported for a specific user/file/container, just make sure to return the correct values
 in :ref:`CheckFileInfo` and :ref:`CheckContainerInfo`.
 
 
@@ -60,7 +60,7 @@ Bootstrapper
 Future Support
 ~~~~~~~~~~~~~~
 
-While these WOPI operations are not current used by |Office iOS|, they must be implemented. |Office iOS| will use
+While these WOPI operations are not currently used by |Office iOS|, they must be implemented. |Office iOS| will use
 these operations in the future.
 
 * :ref:`RenameFile`
