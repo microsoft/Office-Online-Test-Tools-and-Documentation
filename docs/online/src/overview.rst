@@ -106,13 +106,6 @@ You should have a mechanism by which users can clearly identify file versions th
 are cached to improve viewing performance, file versions are extremely helpful. Without them, users can't easily
 determine whether they have the latest version of the file.
 
-Desktop application integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We encourage you to provide a way for users to open files in the Excel, PowerPoint, and Word desktop applications
-from the browser. Office Online is great for many things, but sometimes your users will want to transition to the
-desktop applications to access features that aren't available in Office Online at this time.
-
 
 Security considerations
 -----------------------
