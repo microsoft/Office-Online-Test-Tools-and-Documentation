@@ -142,13 +142,12 @@ understanding the requirements for integration with WOPI clients such as |wac| a
 
         ..  admonition:: |wac| Tip
 
-            WOPI defines a :ref:`GetLock` operation. However, it is not currently called by |wac|. Instead,
-            |wac| will often execute lock-related operations on files with missing or known incorrect lock IDs
-            and expects the host to provide the current lock ID in its WOPI response. Typically the :ref:`Unlock` and
-            :ref:`RefreshLock` operations are used for this purpose, but other lock-related operations may be used.
-
-            In the future, |wac| will call :ref:`GetLock` for this purpose if the host sets the
-            :term:`SupportsGetLock` property in :ref:`CheckFileInfo`.
+            WOPI defines a :ref:`GetLock` operation. However, |wac| does not use it in all cases, even if the host
+            indicates support for the operation using the :term:`SupportsGetLock` property in :ref:`CheckFileInfo`.
+            Instead, |wac| will sometimes execute lock-related operations on files with missing or known incorrect
+            lock IDs and expects the host to provide the current lock ID in its WOPI response. Typically the
+            :ref:`Unlock` and :ref:`RefreshLock` operations are used for this purpose, but other lock-related
+            operations may be used.
 
         The specific conditions for each response are covered in the documentation for each of the
         following lock-related WOPI operations:
@@ -170,9 +169,9 @@ understanding the requirements for integration with WOPI clients such as |wac| a
 
     Share URL
         A Share URL is a URL to a webpage that is suitable for viewing a shared WOPI file or container. The URL should be
-        appropriate for being launched in a web browser, but the experience is defined by the host. For example, 
-        the host may choose to have the URL navigate to the host's browse experience or to a preview of the file 
-        using Office Online or another file previewer. 
+        appropriate for being launched in a web browser, but the experience is defined by the host. For example,
+        the host may choose to have the URL navigate to the host's browse experience or to a preview of the file
+        using Office Online or another file previewer.
 
         A host may support different types of Share URLs that may be used for different purposes. For example, a
         particular Share URL type may not allow users to edit the file by using the Share URL. The list of possible
