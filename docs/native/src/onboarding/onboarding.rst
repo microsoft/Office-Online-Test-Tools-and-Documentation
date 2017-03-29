@@ -70,8 +70,8 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | ProviderId     | String      | TP_CONTOSO                                 | Supplied by Microsoft                            |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| TrustedDomain  | String      | contoso.com, qa-contoso.com                | Known domains for authorization and token        |
-|                |             |                                            | issuance endpoints.                              |
+| TrustedDomain  | String      | contoso.com, qa-contoso.com                | Known domains for bootstraper, authorization and |
+|                |             |                                            | token issuance endpoints.                        |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | Scope          | String      | userprofile, editdocs                      | Set of comma-delimited scopes that are to be     |
 | (optional)     |             |                                            | requested during authentication with the storage |
