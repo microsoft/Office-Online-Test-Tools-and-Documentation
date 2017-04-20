@@ -24,7 +24,7 @@ Modern  Legacy
 pptx    ppt
 ppsx    pps
 potm    pot
-potm    odp
+potx    odp
 ppsm
 pptm
 thmx
