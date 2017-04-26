@@ -5,7 +5,7 @@
 |Office iOS| will fail to load files if there are invalid characters in certain :ref:`CheckFileInfo` or
 :ref:`CheckContainerInfo` properties. The following characters are not allowed::
 
-    \/:*?"<>|#{}^[]`%_
+    \/:*?"<>|#{}^[]`%
 
 These properties are affected:
 
