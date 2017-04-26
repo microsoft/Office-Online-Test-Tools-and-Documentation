@@ -30,9 +30,9 @@ Bootstrap
     ..  important:: Connections to the bootstrapper must be made using :abbr:`TLS (Transport Layer Security)`.
 
     :reqheader Authorization:
-        A **string** in the format ``Bearer: <TOKEN>`` where ``<TOKEN>`` is a Base64-encoded OAuth 2.0 token. If this
-        header is missing, or the token provided is invalid, the host must respond with a :statuscode:`401` response
-        and include the :header:`WWW-Authenticate` header as described below.
+        A **string** in the format ``Bearer: <TOKEN>`` where ``<TOKEN>`` is a Base64-encoded OAuth 2.0 token. If
+        this header is missing or blank, or if the token provided is invalid, the host must respond with a
+        :statuscode:`401` response and include the :header:`WWW-Authenticate` header as described below.
 
     :resheader WWW-Authenticate:
         A **string** value formatted as described in :ref:`WWW-Authenticate header`.
