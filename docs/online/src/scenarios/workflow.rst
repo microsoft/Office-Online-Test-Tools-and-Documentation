@@ -25,7 +25,7 @@ button. The button's text is specific to the :term:`WorkflowType`.
 :term:`WorkflowType`    |wac| workflow button text
 ======================  ==========================
 Assign                  Manage Assignment
-Submit                  Submit
+Submit                  Turn In
 ======================  ==========================
 
 ..  important::
