@@ -455,7 +455,7 @@ Other miscellaneous properties
         user for permission to collect a detailed report about their specific error.  The information gathered
         could include the user's file, and other session specific state.
 
-        ..  versionadded:: 2017.06.15
+        ..  versionadded:: 2017.06.01
         
         ..  tip::
             This value should be set to ``false`` if no additional collection should be done on errors, or if the
