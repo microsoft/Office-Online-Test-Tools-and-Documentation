@@ -22,21 +22,21 @@ Build
 
 The following URL parameter is appended to the request URL::
 
-    Build=#
+    build=#
 
 "#" will be a string showing the build of the Office application making the request.
 
 Platform
 --------
 
-The Platform URL parameter communicates which platform the app is running on.
+The platform URL parameter communicates which platform the app is running on.
 
-	Platform=iOS
+	platform=iOS
 
 Example
 -------
 
 Here's a request to the sign-in endpoint showing all parameters in use::
 
-    https://contoso.com/api/oauth2/authorize?&rs=en-US&Build=1.21.417&Platform=iOS&client_id=abcdefg&redirect_uri=https%3A%2F%2Flocalhost&response_type=code
+    https://contoso.com/api/oauth2/authorize?&rs=en-US&build=1.21.417&platform=iOS&client_id=abcdefg&redirect_uri=https%3A%2F%2Flocalhost&response_type=code
 
