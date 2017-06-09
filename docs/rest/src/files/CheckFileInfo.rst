@@ -306,13 +306,6 @@ the access token is invalid or expired.
         A **Boolean** value that indicates that the user has permission to alter the file. Setting this to ``true``
         tells the WOPI client that it can call :ref:`PutFile` on behalf of the user.
 
-    WebEditingDisabled
-        A **Boolean** value that indicates that the WOPI client must not allow the user to edit the file.
-
-        ..  note::
-            This does not mean that the user doesn't have rights to edit the file. Hosts should use the
-            :term:`UserCanWrite` property for that purpose.
-
 
 File URL properties
 -------------------
@@ -604,6 +597,13 @@ because they are pending deprecation or they are designated for future features 
         A URI to a web page that provides access to an editing experience for the file that can be embedded in
         another HTML page. For example, a page that provides an HTML snippet that can be inserted into the HTML of a
         blog.
+
+    WebEditingDisabled
+        A **Boolean** value that indicates that the WOPI client must not allow the user to edit the file.
+
+        ..  note::
+            This does not mean that the user doesn't have rights to edit the file. Hosts should use the
+            :term:`UserCanWrite` property for that purpose.
 
 
 Workflow properties
