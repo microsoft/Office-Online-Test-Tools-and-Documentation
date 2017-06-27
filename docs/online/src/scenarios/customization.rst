@@ -129,12 +129,17 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
         If the :term:`CloseUrl`, :term:`ClosePostMessage`, and :term:`CloseButtonClosesWindow` properties are all
         omitted, the *Close* UI will be hidden in |wac|.
 
+        ..  important::
+
+            The :term:`CloseUrl` must always be provided in order for the *Close* UI to appear in |wac|, even if
+            :term:`ClosePostMessage` is ``true``.
+
+            Most PostMessage-related properties do not require that the corresponding URL property be provided in
+            order to enable the relevant UI in |wac|. :term:`CloseUrl` is an exception to this.
+
+            ..  seealso:: :ref:`postmessage best practices`
+
         ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
-        
-         ..  important::
-             The CloseUrl must always be specified if you want the Close UI to appear in Office Online, even if you're setting
-             ClosePostMessage to true. This is because there are some cases where Office Online uses the CloseUrl when it can't
-             send the UI_Close post message.
 
     EditModePostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Edit`
@@ -198,6 +203,27 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
 
         ..  important::
             This value will be ignored if :term:`WorkflowType` is not provided.
+
+
+..  _postmessage best practices:
+
+Best practices when using PostMessage properties
+------------------------------------------------
+
+The WOPI protocol is designed for use in a variety of scenarios and environments. While PostMessage is a useful
+integration technique for web-browser-based WOPI clients such as |wac|, it is not usable in other WOPI clients,
+such as |Office iOS|.
+
+To provide maximum compatibility with all types of WOPI clients, hosts should set corresponding URL properties when
+using PostMessage properties. For example, when setting :term:`FileSharingPostMessage` to ``true``, hosts should also
+provide a :term:`FileSharingUrl`. This will enable a WOPI client that cannot use PostMessage to navigate the user to a
+URL that will allow them to manage sharing the file.
+
+While the primary reason to provide corresponding URL properties for PostMessage properties is for non-browser-based
+WOPI clients, there are legitimate reasons to do this for |wac| as well. In particular, users may use browsers that
+do not support PostMessage. While all officially supported |wac| browsers do support PostMessage, when users use
+unsupported browsers |wac| strives to give the user the best possible experience. Providing the URL properties enables
+users to use |wac| features even in browsers where PostMessage won't work.
 
 
 .. _viewer customization:
