@@ -83,8 +83,6 @@ CreateChildFile
 
         If the user is not authorized to overwrite the target file, the host must respond with a :statuscode:`501`.
 
-    :body: The request body must be the full binary contents of the file.
-
     :resheader X-WOPI-InvalidFileNameError:
         A **string** describing the reason the |operation| operation could not be completed. This header should only be
         included when the response code is :http:statuscode:`400`. This string is only used for logging purposes.
