@@ -68,9 +68,9 @@ The following example shows the msg parameter for the :data:`Host_PerfTiming` me
 Sending messages to the Office Online iframe
 --------------------------------------------
 
-To send messages to the Office Online iframe, you must set the PostMessageOrigin property in your WOPI CheckFileInfo
-response to the URL of your host page. If you do not do this, Office Online will ignore any messages you send to its
-iframe.
+To send messages to the Office Online iframe, you must set the :ref:`PostMessageOrigin` property in your WOPI
+:ref:`CheckFileInfo` response to the URL of your host page. If you do not do this, Office Online will ignore any
+messages you send to its iframe.
 
 You can send the following messages; all others are ignored:
 
@@ -301,7 +301,7 @@ every outgoing PostMessage:
             "Values": {
                 "DocumentLoadedTime": 1329014074983,
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
 
@@ -329,7 +329,7 @@ every outgoing PostMessage:
             "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
 
@@ -358,7 +358,7 @@ every outgoing PostMessage:
             "Values": {
                 "NewName": "Renamed Document",
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
 
@@ -385,7 +385,7 @@ every outgoing PostMessage:
             "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
 
@@ -416,7 +416,7 @@ every outgoing PostMessage:
             "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
 
@@ -442,7 +442,7 @@ every outgoing PostMessage:
             "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
 
@@ -468,7 +468,7 @@ every outgoing PostMessage:
             "SendTime": 1329014075000,
             "Values": {
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
 
@@ -498,6 +498,6 @@ every outgoing PostMessage:
             "Values": {
                 "WorkflowType": "Submit",
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "en-us"
+                "ui-language": "1033"
             }
         }
