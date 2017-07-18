@@ -20,8 +20,14 @@ Indicating that a user is a business user
 The first requirement in order to support document editing for business users is to indicate that the user is a
 business user. Doing this requires the following:
 
-#.  Set the :term:`BUSINESS_USER` placeholder value on the Office Online action URL. This parameter must always be on
-    the action URL for business users.
+#.  Set the :term:`BUSINESS_USER` placeholder value on the Office Online action URL. **This parameter must always be on
+    the action URL for business users.**
+
+    ..  important::
+
+        Hosts must properly set the :term:`BUSINESS_USER` placeholder value on the Office Online action URL for all
+        actions that include the placeholder, including the :wopi:action:`view` action.
+
 #.  Include the :term:`LicenseCheckForEditIsEnabled` property in the :ref:`CheckFileInfo` response. This property
     must always be set to ``true`` for business users.
 #.  Include the :term:`HostEditUrl` in the :ref:`CheckFileInfo` response. This property must be included in the
