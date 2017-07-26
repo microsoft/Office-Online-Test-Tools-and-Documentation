@@ -26,13 +26,14 @@ EnumerateChildren (containers)
     :reqheader X-WOPI-FileExtensionFilterList:
         A **string** value that the host must use to filter the returned child files. This header must be a list of
         comma-separated file extensions with a leading dot (``.``). There must be no whitespace and no trailing
-        comma in the string.
+        comma in the string. Wildcard characters are not permitted.
 
         If this header is included, the host must only return child files whose file extensions match the filter
-        list. For example, if this header is set to the value ``.doc,.docx``, the host should include only files with
-        the ``doc`` or ``docx`` file extension.
+        list, based on a case-insensitive match. For example, if this header is set to the value ``.doc,.docx``, the host
+        should include only files with the ``doc`` or ``docx`` file extension.
 
-        This header value does not have any effect on child containers.
+        This header value only affects the child files that are returned; it does not have any effect on child
+        containers.
 
     :code 200: Success
     :code 401: Invalid :term:`access token`
