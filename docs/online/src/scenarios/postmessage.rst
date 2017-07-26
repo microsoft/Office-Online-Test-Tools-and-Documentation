@@ -68,7 +68,7 @@ The following example shows the msg parameter for the :data:`Host_PerfTiming` me
 Sending messages to the Office Online iframe
 --------------------------------------------
 
-To send messages to the Office Online iframe, you must set the :ref:`PostMessageOrigin` property in your WOPI
+To send messages to the Office Online iframe, you must set the :term:`PostMessageOrigin` property in your WOPI
 :ref:`CheckFileInfo` response to the URL of your host page. If you do not do this, Office Online will ignore any
 messages you send to its iframe.
 
