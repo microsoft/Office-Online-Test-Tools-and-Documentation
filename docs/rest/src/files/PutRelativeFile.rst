@@ -112,8 +112,6 @@ PutRelativeFile
     :reqheader X-WOPI-Size:
         An **integer** that specifies the size of the file in bytes.
 
-    :body: The request body must be the full binary contents of the file.
-
     :reqheader X-WOPI-FileConversion:
         A header whose presence indicates that the request is being made in the context of a
         :ref:`binary document conversion<conversion>`. This header will only be included on the request in that case.
@@ -121,6 +119,8 @@ PutRelativeFile
         |operation| request is not being made as part of a binary document conversion.
 
         See :ref:`conversion` for more information on the conversion process and how this header can be used.
+
+    :request Body: The request body must be the full binary contents of the file.
 
     :resheader X-WOPI-ValidRelativeTarget:
         A UTF-7 encoded **string** that specifies a full file name including the file extension. This header may be
