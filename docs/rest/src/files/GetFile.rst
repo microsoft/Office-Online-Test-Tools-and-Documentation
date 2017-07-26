@@ -32,6 +32,7 @@ GetFile
     :resheader X-WOPI-ItemVersion:
         ..  include:: /_fragments/headers/X-WOPI-ItemVersion.rst
 
+    :response Body: The response body must be the full binary contents of the file.
 
     :code 200: Success
     :code 401: Invalid :term:`access token`

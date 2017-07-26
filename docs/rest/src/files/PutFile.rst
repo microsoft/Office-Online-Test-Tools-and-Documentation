@@ -39,6 +39,7 @@ PutFile
         A **string** provided by the WOPI client in a previous :ref:`Lock` request. Note that this header will not be
         included during :ref:`document creation<Create New>`.
 
+    :request Body: The request body must be the full binary contents of the file.
 
     :resheader X-WOPI-Lock:
         ..  include:: /_fragments/headers/X-WOPI-Lock.rst
