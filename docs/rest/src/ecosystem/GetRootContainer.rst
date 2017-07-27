@@ -58,6 +58,9 @@ Other response properties
 ContainerInfo
 ~~~~~~~~~~~~~
 
+Hosts can optionally include the ContainerInfo property, which should match the :ref:`CheckContainerInfo` response
+for the root container.
+
 ..  include:: /_fragments/container_info.rst
 
 
