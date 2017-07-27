@@ -17,23 +17,6 @@ The :ref:`validator` is a very useful tool in testing your WOPI implementation. 
 problems in your implementation. Check the following items in addition to the results from the validator.
 
 
-Non-standard CheckFileInfo properties
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Hosts should avoid returning properties in :ref:`CheckFileInfo` that are not defined as part of the WOPI protocol.
-Properties may be added to CheckFileInfo in the future, and if hosts are already returning something for that property,
-then it might not be the expected type, or the value might not be in the expected format, etc. Thus, hosts should not
-return properties that aren't in this documentation.
-
-
-CheckFileInfo property return types
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The :ref:`validator` tests do not currently check for the proper return types. For example, while the :term:`version`
-value is supposed to be a **string**, you can return an **int** and the tests will pass. This can cause errors in the
-Office Online applications that are difficult to diagnose. For this reason, check that your return types are accurate.
-
-
 Non-empty response body
 ~~~~~~~~~~~~~~~~~~~~~~~
 
