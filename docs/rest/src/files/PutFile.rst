@@ -53,6 +53,8 @@ PutFile
     :resheader X-WOPI-ItemVersion:
         ..  include:: /_fragments/headers/X-WOPI-ItemVersion.rst
 
+        ..  tip:: For PutFile responses, this should be the version of the file *after* the PutFile operation.
+
 
     :code 200: Success
     :code 401: Invalid :term:`access token`
