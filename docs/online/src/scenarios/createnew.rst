@@ -15,3 +15,17 @@ the :wopi:action:`editnew` WOPI action as follows:
    the file, overwriting it with template content appropriate to the file type. Note that this :ref:`PutFile`
    operation will be performed on an unlocked file, so hosts must ensure that :ref:`PutFile` operations on
    unlocked files that are zero bytes succeed. See the :ref:`PutFile` documentation for more information.
+
+
+..  important::
+
+    Because the new file creation is done in two steps, it is possible for the :ref:`PutFile` operation to fail,
+    leaving the zero-byte file. Since such a file is not valid, hosts should expect and handle this case. The ultimate
+    solution is left to the host; options for handling this situation include:
+
+    * Hide zero-byte files from the user.
+    * Prevent users from opening zero-byte files in |wac|.
+    * If a file is zero bytes, then when opening |wac| against the file, always use the :wopi:action:`editnew` action.
+      (This is only an option if the user has edit permissions to the document.)
+
+    This is not an exhaustive list of options; ultimately, the host must decide the best approach to this problem.
