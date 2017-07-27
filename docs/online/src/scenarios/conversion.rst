@@ -28,7 +28,8 @@ process is as follows:
     request is being made in the context of a file conversion. Hosts can thus treat these requests differently than
     other PutRelativeFile requests.
 #.  After the document is successfully converted, Office Online will redirect the user to the :term:`HostEditUrl`
-    returned in the PutRelativeFile response.
+    returned in the PutRelativeFile response. Office Online always redirects the topmost window
+    (``window.top``).
 
 
 Enabling 'convert and edit' from within the Office Online viewer
