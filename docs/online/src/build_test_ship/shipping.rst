@@ -49,19 +49,9 @@ WOPI validation
 ~~~~~~~~~~~~~~~
 
 As part of the validation process, Microsoft will test your WOPI implementation using the :ref:`validator`. All of
-the tests in the following categories must be passing.
+the tests in the following categories must be passing:
 
-* HostFrameIntegration (ValidLanguagePlaceholderValues may be skipped if the host is not using the :term:`UI_LLCC` or
-  :term:`DC_LLCC` placeholder values)
-* BaseWopiViewing
-* CheckFileInfoSchema
-* EditFlows
-* Locks
-* AccessTokens
-* PutRelativeFile **or** PutRelativeFileUnsupported
-* RenameFileIfCreateChildFileIsNotSupported **or** RenameFileIfCreateChildFileIsSupported (applicable only if the
-  host supports :ref:`RenameFile`)
-* ProofKeys (applicable only for hosts implementing :ref:`proof key validation<proof keys>`)
+..  include:: /_fragments/required_validator_tests.rst
 
 
 Manual testing
