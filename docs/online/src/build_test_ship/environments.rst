@@ -51,6 +51,9 @@ Production environment
 The production environment is updated weekly. Once you've started the :ref:`'Go Live' process <go live>`, you'll be
 given production access to verify your integration behaves as expected in that environment prior to release.
 
+..  important::
+    Hosts must use HTTPS in the production |wac| environment. HTTP is not supported.
+
 
 ..  _discovery URLs:
 
