@@ -41,7 +41,7 @@ can be used to trigger the test suite.
     and :ref:`CreateChildContainer` operations. While the validation application attempts to clean up these files, if
     there are errors in the WOPI implementation, these clean up actions may fail, leaving behind these test files.
 
-    If that should happen, you must clean up these test files manually.
+    If that should happen, you must clean up these test files manually. If you don't, subsequent test runs may fail.
 
 
 Interactive WOPI validation

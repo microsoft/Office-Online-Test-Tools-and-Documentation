@@ -6,15 +6,22 @@ Testing |wac| integration
 
 Before starting the :ref:`'go live' process <shipping>`, you should do the following testing on your integration.
 
-..  important::
-    You should do this testing only *after* the :ref:`validator` tests are passing.
+WOPI validator tests
+--------------------
+
+All of the automated tests in the following categories must be passing in the WOPI validator:
+
+..  include:: /_fragments/required_validator_tests.rst
 
 
-WOPI implementation verification
---------------------------------
+Manual WOPI implementation verification
+---------------------------------------
 
 The :ref:`validator` is a very useful tool in testing your WOPI implementation. However, it cannot find all potential
 problems in your implementation. Check the following items in addition to the results from the validator.
+
+..  important::
+    You should do this testing only *after* the :ref:`validator` tests are passing.
 
 
 Non-empty response body
