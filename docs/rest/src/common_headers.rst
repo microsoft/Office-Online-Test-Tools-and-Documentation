@@ -87,8 +87,9 @@ Standard WOPI request and response headers
 
     :resheader X-WOPI-ServerError:
         A **string** indicating that an error occurred while processing the WOPI request. This header should be
-        included in a WOPI response if the status code is :http:statuscode:`500`. The value should contain details
-        about the error. This string must not be used for anything other than logging.
+        included in a WOPI response if the status code is :http:statuscode:`500`, but may be returned on any response
+        with a non-200 status code. The value should contain details about the error. This string must not be used for
+        anything other than logging.
 
     :resheader X-WOPI-ServerVersion:
         A **string** indicating the version of the WOPI host server handling the request. There is no standard
