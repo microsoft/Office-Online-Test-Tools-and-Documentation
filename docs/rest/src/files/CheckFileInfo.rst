@@ -445,15 +445,15 @@ Other miscellaneous properties
         .. _Smart Lookup: https://support.office.microsoft.com/article/Get-insights-into-what-you-re-working-on-with-Smart-Lookup-debf2083-5ac0-4739-8667-ae2467bec044
 
     AllowErrorReportPrompt
-        A **Boolean** value that indicates that if the session ends in an error, it is permitted to prompt the
-        user for permission to collect a detailed report about their specific error.  The information gathered
-        could include the user's file, and other session specific state.
+        A **Boolean** value that indicates that in the event of an error, the WOPI client is permitted to prompt the
+        user for permission to collect a detailed report about their specific error. The information gathered
+        could include the user's file and other session-specific state.
 
         ..  versionadded:: 2017.06.01
 
         ..  tip::
-            This value should be set to ``false`` if no additional collection should be done on errors, or if the
-            user has opted out of telemetry collection.
+            This value should be omitted (or explicitly set to ``false``) if no additional collection should be done on
+            errors, or if the user has opted out of telemetry collection.
 
     AllowExternalMarketplace
         A **Boolean** value that indicates a WOPI client may allow connections to external services referenced in
