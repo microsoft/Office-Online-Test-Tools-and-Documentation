@@ -8,8 +8,16 @@ on their mobile devices.
 
 If you offer both iOS and Android experience, then we recommend you integrate with us for both the experiences simultaneously. However, You can choose to onboard either of the experience first depending on your priority. Please note that once you have onboarded to WOPI APIs for any of the one experience i.e. Android or iOS experience, integrating with the other experience is very minimal work.  
 
+Editing a file in |Office iOS|
+
 .. figure:: /images/scenario_edit.png
    :alt: A screenshot that shows editing a file in |Office iOS|.
+   :align: center
+   
+
+Editing a file in |Office Android|
+.. figure:: /images/scenario_edit_android.png
+   :alt: A screenshot that shows editing a file in |Office Android|.
    :align: center
 
 
