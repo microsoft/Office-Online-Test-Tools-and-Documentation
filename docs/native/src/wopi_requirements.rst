@@ -4,6 +4,8 @@
 WOPI implementation requirements for |Office iOS Android| integration
 =============================================================
 
+Note: Following section is applicable |Office iOS Android|. Both of these endpoints require the same level of WOPI implementation.
+
 This section documents specific requirements for your WOPI implementation for integration with |Office iOS Android| beyond
 what is documented in general for WOPI. You can learn more about how |Office iOS Android| uses these operations in the
 :ref:`operational flows` section.
