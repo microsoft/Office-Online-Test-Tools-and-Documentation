@@ -1,8 +1,8 @@
 
 ..  _native wopi:
 
-Using the WOPI protocol to integrate with Office for iOS
-========================================================
+Using the WOPI protocol to integrate with Office for iOS and Android
+====================================================================
 
 ..  sidebar:: Note
 
@@ -11,17 +11,17 @@ Using the WOPI protocol to integrate with Office for iOS
 
 ..  _issue tracker: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/issues
 
-You can use the Web Application Open Platform Interface (WOPI) protocol to integrate |Office iOS| with your
-application. The WOPI protocol enables |Office iOS| to access and change files that are stored in your service.
+You can use the Web Application Open Platform Interface (WOPI) protocol to integrate |Office iOS Android| with your
+application. The WOPI protocol enables |Office iOS Android| to access and change files that are stored in your service.
 
-To integrate your application with |Office iOS|, you need to do the following:
+To integrate your application with |Office iOS Android|, you need to do the following:
 
-#. Be a member of the *Office 365 - Cloud Storage Partner Program*. Currently integration with |Office iOS| using WOPI
+#. Be a member of the *Office 365 - Cloud Storage Partner Program*. Currently integration with |Office iOS Android| using WOPI
    is available to cloud storage partners. You can learn more about the program, as well as how to apply,
    at http://dev.office.com/programs/officecloudstorage.
 
 #. Implement the WOPI protocol - a set of REST endpoints that expose information about the documents that you want to
-   view or edit in |Office iOS|. The set of WOPI operations that must be supported is described
+   view or edit in |Office iOS Android|. The set of WOPI operations that must be supported is described
    in the section titled :ref:`requirements`.
 
 #. Provide the required on-boarding information as described in the section titled :ref:`onboarding`.
