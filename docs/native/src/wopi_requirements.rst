@@ -60,7 +60,7 @@ Bootstrapper
 Future Support
 ~~~~~~~~~~~~~~
 
-While these WOPI operations are not currently used by |Office iOS|, they must be implemented. |Office iOS| will use
+While these WOPI operations are not currently used by |Office iOS Android|, they must be implemented. |Office iOS Android| will use
 these operations in the future.
 
 * :ref:`RenameFile`
