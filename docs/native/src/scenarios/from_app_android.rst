@@ -43,7 +43,7 @@ Note that the file is opened directly against your service. Your app essentially
 protocol.
 
 
-CSPP Office on Android Upsell guidance
+CSPP |Office Android| Upsell guidance
 --------------------------------------
  
 Step 1 - Verify that Office has been installed
@@ -153,7 +153,6 @@ Step 2 - Integrate upsell logic in your app
     |REFERRERSTRING           |  Excel      | referrer=adjust_reftag%3DcQVPZG14QfkNQ%26utm_source%3DThirdParty%26utm_campaign%3DTencent |     +-------------------------+-------------+-------------------------------------------------------------------------------------------+
     |REFERRERSTRING           |  PowerPoint | referrer=adjust_reftag%3DcfVvTwlIJmkwH%26utm_source%3DThirdParty%26utm_campaign%3DTencent |     +-------------------------+-------------+-------------------------------------------------------------------------------------------+
 
-    Here are guidelines with step by step instructions: 
  
       
 
