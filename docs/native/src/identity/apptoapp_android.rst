@@ -22,9 +22,40 @@ Service Changes: Adding information to the WWW-Authenticate response header on u
 -----------------------------------------------------------------------------------------------------------------
 
 |Office Android| will use Intent to invoke your App. The information Office needs are your App’s Package name, Auth activity name and Version code. Office will consider provided Version code as the base version and will assume that your App with this Version and above will support App to App authentication.
-The information Office needs is passed via the URLScheme parameter in the WWW-Authenticate response header to unauthenticated bootstrap request. New information is highlighted: 
+The information Office needs is passed via the URLScheme parameter in the WWW-Authenticate response header to unauthenticated bootstrap request. 
 
-
++-------------------------+-------------------------------------------+-----------------+-------------------------------------------------------------------------+
+|Parameter                | Value                                     | Required        | Example                                                                 |
++=========================+===========================================+=================+=========================================================================+
+| Bearer                  |n/a                                        | Yes             | Bearer                                                                  |
++-------------------------+-------------------------------------------+-----------------+-------------------------------------------------------------------------+
+| authorization_uri       | The URL of the OAuth2 Authorization       | Yes             | https://contoso.com/api/oauth2/authorize                                |
+|			  | Endpoint to begin authentication          |                 |                                                                         |
+|                         | against as described at:                  |                 |                                                                         |
+|                         | :rfc:`6749#section-3.1`                   |                 |                                                                         |
++-------------------------+-------------------------------------------+-----------------+-------------------------------------------------------------------------+
+| tokenIssuance_uri       | The URL of the OAuth2 Token Endpoint      | Yes             | https://contoso.com/api/oauth2/token                                    |
+|			  | where authentication code can be          |                 |                                                                         |
+|                         | redeemed for an access and (optional)     |                 |                                                                         |
+|                         | refresh token. See Token EndPoint at:     |                 |                                                                         |
+|                         | :rfc:`6749#section-3.2`                   |                 |                                                                         |
++-------------------------+-------------------------------------------+-----------------+-------------------------------------------------------------------------+
+| providerId              | A well-known string (as registered with   | No              | TP_CONTOSO                                                              |
+|			  | with Microsoft Office) that uniquely      |                 |                                                                         |
+|			  | identifies the host.                      |                 |                                                                         |
+|                         | Allowed characters:[a-z,A-Z,0-9]          |                 |                                                                         |
++-------------------------+-------------------------------------------+-----------------+-------------------------------------------------------------------------+
+|UrlSchemes               | Information used to invoke your app       |No               |                                                                         |
+|                         | (despite the name of the parameter, this  |                 | {“iOS” : [“contoso”,”contoso-EMM”], “Android”:[“Package1VesrsionCode”,  |
+|                         | may not always be URL schemes; e.g. on    |                 |  “Package1Name”, “Package1AuthActivityNaame”, “Package2VesrsionCode”,   |
+|                         | Android, intent is used).                 |                 |  “Package2Name”, “Package2AuthActivityNaame”], “UWP”:[…]}               |
+|                         |                                           |                 |  The value itself must be URL encoded                                   |
+|                         | This is an ordered list by platform.      |                 |                                                                         |
+|                         | Omit any platforms you do not support.    |                 |                                                                         |
+|                         | Office will attempt to invoke these in    |                 |                                                                         |
+|                         | order before falling back to the          |                 |                                                                         |
+|                         | webview auth.                             |                 |                                                                         |
++-------------------------+-------------------------------------------+-----------------+-------------------------------------------------------------------------+
 
 
 Client Changes: Invoking your App on Android
@@ -90,7 +121,7 @@ Client Changes: Invoking your App on Android
    
 ..  _HandleIntent.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/HandleIntent.java
  
- 5. Returning result
+5. Returning result
 
 ..  literalinclude:: ../../../../samples/android/HandleIntent.java
     :caption: Sample code from `HandleIntent.java`_
