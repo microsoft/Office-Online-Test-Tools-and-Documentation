@@ -8,7 +8,7 @@
 PutFile
 =======
 
-:Required for: |web| |ios|
+:Required for: |web| |ios| |android|
 
 ..  default-domain:: http
 
