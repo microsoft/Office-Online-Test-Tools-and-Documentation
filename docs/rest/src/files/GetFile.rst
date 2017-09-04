@@ -1,4 +1,4 @@
-
+ 
 ..  index:: WOPI requests; GetFile, GetFile
 
 ..  |operation| replace:: GetFile
@@ -8,7 +8,7 @@
 GetFile
 =======
 
-:Required for: |web| |ios|
+:Required for: |web| |ios| |android|
 
 ..  default-domain:: http
 
