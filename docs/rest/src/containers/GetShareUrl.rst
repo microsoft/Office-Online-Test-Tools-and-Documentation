@@ -8,7 +8,7 @@
 GetShareUrl (containers)
 ==============================
 
-:Required for: |ios|
+:Required for: |ios| |android|
 
 ..  seealso::
 
