@@ -1,4 +1,4 @@
-
+ 
 ..  index:: WOPI requests; Lock, Lock
 
 ..  |operation| replace:: Lock
@@ -8,7 +8,7 @@
 Lock
 ====
 
-:Required for: |web| |ios|
+:Required for: |web| |ios| |android|
 
 ..  default-domain:: http
 
