@@ -1,8 +1,8 @@
 
 .. _app to app:
 
-App to app sign in
-================== 
+App to app sign in |Office iOS|
+===============================
 
 The normal flow to sign in to your service from |Office iOS| uses the iOS UIWebView where your web sign in 
 experience is rendered inside the |Office iOS| app. Optionally, an additional optimization can be done where the user
