@@ -16,6 +16,7 @@ Editing a file in |Office iOS|
    
 
 Editing a file in |Office Android|
+
 .. figure:: /images/scenario_edit_android.png
    :alt: A screenshot that shows editing a file in |Office Android|.
    :align: center
