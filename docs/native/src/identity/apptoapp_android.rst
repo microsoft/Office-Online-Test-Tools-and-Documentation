@@ -1,7 +1,7 @@
-.. _app to app android:
+ .. _app to app android:
 
-App to app sign in
-==================
+App to app sign in |Office Android|
+===================================
 
 The normal flow to sign in to your service from Office uses the OS provided WebView where your web sign in experience is rendered inside the Office app. Optionally, an additional optimization can be done where the user can sign in using your app.
 
