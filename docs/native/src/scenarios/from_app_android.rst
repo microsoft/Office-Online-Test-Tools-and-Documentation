@@ -136,7 +136,7 @@ Step 2 - Integrate upsell logic in your app
     1. Working prototype for this is present here – `MainActivity.java`, and `AppCompatActivity.java`
     2. Please use following values for each of the variables for Word, Excel and PowerPoint 
     
-.. _MainActivity.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/MainActivity.java
+..  _MainActivity.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/MainActivity.java
 
 .. _AppCompatActivity.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/AppCompatActivity.java
 
