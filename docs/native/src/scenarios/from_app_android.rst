@@ -133,7 +133,7 @@ Step 2 - Integrate upsell logic in your app
     In order to also track the number of launches in upsell flow, we will make a call to tracking URL (i.e. adjust URL). Following guidance goes over special handling to make a call to tracking URL (i.e. adjust URL) first, and then show the valid list of app stores for app installations.
   
     Guidance: 
-    1. Working prototype for this is present here – `MainActivity.java <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/MainActivity.java>`, and `AppCompatActivity.java`
+    1. Working prototype for this is present here – `MainActivity.java <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/MainActivity.java>`_, and `AppCompatActivity.java`
     2. Please use following values for each of the variables for Word, Excel and PowerPoint 
     
 ..  _MainActivity.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/MainActivity.java
