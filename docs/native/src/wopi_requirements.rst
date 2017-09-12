@@ -2,7 +2,7 @@
 ..  _requirements:
 
 WOPI implementation requirements for |Office iOS Android| integration
-=============================================================
+=====================================================================
 
 Note: Following section is applicable |Office iOS Android|. Both of these endpoints require the same level of WOPI implementation.
 
@@ -12,12 +12,12 @@ what is documented in general for WOPI. You can learn more about how |Office iOS
 
 
 Required WOPI Operations for |Office iOS Android|
------------------------------------------
+-------------------------------------------------
 
 The following WOPI operations are required for integration on |Office iOS Android|. Operations not listed here are not
 currently called by |Office iOS Android|.
 
-If some operations are not supported for a specific user/file/container, just make sure to return the correct values
+If some operations are not supported for a specific user/file/container; just make sure to return the correct values
 in :ref:`CheckFileInfo` and :ref:`CheckContainerInfo`.
 
 

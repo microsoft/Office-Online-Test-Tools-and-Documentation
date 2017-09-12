@@ -1,10 +1,10 @@
 
 .. _app to app:
 
-App to app sign in |Office iOS|
-===============================
+App to app sign in for |Office iOS|
+===================================
 
-The normal flow to sign in to your service from |Office iOS| uses the iOS UIWebView where your web sign in 
+The normal flow to sign in to your service from |Office iOS| uses the iOS UIWebView where your web sign in
 experience is rendered inside the |Office iOS| app. Optionally, an additional optimization can be done where the user
 can sign in using your app.
 
@@ -28,13 +28,13 @@ Sign in using your app
 * Return the user to the |Office iOS| app with the auth code via the Office URL scheme (see below).
 
 
-URL scheme design 
+URL scheme design
 ~~~~~~~~~~~~~~~~~
 
-The data passed via the URL scheme is essentially the same as would be passed via authorization_uri. 
+The data passed via the URL scheme is essentially the same as would be passed via authorization_uri.
 
-Here is an example of a normal authorization_uri with parameters added. The parameters are described in 
-`RFC6749 <https://tools.ietf.org/html/rfc6749>`_. 
+Here is an example of a normal authorization_uri with parameters added. The parameters are described in
+`RFC6749 <https://tools.ietf.org/html/rfc6749>`_.
 
 
 Invoking the signin screen::
@@ -43,19 +43,19 @@ Invoking the signin screen::
 
 Host's redirect URL that ends the oauth flow::
 
-    https://localhost?state=&code=abcdefg&tk=https%3A%2F%2Fcontoso.com%2Fapi%2Ftoken%2F%3Fextra%3Dstuff 
+    https://localhost?state=&code=abcdefg&tk=https%3A%2F%2Fcontoso.com%2Fapi%2Ftoken%2F%3Fextra%3Dstuff
 
 The same parameters are passed via the URL Schemes, with the addition of "action".
 
 |Office iOS| invoking your app ("To" URL)::
-   
-    Contoso:client_id=abcdefg&response_type=code&scope=wopi&rs=enUS&build=16.1.1234&platform=iOS&app=word&action=76d173ad-a43f-4e3c-a5e7-0e7276b4c624 
+
+    Contoso:client_id=abcdefg&response_type=code&scope=wopi&rs=enUS&build=16.1.1234&platform=iOS&app=word&action=76d173ad-a43f-4e3c-a5e7-0e7276b4c624
 
 Your app invoking |Office iOS| ("Back" URL)::
-   
-    ms-word-tp:code=abcdefg&tk=https%3A%2F%2Fcontoso.com%2Fapi%2Ftoken%2F%3Fextra%3Dstuff&sc=xyz&action=76d173ad-a43f-4e3c-a5e7-0e7276b4c624 
 
-The values of the parameters should be URL encoded. 
+    ms-word-tp:code=abcdefg&tk=https%3A%2F%2Fcontoso.com%2Fapi%2Ftoken%2F%3Fextra%3Dstuff&sc=xyz&action=76d173ad-a43f-4e3c-a5e7-0e7276b4c624
+
+The values of the parameters should be URL encoded.
 
 If authentication fails, the error parameters per `RFC6749 <https://tools.ietf.org/html/rfc6749>`_ can also be passed
 back to |Office iOS| via the URL schemes, just as they can be passed back to |Office iOS| via the redirect URI in the
@@ -63,17 +63,17 @@ UIWebView model.
 
 
 New URL schemes registered by |Office iOS|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- * ms-word-tp 
+ * ms-word-tp
  * ms-excel-tp
- * ms-powerpoint-tp 
+ * ms-powerpoint-tp
 
 These are for Word, Excel, and PowerPoint respectively. Use these to invoke |Office iOS| when the user is done with
 authentication on your side.
 
 
-Action parameter 
+Action parameter
 ~~~~~~~~~~~~~~~~
 
-Action is a string passed to your app that should be passed back to Office unchanged. 
+Action is a string passed to your app that should be passed back to Office unchanged.

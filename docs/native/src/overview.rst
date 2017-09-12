@@ -2,25 +2,27 @@
 ..  _intro:
 
 Integrating with |Office iOS Android|
-=============================
+=====================================
+
 You can integrate with |Office iOS Android| to enable your users to view and edit Excel, PowerPoint, and Word files directly
 on their mobile devices.
 
-If you offer both iOS and Android experience, then we recommend you integrate with us for both the experiences simultaneously. However, You can choose to onboard either of the experience first depending on your priority. Please note that once you have onboarded to WOPI APIs for any of the one experience i.e. Android or iOS experience, integrating with the other experience is very minimal work.  
-
-Editing a file in |Office iOS|
+If you offer both iOS and Android experience, then we recommend you integrate both the experiences simultaneously.
+However, You can choose to onboard either of the experience first depending on your priority. Please note that once you
+have onboarded to WOPI APIs for any of the one experience i.e. Android or iOS experience, integrating with the other
+experience is very minimal work.
 
 .. figure:: /images/scenario_edit.png
    :alt: A screenshot that shows editing a file in |Office iOS|.
    :align: center
-   
 
-Editing a file in |Office Android|
+   Editing a file in |Office iOS|
 
 .. figure:: /images/scenario_edit_android.png
    :alt: A screenshot that shows editing a file in |Office Android|.
    :align: center
 
+   Editing a file in |Office Android|
 
 If you deliver an iOS and/or Android experience that allows your users to store Office files or includes Office files as a key
 part of your solution, you now have the opportunity to integrate |Office iOS Android| into your experience. This
@@ -91,7 +93,7 @@ integration is as secure as possible, ensure that:
 * All traffic is SSL encrypted
 * Server needs to support TLS 1.0+
 * OAuth 2.0 is supported
-	
+
 Interested?
 -----------
 If you're interested in integrating your solution with |Office iOS Android|, take a moment to register at

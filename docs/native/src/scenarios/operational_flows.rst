@@ -26,17 +26,17 @@ Office Client
 Office Identity Service
     The Office Identity service is a service |Office iOS Android| uses for handling user identity information. In OAuth flows,
     the Office Identity Service behaves as the External User Agent
- 
+
 Bootstrapper URL
     URL which the Storage Provider hosts to allow an Office Client app with a valid OAuth 2.0 access token to retrieve
     a WOPI access token
- 
+
 Token Endpoint URL
     URL which the Storage Provider hosts and uses in order to generate access or refresh tokens
- 
+
 Services Manager
     Office-owned service which stores a Service Catalog, listing all of the available services for an app or endpoint
- 
+
 Storage provider
     Refers to a CSPP partner who has integrated their service into |Office iOS Android|
 
@@ -47,7 +47,7 @@ Storage provider
       will attempt to get a valid WOPI access token by calling :ref:`GetNewAccessToken`.
 
 
-Add a Place 
+Add a Place
 -----------
 
 This describes the first time a user adds your storage provider using the :guilabel:`Add a Place` in |Office iOS Android|. To
@@ -57,7 +57,7 @@ account with their |Office iOS Android| account.
 ..  figure:: ../images/user_flows.png
     :alt: Image representation of the authentication flow for adding a place.
 
- 
+
 #. When the Office client boots, it calls the Services Manager for a list of available services. The Services Manager
    returns a Service Catalog, which is an alphabetically-sorted list of available providers and places which the user
    can connect to.
@@ -82,7 +82,7 @@ account with their |Office iOS Android| account.
 Browsing and opening files
 --------------------------
 
-Here is the operational flow for browsing and opening files.   
+Here is the operational flow for browsing and opening files.
 
 #. *Get the Root Container URL:* |Office iOS Android| calls :ref:`GetRootContainer (bootstrapper)` to obtain a Root Container
    URL.
@@ -100,7 +100,7 @@ Here is the operational flow for browsing and opening files.
      header, the file is locked and |Office iOS Android| does not continue opening it.
    * If the earlier :ref:`CheckFileInfo` call returned ``true`` for :term:`SupportsGetLock`, |Office iOS Android| sends a
      :ref:`RefreshLock` request with a known invalid lock ID. If the :ref:`RefreshLock` response is a
-     :http:statuscode:`409` with a lock ID in the **X-WOPI-Lock** response header, the file is locked and |Office iOS Android||
+     :http:statuscode:`409` with a lock ID in the **X-WOPI-Lock** response header, the file is locked and |Office iOS Android|
      does not continue opening it.
 
 #. *Take a lock on the file:* |Office iOS Android| calls :ref:`Lock` on the file, passing a lock ID it wishes to use in the
