@@ -49,7 +49,6 @@ To integrate your application with |Office iOS Android|, you need to do the foll
 
     /scenarios/browse
     /scenarios/from_app
-    /scenarios/from_app_android
     /scenarios/operational_flows
 
 ..  toctree::
