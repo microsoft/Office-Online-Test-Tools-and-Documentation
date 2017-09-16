@@ -73,7 +73,6 @@ To integrate your application with |Office iOS Android|, you need to do the foll
     /identity/oauthparams
     /identity/clientsecret
     /identity/apptoapp
-    /identity/apptoapp_android
 
 ..  toctree::
     :maxdepth: 2

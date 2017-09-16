@@ -1,10 +1,12 @@
 
 .. _app to app android:
 
-App to app sign in for |Office iOS|
-===================================
+App to app sign in for |Office Android|
+=======================================
 
-The normal flow to sign in to your service from Office uses the OS provided WebView where your web sign in experience is rendered inside the Office app. Optionally, an additional optimization can be done where the user can sign in using your app.
+The normal flow to sign in to your service from Office uses the OS provided WebView where your web sign in experience 
+is rendered inside the Office app. Optionally, an additional optimization can be done where the user can sign in using 
+your app.
 
 The overall flow involves:
 
@@ -14,10 +16,16 @@ The overall flow involves:
  
 Signin using your app
 ---------------------
-* When sign in to your service is required (e.g. first time a file is opened from your app into Office, or when the user explicitly adds your service as a place in Office), Office calls your bootstrapper to obtain your authorization_uri, which it displays in a UIWebView. In addition to the authorization_uri, you should return information needed to invoke your App. This information is platform specific.
-* Office will first attempt to use provided information to invoke your app. If none are returned, or if none of them are registered (i.e. your app is not installed), Office will fall back to the UIWebView.
-* If the user does have your app installed, your app will be invoked and the user will be sent to your app to complete authentication.  If the user declines to open your app, Office will fall back to the UIWebView.
-* Once inside your app, you should do whatever is needed to obtain the user's auth code (e.g. display "Grant permission to Office" dialog, for example, or to ask for additional signins).
+* When sign in to your service is required (e.g. first time a file is opened from your app into Office, or when the user 
+explicitly adds your service as a place in Office), Office calls your bootstrapper to obtain your authorization_uri, which it 
+displays in a UIWebView. In addition to the authorization_uri, you should return information needed to invoke your App. This 
+information is platform specific.
+* Office will first attempt to use provided information to invoke your app. If none are returned, or if none of them are 
+registered (i.e. your app is not installed), Office will fall back to the UIWebView.
+* If the user does have your app installed, your app will be invoked and the user will be sent to your app to complete 
+authentication.  If the user declines to open your app, Office will fall back to the UIWebView.
+* Once inside your app, you should do whatever is needed to obtain the user's auth code (e.g. display "Grant permission 
+to Office" dialog, for example, or to ask for additional signins).
 * Return the user to the Office app with the auth code.
 
 Service Changes: Adding information to the WWW-Authenticate response header on unauthenticated bootstrap requests
