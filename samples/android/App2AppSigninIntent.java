@@ -2,34 +2,34 @@
 	{
                 Intent authIntent = new Intent();
 		authIntent.setComponent(new ComponentName("com.android.thirdparty.packagename", " com.android.thirdparty.packagename.AuthActivityName"));
-		authIntent.putExtra(“AuthorizeUrlQueryParams”, “client_id=abcdefg&response_type=code&scope=wopi&rs=enUS&build=16.1.1234&platform =android&app=word”);
-		authIntent.putExtra(“UserId”, “User123”);
+		authIntent.putExtra(ï¿½AuthorizeUrlQueryParamsï¿½, ï¿½client_id=abcdefg&response_type=code&scope=wopi&rs=enUS&build=16.1.1234&platform =android&app=wordï¿½);
+		authIntent.putExtra(ï¿½UserIdï¿½, ï¿½User123ï¿½);
 		startActivityForResult(authIntent, uniqueRequestCode)
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent result) 
 	{
-	    // Check which request we're responding to
-	    if (requestCode == uniqueRequestCode) 
-	    {
-	        // Make sure the auth request was successful
-	        if (resultCode == RESULT_OK) 
-	        {
-	            //successfully authed
+	ï¿½ï¿½ï¿½ // Check which request we're responding to
+	ï¿½ï¿½ï¿½ if (requestCode == uniqueRequestCode) 
+	ï¿½ï¿½ï¿½ï¿½{
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ // Make sure the auth request was successful
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ if (resultCode == RESULT_OK) 
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½{
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ //successfully authed
 	           // Here we will assume that result will contain ResonponseUrlQueryParams
 	           // which will look like this code=abcdefg&tk=http://contoso.com&sc=xyz 
-	        }
-	        else if (resultCode  == RESULT_CANCELED)
-	        {
-	            //auth request cancel
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ }
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ else if (resultCodeï¿½ == RESULT_CANCELED)
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {
+	ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//auth request cancel
 	           // Here we will assume that result will contain ResonponseUrlQueryParams
 	           // But this time we will not get tk and session context but may get error and error_description.
-	        }
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ }
 	     }
-	     else
-	     {
-	            //failed
+	ï¿½ï¿½ï¿½ï¿½ï¿½else
+	ï¿½ï¿½ï¿½ï¿½ï¿½{
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ //failed
 	            // Here we will assume that result will contain ResonponseUrlQueryParams
 	            // But this time we will not get tk and session context but may get error and error_description.
-	      }   
-	  }
+	ï¿½ï¿½ï¿½ï¿½ï¿½ }ï¿½ï¿½ 
+	ï¿½ï¿½}

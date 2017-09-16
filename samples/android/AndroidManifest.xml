@@ -1,7 +1,7 @@
 	<activity android:name="AuthActivityName">
-	    <intent-filter>
-	        <action android:name="android.intent.action.VIEW"/>
-	        <category android:name="android.intent.category.DEFAULT"/>
-	        <category android:name="android.intent.category.BROWSABLE"/>
-	    </intent-filter>
+	ï¿½ï¿½ï¿½ <intent-filter>
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <action android:name="android.intent.action.VIEW"/>
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <category android:name="android.intent.category.DEFAULT"/>
+	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <category android:name="android.intent.category.BROWSABLE"/>
+	ï¿½ï¿½ï¿½ </intent-filter>
 	</activity>

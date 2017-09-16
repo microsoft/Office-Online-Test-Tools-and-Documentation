@@ -1,12 +1,12 @@
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-	    super.onCreate(savedInstanceState); 
-	 
-	    // Get the intent that started this activity
-	    Intent intent = getIntent();
-	    // Get the bundle of Extras, it will have data set by caller App
-	    Bundle extras = intent.getExtras();
+	ï¿½ï¿½ï¿½ super.onCreate(savedInstanceState); 
+	ï¿½
+	ï¿½ï¿½ï¿½ // Get the intent that started this activity
+	ï¿½ï¿½ï¿½ Intent intent = getIntent();
+	ï¿½ï¿½ï¿½ // Get the bundle of Extras, it will have data set by caller App
+	ï¿½ï¿½ï¿½ Bundle extras = intent.getExtras();
 	}
 	
 	protected void returnResult()
