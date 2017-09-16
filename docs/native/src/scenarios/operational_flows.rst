@@ -1,8 +1,8 @@
 
 ..  _operational flows:
 
-Operational flows
-=================
+Operational flows for |Office iOS| and |Office Android|
+========================================================
 
 ..  spelling::
 
