@@ -48,7 +48,6 @@ To integrate your application with |Office iOS Android|, you need to do the foll
     :caption: Scenarios
 
     /scenarios/browse
-    /scenarios/browse_android
     /scenarios/from_app
     /scenarios/from_app_android
     /scenarios/operational_flows
