@@ -155,7 +155,7 @@ Invoking your App on Android
     :language: java
     :linenos:
     :lineno-match:
-    :dedent: 8
+    :dedent: 4
     :lines: 1-8
 
 2.  After this Office will wait for result and will expect following from third party App
@@ -172,10 +172,10 @@ Invoking your App on Android
 
 ..  literalinclude:: ../../../../samples/android/App2AppSigninIntent.java
     :caption: Sample code from `App2AppSigninIntent.java`_
-    :language:java
+    :language: java
     :linenos:
     :lineno-match:
-    :dedent: 8
+    :dedent: 4
     :lines: 10-35
 
 
@@ -191,7 +191,7 @@ This is the work which your App needs to do
     :language: xml
     :linenos:
     :lineno-match:
-    :dedent: 8
+    :dedent: 4
     :lines: 1-7
 
 ..  _AndroidManifest.xml: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/AndroidManifest.xml
@@ -203,7 +203,7 @@ This is the work which your App needs to do
     :language: xml
     :linenos:
     :lineno-match:
-    :dedent: 8
+    :dedent: 4
     :lines: 1-7
 
 5. Returning result
@@ -213,7 +213,7 @@ This is the work which your App needs to do
     :language: xml
     :linenos:
     :lineno-match:
-    :dedent: 8
+    :dedent: 4
     :lines: 12-19
 
 ..  _HandleIntent.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/HandleIntent.java
