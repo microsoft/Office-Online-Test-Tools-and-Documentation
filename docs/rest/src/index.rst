@@ -39,7 +39,7 @@ server intends to integrate with. To learn more about the specific requirements 
     :caption: Microsoft Office WOPI Integrations
 
     Office Online <https://wopi.readthedocs.io/>
-    |Office iOS Android| <https://wopi.readthedocs.io/projects/officewopi>
+    Office for iOS and Android   <https://wopi.readthedocs.io/projects/officewopi>
 
 ..  toctree::
     :maxdepth: 2
