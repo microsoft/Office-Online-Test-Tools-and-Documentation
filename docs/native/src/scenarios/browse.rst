@@ -68,7 +68,7 @@ Open from |Office Android|
 Open from your Cloud Storage App
 -------------------------------- 
  
-1. User browses to a file on your iOS app.
+1. User browses to a file on your iOS or Android app.
  
    .. figure:: ../images/scenario_app_browse.png
       :alt: A screenshot that shows browsing in a storage app. 
@@ -84,4 +84,4 @@ Open from your Cloud Storage App
 3. The file is opened in Office and any saves go back to your service directly.
  
    .. figure:: ../images/scenario_edit.png
-      :alt: A screenshot that shows editing a file in |Office iOS|.
+      :alt: A screenshot that shows editing a file in |Office iOS| or |Office Android|.

@@ -204,7 +204,7 @@ This is the work which your App needs to do
     :linenos:
     :lineno-match:
     :dedent: 4
-    :lines: 1-7
+    :lines: 2-9
 
 5. Returning result
 
@@ -214,7 +214,7 @@ This is the work which your App needs to do
     :linenos:
     :lineno-match:
     :dedent: 4
-    :lines: 12-19
+    :lines: 11-18
 
 ..  _HandleIntent.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/HandleIntent.java
 

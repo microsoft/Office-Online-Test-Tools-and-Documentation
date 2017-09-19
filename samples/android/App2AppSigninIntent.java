@@ -19,7 +19,7 @@
                // Here we will assume that result will contain ResonponseUrlQueryParams
                // which will look like this code=abcdefg&tk=http://contoso.com&sc=xyz 
               }
-              else if (resultCode� == RESULT_CANCELED)
+              else if (resultCode == RESULT_CANCELED)
               {
               //auth request cancel
               // Here we will assume that result will contain ResonponseUrlQueryParams

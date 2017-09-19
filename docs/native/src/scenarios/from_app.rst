@@ -149,7 +149,7 @@ Step 2b - When office apps not installed - upsell via Google Play store
  
 Use adjust URLs to throw market intent to install office apps. These links will be created by Office Android team for you. 
 e.g. https://aka.ms/egnyte_word is created for Egnyte.
-    These links will redirect to following Google Play store page for corresponding office apps.
+These links will redirect to following Google Play store page for corresponding office apps.
 
         +-------------+-------------------------------------------------------------------------------+
         | Application | Google Play Store                                                             |
@@ -203,13 +203,12 @@ Guidance:
 * `MainActivity.java <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/MainActivity.java>`_
 * `AppCompatActivity.java <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/AppCompatActivity.java>`_
 
-2. Please use following values for each of the variables for Word, Excel and PowerPoint
 
 ..  _MainActivity.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/MainActivity.java
 
 .. _AppCompatActivity.java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/android/AppCompatActivity.java
 
-Please change following variable values as per guidance from |Office Android| team. 
+2. Please change following variable values as per guidance from |Office Android| team. 
 
 * ADJUST_CHINA_STORE_LINK
 * APP_PACKAGE_MAKETING_FOR

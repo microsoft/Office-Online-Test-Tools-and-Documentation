@@ -68,7 +68,7 @@ https
 google
 microsoft
 https
-powerpoint:["power point", "counterpoint", "powerboat", "powerhouse", "powerfulness", "PowerPoint"]
+powerpoint
 Baidu
 http
 shouji
