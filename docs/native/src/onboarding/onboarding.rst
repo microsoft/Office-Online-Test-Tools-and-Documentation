@@ -29,7 +29,7 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 | Provider       |             |                                            |                                                  |
 | Name           |             |                                            |                                                  |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| Icon           | String[]    | \https://contoso.com/images/logo16.png     | The path to the provider hosted icons, one for   | 
+| Icon           | String[]    | \https://contoso.com/images/logo16.png     | The path to the provider hosted icons, one for   |
 | Locations      |             | \https://contoso.com/images/logo32.png     | each of the following dimensions:                |
 |                |             | \https://contoso.com/images/logo48.png     |                                                  |
 |                |             | \https://contoso.com/images/logo64.png     | * 16x16                                          |
@@ -70,8 +70,8 @@ The following information must be supplied to Microsoft to enable end-to-end tes
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | ProviderId     | String      | TP_CONTOSO                                 | Supplied by Microsoft                            |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
-| TrustedDomain  | String      | contoso.com, qa-contoso.com                | Known domains for bootstraper, authorization and |
-|                |             |                                            | token issuance endpoints.                        |
+| TrustedDomain  | String      | contoso.com, qa-contoso.com                | Known domains for bootstrapper, authorization    |
+|                |             |                                            | and token issuance endpoints.                    |
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | Scope          | String      | userprofile, editdocs                      | Set of comma-delimited scopes that are to be     |
 | (optional)     |             |                                            | requested during authentication with the storage |
