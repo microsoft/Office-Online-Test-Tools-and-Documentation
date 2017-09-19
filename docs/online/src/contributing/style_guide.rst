@@ -10,11 +10,6 @@ Office Online Documentation Style Guide
     Overlines
 
 
-..  include:: ../../../_shared/stub.rst
-
-.. |issue| issue:: 1
-
-
 Whitespace guidelines
 ---------------------
 
@@ -157,3 +152,14 @@ Examples
         ..  admonition:: Pre-release Content
 
             This is a pre-release content warning using the ``..  admonition::`` directive.
+
+
+..  admonition:: Pre-release Feature
+
+    This is a pre-release feature warning using the ``..  admonition::`` directive.
+
+    ..  code-block:: rst
+
+        ..  admonition:: Pre-release Feature
+
+            This is a pre-release feature warning using the ``..  admonition::`` directive.
