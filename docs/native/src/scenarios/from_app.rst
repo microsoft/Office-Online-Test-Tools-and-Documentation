@@ -138,7 +138,9 @@ Step 2a - When office apps are installed - Check version of office apps
  
 * Guidance to determine Office application version number
 
-    Use Android PackageInfo to determine whether a particular version of Office application is installed on the device
+    Use Android `PackageInfo`_ to determine whether a particular version of Office application is installed on the device
+
+        .. _PackageInfo: https://developer.android.com/reference/android/content/pm/PackageInfo.html
 
 Example::
 
