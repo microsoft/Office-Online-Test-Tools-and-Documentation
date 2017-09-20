@@ -104,7 +104,7 @@ Example::
 |Office Android| Upsell guidance
 --------------------------------
 
-Step 1 - Verify that Office has been installed
+**Step 1 - Verify that Office has been installed**
 
 Your referring application will first need to verify that a particular Office application is installed. The following Office
 applications can be installed on Android devices for document viewing and editing:
@@ -128,21 +128,23 @@ lists the package names for the Office applications that you can use in this pro
 
 If yes Office is installed, go to Step 2a. Else go to Step 2b/2c.
 
-Step 2 - Integrate upsell logic in your app
+**Step 2 - Integrate upsell logic in your app**
 
 Step 2a - When office apps are installed - Check version of office apps
  
 * Make sure office apps are greater than 16.0.XXXX.XX version.
 
-Note : Exact Version number will be provided upon readiness of Office on Android Beta launch with CSPP integration complete.
+    Note : Exact Version number will be provided by Office on Android team.
  
-* How to find version number?
+* Guidance to determine Office application version number
 
-Use Android PackageInfo to determine whether a particular version of Office application is installed on the device.
- 
-PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-String version = pInfo.versionName;
- 
+    Use Android PackageInfo to determine whether a particular version of Office application is installed on the device
+
+Example::
+
+    PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+    String version = pInfo.versionName;
+
 Step 2b - When office apps not installed - upsell via Google Play store
  
 Use adjust URLs to throw market intent to install office apps. These links will be created by Office Android team for you.
