@@ -58,7 +58,8 @@ The following properties must be present in all |operation| responses:
         and determining the extension of the file.
 
     OwnerId
-        A **string** that uniquely identifies the owner of the file.
+        A **string** that uniquely identifies the owner of the file. In most cases, the user who uploaded or created
+        the file should be considered the owner.
 
         ..  important::
             This ID is subject to uniqueness and consistency requirements. See :ref:`User identity requirements` for
