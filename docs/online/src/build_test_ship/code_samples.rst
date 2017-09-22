@@ -30,7 +30,9 @@ While these tests are written in C#, they can be adapted to any language. If you
 proof keys, these test cases can be a useful tool for troubleshooting. See also the :ref:`Troubleshooting proof keys`
 section.
 
-These same test cases along with a basic proof key validation implementation in Python is available here:
-https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/python/proof_keys/tests.py
+These same test cases along with basic proof key validation implementations are available in both Java and Python:
+
+* Java: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/java/ProofKeyTester.java
+* Python: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/blob/master/samples/python/proof_keys/tests.py
 
 Note that the Python samples depend on PyCrypto being installed.

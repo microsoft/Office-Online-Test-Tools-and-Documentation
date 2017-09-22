@@ -34,9 +34,6 @@ public class ProofKeyTester
         String strWopiDiscoveryOldExponent = "AQAB";
 
 
-
-
-
         String strWopiHeaderProofKey = "IflL8OWCOCmws5qnDD5kYMraMGI3o+T+hojoDREbjZSkxbbx7XIS1Av85lohPKjyksocpeVwqEYm9nVWfnq05uhDNGp2MsNyhPO9unZ6w25Rjs1hDFM0dmvYx8wlQBNZ/CFPaz3inCMaaP4PtU85YepaDccAjNc1gikdy3kSMeG1XZuaDixHvMKzF/60DMfLMBIu5xP4Nt8i8Gi2oZs4REuxi6yxOv2vQJQ5+8Wu2Olm8qZvT4FEIQT9oZAXebn/CxyvyQv+RVpoU2gb4BreXAdfKthWF67GpJyhr+ibEVDoIIolUvviycyEtjsaEBpOf6Ne/OLRNu98un7WNDzMTQ==";
         String strWopiRequest = "https://contoso.com/wopi/files/vHxYyRGM8VfmSGwGYDBMIQPzuE+sSC6kw+zWZw2Nyg";
         String strAccessToken = "yZhdN1qgywcOQWhyEMVpB6NE3pvBksvcLXsrFKXNtBeDTPW%2fu62g2t%2fOCWSlb3jUGaz1zc%2fzOzbNgAredLdhQI1Q7sPPqUv2owO78olmN74DV%2fv52OZIkBG%2b8jqjwmUobcjXVIC1BG9g%2fynMN0itZklL2x27Z2imCF6xELcQUuGdkoXBj%2bI%2bTlKM";
@@ -83,8 +80,6 @@ public class ProofKeyTester
 
         //  should verify correctly using X-WOPI-Proof and Old Key from Discovery
         System.out.println( "VERIFIED = " + verifyProofKey( strWopiDiscoveryModulus, strWopiDiscoveryExponent, strWopiHeaderProofKey, expectedProofArray ) );
-
-
     }
 
 
@@ -100,7 +95,8 @@ public class ProofKeyTester
      * @return
      * @throws Exception
      */
-    public static boolean verifyProofKey( String strModulus, String strExponent, String strWopiProofKey, byte[] expectedProofArray ) throws Exception
+    public static boolean verifyProofKey( String strModulus, String strExponent,
+        String strWopiProofKey, byte[] expectedProofArray ) throws Exception
     {
         PublicKey publicKey = getPublicKey( strModulus, strExponent );
 
@@ -117,14 +113,14 @@ public class ProofKeyTester
     /**
      * Gets a public RSA Key using WOPI Discovery Modulus and Exponent for PKI Signed Validation
      *
-     * @param modulas
+     * @param modulus
      * @param exponent
      * @return
      * @throws Exception
      */
-    private static RSAPublicKey getPublicKey( String modulas, String exponent ) throws Exception
+    private static RSAPublicKey getPublicKey( String modulus, String exponent ) throws Exception
     {
-        BigInteger mod = new BigInteger( 1, DatatypeConverter.parseBase64Binary( modulas ) );
+        BigInteger mod = new BigInteger( 1, DatatypeConverter.parseBase64Binary( modulus ) );
         BigInteger exp = new BigInteger( 1, DatatypeConverter.parseBase64Binary( exponent ) );
         KeyFactory factory = KeyFactory.getInstance( "RSA" );
         KeySpec ks = new RSAPublicKeySpec( mod, exp );
@@ -134,7 +130,7 @@ public class ProofKeyTester
 
 
     /**
-     * Generated expected proof based on publishe
+     * Generates expected proof
      *
      * @param url
      * @param accessToken

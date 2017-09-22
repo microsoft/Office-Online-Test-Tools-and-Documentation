@@ -50,10 +50,10 @@ Then, assemble the data as follows:
 * 4 bytes that represent the length, in bytes, of the **X-WOPI-TimeStamp** value.
 * The **X-WOPI-TimeStamp** value.
 
-The following C# code snippet illustrates the construction of an expected proof.
+The following code samples illustrate the construction of an expected proof in C#, Java, and Python.
 
 ..  literalinclude:: ../../../../samples/SampleWopiHandler/SampleWopiHandler/ProofKeyHelper.cs
-    :caption: Sample code from `ProofKeyHelper.cs`_
+    :caption: Constructing the expected in proof in C#
     :language: csharp
     :linenos:
     :lineno-match:
@@ -61,8 +61,6 @@ The following C# code snippet illustrates the construction of an expected proof.
     :lines: 62-96
     :emphasize-lines: 3-22
 
-..  _ProofKeyHelper.cs: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/
-                        blob/master/samples/SampleWopiHandler/SampleWopiHandler/ProofKeyHelper.cs
 
 Retrieving the public key
 -------------------------
@@ -75,6 +73,7 @@ discovery when Office Online rotates keys.
 
 Both keys are represented in the discovery XML in two different formats. One format is for WOPI hosts that use the
 .NET framework. The other format can be imported in a variety of different programming languages and platforms.
+
 
 Using .NET to retrieve the public key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,6 +90,7 @@ To import this key in your application, you must decode it from Base64 then impo
 ..  _RSACryptoServiceProvider.ImportCspBlob: https://msdn.microsoft.com/en-us/library/
     system.security.cryptography.rsacryptoserviceprovider.importcspblob(v=vs.110).aspx
 
+
 Using the RSA modulus and exponent to retrieve the public key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -101,8 +101,22 @@ element in the WOPI discovery XML. The modulus and exponent of the old key are f
 
 The steps to import these values differ based on the language, platform, and cryptography API that you are using.
 
-The following example shows how to import the public key by using the modulus and exponent in a Python program using
-the PyCrypto library.
+The following examples show how to import the public key by using the modulus and exponent in both Java and Python
+(using the PyCrypto library).
+
+Java
+^^^^
+
+..  literalinclude:: ../../../../samples/java/ProofKeyTester.java
+    :caption: Generating a public key from a modulus and exponent in Java
+    :language: java
+    :linenos:
+    :lineno-match:
+    :lines: 121-129
+    :dedent: 4
+
+Python
+^^^^^^
 
 ..  literalinclude:: ../../../../samples/python/proof_keys/__init__.py
     :caption: Generating a public key from a modulus and exponent in Python
@@ -125,7 +139,11 @@ have to check three combinations of proof key values:
 
 If any one of the values is valid, the request was signed by Office Online.
 
-The following example shows how to verify one of these combinations in .NET using C#.
+The following examples show how to verify one of these combinations in C#, Java, and Python.
+
+
+Verification in C#
+~~~~~~~~~~~~~~~~~~
 
 ..  literalinclude:: ../../../../samples/SampleWopiHandler/SampleWopiHandler/ProofKeyHelper.cs
     :caption: Sample proof key validation code in C#
@@ -135,7 +153,21 @@ The following example shows how to verify one of these combinations in .NET usin
     :dedent: 8
     :lines: 108-130
 
-The following example shows how to verify one of these combinations in Python using the PyCrypto library.
+
+Verification in Java
+~~~~~~~~~~~~~~~~~~~~
+
+..  literalinclude:: ../../../../samples/java/ProofKeyTester.java
+    :caption: Sample proof key validation code in Java
+    :language: java
+    :linenos:
+    :lineno-match:
+    :lines: 98-110
+    :dedent: 4
+
+
+Verification in Python
+~~~~~~~~~~~~~~~~~~~~~~
 
 ..  literalinclude:: ../../../../samples/python/proof_keys/__init__.py
     :caption: Sample proof key validation code in Python
