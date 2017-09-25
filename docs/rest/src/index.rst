@@ -24,7 +24,7 @@ a cloud service. Thus, |wac| is a :term:`WOPI client`, while the cloud service t
 This documentation is a reference for all of the defined WOPI operations. However, not all operations must be
 implemented. WOPI is modular and a WOPI server need only implement the operations required by the WOPI client(s) the
 server intends to integrate with. To learn more about the specific requirements for integrating with |wac| or
-|Office iOS|, see the sections below:
+|Office iOS Android|, see the sections below:
 
 * :ref:`officeonline:intro`
 * :ref:`native:intro`
@@ -39,7 +39,7 @@ server intends to integrate with. To learn more about the specific requirements 
     :caption: Microsoft Office WOPI Integrations
 
     Office Online <https://wopi.readthedocs.io/>
-    Office for iOS <https://wopi.readthedocs.io/projects/officewopi>
+    Office for iOS and Android   <https://wopi.readthedocs.io/projects/officewopi>
 
 ..  toctree::
     :maxdepth: 2

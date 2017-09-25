@@ -1,0 +1,15 @@
+{
+  "iOS": [
+    "contoso",
+    "contoso-EMM"
+  ],
+  "Android": [
+    "Package1VersionCode",
+    "Package1Name",
+    "Package1AuthActivityName",
+    "Package2VersionCode",
+    "Package2Name",
+    "Package2AuthActivityName"
+  ],
+  "UWP": [...]
+}

@@ -1,4 +1,4 @@
-
+ 
 ..  index:: WOPI requests; RefreshLock, RefreshLock
 
 ..  |operation| replace:: RefreshLock
@@ -8,7 +8,7 @@
 RefreshLock
 ===========
 
-:Required for: |web| |ios|
+:Required for: |web| |ios| |android|
 
 ..  default-domain:: http
 

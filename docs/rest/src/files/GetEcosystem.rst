@@ -9,7 +9,7 @@
 GetEcosystem (files)
 ====================
 
-:Required for: |ios|
+:Required for: |ios| |android|
 
 ..  seealso::
 

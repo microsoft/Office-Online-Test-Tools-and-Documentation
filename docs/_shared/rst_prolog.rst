@@ -23,6 +23,11 @@
 
 ..  |Office iOS| replace:: Office for iOS
 
+..  |Office iOS Android| replace:: Office for iOS and Android
+
+..  |Office Android| replace:: Office for Android
+
+
 
 ..  'Applies to...' tags
 

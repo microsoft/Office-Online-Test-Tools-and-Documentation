@@ -1,4 +1,4 @@
-
+ 
 ..  index:: WOPI requests; CheckFileInfo, CheckFileInfo
 
 ..  |operation| replace:: CheckFileInfo
@@ -8,7 +8,7 @@
 CheckFileInfo
 =============
 
-:Required for: |web| |ios|
+:Required for: |web| |ios| |android|
 
 ..  default-domain:: http
 

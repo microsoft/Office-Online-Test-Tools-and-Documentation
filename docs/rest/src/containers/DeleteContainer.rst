@@ -8,7 +8,7 @@
 DeleteContainer
 ===============
 
-:Required for: |ios|
+:Required for: |ios| |android|
 
 ..  default-domain:: http
 
