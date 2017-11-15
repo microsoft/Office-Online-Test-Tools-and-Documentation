@@ -12,7 +12,7 @@
     BG
     BiH
     bn
-    Bokmal
+    Bokmål
     bs
     chr
     CN
@@ -31,6 +31,7 @@
     fil
     ga
     Galician
+    gb
     gd
     gl
     gu
@@ -67,6 +68,7 @@
     mk
     mn
     mr
+    mx
     nb
     ne
     NG

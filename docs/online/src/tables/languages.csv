@@ -17,13 +17,16 @@ cy-GB,Welsh,1106
 da-DK,Danish,1030
 de-DE,German,1031
 el-GR,Greek,1032
-en-US,English (US),1033
+en-gb,English (United Kingdom),2057
+en-US,English (United States),1033
 es-ES,Spanish,3082
+es-mx,Spanish (Mexico),2058
 et-EE,Estonian,1061
 eu-ES,Basque,1069
 fa-IR,Persian (aka Farsi),1065
 fi-FI,Finnish,1035
 fil-PH,Filipino,1124
+fr-ca,French (Canada),3084
 fr-FR,French,1036
 ga-IE,Gaelic Irish,2108
 gd-GB,Scottish Gaelic,1084
@@ -36,7 +39,6 @@ hr-HR,Croatian,1050
 hu-HU,Hungarian,1038
 hy-AM,Armenian,1067
 id-ID,Indonesian,1057
-ig-NG,Igbo,1036
 is-IS,Icelandic,1039
 it-IT,Italian,1040
 ja-JP,Japanese,1041
@@ -46,9 +48,9 @@ km-KH,Khmer,1107
 kn-IN,Kannada,1099
 kok-IN,Konkani,1111
 ko-KR,Korean,1042
-ku-Arab-IQ,Central Kurdish,1170
 ky-KG,Kyrgyz,1088
 lb-LU,Luxembourgish,1134
+lo-la,Lao,1108
 lt-LT,Lithuanian,1063
 lv-LV,Latvian,1062
 mi-NZ,Maori,1153
@@ -58,40 +60,33 @@ mn-MN,Mongolian (Cyrillic),1104
 mr-IN,Marathi,1102
 ms-MY,Malay,1086
 mt-MT,Maltese,1082
-nb-NO,Norwegian (Bokmal),1044
+nb-NO,Norwegian (Bokmål),1044
 ne-NP,Nepali,1121
 nl-NL,Dutch,1043
 nn-NO,Norwegian (Nynorsk),2068
-nso-ZA,Sesotho sa Leboa,1132
 or-IN,Odia (aka Oriya),1096
-pa-Arab-PK,Punjabi (Arabic),2118
-pa-IN,Punjabi (Gurmukhi) (aka Punjabi (India)),1094
+pa-IN,Punjabi (India),1094
 pl-PL,Polish,1045
 prs-AF,Dari,1164
 pt-BR,Portuguese (Brazil),1046
 pt-PT,Portuguese (Portugal),2070
-qut-GT,Kiche',1158
 quz-PE,Quechua,3179
 ro-Ro,Romanian,1048
 ru-Ru,Russian,1049
-rw-RW,Kinyarwanda,1159
 sd-Arab-PK,Sindhi,2137
 si-LK,Sinhala,1115
 sk-SK,Slovak,1051
 sl-SI,Slovenian,1060
 sq-AL,Albanian,1052
-sr-Cyrl-BA,Serbian Cyr BiH,7194
+sr-Cyrl-BA,"Serbian (Cyrillic, Bosnia and Herzegovina)",7194
 sr-Cyrl-RS,Serbian (Cyrillic),10266
 sr-Latn-RS,Serbian (Latin),9242
 sv-SE,Swedish,1053
 sw-KE,Kiswahili,1089
 ta-IN,Tamil,1097
 te-IN,Telugu,1098
-tg-Cyrl-TJ,Tajik,1064
 th-TH,Thai,1054
-ti-ET,Tigrigna,1139
 tk-TM,Turkmen,1090
-tn-ZA,Setswana,1074
 tr-TR,Turkish,1055
 tt-RU,Tatar,1092
 ug-CN,Uyghur,1152
@@ -99,9 +94,5 @@ uk-UA,Ukrainian,1058
 ur-PK,Urdu,1056
 uz-Latn-UZ,Uzbek,1091
 vi-VN,Vietnamese,1066
-wo-SN,Wolof,1160
-xh-ZA,isiXhosa,1076
-yo-NG,Yoruba,1130
 zh-CN,Chinese (Simplified),2052
 zh-TW,Chinese (Traditional),1028
-zu-ZA,isiZulu,1077

@@ -7,6 +7,9 @@
 What languages does Office Online support?
 ==========================================
 
+..  versionchanged:: 2017.11.15
+    Updated list to reflect the addition/removal of several languages.
+
 Office Online supports over 100 languages. In order to control the language of the Office Online UI, see the
 :term:`UI_LLCC` placeholder value.
 
