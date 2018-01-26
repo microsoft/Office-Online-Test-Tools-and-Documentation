@@ -63,7 +63,7 @@ WOPI discovery URLs
 Environment     Discovery URL
 ============    =============
 Production      https://onenote.officeapps.live.com/hosting/discovery
-Test/Dogfood    https://onenote.officeapps-df.live.com/hosting/discovery
+Test/Dogfood    https://ffc-onenote.officeapps.live.com/hosting/discovery
 ============    =============
 
 ..  tip::
