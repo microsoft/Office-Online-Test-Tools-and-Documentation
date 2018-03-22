@@ -74,10 +74,43 @@ messages you send to its iframe.
 
 You can send the following messages; all others are ignored:
 
+* :data:`App_PopState`
 * :data:`Blur_Focus`
 * :data:`Grab_Focus`
 * :data:`Host_PerfTiming`
 * :data:`Host_PostmessageReady`
+
+..  data:: App_PopState
+
+    The App_PopState message signals the Office Online application that state has been popped from the HTML5 History
+    API to which the application should navigate to using the URL. This message should be triggered from an
+    `onpopstate` listener in the host page.
+
+    ..  attribute:: Values
+        :noindex:
+
+        Url *(string)*
+            The URL associated with the popped history state.
+    
+        State *(JSON-formatted object)*
+            The data associated with the state.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "App_PopState",
+            "SendTime": 1329014075000,
+            "Values": {
+                "Url": "https://www.contoso.com/abc123/contents?wdtarget=pagexyz",
+                "State": {
+                    "Value": 0
+                }
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "1033"
+            }
+        }
 
 ..  data:: Blur_Focus
 
@@ -244,6 +277,7 @@ message being sent. The following code example shows how you might consume a mes
 The host page receives the following messages; all others are ignored:
 
 * :data:`App_LoadingStatus`
+* :data:`App_PushState`
 * :data:`Edit_Notification`
 * :data:`File_Rename`
 * :data:`UI_Close`
@@ -300,6 +334,42 @@ every outgoing PostMessage:
             "SendTime": 1329014075000,
             "Values": {
                 "DocumentLoadedTime": 1329014074983,
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "1033"
+            }
+        }
+
+..  data:: App_PushState
+
+    The App_PushState message is posted when the user changes the state of Office Online application in a way 
+    which the user may wish to return to later, requesting to capture it in the HTML 5 History API. In receiving 
+    this message, the Host page should using `history.pushState` to capture the state for a potential later 
+    state pop.
+
+    To send this message, the :term:`AppStateHistoryPostMessage` property in the :ref:`CheckFileInfo` response 
+    from the host must be set to ``true``. Otherwise Office Online will not send this message.
+
+    ..  attribute:: Values
+        :noindex:
+
+        Url *(string)*
+            The URL associated with the message.
+    
+        State *(JSON-formatted object)*
+            The data associated with the state.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "App_PushState",
+            "SendTime": 1329014075000,
+            "Values": {
+                "Url": "https://www.contoso.com/abc123/contents?wdtarget=pagexyz",
+                "State": {
+                    "Value": 0
+                }
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "1033"
             }
