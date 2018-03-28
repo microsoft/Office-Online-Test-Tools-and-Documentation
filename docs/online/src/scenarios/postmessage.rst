@@ -107,8 +107,6 @@ You can send the following messages; all others are ignored:
                 "State": {
                     "Value": 0
                 }
-                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
-                "ui-language": "1033"
             }
         }
 
@@ -369,7 +367,7 @@ every outgoing PostMessage:
                 "Url": "https://www.contoso.com/abc123/contents?wdtarget=pagexyz",
                 "State": {
                     "Value": 0
-                }
+                },
                 "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
                 "ui-language": "1033"
             }
