@@ -117,6 +117,12 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
 ..  glossary::
     :sorted:
 
+    AppStateHistoryPostMessage
+        A **Boolean** value that, when set to ``true``, indicates the host outer frame supports the use of 
+        `HTML5 Session History <https://www.w3.org/TR/2011/WD-html5-20110113/history.html>`_. The outer frame
+        should then expect to receive :js:data:`App_PushState` PostMessages and propagate ``onpopstate`` events 
+        to |wac| through the :js:data:`App_PopState` PostMessage. 
+
     ClosePostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
         PostMessage when the *Close* UI in |wac| is activated.
