@@ -14,6 +14,10 @@ Standard WOPI request and response headers
     may send additional request headers or require additional response headers. These unique headers are described in
     the documentation for each WOPI operation.
 
+    ..  tip::
+
+        HTTP header names are *case-insensitive*. See :rfc:`7230#section-3.2` for more information.
+
     :reqheader Authorization:
         The **string** value ``Bearer <token>`` where ``<token>`` is the :term:`access token` for the request.
 
