@@ -1,12 +1,11 @@
 path.py
-Sphinx==1.4.3
-sphinx-rtd-theme>=0.1.9
-sphinxcontrib-httpdomain>=1.5.0,<1.6.0
-sphinxcontrib-spelling==4.0.1
-sphinx-git==10.0.0
+Sphinx~=1.7.4
+sphinx-rtd-theme>=0.3.1
+sphinxcontrib-spelling~=4.1.0
+sphinx-git~=10.0.0.
 
 # pyenchant is required by sphinxcontrib-spelling, but is not auto-installed with that package for some reason
-pyenchant==1.6.11
+pyenchant~=2.0.0
 
-# Bug in installer, so have to install this manually
-# sphinxcontrib-domaintools>=0.1
+# Install custom fork of sphinxcontrib-domaintools
+git+https://github.com/tylerbutler/sphinxcontrib-domaintools-update.git@dev#egg=sphinxcontrib-domaintools
