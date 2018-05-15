@@ -2,7 +2,7 @@ path.py
 Sphinx~=1.7.4
 sphinx-rtd-theme>=0.3.1
 sphinxcontrib-spelling~=4.1.0
-sphinx-git~=10.0.0.
+sphinx-git~=10.0.0
 
 # pyenchant is required by sphinxcontrib-spelling, but is not auto-installed with that package for some reason
 pyenchant~=2.0.0
