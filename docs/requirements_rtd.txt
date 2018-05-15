@@ -2,6 +2,4 @@
 
 -r requirements.txt
 
-# When installing locally you have to do this manually, but it works on readthedocs because
-# docutils is already installed when running this there
-sphinxcontrib-domaintools>=0.1
+# Add any readthedocs-specific dependencies below
