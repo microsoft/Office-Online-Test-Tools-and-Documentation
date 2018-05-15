@@ -1,4 +1,6 @@
 
+:orphan:
+
 ..  _requirements:
 
 WOPI implementation requirements for Office Online integration
