@@ -79,6 +79,13 @@ extensions = [
     'wopi_domain',
 ]
 
+# configure the theme
+html_theme_options = {
+    'display_version': True,  # hide the version in the left-hand sidebar
+    'prev_next_buttons_location': 'both',  # show the buttons at both the top and bottom of the page
+    'style_external_links': True,
+}
+
 # Configure built-in extensions
 numfig = True
 numfig_format = {
