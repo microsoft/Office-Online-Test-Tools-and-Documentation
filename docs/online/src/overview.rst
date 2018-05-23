@@ -63,7 +63,7 @@ Office Online, you:
 * Read XML from Office Online that describes the capabilities of Office Online. This is called :ref:`WOPI discovery`.
 * Implement :ref:`REST endpoints <endpoints>` that Office Online uses to learn about, fetch, and update files. To do
   this, you implement the server side of the WOPI protocol.
-* Provide an HTML page (or pages) that wrap Office Online. This page is called the :ref:`host page`.
+* Provide an HTML page (or pages) that wrap Office Online. This page is called the :ref:`host page<host page>`.
 
 The following figure shows the WOPI protocol workflow.
 

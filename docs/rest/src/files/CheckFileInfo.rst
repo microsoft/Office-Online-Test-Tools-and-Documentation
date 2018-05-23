@@ -1,4 +1,4 @@
- 
+
 ..  index:: WOPI requests; CheckFileInfo, CheckFileInfo
 
 ..  |operation| replace:: CheckFileInfo
@@ -267,7 +267,7 @@ a WOPI client.
 
 Ultimately, the host has final control over whether WOPI operations attempted by the client should succeed or fail
 based on the :term:`access token` provided in the WOPI request. Thus, these properties do not act as an authorization
-mechanism. Rather, these properties help WOPI clients tailor tailor their UI and behavior to the specific permissions a
+mechanism. Rather, these properties help WOPI clients tailor their UI and behavior to the specific permissions a
 user has. For example, a WOPI client can hide file renaming UI if the :term:`UserCanRename` property is ``false``.
 
 However, a WOPI client expects that even if that UI were somehow made available to a user without appropriate
@@ -275,8 +275,8 @@ permissions, the WOPI :ref:`RenameFile` request would fail since the host would 
 permissible based on the :term:`access token` passed in the request.
 
 Note that there is no property that indicates the user has permission to read/view a file. This is because WOPI
-requires the host to respond to any WOPI request, including :ref:`CheckFileInfo`, with a :http:statuscode:`404` if
-the access token is invalid or expired.
+requires the host to respond to any WOPI request, including :ref:`CheckFileInfo`, with a :http:statuscode:`401` or
+:http:statuscode:`404` if the access token is invalid or expired.
 
 ..  glossary::
     :sorted:
