@@ -12,5 +12,9 @@
 * ProofKeys (applicable only for hosts implementing :ref:`proof key validation<proof keys>`)
 
 ..  tip::
-    Hosts are *not* required to support :ref:`RenameFile` or use :ref:`proof key validation<proof keys>`. However, if
-    you do, those test groups must be passing.
+    Hosts are *not* required to support :ref:`RenameFile`, :ref:`PutRelativeFile` or use :ref:`proof key
+    validation<proof keys>`. However, hosts that do support these operations, or use application features that rely on
+    them, those test groups must be passing.
+
+    For example, :ref:`binary file conversion<conversion>` requires the :ref:`PutRelativeFile` operation be
+    implemented, so hosts that support conversion must also pass the PutRelativeFile tests.
