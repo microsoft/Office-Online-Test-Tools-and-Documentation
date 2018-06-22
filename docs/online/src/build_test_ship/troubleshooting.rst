@@ -190,9 +190,9 @@ At this point, it is still often possible to get the session ID by using the fol
 Correlation IDs
 ---------------
 
-Every WOPI request Office Online makes to a host will have a unique ID, called the correlation ID. This ID will be
-included in the WOPI request using the **X-WOPI-CorrelationId** request header. Hosts should log this ID for each
-incoming WOPI request; doing so will allow hosts to easily correlate their own logs with Office Online's server logs.
+Every WOPI request Office Online makes to a host will have an ID called the correlation ID. This ID will be included
+in the WOPI request using the **X-WOPI-CorrelationId** request header. Hosts should log this ID for each incoming WOPI
+request; doing so will allow hosts to easily correlate their own logs with Office Online's server logs.
 
 There are other WOPI request headers that may be useful for hosts to log. See the :ref:`Common headers` for more
 information.
