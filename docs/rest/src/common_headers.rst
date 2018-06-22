@@ -23,6 +23,10 @@ Standard WOPI request and response headers
 
         ..  include:: /_fragments/access_token_handling_warning.rst
 
+    :reqheader X-Request-ID:
+    A **string** that the host should log when logging server activity to correlate that request with a specific
+        WOPI call to the host.
+
     :reqheader X-WOPI-AppEndpoint:
         A **string** used to indicate the endpoint of the WOPI client sending the request. This is typically used to
         indicate geographic location, datacenter, etc. This string must not be used for anything other than logging.
