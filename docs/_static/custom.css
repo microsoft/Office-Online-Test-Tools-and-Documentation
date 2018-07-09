@@ -28,11 +28,6 @@
     content: '\f071';
 }
 
-/* Fix some code layout issues */
-.rst-content .highlight>pre {
-	line-height: 1.5 !important;
-}
-
 /* OneNote Online Note admonition styles */
 .rst-content .admonition-onenote-online-note {
     background-color: #975d93 !important;
