@@ -461,7 +461,7 @@ Other miscellaneous properties
 
     CloseButtonClosesWindow
         A **Boolean** value that indicates the WOPI client should close the window or tab when the user activates any
-        *Close* UI in the WOPI client.
+        :guilabel:`Close` UI in the WOPI client.
 
     DisablePrint
         A **Boolean** value that indicates the WOPI client should disable all print functionality.

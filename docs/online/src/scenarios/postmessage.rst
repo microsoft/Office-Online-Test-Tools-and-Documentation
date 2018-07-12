@@ -91,7 +91,7 @@ You can send the following messages; all others are ignored:
 
         Url *(string)*
             The URL associated with the popped history state.
-    
+
         State *(JSON-formatted object)*
             The data associated with the state.
 
@@ -211,7 +211,8 @@ You can send the following messages; all others are ignored:
 
     To enable this coordination, Office Online sends the :data:`App_LoadingStatus` message only after all of its message
     senders and listeners are available. In addition, Office Online listens for the :data:`Host_PostmessageReady`
-    message from the outer frame. Until it receives this message, some UI, such as the **Share** button, is disabled.
+    message from the outer frame. Until it receives this message, some UI, such as the :guilabel:`Share` button, is
+    disabled.
 
     Until your host page receives the :data:`App_LoadingStatus` message, the Office Online frame cannot respond to any
     incoming messages except :data:`Host_PostmessageReady`. Office Online does not delay-load its
@@ -339,12 +340,12 @@ every outgoing PostMessage:
 
 ..  data:: App_PushState
 
-    The App_PushState message is posted when the user changes the state of Office Online application in a way 
-    which the user may wish to return to later, requesting to capture it in the HTML 5 History API. In receiving 
-    this message, the Host page should using `history.pushState` to capture the state for a potential later 
+    The App_PushState message is posted when the user changes the state of Office Online application in a way
+    which the user may wish to return to later, requesting to capture it in the HTML 5 History API. In receiving
+    this message, the Host page should using `history.pushState` to capture the state for a potential later
     state pop.
 
-    To send this message, the :term:`AppStateHistoryPostMessage` property in the :ref:`CheckFileInfo` response 
+    To send this message, the :term:`AppStateHistoryPostMessage` property in the :ref:`CheckFileInfo` response
     from the host must be set to ``true``. Otherwise Office Online will not send this message.
 
     ..  attribute:: Values
@@ -352,7 +353,7 @@ every outgoing PostMessage:
 
         Url *(string)*
             The URL associated with the message.
-    
+
         State *(JSON-formatted object)*
             The data associated with the state.
 
@@ -459,8 +460,8 @@ every outgoing PostMessage:
 
 ..  data:: UI_Edit
 
-    The UI_Edit message is posted when the user activates the *Edit* UI in Office Online. This UI is only visible
-    when using the :wopi:action:`view` action.
+    The UI_Edit message is posted when the user activates the :guilabel:`Edit` UI in Office Online. This UI is only
+    visible when using the :wopi:action:`view` action.
 
     To send this message, the :term:`EditModePostMessage` property in the :ref:`CheckFileInfo` response from the host
     must be set to ``true``. Otherwise Office Online will not send this message and will redirect the inner iframe to
@@ -490,8 +491,8 @@ every outgoing PostMessage:
 
 ..  data:: UI_FileVersions
 
-    The UI_FileVersions message is posted when the user activates the *Previous Versions* UI in |wac|. The host should
-    use this message to trigger any custom file version history UI.
+    The UI_FileVersions message is posted when the user activates the :guilabel:`Previous Versions` UI in |wac|. The
+    host should use this message to trigger any custom file version history UI.
 
     To send this message, the :term:`FileVersionPostMessage` property in the :ref:`CheckFileInfo` response from the
     host must be set to ``true``. Otherwise |wac| will not send this message.
@@ -516,8 +517,8 @@ every outgoing PostMessage:
 
 ..  data:: UI_Sharing
 
-    The UI_Sharing message is posted when the user activates the *Share* UI in Office Online. The host should use this
-    message to trigger any custom sharing UI.
+    The UI_Sharing message is posted when the user activates the :guilabel:`Share` UI in Office Online. The host should
+    use this message to trigger any custom sharing UI.
 
     To send this message, the :term:`FileSharingPostMessage` property in the :ref:`CheckFileInfo` response from the
     host must be set to ``true``. Otherwise Office Online will not send this message.
@@ -542,8 +543,8 @@ every outgoing PostMessage:
 
 ..  data:: UI_Workflow
 
-    The UI_Workflow message is posted when the user activates the *Workflow* UI in Office Online. The host should use
-    this message to trigger any custom workflow UI.
+    The UI_Workflow message is posted when the user activates the :guilabel:`Workflow` UI in Office Online. The host
+    should use this message to trigger any custom workflow UI.
 
     To send this message, the :term:`WorkflowPostMessage` property in the :ref:`CheckFileInfo` response from the
     host must be set to ``true``. Otherwise Office Online will not send this message.

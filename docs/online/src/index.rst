@@ -30,9 +30,9 @@ To integrate your application with Office Online, you need to do the following:
 #. Provide an HTML page (or pages) that will host the Office Online iframe. This is called the :term:`host page` and is
    the page your users visit when they open or edit Office documents in Office Online.
 
-#. You can also optionally integrate your own UI elements with Office Online. For example, when users choose *Share* in
-   Office Online, you can show your own sharing UI. These interaction points are described in the section titled
-   :ref:`PostMessage`.
+#. You can also optionally integrate your own UI elements with Office Online. For example, when users choose
+   :guilabel:`Share` in Office Online, you can show your own sharing UI. These interaction points are described in
+   the section titled :ref:`PostMessage`.
 
 
 How to read this documentation

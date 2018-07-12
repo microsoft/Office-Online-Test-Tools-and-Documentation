@@ -11,19 +11,19 @@ CheckFileInfo properties
 ------------------------
 
 CloseUrl
-    If provided, when the *Close* UI is activated, |wac| will navigate the outer page (``window.top.location``) to
-    the URI provided.
+    If provided, when the :guilabel:`Close` UI is activated, |wac| will navigate the outer page
+    (``window.top.location``) to the URI provided.
 
     Hosts can also use the :term:`ClosePostMessage` property to indicate a PostMessage should be sent when
-    the *Close* UI is activated rather than navigate to a URL, or set the :term:`CloseButtonClosesWindow`
-    property to indicate that the *Close* UI should close the browser tab or window (``window.top.close``).
+    the :guilabel:`Close` UI is activated rather than navigate to a URL, or set the :term:`CloseButtonClosesWindow`
+    property to indicate that the :guilabel:`Close` UI should close the browser tab or window (``window.top.close``).
 
     If the :term:`CloseUrl`, :term:`ClosePostMessage`, and :term:`CloseButtonClosesWindow` properties are all
-    omitted, the *Close* UI will be hidden in |wac|.
+    omitted, the :guilabel:`Close` UI will be hidden in |wac|.
 
-    ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
+    ..  note:: The :guilabel:`Close` UI will never be displayed when using the :wopi:action:`embedview` action.
 
-    .. seealso:: :term:`CloseUrl` in the WOPI REST documentation.
+    ..  seealso:: :term:`CloseUrl` in the WOPI REST documentation.
 
 DownloadUrl
     If a DownloadUrl is not provided, |wac| will hide all UI to download the file.
@@ -47,13 +47,13 @@ DownloadUrl
     .. seealso:: :term:`DownloadUrl` in the WOPI REST documentation.
 
 FileSharingUrl
-    If provided, when the *Share* UI is activated, |wac| will open a new browser window to the URI provided.
+    If provided, when the :guilabel:`Share` UI is activated, |wac| will open a new browser window to the URI provided.
 
     Hosts can also use the :term:`FileSharingPostMessage` property to indicate a PostMessage should be sent when
-    the *Share* UI is activated rather than navigate to a URL.
+    the :guilabel:`Share` UI is activated rather than navigate to a URL.
 
-    If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the *Share*
-    UI will be hidden in |wac|.
+    If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the
+    :guilabel:`Share` UI will be hidden in |wac|.
 
     .. seealso:: :term:`FileSharingUrl` in the WOPI REST documentation.
 
@@ -73,21 +73,21 @@ SignoutUrl
     .. seealso:: :term:`SignoutUrl` in the WOPI REST documentation.
 
 CloseButtonClosesWindow
-    If set to ``true``, |wac| will close the browser window or tab (``window.top.close``) when the *Close* UI
+    If set to ``true``, |wac| will close the browser window or tab (``window.top.close``) when the :guilabel:`Close` UI
     in |wac| is activated.
 
     If |wac| displays an error dialog when booting, dismissing the dialog is treated as a close button
     activation with respect to this property.
 
     Hosts can also use the :term:`CloseUrl` property to indicate that the outer frame should be navigated
-    (``window.top.location``) when the *Close* UI is activated rather than closing the browser tab or window, or
-    set the :term:`ClosePostMessage` property to indicate a PostMessage should be sent when the *Close* UI is
-    activated.
+    (``window.top.location``) when the :guilabel:`Close` UI is activated rather than closing the browser tab or
+    window, or set the :term:`ClosePostMessage` property to indicate a PostMessage should be sent when the
+    :guilabel:`Close` UI is activated.
 
     If the :term:`CloseUrl`, :term:`ClosePostMessage`, and :term:`CloseButtonClosesWindow` properties are all
-    omitted, the *Close* UI will be hidden in |wac|.
+    omitted, the :guilabel:`Close` UI will be hidden in |wac|.
 
-    ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
+    ..  note:: The :guilabel:`Close` UI will never be displayed when using the :wopi:action:`embedview` action.
 
     .. seealso:: :term:`CloseButtonClosesWindow` in the WOPI REST documentation.
 
@@ -118,41 +118,41 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
     :sorted:
 
     AppStateHistoryPostMessage
-        A **Boolean** value that, when set to ``true``, indicates the host outer frame supports the use of 
+        A **Boolean** value that, when set to ``true``, indicates the host outer frame supports the use of
         `HTML5 Session History <https://www.w3.org/TR/2011/WD-html5-20110113/history.html>`_. The outer frame
-        should then expect to receive :js:data:`App_PushState` PostMessages and propagate ``onpopstate`` events 
-        to |wac| through the :js:data:`App_PopState` PostMessage. 
+        should then expect to receive :js:data:`App_PushState` PostMessages and propagate ``onpopstate`` events
+        to |wac| through the :js:data:`App_PopState` PostMessage.
 
     ClosePostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
-        PostMessage when the *Close* UI in |wac| is activated.
+        PostMessage when the :guilabel:`Close` UI in |wac| is activated.
 
         Hosts should use the :term:`CloseUrl` property to indicate that the outer frame should be navigated
-        (``window.top.location``) when the *Close* UI is activated rather than sending a PostMessage, or set the
-        :term:`CloseButtonClosesWindow` property to indicate that the *Close* UI should close the browser tab or
-        window (``window.top.close``).
+        (``window.top.location``) when the :guilabel:`Close` UI is activated rather than sending a PostMessage, or set
+        the :term:`CloseButtonClosesWindow` property to indicate that the :guilabel:`Close` UI should close the
+        browser tab or window (``window.top.close``).
 
         If the :term:`CloseUrl`, :term:`ClosePostMessage`, and :term:`CloseButtonClosesWindow` properties are all
-        omitted, the *Close* UI will be hidden in |wac|.
+        omitted, the :guilabel:`Close` UI will be hidden in |wac|.
 
         ..  important::
 
-            The :term:`CloseUrl` must always be provided in order for the *Close* UI to appear in |wac|, even if
-            :term:`ClosePostMessage` is ``true``.
+            The :term:`CloseUrl` must always be provided in order for the :guilabel:`Close` UI to appear in |wac|,
+            even if :term:`ClosePostMessage` is ``true``.
 
             Most PostMessage-related properties do not require that the corresponding URL property be provided in
             order to enable the relevant UI in |wac|. :term:`CloseUrl` is an exception to this.
 
             ..  seealso:: :ref:`postmessage best practices`
 
-        ..  note:: The *Close* UI will never be displayed when using the :wopi:action:`embedview` action.
+        ..  note:: The :guilabel:`Close` UI will never be displayed when using the :wopi:action:`embedview` action.
 
     EditModePostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Edit`
-        PostMessage when the *Edit* UI in |wac| is activated.
+        PostMessage when the :guilabel:`Edit` UI in |wac| is activated.
 
         If this property is not set to ``true``, |wac| will navigate the inner iframe URL to an edit action
-        URL when the *Edit* UI is activated.
+        URL when the :guilabel:`Edit` UI is activated.
 
     EditNotificationPostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
@@ -160,27 +160,28 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
 
     FileSharingPostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
-        :js:data:`UI_Sharing` PostMessage when the *Share* UI in |wac| is activated.
+        :js:data:`UI_Sharing` PostMessage when the :guilabel:`Share` UI in |wac| is activated.
 
         Hosts can also use the :term:`FileSharingUrl` property to indicate that a new browser window should be opened
-        when the *Share* UI is activated rather than sending a PostMessage. Note that the :term:`FileSharingUrl`
-        property will be ignored completely if the FileSharingPostMessage property is set to ``true``.
+        when the :guilabel:`Share` UI is activated rather than sending a PostMessage. Note that the
+        :term:`FileSharingUrl` property will be ignored completely if the FileSharingPostMessage property is set to
+        ``true``.
 
-        If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the *Share*
-        UI will be hidden in |wac|.
+        If neither the :term:`FileSharingUrl` nor the :term:`FileSharingPostMessage` properties are set, the
+        :guilabel:`Share` UI will be hidden in |wac|.
 
     FileVersionPostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
-        :js:data:`UI_FileVersions` PostMessage when the *Previous Versions* UI
+        :js:data:`UI_FileVersions` PostMessage when the :guilabel:`Previous Versions` UI
         (:menuselection:`File --> Info --> Previous Versions`) in |wac| is activated.
 
         Hosts can also use the :term:`FileVersionUrl` property to indicate that a new browser window should be opened
-        when the *Previous Versions* UI is activated rather than sending a PostMessage. Note that the
+        when the :guilabel:`Previous Versions` UI is activated rather than sending a PostMessage. Note that the
         :term:`FileVersionUrl` property will be ignored completely if the FileVersionPostMessage property is set to
         ``true``.
 
         If neither the :term:`FileVersionUrl` nor the :term:`FileVersionPostMessage` properties are set, the
-        *Previous Versions* UI will be hidden in |wac|.
+        :guilabel:`Previous Versions` UI will be hidden in |wac|.
 
     PostMessageOrigin
         A **string** value indicating the domain the :term:`host page` will be sending/receiving PostMessages
@@ -198,14 +199,14 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
         |prerelease|
 
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the
-        :js:data:`UI_Workflow` PostMessage when the *Workflow* UI in |wac| is activated.
+        :js:data:`UI_Workflow` PostMessage when the :guilabel:`Workflow` UI in |wac| is activated.
 
         Hosts can also use the :term:`WorkflowUrl` property to indicate that a new browser window should be opened
-        when the *Workflow* UI is activated rather than sending a PostMessage. Note that the :term:`WorkflowUrl`
+        when the :guilabel:`Workflow` UI is activated rather than sending a PostMessage. Note that the :term:`WorkflowUrl`
         property will be ignored completely if the WorkflowPostMessage property is set to ``true``.
 
-        If neither the :term:`WorkflowUrl` nor the :term:`WorkflowPostMessage` properties are set, the *Workflow*
-        UI will be hidden in |wac|.
+        If neither the :term:`WorkflowUrl` nor the :term:`WorkflowPostMessage` properties are set, the
+        :guilabel:`Workflow` UI will be hidden in |wac|.
 
         ..  important::
             This value will be ignored if :term:`WorkflowType` is not provided.
