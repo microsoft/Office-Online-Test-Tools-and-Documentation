@@ -79,7 +79,7 @@ PutRelativeFile
         legally named and does not overwrite any existing file, while preserving the file extension.
 
         This header must be present if **X-WOPI-RelativeTarget** is not present; the two headers are mutually
-        exclusive. If both headers are present the host should respond with a :statuscode:`501`.
+        exclusive. If both headers are present the host should respond with a :statuscode:`400` or :statuscode:`501`.
 
     :reqheader X-WOPI-RelativeTarget:
         A UTF-7 encoded **string** that specifies a full file name including the file extension. The host must not
@@ -97,7 +97,7 @@ PutRelativeFile
         **X-WOPI-Lock** response header containing the value of the current lock on the file.
 
         This header must be present if **X-WOPI-SuggestedTarget** is not present; the two headers are mutually
-        exclusive. If both headers are present the host should respond with a :statuscode:`501`.
+        exclusive. If both headers are present the host should respond with a :statuscode:`400` or :statuscode:`501`.
 
     :reqheader X-WOPI-OverwriteRelativeTarget:
         A **Boolean** value that specifies whether the host must overwrite the file name if it exists. The default
