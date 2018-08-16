@@ -93,6 +93,25 @@ remove the following parameters from your host page URL after passing them to th
 Other ``wd*`` parameters must not be removed from the host page URL.
 
 
+..  _Host page headers:
+
+Host page headers
+------------------------------
+
+If the host page headers are not correctly set, some browsers may cache the response which can result in the host page
+not properly reloading when the customer navigates to it. This can result in errors if the customer reloads a cached
+page  after the :term:`access token`, or :term:`access_token_ttl` have expired. One way this can happen is by reloading
+the page using the forward/back buttons. For more information about cache management refer to `RFC 7234`_.
+
+To prevent this, at the very least, the following headers should be set on the host page.
+
+* Cache-Control: no-cache, no-store
+* Expires: -1
+* Pragma: no-cache
+
+Other headers, such as the ``Date`` and ``Vary`` headers can be useful as well.
+
+
 Applying appropriate CSS styles
 -------------------------------
 
@@ -120,3 +139,5 @@ All of these requirements are illustrated in the
 
 ..  _replaceState: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/
                    Manipulating_the_browser_history#The_replaceState()_method
+
+.. _RFC 7234: https://tools.ietf.org/html/rfc7234
