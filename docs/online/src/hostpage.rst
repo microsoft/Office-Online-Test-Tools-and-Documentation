@@ -109,7 +109,7 @@ To prevent this, at the very least, the following headers should be set on the h
 * Expires: -1
 * Pragma: no-cache
 
-Other headers, such as the ``Date`` and ``Vary`` headers can be useful as well.
+Other headers, such as ``Date`` and ``Vary`` can be useful as well.
 
 
 Applying appropriate CSS styles
