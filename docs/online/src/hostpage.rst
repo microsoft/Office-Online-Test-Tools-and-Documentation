@@ -99,17 +99,17 @@ Host page headers
 ------------------------------
 
 If the host page headers are not correctly set, some browsers may cache the response which can result in the host page
-not properly reloading when the customer navigates to it. This can result in errors if the customer reloads a cached
-page  after the :term:`access token`, or :term:`access_token_ttl` have expired. One way this can happen is by reloading
-the page using the forward/back buttons. For more information about cache management refer to `RFC 7234`_.
+not properly reloading when the user navigates to it. This can result in errors if the user reloads a cached
+page after the :term:`access token`, or :term:`access_token_ttl` have expired. One way this can happen is by reloading
+the page using the forward/back buttons. For more information about cache management refer to :rfc:`7234`.
 
 To prevent this, at the very least, the following headers should be set on the host page.
 
-* Cache-Control: no-cache, no-store
-* Expires: -1
-* Pragma: no-cache
+* :http:header:`Cache-Control`: no-cache, no-store
+* :http:header:`Expires`: -1
+* :http:header:`Pragma`: no-cache
 
-Other headers, such as ``Date`` and ``Vary`` can be useful as well.
+Other headers, such as :http:header:`Date` and :http:header:`Vary` can be useful as well.
 
 
 Applying appropriate CSS styles
