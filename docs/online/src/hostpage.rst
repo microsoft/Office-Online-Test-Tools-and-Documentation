@@ -139,5 +139,3 @@ All of these requirements are illustrated in the
 
 ..  _replaceState: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/
                    Manipulating_the_browser_history#The_replaceState()_method
-
-.. _RFC 7234: https://tools.ietf.org/html/rfc7234
