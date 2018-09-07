@@ -82,6 +82,8 @@ You can send the following messages; all others are ignored:
 
 ..  data:: App_PopState
 
+    ..  include:: /_fragments/onenote_only.rst
+
     The App_PopState message signals the Office Online application that state has been popped from the HTML5 History
     API to which the application should navigate to using the URL. This message should be triggered from an
     `onpopstate` listener in the host page.
@@ -339,6 +341,8 @@ every outgoing PostMessage:
         }
 
 ..  data:: App_PushState
+
+    ..  include:: /_fragments/onenote_only.rst
 
     The App_PushState message is posted when the user changes the state of Office Online application in a way
     which the user may wish to return to later, requesting to capture it in the HTML 5 History API. In receiving

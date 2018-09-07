@@ -123,6 +123,8 @@ settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden
         should then expect to receive :js:data:`App_PushState` PostMessages and propagate ``onpopstate`` events
         to |wac| through the :js:data:`App_PopState` PostMessage.
 
+        ..  include:: /_fragments/onenote_only.rst
+
     ClosePostMessage
         A **Boolean** value that, when set to ``true``, indicates the host expects to receive the :js:data:`UI_Close`
         PostMessage when the :guilabel:`Close` UI in |wac| is activated.
