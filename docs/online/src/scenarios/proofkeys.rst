@@ -19,6 +19,8 @@ request. To verify that a request came from Office Online, you must:
 * Compare the expected proof to the decrypted proof. If they match, the request originated from Office Online.
 * Ensure that the **X-WOPI-TimeStamp** header is no more than 20 minutes old.
 
+When validating proof keys, if a request is not signed properly, the host must return a :http:statuscode:`500`.
+
 ..  note::
     Requests to the :term:`FileUrl` will not be signed. The FileUrl is used exactly as provided by the host, so it does
     not necessarily include the access token, which is required to construct the expected proof.
