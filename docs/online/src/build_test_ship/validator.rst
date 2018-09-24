@@ -8,6 +8,10 @@ WOPI Validation application
 
     :html:`<div id="validator_issues"></div>`
 
+..  tip::
+    The WOPI validator is also available as an open-source tool. See
+    https://github.com/Microsoft/wopi-validator-core for more information.
+
 To assist hosts in verifying their WOPI implementation, Office Online provides a WOPI Validation application that
 executes a test suite against a host's WOPI implementation. The test suite verifies a variety of things, including that
 the semantics for all of the WOPI operations (:ref:`CheckFileInfo`, :ref:`GetFile`, :ref:`PutFile`, etc.) are correct
@@ -128,17 +132,12 @@ versions of their WOPI host.
 Automated WOPI validation using a command-line tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The host can use a Python-based command-line tool at https://github.com/Microsoft/wopi-validator-cli-python instead of
-launching a :term:`host page`. This tool also uses the :wopi:action:`getinfo` action URL provided in
-:ref:`WOPI discovery` to execute the :ref:`validator`.
+There are two options to automate WOPI validation. The first is to use the open-source validation tool at
+https://github.com/Microsoft/wopi-validator-core. This tool runs the same test suite as the hosted validator, but
+does not rely on any |wac| server infrastructure. This make it ideal for use in automated testing or for testing
+servers that are not connected to the internet.
 
-#. Create a ``.wopitest`` file on the host.
-#. Download and install the command-line tool by following the instructions at
-   https://github.com/Microsoft/wopi-validator-cli-python
-#. Execute the tool by providing the :term:`WOPIsrc` and :term:`access token` of the ``.wopitest`` file.
-
-..  tip::
-
-    #. The tool executes all the tests based on the chosen :term:`VALIDATOR_TEST_CATEGORY` and displays the results.
-    #. To view the request and response details for each test, you can turn on verbose logging while executing the
-       command-line tool.
+The second option is to use the Python-based command-line tool at
+https://github.com/Microsoft/wopi-validator-cli-python instead of launching a :term:`host page`. This tool uses
+the :wopi:action:`getinfo` action URL provided in :ref:`WOPI discovery` to execute the :ref:`validator`, so it is
+simply an alternative way of executing the test cases in the hosted validator.
