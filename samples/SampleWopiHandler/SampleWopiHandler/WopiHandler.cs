@@ -21,7 +21,7 @@ namespace SampleWopiHandler
         private const string FoldersRequestPath = @"folders/";
         private const string ContentsRequestPath = @"/contents";
         private const string ChildrenRequestPath = @"/children";
-        internal const string LocalStoragePath = @"c:\WopiStorage\";
+        internal const string LocalStoragePath = @"d:\WopiStorage\";
 
         private class LockInfo
         {
