@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
@@ -21,7 +21,7 @@ namespace SampleWopiHandler
         private const string FoldersRequestPath = @"folders/";
         private const string ContentsRequestPath = @"/contents";
         private const string ChildrenRequestPath = @"/children";
-        internal const string LocalStoragePath = @"d:\WopiStorage\";
+        internal const string LocalStoragePath = @"c:\WopiStorage\";
 
         private class LockInfo
         {
@@ -655,7 +655,8 @@ namespace SampleWopiHandler
             // TODO: Access token validation is not implemented in this sample.
             // For more details on access tokens, see the documentation
             // https://wopi.readthedocs.io/projects/wopirest/en/latest/concepts.html#term-access-token
-            return !String.IsNullOrWhiteSpace(requestData.AccessToken);
+			// "INVALID" is used by the WOPIValidator. 
+            return !String.IsNullOrWhiteSpace(requestData.AccessToken) && (requestData.AccessToken != "INVALID");
         }
 
         private static void ReturnSuccess(HttpResponse response)
