@@ -9,6 +9,8 @@
 * PutRelativeFile **or** PutRelativeFileUnsupported
 * RenameFileIfCreateChildFileIsNotSupported **or** RenameFileIfCreateChildFileIsSupported (applicable only if the
   host supports :ref:`RenameFile`)
+* FileVersion
+* PutUserInfo (applicable only if the host supports :ref:`PutUserInfo`)
 * ProofKeys (applicable only for hosts implementing :ref:`proof key validation<proof keys>`)
 
 ..  tip::
