@@ -1,4 +1,4 @@
-﻿
+
 namespace SampleWopiHandler
 {
     class CheckFileInfoResponse
@@ -6,9 +6,11 @@ namespace SampleWopiHandler
         // This is a subset of all CheckFileInfo properties.
         // Use optional properties in accordance with the [MS-WOPI] Web Application Open Platform Interface Protocol specification.
 
+        // Required response properties
         public string BaseFileName { get; set; }
         public string OwnerId { get; set; }
         public int Size { get; set; }
+        public string UserId { get; set; }
         public string Version { get; set; }
 
         public string BreadcrumbBrandName { get; set; }
@@ -16,7 +18,6 @@ namespace SampleWopiHandler
         public string BreadcrumbFolderName { get; set; }
         public string BreadcrumbFolderUrl { get; set; }
         public string BreadcrumbDocName { get; set; }
-        public string BreadcrumbDocUrl { get; set; }
 
         public bool UserCanWrite { get; set; }
         public bool ReadOnly { get; set; }
