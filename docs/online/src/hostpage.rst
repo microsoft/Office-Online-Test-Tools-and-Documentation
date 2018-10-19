@@ -42,7 +42,7 @@ Passing access tokens securely
 
 It is important, for security purposes, that access tokens not be passed to the Office Online iframe as a query
 string parameter. Doing so would greatly increase the likelihood of token leakage. To avoid this problem, hosts
-should pass the :term:`access token` and :term:`access_token_ttl` values to the Office Online iframe using a form
+must pass the :term:`access token` and :term:`access_token_ttl` values to the Office Online iframe using a form
 :http:method:`POST`. This technique is illustrated, along with :ref:`dynamic iframe creation<iframe behavior>`, in
 :numref:`code sample %s <secure-tokens-sample>`.
 
@@ -58,7 +58,7 @@ cases, this will cause the Office Online iframe to be loaded twice in a single n
 which causes the Office Online application to load with the previous session's state. This may cause a session to
 ultimately fail for a variety of reasons, including an expired :abbr:`CSRF (Cross-Site Request Forgery)` token.
 
-In order to work around this behavior, hosts should dynamically create the Office Online iframe using JavaScript,
+In order to work around this behavior, hosts must dynamically create the Office Online iframe using JavaScript,
 then dynamically submit it. This technique is illustrated in the sample host page:
 
 ..  literalinclude:: ../../../samples/SampleHostPage.html
@@ -71,7 +71,7 @@ then dynamically submit it. This technique is illustrated in the sample host pag
     :lines: 39-64
 
 Note that in an actual implementation, the ``<OFFICE_ONLINE_ACTION_URL>``, ``<ACCESS_TOKEN_VALUE>``, and
-``<ACCESS_TOKEN_TTL_VALUE>`` strings should be replaced with appropriate :ref:`action URL<Action URLs>`,
+``<ACCESS_TOKEN_TTL_VALUE>`` strings must be replaced with appropriate :ref:`action URL<Action URLs>`,
 :term:`access token`, and :term:`access_token_ttl` values.
 
 
