@@ -14,7 +14,7 @@ environment are provided below.
 Initially you'll be given access to the test environment (also called 'Dogfood'), and you should use that environment
 when building and testing your integration.
 
-Once you believe you're ready to release your integration, you can start the :ref:`'Go Live' process <go live>`. As
+Once you believe you're ready to release your integration, you can start the :ref:`Launch process <shipping>`. As
 part of that process, your application will be given access to the production environment.
 
 
@@ -30,7 +30,7 @@ against it. Initially this is the only environment you will be able to access.
 The test environment runs the most recent Office Online code available. This does mean that you may see features
 there that are not yet available in production. However, the WOPI interactions between Office Online and your WOPI
 host should not differ dramatically between test and production. In addition, as part of the
-:ref:`'Go Live' process <go live>` you'll be given production access to verify your integration behaves as expected
+:ref:`Launch process <shipping>` you'll be given production access to verify your integration behaves as expected
 in that environment prior to release.
 
 Because builds are deployed frequently to this environment, you may see regressions in behavior. However, the
@@ -48,11 +48,10 @@ unexpected behavior when using the test environment.
 Production environment
 ----------------------
 
-The production environment is updated weekly. Once you've started the :ref:`'Go Live' process <go live>`, you'll be
-given production access to verify your integration behaves as expected in that environment prior to release.
+The production environment is updated weekly. Once you've started the :ref:`Launch process <shipping>`, you can
+request early production access to verify your integration behaves as expected in that environment prior to release.
 
-..  important::
-    Hosts must use HTTPS in the production |wac| environment. HTTP is not supported.
+..  important:: Hosts must use HTTPS in the production |wac| environment. HTTP is not supported.
 
 
 ..  _discovery URLs:

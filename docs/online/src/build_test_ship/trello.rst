@@ -1,11 +1,11 @@
 
 ..  _trello board:
 
-Using Trello to manage the 'go live' process
-============================================
+Using Trello to manage the launch process
+=========================================
 
-To manage the overall 'go live' process, including testing and validation, Microsoft uses a service called
-`Trello <https://trello.com>`_. Once you have started the 'go live' process, Microsoft will create a dedicated
+To manage the overall launch process, including testing and validation, Microsoft uses a service called
+`Trello <https://trello.com>`_. Once you have started the launch process, Microsoft will create a dedicated
 Trello board to track issues and provide a common communication channel between your team and Microsoft.
 The board will be pre-populated with cards tracking various questions about your WOPI implementation as well as
 discussion cards to determine launch dates, etc.
@@ -14,7 +14,7 @@ If you are new to Trello, you can learn more about it at https://trello.com/guid
 
 ..  important::
 
-    You should use the Trello board to communicate with Microsoft throughout the 'go live' process. This will ensure
+    You should use the Trello board to communicate with Microsoft throughout the launch process. This will ensure
     that all Office Online team members are aware of the communications, and it provides a straightforward way to
     isolate conversations about specific issues.
 
@@ -38,9 +38,9 @@ Board structure
 ---------------
 
 ..  figure:: /images/trello_initial.png
-    :alt: An example partner 'go live' board.
+    :alt: An example partner launch board in Trello.
 
-    Example partner 'go live' board
+    Example partner launch board in Trello
 
 The board structure is fairly basic. There are seven lists, and you can move cards between the lists as needed. The
 lists serve two main purposes. First, they keep issues organized at a high level, so it is easy to see what issues

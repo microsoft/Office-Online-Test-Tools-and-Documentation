@@ -63,7 +63,7 @@ For testing and development using the Office Online test environment, a WOPI-ded
 Office Online has different allow lists for the production and test environments. When you are first given access to
 the test environment, Microsoft will add the domains you provide to the test-only WOPI domain allow list. For test
 purposes you can use broadly-scoped domains such as your top-level domain (e.g. ``contoso.com``); as part of the
-:ref:`'Go Live' process <go live>` you can provide different or additional domains for production.
+:ref:`Launch process <shipping>` you can provide different or additional domains for production.
 
 ..  tip::
     All domains on the production allow list are automatically allowed in the test environment. The inverse is not

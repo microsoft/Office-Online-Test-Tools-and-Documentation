@@ -1,5 +1,4 @@
 
-..  _go live:
 ..  _shipping:
 
 Shipping your Office Online integration
@@ -11,10 +10,10 @@ Shipping your Office Online integration
     rollout
     Rollout
 
-Once you believe you are ready to ship your integration, you should contact Microsoft and ask to begin the 'go live'
+Once you believe you are ready to ship your integration, you should contact Microsoft and ask to begin the launch
 process. This process will prepare you to ship your Office Online integration.
 
-The 'go live' process consists of three phases:
+The launch process consists of three phases:
 
 #. **Validation** - Microsoft will validate your WOPI implementation as well as your UI integration. Depending on what
    issues are uncovered during validation, this may take some time. You should estimate a two-week turnaround time
@@ -23,12 +22,13 @@ The 'go live' process consists of three phases:
 
    ..  important::
        You can avoid delays in validation by ensuring that your implementation is consistent with this documentation
-       and that the :ref:`validator` tests are passing before beginning the 'go live' process.
+       and that you have done manual testing using our :ref:`testing guide<testing>` and that the :ref:`validator`
+       tests are passing before beginning the launch process.
 
-#. **Production Smoke Test** - Microsoft will enable you to use the production Office Online environment for
-   smoke-testing. This should be basic testing performed by the host since the production environment is slightly
-   different than the test environment, and different issues may be uncovered. This can be as long or as short as the
-   host deems necessary. Typically a week is enough time, though it can be much shorter.
+#. **Production testing** - If requested, Microsoft will enable you to use the production Office Online environment
+   for preliminary smoke-testing prior to enabling your full production access. This should be basic testing performed
+   by the host since the production environment is slightly different than the test environment, and different issues
+   may be uncovered. This can be as long or as short as the host deems necessary.
 
 #. **Sign off and roll out** - Once Microsoft has signed off on your integration, you can begin to roll out to your
    users. Depending on your traffic estimates, Microsoft may request that you roll out over a period of several days
@@ -38,12 +38,12 @@ To manage this process, Microsoft will create a dedicated `Trello <https://trell
 provide a common communication channel between your team and Microsoft. You can learn more about how to use this
 Trello board in the :ref:`trello board` section.
 
-Before starting the 'go live' process, you should read the below sections for an overview of the types of questions
+Before starting the launch process, you should read the below sections for an overview of the types of questions
 and issues that you may need to address during the process.
 
 
-Preparing for the 'go live' process
------------------------------------
+Preparing for the launch process
+--------------------------------
 
 WOPI validation
 ~~~~~~~~~~~~~~~
@@ -59,7 +59,12 @@ Manual testing
 
 In addition to checking the WOPI validation results, Microsoft will do some manual validation of scenarios that
 cannot currently be tested using the WOPI validator. You should follow the steps in the :ref:`testing guide<testing>`
-and fully test these scenarios prior to starting the 'go live' process.
+and fully test these scenarios prior to starting the launch process.
+
+..  important::
+
+    Multi-user co-authoring is used to test parts of a WOPI server implementation. Therefore, the validation process
+    requires that multi-user co-authoring can be tested using the test accounts
 
 
 Test accounts
@@ -71,7 +76,8 @@ requires that you provide Microsoft test accounts that they can use to test your
 
 ..  important::
 
-    The provided test accounts must be able to test your Office Online integration. In addition, you must provide a
+    The provided test accounts must be able to test your Office Online integration, including multi-user co-authoring
+    and any optional Office Online features (:ref:`conversion`, for example). In addition, you must provide a
     way for Microsoft to access the :ref:`validator` using these test accounts.
 
 Once test accounts are provided, Microsoft will provide you with a rough time line to complete testing. Usually
@@ -98,7 +104,7 @@ your specific WOPI implementation. These questions are included below.
 ..  note::
 
     This list of questions is subject to change. Microsoft will provide you with a specific list of questions as part
-    of the 'go live' process that may differ from the list below.
+    of the launch process that may differ from the list below.
 
 #. Confirm that your File IDs meet the :term:`criteria listed in the documentation <file id>`. Office Online
    expects file IDs to be unique and consistent over time, as well as when accessed by different users or via
@@ -137,7 +143,7 @@ you to verify your current :ref:`settings`, including your entries in the :ref:`
 Service management contacts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Office Online is a worldwide cloud service, and is thus monitored at all times. As part of the 'go live' process,
+Office Online is a worldwide cloud service, and is thus monitored at all times. As part of the launch process,
 Microsoft will provide you with information regarding how to escalate service quality issues with Office Online's
 on-call engineers.
 
