@@ -179,6 +179,44 @@ Verification in Python
     :lines: 54-70
 
 
+Proof key tests in the WOPI validator
+-------------------------------------
+
+The WOPI validator includes several tests that help verify proof key implementations.
+
+ProofKeyCurrentValid
+    Tests that hosts accept requests where the **X-WOPI-Proof** value is correctly signed with the current proof key,
+    and the **X-WOPI-ProofOld** value is signed with the old proof key.
+
+ProofKeyCurrentOldGarbage
+    Tests that hosts reject requests with invalid current and old proof keys.
+
+ProofKeyCurrentValidOldGarbage
+    Tests that hosts accept requests where the **X-WOPI-Proof** value is correctly signed with the current proof key,
+    but the **X-WOPI-ProofOld** value is invalid. This scenario is unusual and should not happen in a production
+    environment, but since the **X-WOPI-Proof** value is correct, the request should be accepted.
+
+ProofKeyCurrentGarbageValidOldFromOldKey
+    Tests that hosts reject requests where the **X-WOPI-Proof** value is invalid, and the **X-WOPI-ProofOld** value
+    is signed with the *old* public key. This scenario is unusual and should not happen in a production
+    environment; such requests should be rejected.
+
+ProofKeyWacAheadOfHost
+    Tests that hosts accept requests where the **X-WOPI-Proof** value is correctly signed with the *old* proof key.
+    This can happen when a WOPI client has updated proof keys but the host hasn't re-run
+    :ref:`WOPI discovery <discovery>` yet.
+
+ProofKeyWacBehindHost
+    Tests that hosts accept requests where the **X-WOPI-Proof** value is invalid but the **X-WOPI-ProofOld** value is
+    signed with *current* public key. This can happen when a WOPI client has updated proof keys, the host has re-run
+    :ref:`WOPI discovery <discovery>` and has the updated proof keys, but the datacenter machine making the WOPI
+    request does not yet have the updated keys.
+
+WopiTimestampOlderThan20Min
+    Tests that hosts reject requests with an **X-WOPI-Timestamp** value that represents a time more than than 20
+    minutes old.
+
+
 ..  _Troubleshooting proof keys:
 
 Troubleshooting proof key implementations
