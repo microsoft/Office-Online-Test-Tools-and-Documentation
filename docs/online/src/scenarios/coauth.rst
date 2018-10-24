@@ -1,5 +1,6 @@
 
 ..  _coauth:
+..  _coauthoring:
 
 Co-authoring using Office Online
 ================================
