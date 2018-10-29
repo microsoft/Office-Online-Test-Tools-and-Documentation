@@ -194,7 +194,8 @@ ProofKeyCurrentOldGarbage
 ProofKeyCurrentValidOldGarbage
     Tests that hosts accept requests where the **X-WOPI-Proof** value is correctly signed with the current proof key,
     but the **X-WOPI-ProofOld** value is invalid. This scenario is unusual and should not happen in a production
-    environment, but since the **X-WOPI-Proof** value is correct, the request should be accepted.
+    environment, but since the **X-WOPI-Proof** value is signed with the current public key, the request should be
+    accepted.
 
 ProofKeyCurrentGarbageValidOldFromOldKey
     Tests that hosts reject requests where the **X-WOPI-Proof** value is invalid, and the **X-WOPI-ProofOld** value
@@ -202,18 +203,18 @@ ProofKeyCurrentGarbageValidOldFromOldKey
     environment; such requests should be rejected.
 
 ProofKeyWacAheadOfHost
-    Tests that hosts accept requests where the **X-WOPI-Proof** value is correctly signed with the *old* proof key.
-    This can happen when a WOPI client has updated proof keys but the host hasn't re-run
-    :ref:`WOPI discovery <discovery>` yet.
+    Tests that hosts accept requests where the **X-WOPI-Proof** value is invalid but the **X-WOPI-ProofOld** value is
+    signed with *current* public key. This can happen when a WOPI client such as Office Online has rotated proof keys
+    but the host hasn't re-run :ref:`WOPI discovery <discovery>` yet.
 
 ProofKeyWacBehindHost
-    Tests that hosts accept requests where the **X-WOPI-Proof** value is invalid but the **X-WOPI-ProofOld** value is
-    signed with *current* public key. This can happen when a WOPI client has updated proof keys, the host has re-run
-    :ref:`WOPI discovery <discovery>` and has the updated proof keys, but the datacenter machine making the WOPI
-    request does not yet have the updated keys.
+    Tests that hosts accept requests where the **X-WOPI-ProofOld** value is invalid but the **X-WOPI-Proof** value is
+    signed with *old* public key. This can happen when a WOPI client has rotated proof keys, the host has re-run
+    :ref:`WOPI discovery <discovery>` and has the updated keys, but the datacenter machine making the WOPI request
+    does not yet have the updated keys.
 
 WopiTimestampOlderThan20Min
-    Tests that hosts reject requests with an **X-WOPI-Timestamp** value that represents a time more than than 20
+    Tests that hosts reject requests with an **X-WOPI-Timestamp** value that represents a time more than 20
     minutes old.
 
 
