@@ -25,13 +25,8 @@ CreateChildFile
     (indicates *specific* mode) or **X-WOPI-SuggestedTarget** (indicates *suggested* mode) request headers is used. The
     expected behavior for each mode is described in detail below.
 
-    The |operation| operation may be called on a file that is not locked, so the **X-WOPI-Lock** request header
-    is not included in this operation. An example of when this might occur is if a user uses the *Save As* feature
-    when viewing a document in read-only mode. The source file will not be locked in this case, but the
-    |operation| operation will be invoked on it.
-
-    Note, however, that a file matching the target name might be locked, and in *specific* mode, the host must
-    respond with a :statuscode:`409` and include a **X-WOPI-Lock** response header as described below.
+    Note that a file matching the target name might be locked, and in *specific* mode, the host must respond with a
+    :statuscode:`409` and include a **X-WOPI-Lock** response header as described below.
 
     ..  include:: /_fragments/common_containers_params.rst
 
