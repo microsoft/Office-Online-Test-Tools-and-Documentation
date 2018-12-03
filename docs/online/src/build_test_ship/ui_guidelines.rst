@@ -110,8 +110,8 @@ BreadcrumbFolderName/BreadcrumbFolderUrl
     ..  tip::
 
         If you support multiple paths to get to a file, you may wish to expose different breadcrumb properties
-        depending on how the user navigated to the file. You can achieve this by using the :ref:`session context` to
-        customize your :ref:`CheckFileInfo` response.
+        depending on how the user navigated to the file. You can achieve this by using the
+        :term:`session context <SESSION_CONTEXT>` to customize your :ref:`CheckFileInfo` response.
 
 
 Example

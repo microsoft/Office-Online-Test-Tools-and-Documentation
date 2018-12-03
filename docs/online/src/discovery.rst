@@ -274,13 +274,11 @@ Action URLs
 
 The URI values provided in the **urlsrc** attribute in the discovery XML are not in a valid format. Simply navigating to
 them will result in errors. A WOPI host must transform the URIs provided in order to make them valid action URLs that
-can be used to invoke actions on a file. There are two key components to transforming the **urlsrc** attribute:
-
-#. Parsing and replacing :ref:`placeholder values` with appropriate values, or discarding them completely
-#. Appending a :term:`WOPISrc` value to the URI as a query string parameter
+can be used to invoke actions on a file. To transform the **urlsrc** attribute into a proper action URL, the host
+must parse and replace :ref:`placeholder values` with appropriate values or discard them completely.
 
 After the URL is transformed, it is a valid URL. When the URL is opened, the action will be invoked against the file
-indicated by the :term:`WOPISrc` parameter.
+indicated by the :term:`wopirest:WOPISrc`.
 
 Transforming the urlsrc parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -394,34 +392,27 @@ Placeholder values
         * ``OfficeOnline``: activates all tests necessary for |wac| integration.
         * ``OfficeNativeClient``: activates all tests necessary for |Office iOS| integration.
 
+    SESSION_CONTEXT
+        This placeholder can be replaced by any string value. If provided, this value will be passed back to
+        the host in subsequent :ref:`CheckFileInfo` and :ref:`CheckFolderInfo` calls in the **X-WOPI-SessionContext**
+        request header. There is no defined limit for the length of this string; however, since it is passed on the
+        query string, it is subject to the overall Office Online URL length limit of 2047 bytes.
 
-..  _Appending WOPISrc:
+        ..  versionadded:: 2018.12.15
+            Prior to this version, session context was supported but hosts were required to add it to the action URL
+            manually using the ``sc`` query parameter. This placeholder enables hosts to handle session context in the
+            same way as other URL parameters.
 
-Appending a WOPISrc value
-~~~~~~~~~~~~~~~~~~~~~~~~~
+    WOPI_SOURCE
+        This placeholder **must** be replaced by a :term:`wopirest:WopiSrc` value.
 
-After parsing and replacing any placeholder values in the **urlsrc** parameter, hosts must add a ``WOPISrc`` query
-string parameter to the URL. Once this is done, the URL is a valid action URL and, when loaded by a browser, will
-instantiate an Office Online application.
+        ..  important::
+            Unlike other placeholders, replacing this placeholder is required.
 
-The ``WOPISrc`` parameter tells Office Online the URL of the host's WOPI :ref:`Files endpoint`. In other words,
-it is a URL of the form ``http://server/<...>/wopi/files/(file_id)``, where ``file_id`` is the :term:`file id` of the
-file. The ``WOPISrc`` parameter value must be encoded to a URL-safe string, then the parameter is appended to the
-action URL.
-
-..  seealso:: See :term:`WOPISrc` for more information about the ``WOPISrc`` value.
-
-
-..  _session context:
-
-Session context parameter
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In addition to the :ref:`placeholder values` listed above, hosts can optionally append an ``sc`` query string
-parameter to the action URLs. This parameter is called the session context and, if provided, will be passed back to
-the host in subsequent :ref:`CheckFileInfo` and :ref:`CheckFolderInfo` calls in the **X-WOPI-SessionContext** request
-header. There is no defined limit for the length of this string; however, since it is passed on the query string, it
-is subject to the overall Office Online URL length limit of 2047 bytes.
+        ..  versionadded:: 2018.12.15
+            Prior to this version, hosts were required to add the :term:`wopirest:WopiSrc` to the action URL for most
+            (but not all) actions. This placeholder enables hosts to handle the :term:`wopirest:WopiSrc` in the same
+            way as other URL parameters.
 
 
 Additional notes
