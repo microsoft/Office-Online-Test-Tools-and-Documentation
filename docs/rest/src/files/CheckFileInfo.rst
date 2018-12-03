@@ -29,7 +29,7 @@ CheckFileInfo
     ..  include:: /_fragments/common_params.rst
 
     :reqheader X-WOPI-SessionContext:
-        The value of the :ref:`session context`, if provided on the initial WOPI action URL using the ``sc`` parameter.
+        The value of the :term:`session context <SESSION_CONTEXT>`, if provided on the initial WOPI action URL.
 
     :code 200: Success
     :code 401: Invalid :term:`access token`

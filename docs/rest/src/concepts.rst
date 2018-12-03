@@ -32,8 +32,8 @@ understanding the requirements for integration with WOPI clients such as |wac| a
 
         ..  admonition:: |wac| Tip
 
-            See :ref:`Action URLs` and :ref:`Appending WOPISrc` for more information about how the file ID should be
-            passed to |wac|.
+            See :ref:`Action URLs` and :term:`officeonline:WOPI_SOURCE` for more information about how the file ID
+            should be passed to |wac|.
 
     Access token
         An access token is a string used by the host to determine the identity and permissions of the issuer of a
@@ -182,14 +182,17 @@ understanding the requirements for integration with WOPI clients such as |wac| a
         :ref:`Files endpoint` URL for the host along with a particular :term:`file ID`. The WOPISrc does *not*
         include an :term:`access token`.
 
+        For example, a WopiSrc might look like this::
+
+            https://wopi.contoso.com/wopi/files/abcdef0123456789
+
         The WOPISrc is needed beyond just a file ID so that a WOPI client can know what URL to call back to when
         executing WOPI operations on a file. In practice, the WOPISrc and a :term:`file ID` are synonymous, since
         WOPI client typically work with the WOPISrc itself, not the raw :term:`file ID`.
 
         ..  admonition:: |wac| Tip
 
-            See :ref:`Appending WOPISrc` for more details on how the WOPISrc is constructed and passed to
-            |wac|.
+            See :ref:`officeonline:WOPISRC` for more details on how the WOPISrc is passed to |wac|.
 
     Container
         |stub-icon| Not yet documented.
