@@ -15,17 +15,17 @@ $(document).ready(function() {
     );
 
     /* Highlight deprecated items */
-    $("div.deprecated p").addClass(
+    $("div.deprecated p span.versionmodified").addClass(
         'label label-default'
     );
 
     /* Highlight added items */
-    $("div.versionadded p").addClass(
+    $("div.versionadded p span.versionmodified").addClass(
         'label label-success'
     );
 
     /* Highlight added items */
-    $("div.versionchanged p").addClass(
+    $("div.versionchanged p span.versionmodified").addClass(
         'label label-primary'
     );
 
