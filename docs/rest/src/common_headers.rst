@@ -31,6 +31,10 @@ Standard WOPI request and response headers
         A **string** used to indicate the endpoint of the WOPI client sending the request. This is typically used to
         indicate geographic location, datacenter, etc. This string must not be used for anything other than logging.
 
+    :reqheader X-WOPI-RequestingApplication:
+        A **string** used to indicate the WOPI client sending the request. This string must not be used for anything
+        other than logging.
+
     :reqheader X-WOPI-ClientVersion:
         A **string**  that the host should log indicating the version of the WOPI client making the request. There is
         no standard for how this string is formatted, and it must not be used for anything other than logging.
