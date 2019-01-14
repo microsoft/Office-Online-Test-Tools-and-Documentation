@@ -192,7 +192,7 @@ understanding the requirements for integration with WOPI clients such as |wac| a
 
         ..  admonition:: |wac| Tip
 
-            See :ref:`officeonline:WOPISRC` for more details on how the WOPISrc is passed to |wac|.
+            See :ref:`officeonline:WOPI_SOURCE` for more details on how the WOPISrc is passed to |wac|.
 
     Container
         |stub-icon| Not yet documented.
