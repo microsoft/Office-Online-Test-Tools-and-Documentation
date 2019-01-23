@@ -49,7 +49,7 @@ Enabling HTTPS decryption in Fiddler
 Because Office Online traffic is encrypted, Fiddler must be configured to decrypt the HTTPS traffic in order to be
 useful. In order to enable HTTPS encryption in Fiddler, do the following:
 
-#. From Fiddler, click :menuselection:`Tools --> Fiddler Options...` to open the options dialog.
+#. From Fiddler, click :menuselection:`Tools --> Options...` to open the options dialog.
 #. On the :guilabel:`HTTPS` tab, check the :guilabel:`Capture HTTPS CONNECTs` check box.
 #. Check the :guilabel:`Decrypt HTTPS traffic` check box. When you do this Fiddler will display a dialog asking if you
    wish to trust the Fiddler Root certificate. Click :guilabel:`Yes`. You may also see some security warnings from the
