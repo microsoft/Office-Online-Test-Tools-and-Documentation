@@ -73,7 +73,6 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinxcontrib.httpdomain',
-    'sphinxcontrib.spelling',
     'sphinx_git',
     'issue_directive',
     'wopi_domain',
