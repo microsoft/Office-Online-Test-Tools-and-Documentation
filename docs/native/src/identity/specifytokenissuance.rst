@@ -2,20 +2,7 @@
 Post-Authorization token endpoint
 =================================
 
-..  spelling::
-
-    abcdefg
-    api
-    Dstuff
-    Fapi
-    Fcontoso
-    Fextra
-    Ftoken
-    https
-    localhost
-    tk
-
-The token endpoint URL (:rfc:`6749#section-3.2`) is normally obtained from the initial unauthenticated call 
+The token endpoint URL (:rfc:`6749#section-3.2`) is normally obtained from the initial unauthenticated call
 described at :ref:`ClientBootstrapper`.
 
 If the token endpoint URL cannot be determined before the end-user has completed the sign-in process, 

@@ -4,12 +4,6 @@
 Operational flows for |Office iOS| and |Office Android|
 ========================================================
 
-..  spelling::
-
-    auth
-    Auth
-    OAuth
-
 This section outlines the implementation requirements and operational flows for user scenarios outlined in the
 :ref:`browse files` section.
 

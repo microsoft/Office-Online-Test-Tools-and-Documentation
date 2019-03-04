@@ -4,11 +4,6 @@
 App to app sign in for |Office iOS| and |Office Android|
 ========================================================
 
-..  spelling::
-
-    Auth
-    auth
-
 The normal flow to sign in to your service from |Office iOS| or |Office Android| uses the OS UIWebView where your
 web sign in experience is rendered inside the |Office iOS| or |Office Android| app. Optionally, an additional
 optimization can be done where the user can sign in using your app.

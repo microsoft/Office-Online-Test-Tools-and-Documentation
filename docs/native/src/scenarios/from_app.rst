@@ -4,18 +4,6 @@
 Opening files from your app in |Office iOS| and |Office Android|
 ================================================================
 
-..  spelling::
-
-    Baidu
-    Huawei
-    Lenovo
-    Oppo
-    passback
-    Passback
-    Tencent
-    Wandoujia
-    Xiaomi
-
 In order to invoke |Office iOS| or |Office Android| when opening an Office file from your app, you must use the URL
 schemes that Word, Excel, and PowerPoint for iOS or Android register when they are installed.
 

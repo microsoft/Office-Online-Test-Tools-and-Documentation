@@ -4,12 +4,6 @@
 Microsoft-configured settings
 =============================
 
-..  spelling::
-
-    subdomain
-    wopi
-    qa
-
 Most Office Online behavior is configurable based on properties provided in :ref:`CheckFileInfo`. However, there are
 some Office Online settings that must be changed by Microsoft.
 

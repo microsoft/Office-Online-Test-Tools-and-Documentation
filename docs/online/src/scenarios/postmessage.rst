@@ -4,13 +4,6 @@
 Using PostMessage to interact with the |wac| application iframe
 ===============================================================
 
-..  spelling::
-
-    msg
-    ui
-    wdUserSession
-
-
 ..  default-domain:: js
 
 You can integrate your own UI into Office Online applications. This way, you can use your UI for actions on Office

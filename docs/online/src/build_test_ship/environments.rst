@@ -4,10 +4,6 @@
 Office Online environments
 ==========================
 
-..  spelling::
-
-    Dogfood
-
 Office Online provides two environments for use by cloud storage partners. The :ref:`discovery URLs` for each
 environment are provided below.
 

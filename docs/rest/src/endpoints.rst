@@ -4,11 +4,6 @@
 WOPI REST endpoints
 ===================
 
-..  spelling::
-
-    wopi
-
-
 A WOPI host needs to provide some information about the files it stores, as well as the binary contents of those files.
 Because WOPI is a REST-based callback interface, this information is provided via specific URLs. A WOPI host provides a
 small REST API around its files. WOPI clients such as |wac| then use those REST API to work with the files.

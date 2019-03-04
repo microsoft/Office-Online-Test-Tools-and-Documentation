@@ -4,12 +4,6 @@
 Shipping your Office Online integration
 =======================================
 
-..  spelling::
-
-    IPv
-    rollout
-    Rollout
-
 Once you believe you are ready to ship your integration, you should contact Microsoft and ask to begin the launch
 process. This process will prepare you to ship your Office Online integration.
 

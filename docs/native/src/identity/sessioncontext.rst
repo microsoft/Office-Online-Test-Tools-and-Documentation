@@ -2,12 +2,6 @@
 Optional Session Context String
 ===============================
 
-..  spelling::
-
-    abcdefg
-    https
-    localhost
-
 A Session Context String may be returned from the authentication process. |Office iOS| will pass this string, in an HTTP header, in calls to the 
 token endpoint URL (:rfc:`6749#section-3.2`) and authenticated calls to the bootstrapper (:ref:`wopirest:GetNewAccessToken`, :ref:`wopirest:shortcuts`).
 

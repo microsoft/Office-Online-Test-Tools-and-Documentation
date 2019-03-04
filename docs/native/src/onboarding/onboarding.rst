@@ -4,21 +4,6 @@
 Onboarding information
 ======================
 
-..  spelling::
-
-    BhdRkqt
-    Bool
-    editdocs
-    FjfpZBr
-    https
-    localhost
-    png
-    px
-    qa
-    tDRbnfVdmIw
-    userprofile
-    wopibootstrapper
-
 The following information must be supplied to Microsoft to enable end-to-end testing and release of
 |Office iOS| integration.
 

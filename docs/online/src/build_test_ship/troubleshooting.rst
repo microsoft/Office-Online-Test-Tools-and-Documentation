@@ -4,10 +4,6 @@
 Troubleshooting interactions with Office Online
 ===============================================
 
-..  spelling::
-
-    validator
-
 When integrating with Office Online, it may be necessary to work with Microsoft engineers to diagnose problems.
 Following the steps below will help both you and Microsoft diagnose problems more quickly.
 

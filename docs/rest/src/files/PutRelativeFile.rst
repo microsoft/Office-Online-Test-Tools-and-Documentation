@@ -8,11 +8,6 @@
 PutRelativeFile
 ===============
 
-..  spelling::
-
-    Url
-
-
 :Required for: |web|
 
 ..  default-domain:: http

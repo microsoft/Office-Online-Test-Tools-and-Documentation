@@ -4,12 +4,6 @@
 Office Online Documentation Style Guide
 =======================================
 
-..  spelling::
-
-    overlines
-    Overlines
-
-
 Whitespace guidelines
 ---------------------
 
