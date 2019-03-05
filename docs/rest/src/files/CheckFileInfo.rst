@@ -469,6 +469,27 @@ Other miscellaneous properties
 
             ..  seealso:: :ref:`avoid CloseButtonClosesWindow`
 
+    CopyRestrictions
+        |prerelease|
+
+        A **string** value indicating whether the WOPI client should disable Copy functionality within the application.
+        The default is to permit all Copy functionality, i.e. the setting has no effect.
+
+        Possible Values:
+
+        BlockAll
+            Copy is completely disabled within the application.
+
+        CurrentDocumentOnly
+            Copy is enabled but content can only be copied within the file currently open in the application.
+
+        Any values other than those listed above must be ignored by the WOPI client.
+
+        ..  admonition:: |wac| Tip
+
+            This property is only respected by Excel Online. It has no effect in PowerPoint Online or Word Online.
+
+
     DisablePrint
         A **Boolean** value that indicates the WOPI client should disable all print functionality.
 
