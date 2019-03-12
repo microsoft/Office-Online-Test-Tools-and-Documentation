@@ -469,19 +469,19 @@ Other miscellaneous properties
 
             ..  seealso:: :ref:`avoid CloseButtonClosesWindow`
 
-    CopyRestrictions
+    CopyPasteRestrictions
         |prerelease|
 
-        A **string** value indicating whether the WOPI client should disable Copy functionality within the application.
-        The default is to permit all Copy functionality, i.e. the setting has no effect.
+        A **string** value indicating whether the WOPI client should disable Copy and Paste functionality within the application.
+        The default is to permit all Copy and Paste functionality, i.e. the setting has no effect.
 
         Possible Values:
 
         BlockAll
-            Copy is completely disabled within the application.
+            Copy and Paste are completely disabled within the application.
 
         CurrentDocumentOnly
-            Copy is enabled but content can only be copied within the file currently open in the application.
+            Copy and Paste are enabled but content can only be copied and pasted within the file currently open in the application.
 
         Any values other than those listed above must be ignored by the WOPI client.
 
