@@ -20,6 +20,11 @@ To integrate your application with Office Online, you need to do the following:
    service is available to cloud storage partners. You can learn more about the program, as well as how to apply,
    at http://dev.office.com/programs/officecloudstorage.
 
+   ..  important::
+
+       The Cloud Storage Partner Program is intended for independent software vendors whose business is cloud storage.
+       It is not open to Office 365 customers directly.
+
 #. Implement the WOPI protocol - a set of REST endpoints that expose information about the documents that you want to
    view or edit in Office Online. The set of WOPI operations that must be supported is described
    in the section titled :ref:`requirements`.
