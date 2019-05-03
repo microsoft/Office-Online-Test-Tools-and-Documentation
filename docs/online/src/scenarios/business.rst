@@ -13,6 +13,8 @@ When business users open documents for editing, Office Online will validate that
 subscription. This may require the user to sign in using a valid Office 365 business account. This account must have
 an attached Office 365 subscription that includes Office applications.
 
+..  important:: The business user flow is *required* for all partners unless you have received an exemption.
+
 
 Indicating that a user is a business user
 -----------------------------------------

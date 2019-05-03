@@ -5,6 +5,8 @@
 Integrating with Office Online
 ==============================
 
+..  include:: /_fragments/intended_isv.rst
+
 You can integrate with Office Online to enable your users to view and edit Excel, PowerPoint, and Word files directly
 in the browser.
 
@@ -22,6 +24,8 @@ files.
 Viewing Office files
 --------------------
 
+..  important:: /_fragments/edit_support.rst
+
 You can make viewing available in two ways:
 
 * By using the high-fidelity previews in Office Online as an integrated part of your experience. For example, you can
@@ -37,14 +41,7 @@ Editing Office files
 
 Editing is a core part of Office Online integration. When you integrate with Office Online, your users can edit
 Excel, PowerPoint, and Word files directly in the browser. In addition, users can :ref:`edit documents collaboratively
-with other users using Office Online <coauth>`. Here are the key points to note about editing.
-
-===========================================  ==============
-Consumers                                    Business users
-===========================================  ==============
-Do not need an Office 365 subscription.      Do need an Office 365 subscription to edit files, but not to view files.
-Do not have to log on to use Office Online.  Are prompted to authenticate with an Office 365 or a Microsoft account to edit.
-===========================================  ==============
+with other users using Office Online <coauth>`. In order to edit documents, users require an Office license.
 
 ..  seealso::
 

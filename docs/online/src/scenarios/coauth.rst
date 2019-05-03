@@ -5,6 +5,14 @@
 Co-authoring using Office Online
 ================================
 
+..  important:: /_fragments/edit_support.rst
+
+..  important::
+
+    Edit support is required as part of the Cloud Storage Partner Program. In addition, your integration must support
+    multi-user co-authoring. See
+
+
 Office Online supports multiple users editing a document at the same time. Co-authoring in Office Online includes
 real-time content updates between all users editing the document, as well as presence information and real-time
 cursor tracking for each user.

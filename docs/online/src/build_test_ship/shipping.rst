@@ -7,6 +7,8 @@ Shipping your Office Online integration
 Once you believe you are ready to ship your integration, you should contact Microsoft and ask to begin the launch
 process. This process will prepare you to ship your Office Online integration.
 
+..  include:: /_fragments/readiness.rst
+
 The launch process consists of three phases:
 
 #. **Validation** - Microsoft will validate your WOPI implementation as well as your UI integration. Depending on what
@@ -68,24 +70,41 @@ In order to enable your WOPI host to use Office Online's :ref:`production enviro
 Microsoft will perform some manual validation of your WOPI implementation and Office Online integration. This
 requires that you provide Microsoft test accounts that they can use to test your integration.
 
-..  important::
 
-    The provided test accounts must be able to test your Office Online integration, including multi-user co-authoring
-    and any optional Office Online features (:ref:`conversion`, for example). In addition, you must provide a
-    way for Microsoft to access the :ref:`validator` using these test accounts.
+Requirements
+^^^^^^^^^^^^
 
-Once test accounts are provided, Microsoft will provide you with a rough time line to complete testing. Usually
-testing can be completed within two weeks. However, this time line is subject to demand; if other partners are already
-being tested it may take additional time for Microsoft to begin testing your implementation. In addition, if
-implementation issues are uncovered during testing the process may take longer.
+You must provide **at least two (2)** test accounts. All of the accounts you provide *must* be capable of doing the
+following:
+
+#.  **Upload new files** of any file type you open with Office Online, including ``.wopitest`` and ``.wopitestx``
+    files used by the WOPI validator
+#.  Open ``.wopitest`` files in the WOPI validator
+#.  The accounts must be capable of testing *multi-user co-authoring*; co-authoring with a single user account is not
+    sufficient
+
+
+..  include:: /_fragments/readiness.rst
+
+Once test accounts are provided, Microsoft will typically test your implementation the first Tuesday following when the
+accounts are provided. Usually testing can be completed within two to four weeks. However, this time line is subject
+to demand; if other partners are already being tested it may take additional time for Microsoft to begin testing your
+implementation. In addition, if implementation issues are uncovered during testing the process may take longer.
+
+
+Test guide for your product
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To expedite the validation process, you must provide a testing guide for your product. The guide should include how to
+use your product, with a focus on how to upload files, share them between users, and open them in Office Online.
 
 
 Business user flow test accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are using the :ref:`business user flow <Business editing>`, you will need test accounts from Microsoft in
-order to effectively test the flow in the :ref:`dogfood`. See the :ref:`business user testing` section for more
-information.
+You will need test accounts from Microsoft in order to effectively test the
+:ref:`business user flow <Business editing>` flow in the :ref:`dogfood`. See the :ref:`business user testing` section
+for more information.
 
 
 WOPI implementation questionnaire
