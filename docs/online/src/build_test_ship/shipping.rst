@@ -102,7 +102,7 @@ Business user flow test accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You will need test accounts from Microsoft in order to effectively test the
-:ref:`business user flow <Business editing>` flow in the :ref:`dogfood`. See the :ref:`business user testing` section
+:ref:`business user flow <Business editing>` in the :ref:`dogfood`. See the :ref:`business user testing` section
 for more information.
 
 
