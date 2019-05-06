@@ -3,7 +3,7 @@ from path import Path
 
 
 # Load shared config file
-execfile(Path('../../_shared/conf.py').abspath())
+exec(open(Path('../../_shared/conf.py').abspath()).read())
 
 
 def setup(app):

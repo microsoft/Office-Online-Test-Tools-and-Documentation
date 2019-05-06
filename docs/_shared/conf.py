@@ -15,6 +15,7 @@ def common_setup(app):
 def setup(app):
     common_setup(app)
 
+
 # Add WOPI doc module path to the system path for module imports
 sys.path.insert(0, Path('../../_wopi_sphinx/').abspath())
 
