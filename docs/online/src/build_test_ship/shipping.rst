@@ -79,10 +79,9 @@ following:
 
 #.  **Upload new files** of any file type you open with Office Online, including ``.wopitest`` and ``.wopitestx``
     files used by the WOPI validator
-#.  Open ``.wopitest`` files in the WOPI validator
-#.  The accounts must be capable of testing *multi-user co-authoring*; co-authoring with a single user account is not
+#.  **Open .wopitest files in the WOPI validator**
+#.  The accounts **must be capable of testing multi-user co-authoring;** co-authoring with a single user account is not
     sufficient
-
 
 ..  include:: /_fragments/readiness.rst
 
