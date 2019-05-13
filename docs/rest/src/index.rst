@@ -50,7 +50,6 @@ server intends to integrate with. To learn more about the specific requirements 
     /concepts
     /endpoints
     /common_headers
-    /native_apps
     /security
 
 
