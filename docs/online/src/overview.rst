@@ -24,7 +24,7 @@ files.
 Viewing Office files
 --------------------
 
-..  important:: /_fragments/edit_support.rst
+..  include:: /_fragments/edit_support.rst
 
 You can make viewing available in two ways:
 

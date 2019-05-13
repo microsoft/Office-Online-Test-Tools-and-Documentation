@@ -5,7 +5,7 @@
 Co-authoring using Office Online
 ================================
 
-..  important:: /_fragments/edit_support.rst
+..  include:: /_fragments/edit_support.rst
 
 ..  important::
 
