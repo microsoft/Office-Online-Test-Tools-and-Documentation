@@ -140,6 +140,11 @@ understanding the requirements for integration with WOPI clients such as |wac| a
         with an access token that belongs to User B. As long as User B has rights to edit the file, and the
         **X-WOPI-Lock** request header matches the lock ID, the :ref:`Unlock` request should be honored.
 
+        WOPI locks must automatically expire after 30 minutes if not renewed by the WOPI client. This ensures that
+        files do not stay locked indefinitely in error cases. Since locks are client-controlled from a protocol
+        perspective (that is, the WOPI client sets and manages the lock) and clients can be unreliable, the WOPI host
+        must expire the locks in such cases.
+
         ..  admonition:: |wac| Tip
 
             WOPI defines a :ref:`GetLock` operation. However, |wac| does not use it in all cases, even if the host
