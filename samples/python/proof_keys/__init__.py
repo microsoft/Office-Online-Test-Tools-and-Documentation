@@ -19,7 +19,7 @@ ProofKeyValidationInput = namedtuple('ProofKeyValidationInput',
 
 def uint_bytearray(n):
     """
-    Converts a numeric value representing an unsigned 16-bit integer into a bytestring in big-endian byte order.
+    Converts a numeric value representing an unsigned 32-bit integer into a bytestring in big-endian byte order.
     :param n: Number to encode
     :return: Packed bytestring in big-endian byte order
     """
