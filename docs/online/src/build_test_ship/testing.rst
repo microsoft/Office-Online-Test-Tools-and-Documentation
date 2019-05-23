@@ -14,23 +14,6 @@ All of the automated tests in the following categories must be passing in the WO
 ..  include:: /_fragments/required_validator_tests.rst
 
 
-Manual WOPI implementation verification
----------------------------------------
-
-The :ref:`validator` is a very useful tool in testing your WOPI implementation. However, it cannot find all potential
-problems in your implementation. Check the following items in addition to the results from the validator.
-
-..  important::
-    You should do this testing only *after* the :ref:`validator` tests are passing.
-
-
-Non-empty response body
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Most WOPI operations do not return a response body. You should not return a response body unless the operation
-specifically requires it. For example, successful :ref:`PutFile` responses should not have a body.
-
-
 |wac| feature verification
 --------------------------
 
