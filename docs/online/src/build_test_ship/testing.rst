@@ -6,6 +6,9 @@ Testing |wac| integration
 
 Before starting the :ref:`Launch process <shipping>`, you should do the following testing on your integration.
 
+
+..  _validator tests:
+
 WOPI validator tests
 --------------------
 
@@ -20,6 +23,8 @@ All of the automated tests in the following categories must be passing in the WO
 Many |wac| features rely on a host's WOPI implementation. You should test the following features to help ensure your
 WOPI implementation is correct and that the |wac| integration is well-executed.
 
+
+..  _coauth tests:
 
 Co-authoring
 ~~~~~~~~~~~~

@@ -1,5 +1,5 @@
 
 ..  important::
 
-    Please ensure that you are ready to provide test accounts and that you have throughly reviewed all the information
-    here before starting the launch process.
+    Before starting the launch process, please ensure that you have throughly reviewed all the information here, and
+    that you are ready to provide :ref:`test accounts and videos<test accounts>`.

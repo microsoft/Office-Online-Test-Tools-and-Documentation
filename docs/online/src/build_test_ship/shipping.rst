@@ -62,26 +62,47 @@ and fully test these scenarios prior to starting the launch process.
     Multi-user co-authoring is used to test parts of a WOPI server implementation. Therefore, the validation process
     requires that multi-user co-authoring can be tested using the test accounts
 
+..  _test accounts:
 
-Test accounts
-~~~~~~~~~~~~~
+Test accounts and video
+~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to enable your WOPI host to use Office Online's :ref:`production environment <production environment>`,
-Microsoft will perform some manual validation of your WOPI implementation and Office Online integration. This
-requires that you provide Microsoft test accounts that they can use to test your integration.
+Microsoft will perform some validation of your WOPI implementation and Office Online integration. This requires that
+you provide Microsoft **test accounts** in addition to **a video demonstrating the testing.**
 
 
 Requirements
 ^^^^^^^^^^^^
 
-You must provide **at least two (2)** test accounts. All of the accounts you provide *must* be capable of doing the
-following:
+You must provide the following information when submitting your integration for validation:
 
-#.  **Upload new files** of any file type you open with Office Online, including ``.wopitest`` and ``.wopitestx``
-    files used by the WOPI validator
-#.  **Open .wopitest files in the WOPI validator**
-#.  The accounts **must be capable of testing multi-user co-authoring;** co-authoring with a single user account is not
-    sufficient
+*   **At least two (2)** test accounts for your test system; the accounts you provide *must* be capable of doing the
+    following:
+
+    *   **Upload new files** of any file type you open with Office Online, including ``.wopitest`` and ``.wopitestx``
+        files used by the WOPI validator
+    *   **Open .wopitest files in the WOPI validator**
+    *   The accounts **must be capable of testing multi-user co-authoring;** co-authoring with a single user account
+        is not sufficient
+
+*   A login URL to use to sign in to your test system
+*   A video (or several videos) demonstrating the following scenarios **using the test accounts provided**
+
+    *   Upload a new ``.wopitest`` file and open it in the WOPI validator
+
+        *   Run all the WOPI validator tests and capture the passing results in your
+            video; :ref:`all tests listed in the documentation<validator tests>` must be passing
+
+    *   Demonstrate your integration with **Word** by uploading a new Word document and editing it in Word Online
+    *   Demonstrate your integration with **PowerPoint** by uploading a new PowerPoint document and editing it in
+        PowerPoint Online
+    *   Demonstrate your integration with **Excel** by uploading a new Excel document and editing it in Excel Online
+    *   Open a document as two different user accounts and demonstrate multi-user coauthoring
+        (:ref:`test details<coauth tests>`)
+
+        *   If an explicit "share" action is needed to share a document between two users, demonstrate how to do this
+            in your video
 
 ..  include:: /_fragments/readiness.rst
 
@@ -89,21 +110,6 @@ Once test accounts are provided, Microsoft will typically test your implementati
 accounts are provided. Usually testing can be completed within two to four weeks. However, this time line is subject
 to demand; if other partners are already being tested it may take additional time for Microsoft to begin testing your
 implementation. In addition, if implementation issues are uncovered during testing the process may take longer.
-
-
-Test guide for your product
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To expedite the validation process, you must provide a testing guide for your product. The guide should include how to
-use your product, with a focus on how to upload files, share them between users, and open them in Office Online.
-
-
-Business user flow test accounts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You will need test accounts from Microsoft in order to effectively test the
-:ref:`business user flow <Business editing>` in the :ref:`dogfood`. See the :ref:`business user testing` section
-for more information.
 
 
 WOPI implementation questionnaire
@@ -135,9 +141,6 @@ your specific WOPI implementation. These questions are included below.
 #. Are you using the :ref:`business user flow <Business editing>`?
 
 #. What :ref:`supports properties` are you passing in :ref:`CheckFileInfo`?
-
-#. WOPI access tokens are currently provided in both the :http:header:`Authorization` header and on the WOPI URL in the
-   ``access_token`` parameter. Which of these are you using?
 
 #. Do you use IPv6 in your datacenters?
 
