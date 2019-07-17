@@ -15,6 +15,10 @@ some Office Online settings that must be changed by Microsoft.
 WOPI domain allow list
 ----------------------
 
+..  important::
+    Any domains added to the allow list **must be owned by the partner.** Microsoft does not permit domains associated
+    with a partner that are not owned and controlled by that partner.
+
 Office Online only makes WOPI requests to trusted partner domains. This domain list is called the *WOPI domain allow
 list.* It contains entries of the form:
 

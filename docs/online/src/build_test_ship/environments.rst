@@ -47,7 +47,15 @@ Production environment
 The production environment is updated weekly. Once you've started the :ref:`Launch process <shipping>`, you can
 request early production access to verify your integration behaves as expected in that environment prior to release.
 
-..  important:: Hosts must use HTTPS in the production |wac| environment. HTTP is not supported.
+Primary requirements for production environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+..  note:: This is not an exhaustive list.
+
+* Hosts must use HTTPS in the production |wac| environment. HTTP is not supported.
+* Domains on the :ref:`allow list` must be a WOPI-dedicated subdomain in production.
+* Domains must be owned by the partner.
+* Production changes can take **3-4 weeks** to fully roll out; this includes domain changes.
 
 
 ..  _discovery URLs:
