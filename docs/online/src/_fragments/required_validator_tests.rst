@@ -5,7 +5,6 @@
 * CheckFileInfoSchema
 * EditFlows
 * Locks
-* AccessTokens
 * PutRelativeFile **or** PutRelativeFileUnsupported
 * RenameFileIfCreateChildFileIsNotSupported **or** RenameFileIfCreateChildFileIsSupported (applicable only if the
   host supports :ref:`RenameFile`)
