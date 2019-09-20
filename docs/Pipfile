@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pip-tools = "*"
 
 [packages]
 sphinx-rtd-theme = "*"
@@ -11,7 +12,7 @@ sphinxcontrib-httpdomain = "*"
 sphinx-git = "*"
 sphinxcontrib-domaintools = {git = "https://github.com/tylerbutler/sphinxcontrib-domaintools-update.git",ref = "dev"}
 "path.py" = "*"
-Sphinx = "*"
+sphinx = "*"
 
 [requires]
 python_version = "3.7"

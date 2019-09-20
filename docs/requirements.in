@@ -1,0 +1,8 @@
+path.py
+Sphinx~=2.2.0
+sphinx-rtd-theme>=0.4.3
+sphinxcontrib-httpdomain~=1.7.0
+sphinx-git~=11.0.0
+
+# Install custom fork of sphinxcontrib-domaintools
+git+https://github.com/tylerbutler/sphinxcontrib-domaintools-update.git@dev#egg=sphinxcontrib-domaintools
