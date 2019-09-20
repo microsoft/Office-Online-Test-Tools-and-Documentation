@@ -21,10 +21,7 @@ CheckFileInfo
 
     ..  admonition:: |wac| Tip
 
-        Some properties require special arrangements with Microsoft in order to be used with |wac|. These properties
-        are marked |need_permission|. If you wish to use these properties, you must contact Microsoft and request
-        that the appropriate settings be adjusted to allow you to use these properties. Otherwise these properties
-        will be ignored.
+        Some properties are not supported within the |cspp|. These operations are marked |need_permission|.
 
     ..  include:: /_fragments/common_params.rst
 

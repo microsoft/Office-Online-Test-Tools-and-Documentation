@@ -11,13 +11,15 @@
 ..  _FIPS 180-2: http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf
 
 ..  |need_permission| replace::
-    :html:`<span class="tag label label-warning"><i class="fa fa-lock"></i> Special permission required for use in Office Online</span>`
+    :html:`<span class="tag label label-warning"><i class="fa fa-lock"></i> Not supported in the CSPP</span>`
 
 ..  |prerelease| replace::
     :html:`<span class="tag label label-danger"><i class="fa fa-exclamation-circle"></i> Pre-release property - not yet used by any WOPI client</span>`
 
 
 ..  Brand names
+
+..  |cspp| replace:: Office 365 - Cloud Storage Partner Program
 
 ..  |wac| replace:: Office Online
 

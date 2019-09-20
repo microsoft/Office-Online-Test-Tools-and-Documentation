@@ -63,9 +63,7 @@ the :wopi:req:`locks` and :wopi:req:`update` capabilities. To invoke the edit ac
 included in the **urlsrc** attribute. Note that you must parse the **urlsrc** value and add some parameters. For a full
 description of this process, see :ref:`Action URLs`.
 
-Note that some actions require specific permission from Microsoft to use in the Office Online cloud service; these
-actions are marked |need_permission|. If you wish to use these actions you must contact Microsoft to have them
-enabled for your WOPI host.
+Note that some actions are not supported within the |cspp|. These operations are marked |need_permission|.
 
 
 .. _WOPI Actions:
