@@ -4,4 +4,4 @@ Excel Online,Edit,5MB,
 PowerPoint Online,View,See notes,"No limit, but subject to the 60 second time out for file downloads as described above."
 PowerPoint Online,Edit,300MB,"While the upper limit is 300MB, this is still subject to the overall 60 second time out for file downloads so it is possible that smaller files will hit that timeout."
 Word Online,View,See notes,"No limit, but subject to the 60 second time out for file downloads as described above."
-Word Online,Edit,See notes,"The technical limit is 100,000,000 (100 million) characters in the document XML; however, this does not correlate with file size in a meaningful way. For example, a 1000-page document, hundreds of MB in size does not hit this limit. For the vast majority of use-cases, this limit is irrelevant."
+Word Online,Edit,50MB,
