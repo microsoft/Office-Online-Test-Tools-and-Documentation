@@ -2,13 +2,13 @@
 If I make an edit and immediately close the application, occasionally my edit is lost - why?
 ============================================================================================
 
-Office Online applications send edits from the browser to the server as often as possible. However, this process is
+|wac| applications send edits from the browser to the server as often as possible. However, this process is
 not instantaneous and can be influenced by many factors including network latency and quality.
 
-Office Online displays the save status in the bottom status bar:
+|wac| displays the save status in the bottom status bar:
 
 ..  figure:: /images/saved_to.png
-    :alt: An image showing the 'Saved to...' UI in Office Online.
+    :alt: An image showing the 'Saved to...' UI in Office.
 
     The 'Saved to...' UI for OneDrive
 

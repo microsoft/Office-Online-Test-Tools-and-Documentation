@@ -1,8 +1,8 @@
 
 ..  _intro:
 
-Using the WOPI protocol to integrate with Office Online
-=======================================================
+Using the WOPI protocol to integrate with |wac|
+===============================================
 
 ..  sidebar:: Note
 
@@ -11,54 +11,54 @@ Using the WOPI protocol to integrate with Office Online
 
 ..  _issue tracker: https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/issues
 
-You can use the Web Application Open Platform Interface (WOPI) protocol to integrate Office Online with your
-application. The WOPI protocol enables Office Online to access and change files that are stored in your service.
+You can use the Web Application Open Platform Interface (WOPI) protocol to integrate |wac| with your
+application. The WOPI protocol enables |wac| to access and change files that are stored in your service.
 
-To integrate your application with Office Online, you need to do the following:
+To integrate your application with |wac|, you need to do the following:
 
-#. Be a member of the *Office 365 - Cloud Storage Partner Program*. Currently integration with the Office Online cloud
-   service is available to cloud storage partners. You can learn more about the program, as well as how to apply,
-   at http://dev.office.com/programs/officecloudstorage.
+#. Be a member of the |cspp|. Currently integration with the |wac| cloud service is available to cloud storage
+   partners. You can learn more about the program, as well as how to apply, at
+   http://dev.office.com/programs/officecloudstorage.
 
    ..  include:: /_fragments/intended_isv.rst
 
 #. Implement the WOPI protocol - a set of REST endpoints that expose information about the documents that you want to
-   view or edit in Office Online. The set of WOPI operations that must be supported is described
+   view or edit in |wac|. The set of WOPI operations that must be supported is described
    in the section titled :ref:`requirements`.
 
-#. Read some XML from an Office Online URL that provides information about the capabilities that Office Online
+#. Read some XML from an |wac| URL that provides information about the capabilities that |wac|
    applications expose, and how to invoke them; this process is called :ref:`WOPI discovery<Discovery>`.
 
-#. Provide an HTML page (or pages) that will host the Office Online iframe. This is called the :term:`host page` and is
-   the page your users visit when they open or edit Office documents in Office Online.
+#. Provide an HTML page (or pages) that will host the |wac| iframe. This is called the :term:`host page` and is
+   the page your users visit when they open or edit |Office| documents in |wac|.
 
-#. You can also optionally integrate your own UI elements with Office Online. For example, when users choose
-   :guilabel:`Share` in Office Online, you can show your own sharing UI. These interaction points are described in
+#. You can also optionally integrate your own UI elements with |wac|. For example, when users choose
+   :guilabel:`Share` in |wac|, you can show your own sharing UI. These interaction points are described in
    the section titled :ref:`PostMessage`.
 
 
 How to read this documentation
 ------------------------------
 
-This documentation contains an immense amount of information about how to integrate with Office Online,
-including details about how to implement the WOPI protocol, how Office Online uses the protocol, how you can test
+This documentation contains an immense amount of information about how to integrate with |wac|,
+including details about how to implement the WOPI protocol, how |wac| uses the protocol, how you can test
 your integration, the :ref:`process for shipping your integration <shipping>`, and much more. It can be difficult to
 know where to begin. The following guidelines can help you find the specific sections in this documentation that will
 be most helpful to you.
 
 
-**If you want to know why Office Online integration may be useful to you,** and what capabilities it provides, you
+**If you want to know why Office integration may be useful to you,** and what capabilities it provides, you
 should read the following sections:
 
-* :ref:`overview` - A high level overview of the scenarios enabled by Office Online integration, as well as a brief
+* :ref:`overview` - A high level overview of the scenarios enabled by |wac| integration, as well as a brief
   description of some of the key technical elements in a successful integration.
-* :ref:`intro` - A brief description of the technical pieces that you must implement to integrate with Office Online.
+* :ref:`intro` - A brief description of the technical pieces that you must implement to integrate with |wac|.
 
 
 **If you are an engineer** about to begin implementing a WOPI host, you should first read the :ref:`key concepts`
 section. When designing your WOPI implementation, you must keep in mind the expectations around
 :term:`file IDs <file ID>`, :term:`access tokens <access token>`, and :term:`locks <lock>`. These concepts are
-critical to a successful integration with Office Online. You should also read the following sections:
+critical to a successful integration with |wac|. You should also read the following sections:
 
 * :ref:`validator`
 * :ref:`troubleshooting`
@@ -153,7 +153,7 @@ Finally, **if you are looking for more details about the process for shipping yo
     :caption: Customization
 
     /scenarios/customization
-    PostMessage: interact with Office Online </scenarios/postmessage>
+    PostMessage: interact with Office </scenarios/postmessage>
 
 
 ..  toctree::

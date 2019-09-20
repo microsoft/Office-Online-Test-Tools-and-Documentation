@@ -7,7 +7,7 @@ exec(open(Path('../../_shared/conf.py').abspath()).read())
 
 # -- General configuration -----------------------------------------------------
 
-project = u'Office Online Integration Documentation'
+project = u'Office for the web Integration Documentation'
 
 # Configure sphinx.ext.intersphinx
 # noinspection PyUnresolvedReferences

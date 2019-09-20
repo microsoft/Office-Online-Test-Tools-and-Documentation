@@ -108,10 +108,10 @@ the document name is updated after the file is renamed. If it is not, check that
 :js:data:`File_Rename` PostMessage.
 
 
-Save As in Excel Online
-~~~~~~~~~~~~~~~~~~~~~~~
+Save As in |excel-web|
+~~~~~~~~~~~~~~~~~~~~~~
 
-Excel Online supports saving an open document as a new copy of that document using the
+|excel-web| supports saving an open document as a new copy of that document using the
 :menuselection:`File --> Save As --> Save As` button. This feature uses the :ref:`PutRelativeFile` WOPI operation.
 You should test that this feature works as expected.
 

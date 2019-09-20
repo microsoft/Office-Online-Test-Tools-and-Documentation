@@ -42,16 +42,16 @@ PutRelativeFile
         #.  Set the :term:`UserCanNotWriteRelative` property to ``true`` always.
         #.  Return a :statuscode:`501` to all |operation| requests.
 
-    ..  admonition:: Excel Online Note
+    ..  admonition:: |excel-web| Note
 
-        Excel Online uses this operation in the following two ways:
+        |excel-web| uses this operation in the following two ways:
 
         #.  As part of the *Save As* feature. If |operation| is not supported, the *Save As* feature will not work
-            in Excel Online.
-        #.  To support editing of some Excel files in Excel Online. Some files may contain content that is not
-            currently supported in Excel Online. In this case, Excel Online will prompt the user to save
+            in |excel-web|.
+        #.  To support editing of some Excel files in |excel-web|. Some files may contain content that is not
+            currently supported in |excel-web|. In this case, |excel-web| will prompt the user to save
             an editable copy of the document, removing all unsupported content so that the file can be edited in
-            Excel Online. If |operation| is not supported, files with unsupported content will not be editable in Excel
+            |excel-web|. If |operation| is not supported, files with unsupported content will not be editable in Excel
             Online.
 
     ..  include:: /_fragments/common_params.rst

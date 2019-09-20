@@ -21,13 +21,25 @@
 
 ..  |cspp| replace:: Office 365 - Cloud Storage Partner Program
 
-..  |wac| replace:: Office Online
+..  |Office| replace:: Office
+
+..  |wac| replace:: Office for the web
 
 ..  |Office iOS| replace:: Office for iOS
 
 ..  |Office iOS Android| replace:: Office for iOS and Android
 
 ..  |Office Android| replace:: Office for Android
+
+..  |excel-web| replace:: Excel for the web
+
+..  |onenote-web| replace:: OneNote for the web
+
+..  |ppt-web| replace:: PowerPoint for the web
+
+..  |word-web| replace:: Word for the web
+
+..  |visio-web| replace:: Visio for the web
 
 
 

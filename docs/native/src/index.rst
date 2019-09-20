@@ -16,9 +16,9 @@ application. The WOPI protocol enables |Office iOS Android| to access and change
 
 To integrate your application with |Office iOS Android|, you need to do the following:
 
-#. Be a member of the *Office 365 - Cloud Storage Partner Program*. Currently integration with |Office iOS Android| using WOPI
-   is available to cloud storage partners. You can learn more about the program, as well as how to apply,
-   at http://dev.office.com/programs/officecloudstorage.
+#. Be a member of the |cspp|. Currently integration with |Office iOS Android| using WOPI
+   is available to cloud storage partners. You can learn more about the program, as well as how to apply, at
+   http://dev.office.com/programs/officecloudstorage.
 
 #. Implement the WOPI protocol - a set of REST endpoints that expose information about the documents that you want to
    view or edit in |Office iOS Android|. The set of WOPI operations that must be supported is described
@@ -57,7 +57,7 @@ To integrate your application with |Office iOS Android|, you need to do the foll
     :hidden:
     :caption: Onboarding
     :name: onboardingtoc
-    
+
     /onboarding/onboarding
 
 ..  toctree::
@@ -79,7 +79,7 @@ To integrate your application with |Office iOS Android|, you need to do the foll
     :glob:
     :hidden:
     :caption: Testing
-    
+
     /testing/testcases
     /testing/validator
 

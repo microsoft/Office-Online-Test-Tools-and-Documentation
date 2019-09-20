@@ -6,10 +6,10 @@ Using PostMessage to interact with the |wac| application iframe
 
 ..  default-domain:: js
 
-You can integrate your own UI into Office Online applications. This way, you can use your UI for actions on Office
+You can integrate your own UI into |wac| applications. This way, you can use your UI for actions on Office
 documents, such as sharing.
 
-To integrate with Office Online in this way, implement the
+To integrate with |wac| in this way, implement the
 `HTML5 Web Messaging protocol <http://www.w3.org/TR/webmessaging/>`_. The Web Messaging protocol,
 also known as PostMessage, allows the |wac| frame to communicate with its parent :term:`host page`, and
 vice-versa. The following example shows the general syntax for PostMessage. In this example, ``otherWindow`` is a
@@ -21,12 +21,12 @@ reference to another window that ``msg`` will be posted to.
         data.
     :param string targetOrigin: Specifies what the origin of ``otherWindow`` must be for the event to be dispatched.
         This value will be set to the :term:`PostMessageOrigin` property provided in :ref:`CheckFileInfo`. The literal
-        string ``*``, while supported in the PostMessage protocol, is not allowed by Office Online.
+        string ``*``, while supported in the PostMessage protocol, is not allowed by |wac|.
 
 Message format
 --------------
 
-All messages posted to and from the Office Online application frame are posted using the
+All messages posted to and from the |wac| application frame are posted using the
 :func:`~otherWindow.postMessage` function. Each message (the ``msg`` parameter in the
 :func:`~otherWindow.postMessage` function) is a JSON-formatted object of the form:
 
@@ -58,11 +58,11 @@ The following example shows the msg parameter for the :data:`Host_PerfTiming` me
         }
     }
 
-Sending messages to the Office Online iframe
---------------------------------------------
+Sending messages to the |wac| iframe
+------------------------------------
 
-To send messages to the Office Online iframe, you must set the :term:`PostMessageOrigin` property in your WOPI
-:ref:`CheckFileInfo` response to the URL of your host page. If you do not do this, Office Online will ignore any
+To send messages to the |wac| iframe, you must set the :term:`PostMessageOrigin` property in your WOPI
+:ref:`CheckFileInfo` response to the URL of your host page. If you do not do this, |wac| will ignore any
 messages you send to its iframe.
 
 You can send the following messages; all others are ignored:
@@ -78,7 +78,7 @@ You can send the following messages; all others are ignored:
 
     ..  include:: /_fragments/onenote_only.rst
 
-    The App_PopState message signals the Office Online application that state has been popped from the HTML5 History
+    The App_PopState message signals the |wac| application that state has been popped from the HTML5 History
     API to which the application should navigate to using the URL. This message should be triggered from an
     `onpopstate` listener in the host page.
 
@@ -108,15 +108,15 @@ You can send the following messages; all others are ignored:
 
 ..  data:: Blur_Focus
 
-    The Blur_Focus message signals the Office Online application to stop aggressively grabbing focus. Hosts should
-    send this message whenever the host application UI is drawn over the Office Online frame, so that the Office
+    The Blur_Focus message signals the |wac| application to stop aggressively grabbing focus. Hosts should
+    send this message whenever the host application UI is drawn over the |wac| frame, so that the Office
     application does not interfere with the UI behavior of the host.
 
-    This message only affects Office Online edit modes; it does not affect view modes.
+    This message only affects |wac| edit modes; it does not affect view modes.
 
     ..  tip::
-        When the host application displays UI over Office Online, it should put a full-screen dimming effect over the
-        Office Online UI, so that it is clear that the Office application is not interactive.
+        When the host application displays UI over |wac|, it should put a full-screen dimming effect over the
+        |wac| UI, so that it is clear that the Office application is not interactive.
 
     ..  attribute:: Values
         :noindex:
@@ -159,11 +159,11 @@ You can send the following messages; all others are ignored:
 
 ..  data:: Grab_Focus
 
-    The Grab_Focus message signals the Office Online application to resume aggressively grabbing focus. Hosts should
-    send this message whenever the host application UI that is drawn over the Office Online frame is closing. This
+    The Grab_Focus message signals the |wac| application to resume aggressively grabbing focus. Hosts should
+    send this message whenever the host application UI that is drawn over the |wac| frame is closing. This
     allows the Office application to resume functioning.
 
-    This message only affects Office Online edit modes; it does not affect view modes.
+    This message only affects |wac| edit modes; it does not affect view modes.
 
     ..  attribute:: Values
         :noindex:
@@ -189,12 +189,12 @@ You can send the following messages; all others are ignored:
         :noindex:
 
         **Click** *(integer)*
-            The timestamp, in ticks, when the user selected a link that launched the Office Online application. For
-            example, if the host exposed a link in its UI that launches an Office Online application, this timestamp
+            The timestamp, in ticks, when the user selected a link that launched the |wac| application. For
+            example, if the host exposed a link in its UI that launches an |wac| application, this timestamp
             is the time the user originally selected that link.
 
         **Iframe** *(integer)*
-            The timestamp, in ticks, when the host created the Office Online iframe when the user selected the link.
+            The timestamp, in ticks, when the host created the |wac| iframe when the user selected the link.
 
         **HostFrameFetchStart** *(integer)*
             The result of the `PerformanceTiming.fetchStart`_ attribute, if the browser supports the
@@ -225,17 +225,17 @@ You can send the following messages; all others are ignored:
 
 ..  data:: Host_PostmessageReady
 
-    Office Online delay-loads much of its JavaScript code, including most of its PostMessage senders and listeners.
+    |wac| delay-loads much of its JavaScript code, including most of its PostMessage senders and listeners.
     You might choose to follow this pattern in your WOPI host page. This means that your outer host page and the
-    Office Online iframe must coordinate to ensure that each is ready to receive and respond to messages.
+    |wac| iframe must coordinate to ensure that each is ready to receive and respond to messages.
 
-    To enable this coordination, Office Online sends the :data:`App_LoadingStatus` message only after all of its message
-    senders and listeners are available. In addition, Office Online listens for the :data:`Host_PostmessageReady`
+    To enable this coordination, |wac| sends the :data:`App_LoadingStatus` message only after all of its message
+    senders and listeners are available. In addition, |wac| listens for the :data:`Host_PostmessageReady`
     message from the outer frame. Until it receives this message, some UI, such as the :guilabel:`Share` button, is
     disabled.
 
-    Until your host page receives the :data:`App_LoadingStatus` message, the Office Online frame cannot respond to any
-    incoming messages except :data:`Host_PostmessageReady`. Office Online does not delay-load its
+    Until your host page receives the :data:`App_LoadingStatus` message, the |wac| frame cannot respond to any
+    incoming messages except :data:`Host_PostmessageReady`. |wac| does not delay-load its
     :data:`Host_PostmessageReady` listener; it is available almost immediately upon iframe load.
 
     If you are delay-loading your PostMessage code, you must ensure that your :data:`App_LoadingStatus` listener is not
@@ -245,13 +245,13 @@ You can send the following messages; all others are ignored:
     The following is the typical flow:
 
     1. Host page begins loading.
-    2. Office Online frame begins loading. Some UI elements are disabled, because :data:`Host_PostmessageReady` has
+    2. |wac| frame begins loading. Some UI elements are disabled, because :data:`Host_PostmessageReady` has
        not yet been sent by the host page.
     3. Host page finishes loading and sends :data:`Host_PostmessageReady`. No other messages are sent because the
-       host page hasn't received the :data:`App_LoadingStatus` message from the Office Online frame.
-    4. Office Online frame receives :data:`Host_PostmessageReady`.
-    5. Office Online frame finishes loading and sends :data:`App_LoadingStatus` to host page.
-    6. Host page and Office Online communicate by using other PostMessage messages.
+       host page hasn't received the :data:`App_LoadingStatus` message from the |wac| frame.
+    4. |wac| frame receives :data:`Host_PostmessageReady`.
+    5. |wac| frame finishes loading and sends :data:`App_LoadingStatus` to host page.
+    6. Host page and |wac| communicate by using other PostMessage messages.
 
     ..  attribute:: Values
         :noindex:
@@ -269,10 +269,10 @@ You can send the following messages; all others are ignored:
         }
 
 
-Listening to messages from the Office Online iframe
----------------------------------------------------
+Listening to messages from the |wac| iframe
+-------------------------------------------
 
-The Office Online iframe will send messages to the host page. On the receiving end, the host page will receive a
+The |wac| iframe will send messages to the host page. On the receiving end, the host page will receive a
 MessageEvent. The origin property of the MessageEvent is the origin of the message, and the data property is the
 message being sent. The following code example shows how you might consume a message.
 
@@ -312,31 +312,31 @@ The host page receives the following messages; all others are ignored:
 Common Values
 ~~~~~~~~~~~~~
 
-In addition to message-specific values passed with each message, Office Online sends the following common values with
+In addition to message-specific values passed with each message, |wac| sends the following common values with
 every outgoing PostMessage:
 
 ..  glossary::
     :sorted:
 
     ui-language *(string)*
-        The LCID of the language Office Online was loaded in. This value will not match the value provided using the
+        The LCID of the language |wac| was loaded in. This value will not match the value provided using the
         :term:`UI_LLCC` placeholder. Instead, this value will be the numeric LCID value (as a *string*) that
         corresponds to the language used. See :ref:`languages` for more information.
 
-        This value may be needed in the event that Office Online renders using a language different than the one
-        requested by the host, which may occur if Office Online is not localized in the language requested. In that
-        case, the host may choose to draw its own UI in the same language that Office Online used.
+        This value may be needed in the event that |wac| renders using a language different than the one
+        requested by the host, which may occur if |wac| is not localized in the language requested. In that
+        case, the host may choose to draw its own UI in the same language that |wac| used.
 
     wdUserSession *(string)*
-        The ID of the Office Online session. This value can be logged by host and used when
-        :ref:`troubleshooting <troubleshooting>` issues with Office Online. See :ref:`session id` for more
+        The ID of the |wac| session. This value can be logged by host and used when
+        :ref:`troubleshooting <troubleshooting>` issues with |wac|. See :ref:`session id` for more
         information about this value.
 
 
 ..  data:: App_LoadingStatus
 
-    The App_LoadingStatus message is posted after the Office Online application frame has loaded. Until the host
-    receives this message, it must assume that the Office Online frame cannot react to any incoming messages except
+    The App_LoadingStatus message is posted after the |wac| application frame has loaded. Until the host
+    receives this message, it must assume that the |wac| frame cannot react to any incoming messages except
     :data:`Host_PostmessageReady`.
 
     ..  attribute:: Values
@@ -363,13 +363,13 @@ every outgoing PostMessage:
 
     ..  include:: /_fragments/onenote_only.rst
 
-    The App_PushState message is posted when the user changes the state of Office Online application in a way
+    The App_PushState message is posted when the user changes the state of |wac| application in a way
     which the user may wish to return to later, requesting to capture it in the HTML 5 History API. In receiving
     this message, the Host page should using `history.pushState` to capture the state for a potential later
     state pop.
 
     To send this message, the :term:`AppStateHistoryPostMessage` property in the :ref:`CheckFileInfo` response
-    from the host must be set to ``true``. Otherwise Office Online will not send this message.
+    from the host must be set to ``true``. Otherwise |wac| will not send this message.
 
     ..  attribute:: Values
         :noindex:
@@ -401,11 +401,11 @@ every outgoing PostMessage:
 
     The Edit_Notification message is posted when the user first makes an edit to a document, and every five minutes
     thereafter, if the user has made edits in the last five minutes. Hosts can use this message to gauge whether
-    users are interacting with Office Online. In coauthoring sessions, hosts cannot use the WOPI calls for
+    users are interacting with |wac|. In coauthoring sessions, hosts cannot use the WOPI calls for
     this purpose.
 
     To send this message, the :term:`EditNotificationPostMessage` property in the :ref:`CheckFileInfo` response from
-    the host must be set to ``true``. Otherwise Office Online will not send this message.
+    the host must be set to ``true``. Otherwise |wac| will not send this message.
 
     ..  attribute:: Values
         :noindex:
@@ -427,12 +427,12 @@ every outgoing PostMessage:
 
 ..  data:: File_Rename
 
-    The File_Rename message is posted when the user renames the current file in Office Online. The host can use this
+    The File_Rename message is posted when the user renames the current file in |wac|. The host can use this
     message to optionally update the UI, such as the title of the page.
 
     ..  note::
         If the host does not return the :term:`SupportsRename` parameter in their :ref:`CheckFileInfo` response, then
-        the rename UI will not be available in Office Online.
+        the rename UI will not be available in |wac|.
 
     ..  attribute:: Values
         :noindex:
@@ -456,12 +456,12 @@ every outgoing PostMessage:
 
 ..  data:: UI_Close
 
-    The UI_Close message is posted when the Office Online application is closing, either due to an error or a user
+    The UI_Close message is posted when the |wac| application is closing, either due to an error or a user
     action. Typically, the URL specified in the :term:`CloseUrl` property in the :ref:`CheckFileInfo` response is
     displayed. However, hosts can intercept this message instead and navigate in an appropriate way.
 
     To send this message, the :term:`ClosePostMessage` property in the :ref:`CheckFileInfo` response from the host
-    must be set to ``true``. Otherwise Office Online will not send this message.
+    must be set to ``true``. Otherwise |wac| will not send this message.
 
     ..  attribute:: Values
         :noindex:
@@ -483,11 +483,11 @@ every outgoing PostMessage:
 
 ..  data:: UI_Edit
 
-    The UI_Edit message is posted when the user activates the :guilabel:`Edit` UI in Office Online. This UI is only
+    The UI_Edit message is posted when the user activates the :guilabel:`Edit` UI in |wac|. This UI is only
     visible when using the :wopi:action:`view` action.
 
     To send this message, the :term:`EditModePostMessage` property in the :ref:`CheckFileInfo` response from the host
-    must be set to ``true``. Otherwise Office Online will not send this message and will redirect the inner iframe to
+    must be set to ``true``. Otherwise |wac| will not send this message and will redirect the inner iframe to
     an edit action URL instead.
 
     Hosts may choose to use this message in cases where they want more control over the user's transition to edit
@@ -514,7 +514,7 @@ every outgoing PostMessage:
 
 ..  data:: UI_FileEmbed
 
-    The UI_FileEmbed message is posted when the user activates the *Embed* UI in Office Online. The host should use
+    The UI_FileEmbed message is posted when the user activates the *Embed* UI in |wac|. The host should use
     this message to trigger the creation of a :term:`HostEmbeddedViewUrl`, which the host then passes back to the WOPI
     client using the :js:data:`CanEmbed` message.
 
@@ -573,11 +573,11 @@ every outgoing PostMessage:
 
 ..  data:: UI_Sharing
 
-    The UI_Sharing message is posted when the user activates the :guilabel:`Share` UI in Office Online. The host should
+    The UI_Sharing message is posted when the user activates the :guilabel:`Share` UI in |wac|. The host should
     use this message to trigger any custom sharing UI.
 
     To send this message, the :term:`FileSharingPostMessage` property in the :ref:`CheckFileInfo` response from the
-    host must be set to ``true``. Otherwise Office Online will not send this message.
+    host must be set to ``true``. Otherwise |wac| will not send this message.
 
     ..  attribute:: Values
         :noindex:
@@ -599,11 +599,11 @@ every outgoing PostMessage:
 
 ..  data:: UI_Workflow
 
-    The UI_Workflow message is posted when the user activates the :guilabel:`Workflow` UI in Office Online. The host
+    The UI_Workflow message is posted when the user activates the :guilabel:`Workflow` UI in |wac|. The host
     should use this message to trigger any custom workflow UI.
 
     To send this message, the :term:`WorkflowPostMessage` property in the :ref:`CheckFileInfo` response from the
-    host must be set to ``true``. Otherwise Office Online will not send this message.
+    host must be set to ``true``. Otherwise |wac| will not send this message.
 
     ..  attribute:: Values
         :noindex:

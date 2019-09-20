@@ -15,25 +15,28 @@ Requirements
 
 The following guidelines are required as part of |wac| integration.
 
-#.  **Do not display any UI on or around the Office Online editor.** The |wac| editors must always be displayed
+#.  **Do not display any UI on or around the Office editor.** The |wac| editors must always be displayed
     'edge-to-edge', with no surrounding UI. The editor cannot be 'light-boxed' or integrated as a component in host
     UI. The editor is a standalone application. Note that the |wac| viewer can be 'light-boxed' or otherwise embedded
     in your application. However, if the user transitions to the editor, the editor must be edge-to-edge.
 #.  **Use Microsoft-provided application and file type icons.** See :ref:`icons` for more information.
-#.  **Provide favicons for the Office Online applications.** Whenever the editor is displayed or the viewer is
+#.  **Provide favicons for the Office applications.** Whenever the editor is displayed or the viewer is
     displayed full-window/full-tab, the favicon for the page should be set to the appropriate favicon. The preferred
     method is to use the URLs provided in WOPI discovery. See :ref:`favicons` for more information.
-#.  **Use Office Online application names in UI that activates Office Online.** For example, if you have UI in your
-    application that reads, :guilabel:`Open`, this UI should read :guilabel:`Open in PowerPoint Online` or
-    :guilabel:`Open in Office Online`.
+#.  **Use Office application names in UI that activates Office.** For example, if you have UI in your
+    application that reads, :guilabel:`Open`, this UI should read :guilabel:`Open in PowerPoint for the web`,
+    :guilabel:`Open in Office for the web`, or :guilabel:`Open in Office in a browser`. See
+    `this blog post
+    <https://techcommunity.microsoft.com/t5/Office-Apps-Blog/Why-Office-Online-is-Now-Simply-Office/ba-p/760207>`_
+    for more information.
 
 
 Other recommendations
 ---------------------
 
-While the following guidelines are not required, |wac| strongly recommends partners
+While the following guidelines are not required, |wac| strongly recommends partners do the following:
 
-#.  **Provide support for sharing within Office Online.** |wac| provides a mechanism to share documents with other
+#.  **Provide support for sharing within Office.** |wac| provides a mechanism to share documents with other
     users directly within the |wac| applications. You should take advantage of this capability so that users can access
     sharing controls directly within |wac|. See :term:`FileSharingPostMessage` and :term:`FileSharingUrl` for more
     information.
@@ -71,7 +74,7 @@ You should use these icons as follows:
 #.  When displaying an Office file, either individually or as part of a list of files, use the file type icons. Do
     not use the application icons for this purpose.
 #.  When displaying a button or other UI element that opens an |wac| application, use the application icons. For
-    example, if you display an :guilabel:`Open in Word Online` button, you should use the Word application icon.
+    example, if you display an :guilabel:`Open in Word on the web` button, you should use the Word application icon.
 
 ..  important::
 

@@ -1,4 +1,4 @@
 
 ..  important::
 
-    Participants in the Cloud Storage Partner Program must support document editing and multi-user co-authoring.
+    Participants in the |cspp| must support document editing and multi-user co-authoring.

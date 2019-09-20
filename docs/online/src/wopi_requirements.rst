@@ -3,8 +3,8 @@
 
 ..  _requirements:
 
-WOPI implementation requirements for Office Online integration
-==============================================================
+WOPI implementation requirements for |wac| integration
+======================================================
 
 A WOPI host does not need to implement every WOPI operation. WOPI hosts express their capabilities using
 `properties in CheckFileInfo <supports properties>`_, such as :term:`SupportsLocks`. In addition, WOPI actions
@@ -12,7 +12,7 @@ specify the WOPI operations that must be supported in order to use that action, 
 :ref:`Action requirements`.
 
 However, practically speaking, there is a minimum set of operations required in order to support the two major
-Office Online WOPI scenarios - viewing and editing.
+|wac| WOPI scenarios - viewing and editing.
 
 ..  important::
 
@@ -23,7 +23,7 @@ Office Online WOPI scenarios - viewing and editing.
 View
 ----
 
-In order to support viewing documents using Office Online, WOPI hosts must implement:
+In order to support viewing documents using |wac|, WOPI hosts must implement:
 
 * :ref:`CheckFileInfo`
 * :ref:`GetFile`
@@ -36,7 +36,7 @@ In order to support viewing documents using Office Online, WOPI hosts must imple
 Edit
 ----
 
-In order to support editing documents using Office Online, WOPI hosts must implement:
+In order to support editing documents using |wac|, WOPI hosts must implement:
 
 * :ref:`CheckFileInfo`
 * :ref:`GetFile`

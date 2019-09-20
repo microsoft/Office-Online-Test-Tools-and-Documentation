@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
 
@@ -9,16 +10,15 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 
-    <link rel="shortcut icon"
-          href="<OFFICE ONLINE APPLICATION FAVICON URL>" />
+    <link rel="shortcut icon" href="<OFFICE APPLICATION FAVICON URL>" />
 
     <style type="text/css">
         body {
             margin: 0;
             padding: 0;
-            overflow:hidden;
+            overflow: hidden;
             -ms-content-zooming: none;
         }
 
@@ -36,35 +36,36 @@
         }
     </style>
 </head>
+
 <body>
 
-<form id="office_form" name="office_form" target="office_frame"
-      action="<OFFICE_ONLINE_ACTION_URL>" method="post">
-    <input name="access_token" value="<ACCESS_TOKEN_VALUE>" type="hidden"/>
-    <input name="access_token_ttl" value="<ACCESS_TOKEN_TTL_VALUE>" type="hidden"/>
-</form>
+    <form id="office_form" name="office_form" target="office_frame" action="<OFFICE_ACTION_URL>" method="post">
+        <input name="access_token" value="<ACCESS_TOKEN_VALUE>" type="hidden" />
+        <input name="access_token_ttl" value="<ACCESS_TOKEN_TTL_VALUE>" type="hidden" />
+    </form>
 
-<span id="frameholder"></span>
+    <span id="frameholder"></span>
 
-<script type="text/javascript">
-    var frameholder = document.getElementById('frameholder');
-    var office_frame = document.createElement('iframe');
-    office_frame.name = 'office_frame';
-    office_frame.id ='office_frame';
+    <script type="text/javascript">
+        var frameholder = document.getElementById('frameholder');
+        var office_frame = document.createElement('iframe');
+        office_frame.name = 'office_frame';
+        office_frame.id = 'office_frame';
 
-    // The title should be set for accessibility
-    office_frame.title = 'Office Online Frame';
+        // The title should be set for accessibility
+        office_frame.title = 'Office Frame';
 
-    // This attribute allows true fullscreen mode in slideshow view
-    // when using PowerPoint Online's 'view' action.
-    office_frame.setAttribute('allowfullscreen', 'true');
+        // This attribute allows true fullscreen mode in slideshow view
+        // when using PowerPoint's 'view' action.
+        office_frame.setAttribute('allowfullscreen', 'true');
 
-    // The sandbox attribute is needed to allow automatic redirection to the O365 sign-in page in the business user flow
-    office_frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-popups-to-escape-sandbox');
-    frameholder.appendChild(office_frame);
+        // The sandbox attribute is needed to allow automatic redirection to the O365 sign-in page in the business user flow
+        office_frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-popups-to-escape-sandbox');
+        frameholder.appendChild(office_frame);
 
-    document.getElementById('office_form').submit();
-</script>
+        document.getElementById('office_form').submit();
+    </script>
 
 </body>
+
 </html>

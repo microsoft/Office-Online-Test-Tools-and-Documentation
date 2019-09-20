@@ -12,14 +12,14 @@ WOPI Validation application
     The WOPI validator is also available as an open-source tool. See
     https://github.com/Microsoft/wopi-validator-core for more information.
 
-To assist hosts in verifying their WOPI implementation, Office Online provides a WOPI Validation application that
+To assist hosts in verifying their WOPI implementation, |wac| provides a WOPI Validation application that
 executes a test suite against a host's WOPI implementation. The test suite verifies a variety of things, including that
 the semantics for all of the WOPI operations (:ref:`CheckFileInfo`, :ref:`GetFile`, :ref:`PutFile`, etc.) are correct
 and that request/response headers are set properly. New tests are added regularly.
 
-The WOPI Validation application is an Office Online application similar to Word Online or PowerPoint Online.
+The WOPI Validation application is an |wac| application similar to |word-web| or |ppt-web|.
 It uses the ``.wopitest`` file extension. The WOPI Validation application is included in the :ref:`discovery`
-XML just like all other Office Online applications.
+XML just like all other |wac| applications.
 
 ..  important::
 
@@ -56,9 +56,9 @@ treat ``.wopitest`` files the same way other Office documents are treated. In ot
 following:
 
 #. Launch a :term:`host page` pointed at the ``.wopitest`` file. Ideally, this should be the same host page used to
-   host regular Office Online sessions. This will allow the validation application to test things like PostMessage and
-   do some validation on the way the Office Online iframe was loaded.
-#. The host page will create and navigate the Office Online iframe to the *view* action URL provided in
+   host regular |wac| sessions. This will allow the validation application to test things like PostMessage and
+   do some validation on the way the |wac| iframe was loaded.
+#. The host page will create and navigate the |wac| iframe to the *view* action URL provided in
    :ref:`WOPI discovery`. The :term:`WOPIsrc` and :term:`access token` should be provided just like with all other
    actions.
 #. The WOPI validation application will load and display a number of test groups. Each test group can be expanded to
@@ -70,7 +70,7 @@ following:
 
     WOPI validation application UI
 
-Tests can either pass, fail, or be skipped. Before executing any tests, Office Online will do some basic validation
+Tests can either pass, fail, or be skipped. Before executing any tests, |wac| will do some basic validation
 (e.g. confirm the file really has the ``.wopitest`` file extension) and check any applicable pre-requisites. Any test
 whose pre-requisites are not met will simply be skipped. For example, the tests in the :guilabel:`EditFlows` test
 group require the :term:`SupportsUpdate` property to be set to ``true``. If it is not, the tests in that group will
@@ -96,7 +96,7 @@ useful when debugging a proof key validation implementation.
 ..  tip::
 
     For ease of testing, we strongly recommend that hosts support the ``.wopitest`` file extension just like all other
-    file extensions supported by Office Online and included in :ref:`WOPI discovery`. This is especially important
+    file extensions supported by |wac| and included in :ref:`WOPI discovery`. This is especially important
     while testing, since it provides any user a quick and easy way to execute the validation test suite.
 
 
@@ -118,10 +118,10 @@ following:
        :term:`access_token_ttl` values must be appended to the URL instead of being passed as :http:method:`POST`
        parameters.
 
-#. Office Online will do some basic validation (e.g. confirm the file really has the ``.wopitest`` extension) and then
+#. |wac| will do some basic validation (e.g. confirm the file really has the ``.wopitest`` extension) and then
    return a JSON-formatted array of test URLs.
 
-#. Hosts should then make a :http:method:`GET` request to each test URL. Office Online will run the specified
+#. Hosts should then make a :http:method:`GET` request to each test URL. |wac| will run the specified
    test and return results in a simple JSON object. No changes to the URL are needed; the necessary parameters are
    included already on the URL returned from the validation application.
 

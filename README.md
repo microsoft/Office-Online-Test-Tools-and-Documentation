@@ -1,8 +1,8 @@
-# Office Online Test Tools and Documentation
+# |cspp| Test Tools and Documentation
 
 ## Documentation [![Documentation Status](https://readthedocs.org/projects/wopi/badge/?version=latest)](https://wopi.readthedocs.io/)
 
-Latest documentation can be found at https://wopi.readthedocs.io/
+Latest documentation can be found at <https://wopi.readthedocs.io/>
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact

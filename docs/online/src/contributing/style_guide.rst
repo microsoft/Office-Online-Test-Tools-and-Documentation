@@ -1,8 +1,8 @@
 
 .. _style guide:
 
-Office Online Documentation Style Guide
-=======================================
+|wac| Documentation Style Guide
+===============================
 
 Whitespace guidelines
 ---------------------
@@ -15,7 +15,7 @@ Whitespace guidelines
 Heading styles
 --------------
 
-The Office Online documentation should use the following characters for header underlines:
+The |wac| documentation should use the following characters for header underlines:
 
 1.  ``=====`` (equals sign)
 2.  ``-----`` (dashes)
@@ -104,37 +104,37 @@ Examples
             This is a warning using the ``..  danger::`` directive.
 
 
-..  admonition:: OneNote Online Note
+..  admonition:: |onenote-web| Note
 
-    This is an OneNote Online note using the ``..  admonition::`` directive.
-
-    ..  code-block:: rst
-
-        ..  admonition:: OneNote Online Note
-
-            This is an Office Online note using the ``..  admonition::`` directive.
-
-
-..  admonition:: Excel Online Note
-
-    This is an Excel Online note using the ``..  admonition::`` directive.
+    This is an |onenote-web| note using the ``..  admonition::`` directive.
 
     ..  code-block:: rst
 
-        ..  admonition:: Excel Online Note
+        ..  admonition:: |onenote-web| Note
 
-            This is an Excel Online note using the ``..  admonition::`` directive.
+            This is a |onenote-web| note using the ``..  admonition::`` directive.
 
 
-..  admonition:: Office Online Tip
+..  admonition:: |excel-web| Note
 
-    This is an Office Online tip using the ``..  admonition::`` directive.
+    This is an |excel-web| note using the ``..  admonition::`` directive.
 
     ..  code-block:: rst
 
-        ..  admonition:: Office Online Tip
+        ..  admonition:: |excel-web| Note
 
-            This is an Office Online tip using the ``..  admonition::`` directive.
+            This is an |excel-web| note using the ``..  admonition::`` directive.
+
+
+..  admonition:: |wac| Tip
+
+    This is an |wac| tip using the ``..  admonition::`` directive.
+
+    ..  code-block:: rst
+
+        ..  admonition:: |wac| Tip
+
+            This is an |wac| tip using the ``..  admonition::`` directive.
 
 
 ..  admonition:: Pre-release Content

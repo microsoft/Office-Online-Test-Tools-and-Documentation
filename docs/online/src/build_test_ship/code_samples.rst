@@ -7,7 +7,7 @@ Example code
 Sample WOPI host
 ----------------
 
-The `Office Online GitHub repository <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation>`_
+The `|wac| GitHub repository <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation>`_
 contains a
 `sample implementation of a WOPI host <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation/tree/master/samples/SampleWopiHandler>`_
 written in C#. This sample implementation illustrates many of the concepts necessary to implement a WOPI server,

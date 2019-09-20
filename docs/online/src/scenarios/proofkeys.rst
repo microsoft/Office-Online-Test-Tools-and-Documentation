@@ -1,22 +1,22 @@
 
 ..  _Proof Keys:
 
-Verifying that requests originate from Office Online by using proof keys
+Verifying that requests originate from |wac| by using proof keys
 ========================================================================
 
-When processing WOPI requests from Office Online, you might want to verify that these requests are coming from Office
+When processing WOPI requests from |wac|, you might want to verify that these requests are coming from Office
 Online. To do this, you use proof keys.
 
-Office Online signs every WOPI request with a private key. The corresponding public key is available in the
+|wac| signs every WOPI request with a private key. The corresponding public key is available in the
 **proof-key** element in the WOPI discovery XML. The signature is sent with every request in the **X-WOPI-Proof** and
 **X-WOPI-ProofOld** HTTP headers.
 
 The signature is assembled from information that is available to the WOPI host when it processes the incoming WOPI
-request. To verify that a request came from Office Online, you must:
+request. To verify that a request came from |wac|, you must:
 
 * Create the expected value of the proof headers.
 * Use the public key provided in WOPI discovery to decrypt the proof provided in the **X-WOPI-Proof** header.
-* Compare the expected proof to the decrypted proof. If they match, the request originated from Office Online.
+* Compare the expected proof to the decrypted proof. If they match, the request originated from |wac|.
 * Ensure that the **X-WOPI-TimeStamp** header is no more than 20 minutes old.
 
 When validating proof keys, if a request is not signed properly, the host must return a :http:statuscode:`500`.
@@ -26,7 +26,7 @@ When validating proof keys, if a request is not signed properly, the host must r
     not necessarily include the access token, which is required to construct the expected proof.
 
 ..  tip::
-    The `Office Online GitHub repository <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation>`_
+    The `|wac| GitHub repository <https://github.com/Microsoft/Office-Online-Test-Tools-and-Documentation>`_
     contains a set of unit tests that hosts can adapt to verify proof key validation implementations. See
     :ref:`Proof key unit tests` for more information.
 
@@ -67,11 +67,11 @@ The following code samples illustrate the construction of an expected proof in C
 Retrieving the public key
 -------------------------
 
-Office Online provides two different public keys as part of the WOPI discovery XML: the current key and the old key.
-Two keys are necessary because the discovery data is meant to be cached by the host, and Office Online periodically
+|wac| provides two different public keys as part of the WOPI discovery XML: the current key and the old key.
+Two keys are necessary because the discovery data is meant to be cached by the host, and |wac| periodically
 rotates the keys it uses to sign requests. When the keys are rotated, the current key becomes the old key, and a new
 current key is generated. This helps to minimize the risk that a host does not have updated key information from WOPI
-discovery when Office Online rotates keys.
+discovery when |wac| rotates keys.
 
 Both keys are represented in the discovery XML in two different formats. One format is for WOPI hosts that use the
 .NET framework. The other format can be imported in a variety of different programming languages and platforms.
@@ -96,7 +96,7 @@ To import this key in your application, you must decode it from Base64 then impo
 Using the RSA modulus and exponent to retrieve the public key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For hosts that don't use the .NET framework, Office Online provides the RSA modulus and exponent directly. The
+For hosts that don't use the .NET framework, |wac| provides the RSA modulus and exponent directly. The
 modulus and exponent of the current key are found in the **modulus** and **exponent** attributes of the *proof-key*
 element in the WOPI discovery XML. The modulus and exponent of the old key are found in the **oldmodulus** and
 **oldexponent** attributes. All four of these values are Base64-encoded.
@@ -132,14 +132,14 @@ Verifying the proof keys
 ------------------------
 
 After you import the key, you can use a verification method provided by your cryptography library to verify incoming
-requests were signed by Office Online. Because Office Online rotates the current and old proof keys periodically, you
+requests were signed by |wac|. Because |wac| rotates the current and old proof keys periodically, you
 have to check three combinations of proof key values:
 
 * The **X-WOPI-Proof** value using the current public key
 * The **X-WOPI-ProofOld** value using the current public key
 * The **X-WOPI-Proof** value using the old public key
 
-If any one of the values is valid, the request was signed by Office Online.
+If any one of the values is valid, the request was signed by |wac|.
 
 The following examples show how to verify one of these combinations in C#, Java, and Python.
 
@@ -196,7 +196,7 @@ ProofKeys.CurrentValid.OldInvalid
 
 ProofKeys.CurrentInvalid.OldValidSignedWithCurrentKey
     Tests that hosts accept requests where the **X-WOPI-Proof** value is invalid but the **X-WOPI-ProofOld** value is
-    signed with *current* public key. This can happen when a WOPI client such as Office Online has rotated proof keys
+    signed with *current* public key. This can happen when a WOPI client such as |wac| has rotated proof keys
     but the host hasn't re-run :ref:`WOPI discovery <discovery>` yet.
 
 ProofKeys.CurrentValidSignedWithOldKey.OldInvalid
@@ -231,8 +231,8 @@ should investigate:
   expected proof value.
 * Verify you're using the same encoding for any special characters that may be in the URL.
 * Verify you're using an HTTPS URL if your WOPI endpoints are HTTPS. This is especially important if you have SSL
-  termination in your network prior to your WOPI request handlers. In this case, the URL Office Online will use to sign
+  termination in your network prior to your WOPI request handlers. In this case, the URL |wac| will use to sign
   the requests will be HTTPS, but the URL your WOPI handlers ultimately receive will be HTTP. If you simply use the
-  incoming request URL your expected proof will not match the signature provided by Office Online.
+  incoming request URL your expected proof will not match the signature provided by |wac|.
 
 In addition, use the :ref:`Proof key unit tests` to verify your implementation with sample data.

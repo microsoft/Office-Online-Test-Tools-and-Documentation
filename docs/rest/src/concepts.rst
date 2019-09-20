@@ -173,10 +173,10 @@ understanding the requirements for integration with WOPI clients such as |wac| a
 
 
     Share URL
-        A Share URL is a URL to a webpage that is suitable for viewing a shared WOPI file or container. The URL should be
-        appropriate for being launched in a web browser, but the experience is defined by the host. For example,
-        the host may choose to have the URL navigate to the host's browse experience or to a preview of the file
-        using Office Online or another file previewer.
+        A Share URL is a URL to a webpage that is suitable for viewing a shared WOPI file or container. The URL should
+        be appropriate for being launched in a web browser, but the experience is defined by the host. For example, the
+        host may choose to have the URL navigate to the host's browse experience or to a preview of the file using
+        |wac| or another file previewer.
 
         A host may support different types of Share URLs that may be used for different purposes. For example, a
         particular Share URL type may not allow users to edit the file by using the Share URL. The list of possible

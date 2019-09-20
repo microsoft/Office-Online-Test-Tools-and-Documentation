@@ -28,18 +28,18 @@ CloseUrl
 DownloadUrl
     If a DownloadUrl is not provided, |wac| will hide all UI to download the file.
 
-    If provided, Word and PowerPoint Online will display UI to download the file. When a user attempts to download
+    If provided, Word and |ppt-web| will display UI to download the file. When a user attempts to download
     the file, Word and PowerPoint will ensure that the latest document content is saved back to the WOPI host before
     navigating the user to the DownloadUrl to download the file.
 
-    ..  admonition:: Excel Online Note
+    ..  admonition:: |excel-web| Note
 
-        Excel Online does not use the DownloadUrl when users click the :guilabel:`Download a Copy` button. Excel Online
+        |excel-web| does not use the DownloadUrl when users click the :guilabel:`Download a Copy` button. |excel-web|
         always downloads the file directly from the |wac| server. This has the following side effects:
 
-        #.  Any content that Excel Online does not currently support, such as diagrams, are stripped from the
+        #.  Any content that |excel-web| does not currently support, such as diagrams, are stripped from the
             downloaded file.
-        #.  Excel Online does not guarantee that the latest document content is saved back to the WOPI host before
+        #.  |excel-web| does not guarantee that the latest document content is saved back to the WOPI host before
             downloading the file.
         #.  :guilabel:`Download a Copy` contains all the most recent document edits, even when the DownloadUrl is
             implemented incorrectly and does not point to the latest version of the document.
@@ -109,7 +109,7 @@ integration at :ref:`PostMessage`.
 In cases where a PostMessage is triggered by the user activating some |wac| UI, such as
 :term:`FileSharingPostMessage` or :term:`EditModePostMessage`, |wac| will do nothing when the relevant UI is
 activated except send the appropriate PostMessage. Thus, hosts must accept and handle the relevant messages when
-the Office Online UI is triggered. Otherwise the |wac| UI will appear to do nothing when activated.
+the |wac| UI is triggered. Otherwise the |wac| UI will appear to do nothing when activated.
 
 If the PostMessage API is not supported (e.g. the user's browser does not support it, or the browser security
 settings prohibit it, etc.), |wac| UI that triggers a PostMessage will be hidden.
@@ -252,10 +252,10 @@ users to use |wac| features even in browsers where PostMessage won't work.
 
 .. _viewer customization:
 
-Customizing the Office Online viewer UI using CheckFileInfo
------------------------------------------------------------
+Customizing the |wac| viewer UI using CheckFileInfo
+---------------------------------------------------
 
-The following table describes all available buttons and UI in the Office Online viewer and what :ref:`CheckFileInfo`
+The following table describes all available buttons and UI in the |wac| viewer and what :ref:`CheckFileInfo`
 properties can be used to remove them.
 
 ===========================  ==========================================================================================

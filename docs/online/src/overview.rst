@@ -2,23 +2,23 @@
 ..  _office online overview:
 ..  _overview:
 
-Integrating with Office Online
+Integrating with |wac|
 ==============================
 
 ..  include:: /_fragments/intended_isv.rst
 
-You can integrate with Office Online to enable your users to view and edit Excel, PowerPoint, and Word files directly
+You can integrate with |wac| to enable your users to view and edit Excel, PowerPoint, and Word files directly
 in the browser.
 
 If you deliver a web-based experience that allows your users to store Office files or includes Office files as a key
-part of your solution, you now have the opportunity to integrate Office Online into your experience. This integration
+part of your solution, you now have the opportunity to integrate |wac| into your experience. This integration
 works directly against files stored by you. Your users won't need a separate storage solution to view and edit Office
 files.
 
 ..  figure:: images/office_online_browser.*
-    :alt: A screenshot that shows a file viewed in Office Online.
+    :alt: A screenshot that shows a file viewed in Office.
 
-    Word file open for editing in Office Online
+    Word file open for editing in |wac|
 
 
 Viewing Office files
@@ -28,20 +28,20 @@ Viewing Office files
 
 You can make viewing available in two ways:
 
-* By using the high-fidelity previews in Office Online as an integrated part of your experience. For example, you can
+* By using the high-fidelity previews in |wac| as an integrated part of your experience. For example, you can
   use these previews in a light box view of a Word document.
 
 * By offering to show Office files in a full-page interactive preview. Depending on your solution, this might be
   useful for file browsing or showing read-only files to users or in cases where users don't have a license to edit
-  files in Office Online.
+  files in |wac|.
 
 
 Editing Office files
 --------------------
 
-Editing is a core part of Office Online integration. When you integrate with Office Online, your users can edit
+Editing is a core part of |wac| integration. When you integrate with |wac|, your users can edit
 Excel, PowerPoint, and Word files directly in the browser. In addition, users can :ref:`edit documents collaboratively
-with other users using Office Online <coauth>`. In order to edit documents, users require an Office license.
+with other users using Office <coauth>`. In order to edit documents, users require an |Office| license.
 
 ..  seealso::
 
@@ -52,15 +52,15 @@ with other users using Office Online <coauth>`. In order to edit documents, user
 Integration process
 -------------------
 
-Integrating with Office Online is relatively simple. You just need to do some HTML and JavaScript work, and set up a
+Integrating with |wac| is relatively simple. You just need to do some HTML and JavaScript work, and set up a
 few simple REST endpoints. If you are familiar with existing Office protocols, note that you don't have to implement
 the [MS-FSSHTTP]: File Synchronization via SOAP over HTTP Protocol (Cobalt). At a high level, to integrate with
-Office Online, you:
+|wac|, you:
 
-* Read XML from Office Online that describes the capabilities of Office Online. This is called :ref:`WOPI discovery`.
-* Implement :ref:`REST endpoints <endpoints>` that Office Online uses to learn about, fetch, and update files. To do
+* Read XML from |wac| that describes the capabilities of |wac|. This is called :ref:`WOPI discovery`.
+* Implement :ref:`REST endpoints <endpoints>` that |wac| uses to learn about, fetch, and update files. To do
   this, you implement the server side of the WOPI protocol.
-* Provide an HTML page (or pages) that wrap Office Online. This page is called the :ref:`host page<host page>`.
+* Provide an HTML page (or pages) that wrap |wac|. This page is called the :ref:`host page<host page>`.
 
 The following figure shows the WOPI protocol workflow.
 
@@ -74,7 +74,7 @@ To do this, you will need to ensure that your solution meets a few basic require
 Authentication
 ~~~~~~~~~~~~~~
 
-Authentication is handled by passing Office Online an access token that you generate. Assign this token a reasonable
+Authentication is handled by passing |wac| an access token that you generate. Assign this token a reasonable
 expiration date. Also, we recommend that tokens be valid for a single user against a single file, to help mitigate
 the risk of token leaks.
 
@@ -83,8 +83,8 @@ the risk of token leaks.
 Conflict resolution
 ~~~~~~~~~~~~~~~~~~~
 
-Office Online does support multiuser authoring scenarios if all users are using Office Online. However, you are
-responsible for managing conflicts that may come from applications other than Office Online, either with some form of
+|wac| does support multiuser authoring scenarios if all users are using |wac|. However, you are
+responsible for managing conflicts that may come from applications other than |wac|, either with some form of
 file locking, or by using another type of conflict resolution.
 
 File IDs
@@ -107,25 +107,25 @@ determine whether they have the latest version of the file.
 Security considerations
 -----------------------
 
-Office Online is designed to work for enterprises that have strict security requirements. To make sure your
+|wac| is designed to work for enterprises that have strict security requirements. To make sure your
 integration is as secure as possible, ensure that:
 
 * All traffic is SSL encrypted.
-* Initial requests to Office Online are made by using POST, where the access token is in the body of the POST request.
+* Initial requests to |wac| are made by using POST, where the access token is in the body of the POST request.
 
-Office Online identity can be established by using a public :ref:`proof key <Proof Keys>` to decrypt part of the WOPI
-requests. Also, the Office Online file cache indexes stored file contents by using a SHA256 hash as the cache key. You
-can pass Office Online the hash value using the :term:`SHA256` property in the :ref:`CheckFileInfo` response. If
-not provided, Office Online will generate a cache key from the file ID and version. To ensure that users can't force a
+|wac| identity can be established by using a public :ref:`proof key <Proof Keys>` to decrypt part of the WOPI
+requests. Also, the |wac| file cache indexes stored file contents by using a SHA256 hash as the cache key. You
+can pass |wac| the hash value using the :term:`SHA256` property in the :ref:`CheckFileInfo` response. If
+not provided, |wac| will generate a cache key from the file ID and version. To ensure that users can't force a
 cache collision and view the wrong file, no user-provided information is used to generate the cache key.
 
 
 Managing Office 365 subscriptions
 ---------------------------------
 
-Business users require an Office 365 subscription to edit files in Office Online. The simplest way to implement this
+Business users require an Office 365 subscription to edit files in |wac|. The simplest way to implement this
 is to have users sign in with a Microsoft account or other valid identity. This establishes that they have the
-correct subscription. To limit the number of times a user needs to sign in, Office Online first checks for a cookie.
+correct subscription. To limit the number of times a user needs to sign in, |wac| first checks for a cookie.
 
 To provide a better experience for users with Office 365 subscriptions, hosts can optionally implement the
 :ref:`PutUserInfo` WOPI operation. See :ref:`implement PutUserInfo` for more information.
@@ -134,5 +134,5 @@ To provide a better experience for users with Office 365 subscriptions, hosts ca
 Interested?
 -----------
 
-If you're interested in integrating your solution with Office Online, take a moment to register at
+If you're interested in integrating your solution with |wac|, take a moment to register at
 `Office 365 Cloud Storage Partner Program <http://dev.office.com/programs/officecloudstorage>`_.

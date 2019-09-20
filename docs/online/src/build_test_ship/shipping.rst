@@ -1,11 +1,11 @@
 
 ..  _shipping:
 
-Shipping your Office Online integration
+Shipping your |wac| integration
 =======================================
 
 Once you believe you are ready to ship your integration, you should contact Microsoft and ask to begin the launch
-process. This process will prepare you to ship your Office Online integration.
+process. This process will prepare you to ship your |wac| integration.
 
 ..  include:: /_fragments/readiness.rst
 
@@ -21,14 +21,14 @@ The launch process consists of three phases:
        and that you have done manual testing using our :ref:`testing guide<testing>` and that the :ref:`validator`
        tests are passing before beginning the launch process.
 
-#. **Production testing** - If requested, Microsoft will enable you to use the production Office Online environment
+#. **Production testing** - If requested, Microsoft will enable you to use the production |wac| environment
    for preliminary smoke-testing prior to enabling your full production access. This should be basic testing performed
    by the host since the production environment is slightly different than the test environment, and different issues
    may be uncovered. This can be as long or as short as the host deems necessary.
 
 #. **Sign off and roll out** - Once Microsoft has signed off on your integration, you can begin to roll out to your
    users. Depending on your traffic estimates, Microsoft may request that you roll out over a period of several days
-   to ensure you do not overload Office Online or your WOPI servers.
+   to ensure you do not overload |wac| or your WOPI servers.
 
 To manage this process, Microsoft will create a dedicated `Trello <https://trello.com>`_ board to track issues and
 provide a common communication channel between your team and Microsoft. You can learn more about how to use this
@@ -67,8 +67,8 @@ and fully test these scenarios prior to starting the launch process.
 Test accounts and video
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to enable your WOPI host to use Office Online's :ref:`production environment <production environment>`,
-Microsoft will perform some validation of your WOPI implementation and Office Online integration. This requires that
+In order to enable your WOPI host to use |wac|'s :ref:`production environment <production environment>`,
+Microsoft will perform some validation of your WOPI implementation and |wac| integration. This requires that
 you provide Microsoft **test accounts** in addition to **a video demonstrating the testing.**
 
 
@@ -80,7 +80,7 @@ You must provide the following information when submitting your integration for 
 *   **At least two (2)** test accounts for your test system; the accounts you provide *must* be capable of doing the
     following:
 
-    *   **Upload new files** of any file type you open with Office Online, including ``.wopitest`` and ``.wopitestx``
+    *   **Upload new files** of any file type you open with |wac|, including ``.wopitest`` and ``.wopitestx``
         files used by the WOPI validator
     *   **Open .wopitest files in the WOPI validator**
     *   The accounts **must be capable of testing multi-user co-authoring;** co-authoring with a single user account
@@ -94,10 +94,10 @@ You must provide the following information when submitting your integration for 
         *   Run all the WOPI validator tests and capture the passing results in your
             video; :ref:`all tests listed in the documentation<validator tests>` must be passing
 
-    *   Demonstrate your integration with **Word** by uploading a new Word document and editing it in Word Online
+    *   Demonstrate your integration with **Word** by uploading a new Word document and editing it in Word on the web
     *   Demonstrate your integration with **PowerPoint** by uploading a new PowerPoint document and editing it in
-        PowerPoint Online
-    *   Demonstrate your integration with **Excel** by uploading a new Excel document and editing it in Excel Online
+        |ppt-web|
+    *   Demonstrate your integration with **Excel** by uploading a new Excel document and editing it in |excel-web|
     *   Open a document as two different user accounts and demonstrate multi-user coauthoring
         (:ref:`test details<coauth tests>`)
 
@@ -124,7 +124,7 @@ your specific WOPI implementation. These questions are included below.
     This list of questions is subject to change. Microsoft will provide you with a specific list of questions as part
     of the launch process that may differ from the list below.
 
-#. Confirm that your File IDs meet the :term:`criteria listed in the documentation <file id>`. Office Online
+#. Confirm that your File IDs meet the :term:`criteria listed in the documentation <file id>`. |wac|
    expects file IDs to be unique and consistent over time, as well as when accessed by different users or via
    different UI paths (e.g. a given file might be available in two different parts of your UI, such as in a typical
    folder and also in search results. If the document is meant to be the same, then the file IDs should match.
@@ -158,13 +158,13 @@ you to verify your current :ref:`settings`, including your entries in the :ref:`
 Service management contacts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Office Online is a worldwide cloud service, and is thus monitored at all times. As part of the launch process,
-Microsoft will provide you with information regarding how to escalate service quality issues with Office Online's
+|wac| is a worldwide cloud service, and is thus monitored at all times. As part of the launch process,
+Microsoft will provide you with information regarding how to escalate service quality issues with |wac|'s
 on-call engineers.
 
 In order to use the :ref:`production environment <production environment>`, you must also provide a contact for
-Microsoft's on-call engineers to reach if Office Online detects an issue that we suspect is due to a problem on the
-host side. For example, Office Online's monitoring systems might detect error rates for sessions spiking, and the
+Microsoft's on-call engineers to reach if |wac| detects an issue that we suspect is due to a problem on the
+host side. For example, |wac|'s monitoring systems might detect error rates for sessions spiking, and the
 on-call engineer would contact the host to see if it's a known issue on the host side. Ideally this emergency contact
 can be reached 24x7, either by phone or email.
 

@@ -4,12 +4,12 @@
 Supporting document editing for business users
 ==============================================
 
-Business users require an Office 365 subscription to edit files in Office Online. In order to support this scenario,
-Office Online requires that hosts specify that a user is a business user when using any actions that include the
+Business users require an Office 365 subscription to edit files in |wac|. In order to support this scenario,
+|wac| requires that hosts specify that a user is a business user when using any actions that include the
 :term:`BUSINESS_USER` placeholder value, such as :wopi:action:`edit`, :wopi:action:`editnew`, and
 :wopi:action:`view`.
 
-When business users open documents for editing, Office Online will validate that they have a valid Office 365
+When business users open documents for editing, |wac| will validate that they have a valid Office 365
 subscription. This may require the user to sign in using a valid Office 365 business account. This account must have
 an attached Office 365 subscription that includes Office applications.
 
@@ -22,12 +22,12 @@ Indicating that a user is a business user
 The first requirement in order to support document editing for business users is to indicate that the user is a
 business user. Doing this requires the following:
 
-#.  Set the :term:`BUSINESS_USER` placeholder value on the Office Online action URL. **This parameter must always be on
+#.  Set the :term:`BUSINESS_USER` placeholder value on the |wac| action URL. **This parameter must always be on
     the action URL for business users.**
 
     ..  important::
 
-        Hosts must properly set the :term:`BUSINESS_USER` placeholder value on the Office Online action URL for all
+        Hosts must properly set the :term:`BUSINESS_USER` placeholder value on the |wac| action URL for all
         actions that include the placeholder, including the :wopi:action:`view` action.
 
 #.  Include the :term:`LicenseCheckForEditIsEnabled` property in the :ref:`CheckFileInfo` response. This property
@@ -53,7 +53,7 @@ business user. Doing this requires the following:
 Validating edit capabilities
 ----------------------------
 
-When Office Online is loaded for business users, it will check that the user is signed in with an Office 365 business
+When |wac| is loaded for business users, it will check that the user is signed in with an Office 365 business
 account. If the user is not signed in, they'll be prompted to sign in.
 
 ..  figure:: /images/business_user_flow_start.png
@@ -63,8 +63,8 @@ account. If the user is not signed in, they'll be prompted to sign in.
     Business users will be prompted to sign in if they are not signed in with an Office 365 business account when
     they attempt to edit a document using |wac|
 
-Once signed in, Office Online will verify that the user has a valid Office 365 subscription. After this is verified,
-Office Online will automatically redirect the user back to the :term:`HostEditUrl` and the user can edit documents.
+Once signed in, |wac| will verify that the user has a valid Office 365 subscription. After this is verified,
+|wac| will automatically redirect the user back to the :term:`HostEditUrl` and the user can edit documents.
 
 If the user has a valid Office 365 account but their subscription does not include |wac|, the user will see a message
 that their subscription is insufficient.
@@ -84,9 +84,9 @@ In the flow described above, the user must always be signed in with a valid Offi
 edit documents. This is not an ideal experience since it might require the user to sign in many times.
 
 To provide a better experience for users with Office 365 subscriptions, hosts can implement the :ref:`PutUserInfo` WOPI
-operation. Office Online will use this operation to pass back user information, including subscription status, to the
-host. The host can, in turn, pass the UserInfo string back to Office Online on subsequent :ref:`CheckFileInfo`
-responses for that user. Office Online will use the data in the UserInfo string to determine whether a subscription
+operation. |wac| will use this operation to pass back user information, including subscription status, to the
+host. The host can, in turn, pass the UserInfo string back to |wac| on subsequent :ref:`CheckFileInfo`
+responses for that user. |wac| will use the data in the UserInfo string to determine whether a subscription
 check is needed, and in most cases will not require the user to sign in. Note that hosts must treat the UserInfo
 string as an opaque string.
 
@@ -102,7 +102,7 @@ Testing the business user flow
 ------------------------------
 
 In order to test the business user flow in the :ref:`test environment`, you must use test Office 365 user accounts
-provided by Microsoft. These accounts are provided in the Cloud Storage Partner Program Yammer group.
+provided by Microsoft. These accounts are provided in the |cspp| Yammer group.
 
 These test accounts are periodically rotated. If you have trouble signing in while testing the business user flow,
 check that the accounts you're using are the most recent ones provided.

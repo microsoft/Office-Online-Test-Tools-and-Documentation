@@ -487,7 +487,7 @@ Other miscellaneous properties
 
         ..  admonition:: |wac| Tip
 
-            This property is only respected by Excel Online. It has no effect in PowerPoint Online or Word Online.
+            This property is only respected by |excel-web|. It has no effect in |ppt-web| or |word-web|.
 
 
     DisablePrint

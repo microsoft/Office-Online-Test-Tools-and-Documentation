@@ -5,9 +5,9 @@
 Editing binary document formats
 ===============================
 
-Office Online does not support editing files in binary formats such as ``doc``, ``ppt``, and ``xls``, directly.
-However, Office Online can convert documents in those formats to modern formats like ``docx``, ``pptx``, and
-``xlsx``, so that users can then edit them in Office Online.
+|wac| does not support editing files in binary formats such as ``doc``, ``ppt``, and ``xls``, directly.
+However, |wac| can convert documents in those formats to modern formats like ``docx``, ``pptx``, and
+``xlsx``, so that users can then edit them in |wac|.
 
 ..  important::
     Conversion is almost always a lossless process, and there are typically very few, if any, user-visible changes to
@@ -21,22 +21,22 @@ started by simply invoking the :wopi:action:`convert` action on the binary file.
 process is as follows:
 
 #.  The host invokes the :wopi:action:`convert` action on a binary file.
-#.  Office Online will retrieve the file from the host and convert it.
-#.  Office Online will send the converted document back to the host by issuing a :ref:`PutRelativeFile` request
+#.  |wac| will retrieve the file from the host and convert it.
+#.  |wac| will send the converted document back to the host by issuing a :ref:`PutRelativeFile` request
     against the original file ID.
 #.  Hosts can use the **X-WOPI-FileConversion** header on the :ref:`PutRelativeFile` request to determine that the
     request is being made in the context of a file conversion. Hosts can thus treat these requests differently than
     other PutRelativeFile requests.
-#.  After the document is successfully converted, Office Online will redirect the user to the :term:`HostEditUrl`
-    returned in the PutRelativeFile response. Office Online always redirects the topmost window
+#.  After the document is successfully converted, |wac| will redirect the user to the :term:`HostEditUrl`
+    returned in the PutRelativeFile response. |wac| always redirects the topmost window
     (``window.top``).
 
 
-Enabling 'convert and edit' from within the Office Online viewer
-----------------------------------------------------------------
+Enabling 'convert and edit' from within the |wac| viewer
+--------------------------------------------------------
 
 In the basic conversion flow described above, a user will invoke the :wopi:action:`convert` action using some UI on
-the host. However, hosts may wish to open a document first in the Office Online viewer and use Office Online's
+the host. However, hosts may wish to open a document first in the |wac| viewer and use |wac|'s
 in-application :guilabel:`Edit` button to convert and edit the document, as is done with documents in editable formats.
 
 Hosts can support this in the same way that view -> edit transitions are typically supported. Hosts must do the
@@ -58,18 +58,18 @@ Hosts may optionally handle the in-application :guilabel:`Edit` button themselve
 Customizing the conversion process
 ----------------------------------
 
-In the basic conversion process, Office Online will create a new file each time a user attempts to edit a file in a
+In the basic conversion process, |wac| will create a new file each time a user attempts to edit a file in a
 binary file format. For example, consider this scenario:
 
-#.  A user opens a binary file named :file:`File.doc` in the Office Online viewer.
-#.  The user clicks the :guilabel:`Edit` button in the Office Online viewer.
-#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` on the host, creating a newly
+#.  A user opens a binary file named :file:`File.doc` in the |wac| viewer.
+#.  The user clicks the :guilabel:`Edit` button in the |wac| viewer.
+#.  The conversion process is started, and |wac| calls :ref:`PutRelativeFile` on the host, creating a newly
     converted file, :file:`File.docx`.
 #.  The user edits the newly converted document, then ends the editing session.
-#.  Later, the user returns and opens the original binary file, :file:`File.doc`, in the Office Online viewer.
+#.  Later, the user returns and opens the original binary file, :file:`File.doc`, in the |wac| viewer.
 
 At this point, the user may be confused as to why the changes made earlier are not in the document. If the user
-attempts to edit the file again, Office Online will again convert it and create a *second* converted file, for example
+attempts to edit the file again, |wac| will again convert it and create a *second* converted file, for example
 :file:`File1.docx`.
 
 This can be very confusing for users depending on how the user experience within the host UI is designed. Thus, it is
@@ -86,10 +86,10 @@ Second, the host can choose to handle converted documents in a unique way, by ha
 operation differently when called from the conversion flow. The **X-WOPI-FileConversion** header tells hosts when the
 operation is being called from the conversion flow, so the host can choose how best to handle those requests.
 
-Finally, the host can control where the user is navigated after conversion is complete. Office Online navigates to the
+Finally, the host can control where the user is navigated after conversion is complete. |wac| navigates to the
 :term:`HostEditUrl` that is returned in the PutRelativeFile response, which the host controls. Thus, hosts can
 customize where the user lands after the conversion is finished. This allows hosts to opt not to send the user
-directly to the Office Online editor, but to any URL they wish. For example, a host may redirect the user to an
+directly to the |wac| editor, but to any URL they wish. For example, a host may redirect the user to an
 interstitial page that informs them their document has been converted.
 
 The following are some examples illustrating how these options can be used by hosts to change the user experience
@@ -103,12 +103,12 @@ Example 1
 In the following example, the host helps the user understand the conversion process by naming the converted file such
 that it is clear that it was converted from a binary file.
 
-#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
-#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
+#.  A user selects a binary file in the host UI and chooses to edit it using |wac|.
+#.  The conversion process is started, and |wac| calls :ref:`PutRelativeFile` with the converted document
     content.
 #.  The host creates a new file as part of the PutRelativeFile request and appends ``(Editable)`` to the name of the
     file.
-#.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
+#.  The user is navigated to a page that allows them to edit the newly converted file in |wac|.
 
 
 Example 2
@@ -117,12 +117,12 @@ Example 2
 In the following example, the host wishes to hide the conversion process from the user to provide the most
 frictionless experience possible.
 
-#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
-#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
+#.  A user selects a binary file in the host UI and chooses to edit it using |wac|.
+#.  The conversion process is started, and |wac| calls :ref:`PutRelativeFile` with the converted document
     content.
 #.  Rather than create a new file, the host chooses to add the converted file as a new version to the existing binary
     file.
-#.  The user is navigated to a page that allows them to edit the newly converted file in Office Online.
+#.  The user is navigated to a page that allows them to edit the newly converted file in |wac|.
 #.  The user can restore the binary version of the file by using the 'version history' features within the host.
 
 ..  note::
@@ -142,7 +142,7 @@ Example 3
 In the following example, the host has deemed it important to inform users explicitly about the conversion process
 and its possible side effects.
 
-#.  A user selects a binary file in the host UI and chooses to edit it using Office Online.
+#.  A user selects a binary file in the host UI and chooses to edit it using |wac|.
 #.  The host displays a notification message with the following text:
 
         In order to edit **File.doc**, it must be converted to a modern file format. If the document doesn't look the
@@ -156,9 +156,9 @@ and its possible side effects.
     The user can cancel the conversion operation or choose to continue with it.
 #.  If the user chooses to continue, the host navigates them to a page that invokes the :wopi:action:`convert` action
     on the file.
-#.  The conversion process is started, and Office Online calls :ref:`PutRelativeFile` with the converted document
+#.  The conversion process is started, and |wac| calls :ref:`PutRelativeFile` with the converted document
     content.
-#.  The host returns a special URL in the :term:`HostEditUrl` property in the PutRelativeFile response. Office Online
+#.  The host returns a special URL in the :term:`HostEditUrl` property in the PutRelativeFile response. |wac|
     navigates the user to that URL once the conversion is complete.
 #.  The user lands on the URL specified by the host, and sees the following message:
 
@@ -174,17 +174,17 @@ and its possible side effects.
 #.  Once the user clicks :guilabel:`OK`, they're navigated to a page that invokes the :wopi:action:`edit` action on
     the converted file.
 
-Variant 3.1: Display post-conversion message in the Office Online UI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Variant 3.1: Display post-conversion message in the |wac| UI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In steps 5 and 6, rather than navigating the user to an interstitial page, the host may choose to append some
 parameters to the standard HostEditUrl. Then, when that HostEditUrl is navigated to, the host page can use the
 parameters that were added to the URL to determine that the dialog described in step 6 should be displayed. The host
-can display that notification above the Office Online editor frame. This is similar to what hosts do when handling the
+can display that notification above the |wac| editor frame. This is similar to what hosts do when handling the
 :js:data:`UI_Sharing` PostMessage.
 
 ..  tip::
     Hosts must ensure that they properly use the :js:data:`Blur_Focus` and :js:data:`Grab_Focus` messages when
-    drawing UI over the Office Online frame.
+    drawing UI over the |wac| frame.
 
 

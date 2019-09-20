@@ -4,8 +4,7 @@
 OneNote
 =======
 
-Integration with OneNote Online is not currently supported through the
-`Office 365 Cloud Storage Partner Program <http://dev.office.com/programs/officecloudstorage>`_.
+|onenote-web| integration is not included in the |cspp|.
 
 
 .. _Folders endpoint:

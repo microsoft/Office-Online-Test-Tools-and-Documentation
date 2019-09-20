@@ -1,7 +1,6 @@
-..  admonition:: OneNote Online Note
+..  admonition:: |onenote-web| Note
 
-    The operations exposed by this endpoint are only used by OneNote Online and thus are not needed to integrate with
-    Office Online. They are included for completeness but do not need to be implemented.
+    The operations exposed by this endpoint are only used by |onenote-web| and thus are not needed to integrate with
+    |wac|. They are included for completeness but do not need to be implemented.
 
-    OneNote Online integration is not included in the
-    `Office 365 Cloud Storage Partner Program <http://dev.office.com/programs/officecloudstorage>`_.
+    |onenote-web| integration is not included in the |cspp|.

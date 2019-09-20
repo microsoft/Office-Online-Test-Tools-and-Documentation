@@ -1,10 +1,10 @@
 
 ..  _Troubleshooting:
 
-Troubleshooting interactions with Office Online
+Troubleshooting interactions with |wac|
 ===============================================
 
-When integrating with Office Online, it may be necessary to work with Microsoft engineers to diagnose problems.
+When integrating with |wac|, it may be necessary to work with Microsoft engineers to diagnose problems.
 Following the steps below will help both you and Microsoft diagnose problems more quickly.
 
 Before reporting issues
@@ -28,11 +28,11 @@ Before reporting any issues to Microsoft, ensure that you have done the followin
 Fiddler traces
 --------------
 
-The most useful tool when troubleshooting Office Online integration issues is `Fiddler`_. When you run Fiddler while
+The most useful tool when troubleshooting |wac| integration issues is `Fiddler`_. When you run Fiddler while
 reproducing an issue, it will record all HTTP requests and responses. You can then save the Fiddler trace and share
 it with Microsoft engineers. Fiddler traces are an invaluable tool when troubleshooting problems because they
-provide a full record of the HTTP traffic between the browser and Office Online. As a rule of thumb, hosts should
-always provide a Fiddler trace when reporting Office Online integration issues to Microsoft.
+provide a full record of the HTTP traffic between the browser and |wac|. As a rule of thumb, hosts should
+always provide a Fiddler trace when reporting |wac| integration issues to Microsoft.
 
 ..  _Fiddler: http://www.telerik.com/fiddler
 
@@ -42,7 +42,7 @@ always provide a Fiddler trace when reporting Office Online integration issues t
 Enabling HTTPS decryption in Fiddler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Because Office Online traffic is encrypted, Fiddler must be configured to decrypt the HTTPS traffic in order to be
+Because |wac| traffic is encrypted, Fiddler must be configured to decrypt the HTTPS traffic in order to be
 useful. In order to enable HTTPS encryption in Fiddler, do the following:
 
 #. From Fiddler, click :menuselection:`Tools --> Options...` to open the options dialog.
@@ -93,7 +93,7 @@ Archive (HAR) files containing the HTTP requests made by the browser. To do this
 #.  Open the Chrome developer tools and select the :guilabel:`Network` tab.
 #.  Check the :guilabel:`Preserve log` check box if you wish to retain the request log across multiple page
     navigations. This makes the network tracing behave more like Fiddler, and makes it less likely that you'll lose
-    your request log by accidentally refreshing the page or navigating away before you save the log. Office Online
+    your request log by accidentally refreshing the page or navigating away before you save the log. |wac|
     applications are single-page applications, so you don't *need* to check this if you're only planning to trace a
     single session.
 
@@ -122,12 +122,12 @@ Archive (HAR) files containing the HTTP requests made by the browser. To do this
 Session IDs
 -----------
 
-Whenever an :ref:`action URL <Action URLs>` is navigated to, Office Online creates a unique session ID. This session
+Whenever an :ref:`action URL <Action URLs>` is navigated to, |wac| creates a unique session ID. This session
 ID allows Microsoft engineers to quickly retrieve all server logs related to that session, including information
 about the WOPI calls that were made to the host. The session ID is passed back in the WOPI action URL HTTP response in
 the **X-UserSessionId** response header. It is also passed on every subsequent request made by the browser to Office
 Online in the **X-UserSessionId** request header, and it is included in all PostMessages
-:ref:`sent from Office Online to the host page <outgoing postmessage common values>` in the
+:ref:`sent from |wac| to the host page <outgoing postmessage common values>` in the
 :term:`wdUserSession <wdUserSession (string)>` value.
 
 The easiest way to retrieve the session ID is to use Fiddler, as described previously. However, you can also use the
@@ -145,7 +145,7 @@ the value of the **X-UserSessionId** response header.
     As can the Internet Explorer developer tools.
 
 Full Fiddler traces are always preferred, but in cases where they're not available, session IDs can still be used by
-Microsoft engineers to retrieve Office Online server logs.
+Microsoft engineers to retrieve |wac| server logs.
 
 
 ..  _fiddler not running:
@@ -160,7 +160,7 @@ the document below the ribbon.
 Sometimes the error dialog will include the session ID in the dialog itself:
 
 ..  figure:: /images/error_with_session_id_and_exit_button.png
-    :alt: An image of an error dialog in Word Online that includes a session ID.
+    :alt: An image of an error dialog in Word on the web that includes a session ID.
 
 In such cases, you can copy the session ID from the error dialog.
 
@@ -172,13 +172,13 @@ In such cases, you can copy the session ID from the error dialog.
 In other cases, the session ID might not be available in the UI.
 
 ..  figure:: /images/error_bizbar.png
-    :alt: An image of an error in Word Online displayed in a yellow bar under the ribbon.
+    :alt: An image of an error in Word on the web displayed in a yellow bar under the ribbon.
 
 At this point, it is still often possible to get the session ID by using the following steps:
 
 #.  Before closing the browser, refreshing the page, or clicking any buttons in the dialog or notification bar,
     start Fiddler or open the browser developer tools.
-#.  Navigate away from the Office Online application or click a button in the dialog or notification bar.
+#.  Navigate away from the |wac| application or click a button in the dialog or notification bar.
 #.  You should see a request to either `WsaUpload.ashx` or `RemoteUls.ashx`. The response to those requests should
     include the **X-UserSessionId** header with the session ID.
 
@@ -186,9 +186,9 @@ At this point, it is still often possible to get the session ID by using the fol
 Correlation IDs
 ---------------
 
-Every WOPI request Office Online makes to a host will have an ID called the correlation ID. This ID will be included
+Every WOPI request |wac| makes to a host will have an ID called the correlation ID. This ID will be included
 in the WOPI request using the **X-WOPI-CorrelationId** request header. Hosts should log this ID for each incoming WOPI
-request; doing so will allow hosts to easily correlate their own logs with Office Online's server logs.
+request; doing so will allow hosts to easily correlate their own logs with |wac|'s server logs.
 
 There are other WOPI request headers that may be useful for hosts to log. See the :ref:`Common headers` for more
 information.
@@ -196,5 +196,5 @@ information.
 ..  tip::
 
     In many cases, a single correlation ID is all that's needed in order for a Microsoft engineer to retrieve
-    complete server logs for an Office Online session for analysis. While hosts should provide Fiddler traces or
+    complete server logs for an |wac| session for analysis. While hosts should provide Fiddler traces or
     session IDs whenever possible, a correlation ID will often suffice if necessary.

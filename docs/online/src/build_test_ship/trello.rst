@@ -15,14 +15,14 @@ If you are new to Trello, you can learn more about it at https://trello.com/guid
 ..  important::
 
     You should use the Trello board to communicate with Microsoft throughout the launch process. This will ensure
-    that all Office Online team members are aware of the communications, and it provides a straightforward way to
+    that all |Office| team members are aware of the communications, and it provides a straightforward way to
     isolate conversations about specific issues.
 
 
 Adding people to the board
 --------------------------
 
-You can invite other relevant people to the board as needed; only people from the Office Online team and people you
+You can invite other relevant people to the board as needed; only people from the |Office| team and people you
 explicitly invite will have access to see or edit the content of the board.
 
 We recommend that you add relevant engineers from your team to the board as well, since many of the discussions will
@@ -55,7 +55,7 @@ Trello's notifications such that both you and Microsoft are aware of what requir
     Microsoft has not yet acknowledged or taken action on. Once Microsoft is aware of the card, it will be moved to
     another list like *Under Discussion/Investigation* for action.
 
-#.  **New: Partner**: This list contains new cards that you, the Office Online partner, need to take action on.
+#.  **New: Partner**: This list contains new cards that you, the |Office| partner, need to take action on.
     Initially, this list will contain a number of cards tracking various questions about your WOPI implementation or
     launch plans. As testing is done, Microsoft will create new cards to track implementation issues or additional
     questions that arise during testing. Like the *New: Microsoft* list, cards should be moved from this list once
@@ -142,7 +142,7 @@ your Trello settings.
 Recommended configuration and best practices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, Office Online team members will subscribe to the *New: Microsoft* list. This ensures that they will be
+By default, |Office| team members will subscribe to the *New: Microsoft* list. This ensures that they will be
 notified any time a card is added or moved to that list. We recommend that your team members similarly subscribe to the
 *New: Partner* list for the same reason.
 

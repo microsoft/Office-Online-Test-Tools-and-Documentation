@@ -9,12 +9,12 @@ Performance
 Preloading static content
 -------------------------
 
-One way to improve the load time performance of Office Online applications is to preload Office Online's static content
+One way to improve the load time performance of |wac| applications is to preload |wac|'s static content
 (JavaScript, CSS, and images) into the user's browser cache. This will help ensure that when the user opens a
-document in Office Online, they can use the previously cached static content and do not need to download that data
-when they first try to load Office Online.
+document in |wac|, they can use the previously cached static content and do not need to download that data
+when they first try to load |wac|.
 
-To support preloading static content, Office Online provides two WOPI actions for each Office Online application in its
+To support preloading static content, |wac| provides two WOPI actions for each |wac| application in its
 discovery XML, one to preload static content for the :wopi:action:`view` action (:wopi:action:`preloadview`), and a
 second to preload static content for the :wopi:action:`edit` action (:wopi:action:`preloadedit`).
 

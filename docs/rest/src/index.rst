@@ -38,7 +38,7 @@ server intends to integrate with. To learn more about the specific requirements 
     :glob:
     :caption: Microsoft Office WOPI Integrations
 
-    Office Online <https://wopi.readthedocs.io/>
+    Office for the web <https://wopi.readthedocs.io/>
     Office for iOS and Android   <https://wopi.readthedocs.io/projects/officewopi>
 
 ..  toctree::

@@ -1,5 +1,6 @@
 /* override table width restrictions */
-.wy-table-responsive table td, .wy-table-responsive table th {
+.wy-table-responsive table td,
+.wy-table-responsive table th {
     /* !important prevents the common CSS stylesheets from
        overriding this as on RTD they are loaded after this stylesheet */
     white-space: normal !important;
@@ -24,44 +25,44 @@
 }
 
 .rst-content .admonition.warning .admonition-title:before,
-.rst-content .admonition.danger .admonition-title:before{
+.rst-content .admonition.danger .admonition-title:before {
     content: '\f071';
 }
 
-/* OneNote Online Note admonition styles */
-.rst-content .admonition-onenote-online-note {
+/* OneNote Note admonition styles */
+.rst-content .admonition-onenote-web-note {
     background-color: #975d93 !important;
     color: #fff !important;
 }
 
-.rst-content .admonition-onenote-online-note .admonition-title {
+.rst-content .admonition-onenote-web-note .admonition-title {
     background-color: #80397b !important;
 }
 
-.rst-content .admonition-onenote-online-note .admonition-title:before {
-    content:url('images/OneNote-white_16x16x32.png');
+.rst-content .admonition-onenote-web-note .admonition-title:before {
+    content: url('images/OneNote-white_16x16x32.png');
 }
 
-.rst-content .admonition-onenote-online-note a:link,
-.rst-content .admonition-onenote-online-note a:visited {
+.rst-content .admonition-onenote-web-note a:link,
+.rst-content .admonition-onenote-web-note a:visited {
     color: #d9d9d9 !important;
 }
 
-.rst-content .admonition-onenote-online-note a:hover {
+.rst-content .admonition-onenote-web-note a:hover {
     color: #fff !important;
 }
 
-/* Excel Online Note admonition styles */
-.rst-content .admonition-excel-online-note {
+/* Excel Note admonition styles */
+.rst-content .admonition-excel-web-note {
     background-color: #d3f0e0 !important;
 }
 
-.rst-content .admonition-excel-online-note .admonition-title {
+.rst-content .admonition-excel-web-note .admonition-title {
     background-color: #207144 !important;
 }
 
-.rst-content .admonition-excel-online-note .admonition-title:before {
-    content:url('images/Excel-white_16x16x32.png');
+.rst-content .admonition-excel-web-note .admonition-title:before {
+    content: url('images/Excel-white_16x16x32.png');
 }
 
 /* Validator status styles */
@@ -87,7 +88,7 @@
 }
 
 .rst-content .admonition-status.error {
-    background-color: rgba(0,0,0,0.05) !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Pre-release Feature admonition styles */
@@ -108,7 +109,7 @@
 }
 
 .rst-content .admonition-wac-tip .admonition-title,
-.rst-content .admonition-office-online-tip .admonition-title{
+.rst-content .admonition-office-online-tip .admonition-title {
     /*background-color: #4e4a4a;*/
     background-color: #5bc0de;
 }
@@ -116,7 +117,7 @@
 .rst-content .admonition-wac-tip,
 .rst-content .admonition-office-online-tip {
     /*background-color: rgba(0,0,0,0.05) !important;*/
-    background-color: rgba(91,192,222,0.25) !important;
+    background-color: rgba(91, 192, 222, 0.25) !important;
 }
 
 .rst-content table.field-list td {
@@ -128,14 +129,13 @@ span.caption-number {
 }
 
 span.caption-number:after {
-    content: "- ";
+    content: '- ';
 }
 
 span.menuselection,
 span.guilabel {
     font-style: italic;
 }
-
 
 dl.glossary dt a.def-link {
     font-size: small;
@@ -189,7 +189,7 @@ div.deprecated {
 /* label styles */
 .label {
     display: inline;
-    padding: .2em .6em .3em;
+    padding: 0.2em 0.6em 0.3em;
     font-size: 85%;
     font-weight: bold;
     line-height: 1;
@@ -197,68 +197,75 @@ div.deprecated {
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .25em
+    border-radius: 0.25em;
 }
 
-a.label:hover, a.label:focus {
+a.label:hover,
+a.label:focus {
     color: #fff;
     text-decoration: none;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .label:empty {
-    display: none
+    display: none;
 }
 
 .btn .label {
     position: relative;
-    top: -1px
+    top: -1px;
 }
 
 .label-default {
-    background-color: #777
+    background-color: #777;
 }
 
-.label-default[href]:hover, .label-default[href]:focus {
-    background-color: #5e5e5e
+.label-default[href]:hover,
+.label-default[href]:focus {
+    background-color: #5e5e5e;
 }
 
 .label-primary {
-    background-color: #337ab7
+    background-color: #337ab7;
 }
 
-.label-primary[href]:hover, .label-primary[href]:focus {
-    background-color: #286090
+.label-primary[href]:hover,
+.label-primary[href]:focus {
+    background-color: #286090;
 }
 
 .label-success {
-    background-color: #5cb85c
+    background-color: #5cb85c;
 }
 
-.label-success[href]:hover, .label-success[href]:focus {
-    background-color: #449d44
+.label-success[href]:hover,
+.label-success[href]:focus {
+    background-color: #449d44;
 }
 
 .label-info {
-    background-color: #5bc0de
+    background-color: #5bc0de;
 }
 
-.label-info[href]:hover, .label-info[href]:focus {
-    background-color: #31b0d5
+.label-info[href]:hover,
+.label-info[href]:focus {
+    background-color: #31b0d5;
 }
 
 .label-warning {
-    background-color: #f0ad4e
+    background-color: #f0ad4e;
 }
 
-.label-warning[href]:hover, .label-warning[href]:focus {
-    background-color: #ec971f
+.label-warning[href]:hover,
+.label-warning[href]:focus {
+    background-color: #ec971f;
 }
 
 .label-danger {
-    background-color: #d9534f
+    background-color: #d9534f;
 }
 
-.label-danger[href]:hover, .label-danger[href]:focus {
-    background-color: #c9302c
+.label-danger[href]:hover,
+.label-danger[href]:focus {
+    background-color: #c9302c;
 }

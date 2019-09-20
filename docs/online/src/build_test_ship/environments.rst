@@ -1,11 +1,11 @@
 
 ..  _environments:
 
-Office Online environments
-==========================
+|wac| environments
+==================
 
-Office Online provides two environments for use by cloud storage partners. The :ref:`discovery URLs` for each
-environment are provided below.
+|wac| provides two environments for use by cloud storage partners. The :ref:`discovery URLs` for each environment are
+provided below.
 
 Initially you'll be given access to the test environment (also called 'Dogfood'), and you should use that environment
 when building and testing your integration.
@@ -23,8 +23,8 @@ Test environment
 The test environment is updated frequently - usually at least once a day - and all initial testing should be done
 against it. Initially this is the only environment you will be able to access.
 
-The test environment runs the most recent Office Online code available. This does mean that you may see features
-there that are not yet available in production. However, the WOPI interactions between Office Online and your WOPI
+The test environment runs the most recent |wac| code available. This does mean that you may see features
+there that are not yet available in production. However, the WOPI interactions between |wac| and your WOPI
 host should not differ dramatically between test and production. In addition, as part of the
 :ref:`Launch process <shipping>` you'll be given production access to verify your integration behaves as expected
 in that environment prior to release.
@@ -34,7 +34,7 @@ deployment cadence also allows us to push out changes quickly, so contact Micros
 unexpected behavior when using the test environment.
 
 ..  important::
-    End users should not use the test environment. If you are making Office Online integration available to end-users,
+    End users should not use the test environment. If you are making |wac| integration available to end-users,
     you must use the production environment.
 
 

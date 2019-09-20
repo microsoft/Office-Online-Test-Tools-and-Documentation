@@ -51,7 +51,7 @@ namespace SampleWopiHandler
         public void ProcessRequest(HttpContext context)
         {
             // WOPI ProofKey validation is an optional way that a WOPI host can ensure that the request
-            // is coming from the Office Online server that they expect to be talking to.
+            // is coming from the Office server that they expect to be talking to.
             if (!ValidateWopiProofKey(context.Request))
             {
                 ReturnServerError(context.Response);
@@ -459,7 +459,7 @@ namespace SampleWopiHandler
                 {
                     // There is a valid existing lock on the file and it doesn't match the requested lockstring.
 
-                    // This is a fairly common case and shouldn't be tracked as an error.  Office Online can store
+                    // This is a fairly common case and shouldn't be tracked as an error.  Office can store
                     // information about a current session in the lock value and expects to conflict when there's
                     // an existing session to join.
                     ReturnLockMismatch(context.Response, existingLock.Lock);

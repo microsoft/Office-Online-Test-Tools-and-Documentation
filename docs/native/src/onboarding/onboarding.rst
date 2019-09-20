@@ -78,7 +78,7 @@ Additional information required
 * Website interface of each environment, if one exists.
 * Whether each environment can be reached outside your network (if it's Internet accessible so we can use it)
 * How many apps do you have on each platform? (E.g. on iOS, do you have a "for enterprise app" vs. a "for consumer app", or do you just have one?)
-* If you have already integrated with Office Online, please provide directions to access the validator.
+* If you have already integrated with |wac|, please provide directions to access the validator.
 
 Security Questions
 ------------------

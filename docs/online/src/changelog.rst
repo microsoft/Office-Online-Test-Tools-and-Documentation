@@ -11,7 +11,7 @@ Version 2016.01.27
 
 *January 27, 2016*
 
-* Office Online co-authoring is now supported across all WOPI hosts. See :ref:`coauth` for more information.
+* |wac| co-authoring is now supported across all WOPI hosts. See :ref:`coauth` for more information.
 * Several new endpoints and operations have been added to WOPI to support |Office iOS|. Some documentation is
   still in progress. See :ref:`wopirest:index` for more information.
 
@@ -30,7 +30,7 @@ Version 2015.12.18
 
 *December 18, 2015*
 
-The documentation of the WOPI REST operations has been split from the Office Online integration documentation. This
+The documentation of the WOPI REST operations has been split from the |wac| integration documentation. This
 was done to prepare for the expansion of the WOPI REST API that will come in a future commit.
 
 
@@ -48,7 +48,7 @@ Version 2015.08.03
 
 *August 3, 2015*
 
-Office Online now supports a new WOPI operation, :ref:`PutUserInfo`, as well as the following supporting
+|wac| now supports a new WOPI operation, :ref:`PutUserInfo`, as well as the following supporting
 :ref:`CheckFileInfo` properties:
 
 * :term:`SupportsUserInfo`
