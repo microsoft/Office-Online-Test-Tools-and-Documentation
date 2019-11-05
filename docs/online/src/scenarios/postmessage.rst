@@ -73,6 +73,7 @@ You can send the following messages; all others are ignored:
 * :data:`Grab_Focus`
 * :data:`Host_PerfTiming`
 * :data:`Host_PostmessageReady`
+* :data:`Host_RefreshSessionInfo`
 
 ..  data:: App_PopState
 
@@ -269,6 +270,72 @@ You can send the following messages; all others are ignored:
         }
 
 
+..  data:: Host_RefreshSessionInfo
+
+    When the host has to send new tokens to |wac|, a :term:`Host_RefreshSessionInfo` message is poseted. The host sends
+    all new tokens and their properties in this post message. If the host is unable to issue new tokens an error message 
+    must be provided, with an optional description of the reason.
+
+    If no errors are present, the value property must contain the token and an expiry if applicable.
+
+
+    ..  note::
+        If the host does not return the :term:`SupportsSessionRefresh` parameter in their :ref:`CheckFileInfo` response, 
+        then this will not be available in |wac|. Also if no tokens are returned when requested by |wac| using 
+        :ref:`App_RefreshSessionInfo`, |wac| would consider this as an error. 
+
+    .. attribute:: Values
+        :noindex:
+
+        Tokens  *(JSON-formatted list)*
+            :term:`Tokens` refers to a arrray of *(JSON-formatted object)* identifying new tokens sent to |wac|.
+
+            Name *(string)*
+            :term:`Name` refers to the property used to identify token elements.
+
+            Expiry *(long)*
+            :term:`Expiry` refers The time the token would no longer be valid.
+
+            Value *(string)*
+            :term: `Value` refers the to value of the new token
+
+            Errors *(JSON-formated list)*
+
+                Id *(string)*
+                :term:`Id` refers to a *(string)* indicating error type
+
+                Details *(string)*
+                :term:`Details` refers to any additional details the host wishes to provide for debug purposes.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+    { 
+        "MessageId": "Host_RefreshSessionInfo", 
+        "SendTime": 1544582170151, 
+        "Values": { 
+            "Tokens": [{ 
+                "Name": "AccessToken", 
+                "Expiry": "1544583670139.32", 
+                "Value": "opaque string" 
+            }, 
+            { 
+                "Name": "FileGetUrl", 
+                "Expiry": "1544583670139.32", 
+                "Value": "http://example.com/path/to/the/document/file.extension" 
+            },
+            {
+                "Name": "Unknown", 
+                "Errors": [ 
+                    { 
+                        "Id": "UnknownToken", 
+                        "Details": "I have never heard of this token" 
+                    }] 
+            }] 
+        } 
+    } 
+
 Listening to messages from the |wac| iframe
 -------------------------------------------
 
@@ -297,6 +364,7 @@ The host page receives the following messages; all others are ignored:
 
 * :data:`App_LoadingStatus`
 * :data:`App_PushState`
+* :data:`App_RefreshSessionInfo`
 * :data:`Edit_Notification`
 * :data:`File_Rename`
 * :data:`UI_Close`
@@ -396,6 +464,35 @@ every outgoing PostMessage:
                 "ui-language": "1033"
             }
         }
+
+..  data:: App_RefreshSessionInfo
+
+    The :term:`App_RefreshSessionInfo` message is poseted when the app detects the need of new tokens. The host responds to this by
+    sending a response message :term:`App_RefreshSessionInfo` with a :term:`Host_RefreshSessionInfo` response. 
+
+    ..  note::
+        If the host does not return the :term:`SupportsSessionRefresh` parameter in their :ref:`CheckFileInfo` response, then
+        this will not be available in |wac|.
+
+    .. attribute:: Values
+        :noindex:
+
+        Tokens  *(string)* List
+            :term:`Tokens` refers to a arrray of string identifying tokens requested by |wac|.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+    {
+        "MessageId": "App_RefreshSessionInfo", 
+        "SentTime": 1529360729000, 
+        "Values":{ 
+            "Tokens": ["AccessToken"], 
+            "ui-language": "1033", 
+            "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984" 
+        } 
+    } 
 
 ..  data:: Edit_Notification
 

@@ -212,6 +212,12 @@ WOPI implementation meets the requirements for a particular property.
 
         ..  versionadded:: 2015.08.03
 
+    SupportsSessionRefreshInfo
+        A **Boolean** value that indicates that the host supports the following operations:
+
+        * :ref:`App_RefreshSessionInfo`
+        * :ref:`Host_RefreshSessionInfo`
+
 
 ..  _User metadata properties:
 
