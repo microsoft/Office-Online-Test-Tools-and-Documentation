@@ -272,42 +272,46 @@ You can send the following messages; all others are ignored:
 
 ..  data:: Host_RefreshSessionInfo
 
-    When the host has to send new tokens to |wac|, a :term:`Host_RefreshSessionInfo` message is poseted. The host sends
-    all new tokens and their properties in this post message. If the host is unable to issue new tokens an error message 
-    must be provided, with an optional description of the reason.
+    When the host wants to send new tokens to |wac|, for instance when an :term:`access token` is about to expire, 
+    a :data:`Host_RefreshSessionInfo` message is posted. The host can send a set of new access tokens and their properties 
+    in this post message. 
 
-    If no errors are present, the value property must contain the token and an expiry if applicable.
-
+    ..  note:: 
+        |wac| expects a :data:`Host_RefreshSessionInfo` response to a :data:`App_RefreshSessionInfo` request. If no response is 
+        received by |wac|, the session could expire. 
+    
+    If the host is unable to issue new tokens an error message must be provided, with an optional description of the 
+    reason. If no errors are present, the value property must contain the token and its expiry. 
 
     ..  note::
-        If the host does not return the :term:`SupportsSessionRefresh` parameter in their :ref:`CheckFileInfo` response, 
-        then this will not be available in |wac|. Also if no tokens are returned when requested by |wac| using 
-        :ref:`App_RefreshSessionInfo`, |wac| would consider this as an error. 
+        The host must indicate the support for :data:`App_RefreshSessionInfo` by setting the :term:`SupportsSessionRefresh` parameter 
+        in the :ref:`CheckFileInfo` response to true.
 
     .. attribute:: Values
         :noindex:
 
         Tokens  *(JSON-formatted list)*
-            :term:`Tokens` refers to a arrray of *(JSON-formatted object)* identifying new tokens sent to |wac|.
+            :term:`Tokens` refers to an array of *(JSON-formatted object)* identifying new :term:`access token` sent to |wac|.
 
             Name *(string)*
             :term:`Name` refers to the property used to identify token elements.
 
             Expiry *(long)*
-            :term:`Expiry` refers The time the token would no longer be valid.
+            :term:`Expiry` refers to the time the token would no longer be valid.
 
             Value *(string)*
-            :term: `Value` refers the to value of the new token
+            :term: `Value` refers to the value of the new token.
 
             Errors *(JSON-formated list)*
 
                 Id *(string)*
-                :term:`Id` refers to a *(string)* indicating error type
+                :term:`Id` refers to a *(string)* indicating error type.
 
                 Details *(string)*
-                :term:`Details` refers to any additional details the host wishes to provide for debug purposes.
+                :term:`Details` refers to any additional details the host wishes to provide for debugging purposes.
 
     ..  rubric:: Example Message:
+    ..  .. important:: |wac| supports the :term:`access token` of type "AccessToken" (Word, Powerpoint and Excel) and "FileGetUrl" (Powerpoint)
 
     ..  code-block:: JSON
 
@@ -467,12 +471,13 @@ every outgoing PostMessage:
 
 ..  data:: App_RefreshSessionInfo
 
-    The :term:`App_RefreshSessionInfo` message is poseted when the app detects the need of new tokens. The host responds to this by
-    sending a response message :term:`App_RefreshSessionInfo` with a :term:`Host_RefreshSessionInfo` response. 
+    WOPI clients expect that an access token will remain valid until it expires (as indicated by the :term:`access_token_ttl` 
+    value). When the :term:`Access-Tokens` are about to expire, |wac| sends a :data:`App_RefreshSessionInfo` message requesting 
+    new tokens so that the user session continues. The host responds to this with a :data:`Host_RefreshSessionInfo` response.
 
     ..  note::
-        If the host does not return the :term:`SupportsSessionRefresh` parameter in their :ref:`CheckFileInfo` response, then
-        this will not be available in |wac|.
+        The host must indicate the support for :data:`App_RefreshSessionInfo` by setting :term:`SupportsSessionRefresh` parameter 
+        in the :ref:`CheckFileInfo` response to true
 
     .. attribute:: Values
         :noindex:
@@ -482,18 +487,32 @@ every outgoing PostMessage:
 
     ..  rubric:: Example Message:
 
+    Word Online asking for a new access token 
     ..  code-block:: JSON
 
-    {
+    { 
         "MessageId": "App_RefreshSessionInfo", 
         "SentTime": 1529360729000, 
-        "Values":{ 
+        "Values": { 
             "Tokens": ["AccessToken"], 
             "ui-language": "1033", 
             "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984" 
         } 
     } 
 
+    PowerPoint Online asking for a new access token and a new url 
+    ..  code-block:: JSON
+    { 
+        "MessageId": "App_RefreshSessionInfo", 
+        "SentTime": 1529360729000, 
+        "Values": { 
+            "Tokens": ["AccessToken","FileGetUrl"], 
+            "ui-language": "1033", 
+            "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984" 
+        } 
+    
+    } 
+    
 ..  data:: Edit_Notification
 
     The Edit_Notification message is posted when the user first makes an edit to a document, and every five minutes
