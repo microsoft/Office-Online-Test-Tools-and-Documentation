@@ -1,4 +1,4 @@
-# |cspp| Test Tools and Documentation
+# Office for Web Test Tools and Documentation
 
 ## Documentation [![Documentation Status](https://readthedocs.org/projects/wopi/badge/?version=latest)](https://wopi.readthedocs.io/)
 
