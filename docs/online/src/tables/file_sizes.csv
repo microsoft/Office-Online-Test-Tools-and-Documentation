@@ -2,6 +2,6 @@ Application,Mode,Limit,Notes
 Excel for the web,View,5MB,
 Excel for the web,Edit,5MB,
 PowerPoint for the web,View,See notes,"No limit, but subject to the 60 second time out for file downloads as described above."
-PowerPoint for the web,Edit,300MB,"While the upper limit is 300MB, this is still subject to the overall 60 second time out for file downloads so it is possible that smaller files will hit that timeout."
+PowerPoint for the web,Edit,300MB,"While the upper limit is 300MB, this is still subject to the overall 60 second time out for file downloads so it is possible that smaller files will hit that timeout. In addition, for embedded media, the size limit os 100MB for most embedded media types. For WAV files the limit is 100KB."
 Word for the web,View,See notes,"No limit, but subject to the 60 second time out for file downloads as described above."
 Word for the web,Edit,50MB,
