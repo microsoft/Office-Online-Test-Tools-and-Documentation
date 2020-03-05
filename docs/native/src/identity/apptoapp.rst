@@ -4,7 +4,7 @@
 App to app sign in for |Office iOS| and |Office Android|
 ========================================================
 
-The normal flow to sign in to your service from |Office iOS| or |Office Android| uses the OS UIWebView where your
+The normal flow to sign in to your service from |Office iOS| or |Office Android| uses the OS WebView where your
 web sign in experience is rendered inside the |Office iOS| or |Office Android| app. Optionally, an additional
 optimization can be done where the user can sign in using your app.
 
@@ -71,6 +71,7 @@ New URL schemes registered by |Office iOS|
  * ``ms-word-tp``
  * ``ms-excel-tp``
  * ``ms-powerpoint-tp``
+ * ``ms-officemobile-tp``
 
 
 These are for Word, Excel, and PowerPoint respectively. Use these to invoke |Office iOS| when the user is done with
