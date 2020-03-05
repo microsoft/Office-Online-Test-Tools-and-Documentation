@@ -643,6 +643,14 @@ because they are pending deprecation or they are designated for future features 
         ..  note::
             This does not mean that the user doesn't have rights to edit the file. Hosts should use the
             :term:`UserCanWrite` property for that purpose.
+    
+    CobaltCapabilities
+        A **array** of strings that contains the Cobalt capabilities supported by the host.
+
+        Possible Values:
+
+        DownloadStreaming
+            This type of CobaltCapabilities indicates the host supports cobalt streaming for download at the moment it handles the request.
 
 
 Workflow properties
