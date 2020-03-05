@@ -273,11 +273,7 @@ Download / Download as PDF   Omit the :term:`DownloadUrl` property from the Chec
 Print                        Set the :term:`DisablePrint` property to ``true`` in the CheckFileInfo response
 Exit / Close                 Omit the :term:`CloseUrl` and :term:`ClosePostMessage` properties from the CheckFileInfo
                              response
-Comments                     For Word only, set the :term:`UserCanWrite` property to ``false`` in the CheckFileInfo
-                             response (or omit it since the default for all boolean properties in CheckFileInfo is
-                             ``false``)
-
-                             Can't be hidden in PowerPoint
+Comments                     Can't be hidden
 Find                         Can't be hidden
 Translate                    Can't be hidden
 Help                         Can't be hidden
