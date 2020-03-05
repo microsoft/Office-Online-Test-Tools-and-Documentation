@@ -650,7 +650,8 @@ because they are pending deprecation or they are designated for future features 
         Possible Values:
 
         DownloadStreaming
-            This type of CobaltCapabilities indicates the host supports cobalt streaming for download at the moment it handles the request.
+            This type of CobaltCapabilities indicates the host supports cobalt streaming for download 
+            at the moment it handles the request.
 
 
 Workflow properties
