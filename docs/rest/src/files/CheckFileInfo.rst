@@ -645,12 +645,14 @@ because they are pending deprecation or they are designated for future features 
             :term:`UserCanWrite` property for that purpose.
     
     CobaltCapabilities
-        A **array** of strings that contains the Cobalt capabilities supported by the host.
+        A **array of strings** that contains the Cobalt capabilities supported by the host. If :term:`SupportsCobalt` 
+        is set to ``false``, this property must be ignored by the WOPI client. Any value other than the possible values 
+        listed below must be ignored by the WOPI client.
 
         Possible Values:
 
         DownloadStreaming
-            This type of CobaltCapabilities indicates the host supports cobalt streaming for download 
+            This type of CobaltCapabilities indicates the host supports Cobalt streaming for download 
             at the moment it handles the request.
 
 
