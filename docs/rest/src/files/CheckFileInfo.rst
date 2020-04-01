@@ -469,6 +469,38 @@ Other miscellaneous properties
 
             ..  seealso:: :ref:`avoid CloseButtonClosesWindow`
 
+    ClientThrottlingProtection
+        |prerelease|
+
+        A **string** value offering guidance to the WOPI client as to how to differentiate client throttling behaviors between the
+        user and documents combinations from the WOPI host. Under times of stress, the WOPI client may choose to make use of this
+        field to vary the level of impact of client side throttling behaviors within the set of active host documents. If the WOPI
+        client chooses to differentiate throttling of client behaviors that are not necessarily tied to WOPI calls to the host,
+        it may apply the most reduced quality of service to the LeastProtected document/users and the least reduced quality of
+        service to the MostProtected documents/users. As in the case of :term:`RequestedCallThrottling`, it is advised that hosts
+        sharing this value between responses for distinct users of the same document at any given time may yield more deterministic
+        results from the clients.
+
+        Possible Values:
+
+        MostProtected
+            The most protected documents/users.
+
+        Protected
+            The documents/users that should be protected more than the average ones.
+
+        None
+            The documents/users with the standard level of protection from throttling.
+
+        LessProtected
+            The documents/users that can be throttled more heavily than a typical than the average ones.
+
+        LeastProtected
+            The least proteced documents/users.
+
+        If no value is specified, or an invalid value is provided, the default behavior is to assume the WOPI host intended the value
+        of None.
+
     CopyPasteRestrictions
         |prerelease|
 
@@ -520,6 +552,37 @@ Other miscellaneous properties
         A **string** that represents the last time that the file was modified. This time must always be a must be
         a :abbr:`UTC (Coordinated Universal Time)` time, and must be formatted in ISO 8601 round-trip format. For
         example, ``"2009-06-15T13:45:30.0000000Z"``.
+
+    RequestedCallThrottling
+        |prerelease|
+
+        A **string** value indicating whether the WOPI host is experiencing capacity problems and would like to
+        reduce the frequency at which the WOPI clients make calls to the host.  Each WOPI application may choose
+        how best to respect the expressed desire from the host.  WOPI applications may respond in manners such
+        as reducing the frequency of CheckFileInfo calls and extending the window between when a user makes a
+        change and the updated document gets saved back to the WOPI host.  It is advised that hosts sharing this
+        value between responses for distinct users of the same document at any given time may yield more
+        deterministic results from the clients.
+
+        Possible Values:
+
+        None
+            The WOPI host is healthy and does not want any additional request throttling.
+
+        Minor
+            The WOPI host is requesting a small amount of throttling from the WOPI client.
+
+        Medium
+            The WOPI host is requesting a medium amount of throttling from the WOPI client.
+
+        Major
+            The WOPI host is requesting a large amount of throttling from the WOPI client.
+
+        Critical
+            The WOPI host is requesting the WOPI client to apply the largest amount of throttling possible.
+
+        If no value is specified, or an invalid value is provided, the default behavior is to assume the WOPI host intended the value
+        of None.
 
     SHA256
         A 256 bit SHA-2-encoded [`FIPS 180-2`_] hash of the file contents, as a Base64-encoded **string**. Used for
