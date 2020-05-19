@@ -489,7 +489,7 @@ Other miscellaneous properties
         Protected
             The documents/users that should be protected more than the average ones.
 
-        None
+        Normal
             The documents/users with the standard level of protection from throttling.
 
         LessProtected
@@ -566,7 +566,7 @@ Other miscellaneous properties
 
         Possible Values:
 
-        None
+        Normal
             The WOPI host is healthy and does not want any additional request throttling.
 
         Minor
