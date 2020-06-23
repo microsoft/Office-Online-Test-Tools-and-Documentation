@@ -18,7 +18,7 @@ To integrate your application with |wac|, you need to do the following:
 
 #. Be a member of the |cspp|. Currently integration with the |wac| cloud service is available to cloud storage
    partners. You can learn more about the program, as well as how to apply, at
-   http://dev.office.com/programs/officecloudstorage.
+   https://developer.microsoft.com/office/cloud-storage-partner-program.
 
    ..  include:: /_fragments/intended_isv.rst
 
