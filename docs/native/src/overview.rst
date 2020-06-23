@@ -46,7 +46,7 @@ application. The WOPI protocol enables |Office iOS Android| to access and change
 To integrate your application with |Office iOS Android|, you need to do the following:
 
 #.  Become a member of the |cspp|. You can learn more about the program, as well
-    as how to apply, at `|cspp|. <http://dev.office.com/programs/officecloudstorage>`_
+    as how to apply, at `|cspp|. <https://developer.microsoft.com/office/cloud-storage-partner-program>`_
 #.  Provide the required on-boarding information as described in the section titled :ref:`onboarding`.
 #.  Obtain your ProviderId and app store URLs from Microsoft. The app store URLs are the URLs you should use to
     launch Office on a platform's app store.
@@ -97,4 +97,4 @@ integration is as secure as possible, ensure that:
 Interested?
 -----------
 If you're interested in integrating your solution with |Office iOS Android|, take a moment to register at
-`Office 365 Cloud Storage Partner Program. <http://dev.office.com/programs/officecloudstorage>`_
+`Office 365 Cloud Storage Partner Program. <https://developer.microsoft.com/office/cloud-storage-partner-program>`_

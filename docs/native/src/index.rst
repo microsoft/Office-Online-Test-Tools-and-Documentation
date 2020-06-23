@@ -18,7 +18,7 @@ To integrate your application with |Office iOS Android|, you need to do the foll
 
 #. Be a member of the |cspp|. Currently integration with |Office iOS Android| using WOPI
    is available to cloud storage partners. You can learn more about the program, as well as how to apply, at
-   http://dev.office.com/programs/officecloudstorage.
+   https://developer.microsoft.com/office/cloud-storage-partner-program.
 
 #. Implement the WOPI protocol - a set of REST endpoints that expose information about the documents that you want to
    view or edit in |Office iOS Android|. The set of WOPI operations that must be supported is described

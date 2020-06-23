@@ -135,4 +135,4 @@ Interested?
 -----------
 
 If you're interested in integrating your solution with |wac|, take a moment to register at
-`Office 365 Cloud Storage Partner Program <http://dev.office.com/programs/officecloudstorage>`_.
+`Office 365 Cloud Storage Partner Program <https://developer.microsoft.com/office/cloud-storage-partner-program>`_.
