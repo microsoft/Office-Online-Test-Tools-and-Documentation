@@ -592,6 +592,24 @@ Other miscellaneous properties
 
             See :ref:`View performance` for more details on how this property is used in |wac|.
 
+    SharingStatus
+        |prerelease|
+
+        A **string** value indicating whether the current document is shared with other users. The value can change
+        upon adding or removing permissions to other users. Clients should use this value to help decide when to enable
+        collaboration features as a document must be Shared in order to multi-user collaboration on the document. 
+
+        Possible Values:
+
+        Private
+            Only the document owner has permission to the file.
+
+        Shared
+            At least one other user has access to the file via direct permissions or a sharing link.
+
+        If no value is specified, or an invalid value is provided, the default behavior is to assume the WOPI host intended the value
+        of None.
+
     UniqueContentId
         |need_permission|
 
