@@ -95,7 +95,8 @@ understanding the requirements for integration with WOPI clients such as |wac| a
             access token for their session is close to expiring. In order to do this, |wac| needs to know when
             the access token will expire, which it determines based on the access_token_ttl value.
 
-        Hosts can set the access_token_ttl value to ``0``. This will effectively tell the client that the
+        It is recommended to use an access_token_ttl value that makes access token valid for 10 hours.
+        Hosts can also set the access_token_ttl value to ``0``. This will effectively tell the client that the
         token expiry is either infinite or unknown. In this case, clients may disable any UI prompting users
         to refresh their sessions. This can lead to unexpected data loss due to access token expiry, so specifying a
         value for access_token_ttl is strongly recommended.
