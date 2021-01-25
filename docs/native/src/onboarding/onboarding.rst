@@ -5,9 +5,9 @@ Onboarding information
 ======================
 
 The following information must be supplied to Microsoft to enable end-to-end testing and release of
-|Office iOS| integration. After initially onboarding to the |cspp|_, you should be given
-access to the |YammerGroup|_. You
-can work with the onboarding representatives there to provide this information to Microsoft.
+|Office iOS| integration. After initially onboarding to the |cspp|_, you should be given access to
+the |YammerGroup|_. You can work with the onboarding representatives there to provide this information
+to Microsoft.
 
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
 | Property       | Data Type   | Sample Value                               | Description                                      |
