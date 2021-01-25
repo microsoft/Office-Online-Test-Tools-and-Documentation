@@ -8,7 +8,11 @@
 
 ..  Global links
 
+..  _cspp: https://developer.microsoft.com/office/cloud-storage-partner-program
+
 ..  _FIPS 180-2: http://csrc.nist.gov/publications/fips/fips180-2/fips180-2.pdf
+
+..  _YammerGroup: https://www.yammer.com/officeenterprisenda/#/threads/inGroup?type=in_group&feedId=7197423
 
 ..  |need_permission| replace::
     :html:`<span class="tag label label-warning"><i class="fa fa-lock"></i> Not supported in the CSPP</span>`
@@ -40,6 +44,8 @@
 ..  |word-web| replace:: Word for the web
 
 ..  |visio-web| replace:: Visio for the web
+
+..  |YammerGroup| replace:: CSPP Yammer Group
 
 
 
