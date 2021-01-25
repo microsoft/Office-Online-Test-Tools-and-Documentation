@@ -4,7 +4,13 @@
 Onboarding information
 ======================
 
-The following information must be supplied to Microsoft to enable end-to-end testing and release of
+The following information must be supplied to Microsoft to enable end-to-end testing and release of Office for iOS
+integration. After initially onboarding to the `Cloud Storage Partner Program
+<https://developer.microsoft.com/office/cloud-storage-partner-program>`_ (CSPP), you should be given access to
+the `CSPP Yammer Group
+<https://www.yammer.com/officeenterprisenda/#/threads/inGroup?type=in_group&feedId=7197423>`_. You can work with the
+onboarding representatives in that group to provide this information to Microsoft.
+
 |Office iOS| integration.
 
 +----------------+-------------+--------------------------------------------+--------------------------------------------------+
