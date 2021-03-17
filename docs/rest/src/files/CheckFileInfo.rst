@@ -470,7 +470,6 @@ Other miscellaneous properties
             ..  seealso:: :ref:`avoid CloseButtonClosesWindow`
 
     ClientThrottlingProtection
-        |prerelease|
 
         A **string** value offering guidance to the WOPI client as to how to differentiate client throttling behaviors between the
         user and documents combinations from the WOPI host. Under times of stress, the WOPI client may choose to make use of this
@@ -554,7 +553,6 @@ Other miscellaneous properties
         example, ``"2009-06-15T13:45:30.0000000Z"``.
 
     RequestedCallThrottling
-        |prerelease|
 
         A **string** value indicating whether the WOPI host is experiencing capacity problems and would like to
         reduce the frequency at which the WOPI clients make calls to the host.  Each WOPI application may choose
