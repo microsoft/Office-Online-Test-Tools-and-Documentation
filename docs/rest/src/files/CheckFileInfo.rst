@@ -212,6 +212,8 @@ WOPI implementation meets the requirements for a particular property.
 
         ..  versionadded:: 2015.08.03
 
+    TemporarilyNotWritable
+        A **Boolean** value that indicates that if host is temporarily unable to process writes on a file
 
 ..  _User metadata properties:
 
