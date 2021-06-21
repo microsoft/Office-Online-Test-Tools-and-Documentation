@@ -11,20 +11,19 @@ You can enable |wac| applications to show a list of Office Web add-ins at |wac| 
 when a document is opened or created from your host, a list of Office Web add-ins provided by host will be available 
 to be used with the document.
 
-Currently, we only support App Command Add-ins.
+Currently, only add-ins that utilize app commands are supported.
 
 In order to enable this feature, WOPI host developers need to:
-1. register with |wac| server for this feature.
-2. the list of add-ins are provided via as Form field values as part of POST request sent
-to |wac| server. 
+1. register with |wac| server for this feature by contacting the team of |wac| server.
+2. provide the add-ins as a Form field value as part of the POST request sent to |wac| server. 
 
 Add-In List
 --------------
 
-The list of add-ins provided by Host page needs to be sent as POST Request body as a part of POST request sent
-to |wac| server. The data format is the JSON-formatted object of the form. The Form field name of data is host_install_addins.
+The list of add-ins provided by Host page needs to be sent as a Form field value as part of the POST request body sent
+to |wac| server. The data format is the JSON-formatted object of the form. The Form data field name of data is host_install_addins.
 
-See FAQ section for the example data payload and Form field name.
+See FAQ section for the example data payload and form data filed name.
 
 
 The following example shows a list of add-ins.
@@ -39,16 +38,3 @@ The following example shows a list of add-ins.
     }
 
 Also, see FAQ section for the example data payload and Form field name.
-
-
-Add-In Prompt
---------------
-
-There are two kinds of add-ins in term of the behavior: 
-1. Add-ins are a part of WOPI host core service. When these add-ins are registered with |wac| server for the specified
-WOPI host , users won't be prompted for any permission to run the add-ins, since these add-ins are the part of host core service. 
-By using host, users have consented to use these add-ins.
-2. Any add-ins that are not a part of WOPI host core service, and have not been registered for the WOPI host. For this kind
-of add-ins, users will get a prompted for a permissions to allow add-ins to run.
-
-

@@ -2,15 +2,14 @@ What are WOPI host preinstall add-ins, what are tips to use them?
 ==================================================================================================
 
 When a document is opened or created from a WOPI host, the WOPI host can provide a list of Office Web add-ins to
-be used with the document. The list of add-ins are provided via as Form field values as part of POST request sent
-to |wac| server. In order to enable this feature, WOPI host developers need to register with |wac| server for this 
-feature.
+be used with the document. The list of add-ins are provided as a Form field value as part of the POST request sent to |wac| server. 
+In order to enable this feature, WOPI host developers need to register with |wac| server for this feature.
 
-Currently, we only support App Command Add-in.
+Currently, only add-ins that utilize app commands are supported.
 
 ..  tips::
 
-    1. For the Form field name and value format of host_install_addins, here is code snippet:
+    1. The following code snippet shows the Form field name and value format of host_install_addins :
     
     <body>
 
@@ -29,12 +28,10 @@ Currently, we only support App Command Add-in.
         { addinId: "WA123456784", type: "TaskPaneApp"} 
     }" 
 
-    2. A quick trial with Fiddler, 
+    2. Testing with Fiddler, 
 
     To understand the data flow and quickly see the action of this feature, or to troubleshoot your own 
     implementation, you can use Fiddler to mimic the data payload of add-ins sent by your WOPI host page before you implement it in your page. 
-
-    Here are the steps: 
 
         1. Pick an App Command Add-in, write down its add-in Id
             For example, browse to https://appsource.microsoft.com/en-us/product/office/WA104380121?tab=Overview, write down WA104380121.
@@ -44,11 +41,10 @@ Currently, we only support App Command Add-in.
         4. In fiddler, add the following section to FiddlerScript, in function OnBeforeRequest. The high-lighted part is the escaped string from step 3.  
         if (oSession.PathAndQuery.StartsWith("/we/wordeditorframe.aspx?"))  
         {  
-            oSession.utilSetRequestBody(oSession.GetRequestBodyAsString() + "&host_install_addins=%5B%7B%22addinId%22%3A%22WA104380121%22%2C%22type%22%3A%22TaskPaneApp%22%7D%5D");   
-
+            oSession.utilSetRequestBody(oSession.GetRequestBodyAsString() + "&host_install_addins=%5B%7B%22addinId%22%3A%22WA104380121%22%2C%22type%22%3A%22TaskPaneApp%22%7D%5D"); 
         }  
 
-        To test with Excel Online ( not in FF yet as of 2/23/21), add the following condition:  
+        To test with Excel Online, use the following condition instead:  
         if (oSession.PathAndQuery.StartsWith("/x/_layouts/xlviewerinternal.aspx?"))  
 
     3. To troubleshoot any data format or encoding issue, you can compare what are sending with the payload that Fiddler mimics above by inspecting them 
