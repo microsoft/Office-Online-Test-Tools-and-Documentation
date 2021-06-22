@@ -1,3 +1,6 @@
+
+..  _addins_faq:
+
 What are WOPI host preinstall add-ins? How are they used?
 =========================================================
 
@@ -45,7 +48,7 @@ implement it in your page.
         write down WA104380121.
     2.  Write down a JSON string like this: [{"addinId":"WA104380121","type":"TaskPaneApp"}]. The addinId
         is the add-in ID from step 1.
-        The type is always TaskPaneApp for App Command. 
+        The type is always TaskPaneApp for App Command.
     3.  Use html encode tool to escape the string from step 2. Like
         this: ``%5B%7B%22addinId%22%3A%22WA104380121%22%2C%22type%22%3A%22TaskPaneApp%22%7D%5D``.
     4.  In Fiddler, add the following section to FiddlerScript, in function OnBeforeRequest. The highlighted part is
@@ -53,18 +56,18 @@ implement it in your page.
 
         ..  code-block:: csharp
 
-            if (oSession.PathAndQuery.StartsWith("/we/wordeditorframe.aspx?")) 
-            { 
+            if (oSession.PathAndQuery.StartsWith("/we/wordeditorframe.aspx?"))
+            {
                 oSession.utilSetRequestBody(
                     oSession.GetRequestBodyAsString() +
-                    "&host_install_addins=%5B%7B%22addinId%22%3A%22WA104380121%22%2C%22type%22%3A%22TaskPaneApp%22%7D%5D"); 
-            } 
+                    "&host_install_addins=%5B%7B%22addinId%22%3A%22WA104380121%22%2C%22type%22%3A%22TaskPaneApp%22%7D%5D");
+            }
 
         To test with |excel-web|, use the following condition instead:
 
         ..  code-block:: csharp
 
-            if (oSession.PathAndQuery.StartsWith("/x/_layouts/xlviewerinternal.aspx?")) 
+            if (oSession.PathAndQuery.StartsWith("/x/_layouts/xlviewerinternal.aspx?"))
 
 Troubleshooting
 ---------------

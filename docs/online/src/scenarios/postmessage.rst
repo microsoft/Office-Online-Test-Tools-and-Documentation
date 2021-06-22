@@ -361,10 +361,11 @@ every outgoing PostMessage:
 
     The App_IsFrameTrusted message is posted by |wac| application frame to initiate handshake flow.
     The host is expected to check whether the top frame is trusted and post :js:data:`Host_IsFrameTrusted`
-    message back to |wac| application. The host first needs to include a query string: &sftc=1 to url of POST 
-    request sent to |wac| application, to indicate to |wac| application that the host supports frame trust post Message. 
-    Note: sftc, stands for supportsFrameTrustedPostMessage. Only when &sftc is included in the query string, 
-    the App_IsFrameTrusted message will be posted by |wac| application frame to initiate handshake flow.
+    message back to |wac| application. The host first needs to include a query string: &sftc=1 to url of POST
+    request sent to |wac| application, to indicate to |wac| application that the host supports frame trust post Message.
+
+    ``sftc`` stands for "SupportsFrameTrustedPostMessage." Only when ``&sftc`` is included in the query string,
+    the ``App_IsFrameTrusted`` message will be posted by |wac| application frame to initiate handshake flow.
 
 
     ..  attribute:: Values
