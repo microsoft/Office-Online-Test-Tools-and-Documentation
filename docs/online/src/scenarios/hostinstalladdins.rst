@@ -1,8 +1,8 @@
 
 ..  _HostInstallAddIns:
 
-Enable Office Web Add-Ins provided by Host.PostMessage
-======================================================
+Enable Office Web Add-Ins provided by Host
+==========================================
 
 ..  default-domain:: js
 
