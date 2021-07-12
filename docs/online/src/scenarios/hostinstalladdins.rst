@@ -2,7 +2,7 @@
 ..  _HostInstallAddIns:
 
 Enable Office Web Add-Ins provided by Host
-======================================================
+==========================================
 
 ..  default-domain:: js
 
