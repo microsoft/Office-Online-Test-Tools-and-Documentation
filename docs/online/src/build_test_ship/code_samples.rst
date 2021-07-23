@@ -17,6 +17,7 @@ including:
 * Handling WOPI operations such as :ref:`CheckFileInfo`, :ref:`GetFile`, and :ref:`PutFile`
 * Example :ref:`proof key verification <Proof Keys>` (also see :ref:`Proof key unit tests`)
 
+You can find a documents preview implementation written on golang here - https://github.com/ildarusmanov/msofficepreview
 
 ..  _Proof key unit tests:
 
