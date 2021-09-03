@@ -212,7 +212,6 @@ WOPI implementation meets the requirements for a particular property.
 
         ..  versionadded:: 2015.08.03
 
-
 ..  _User metadata properties:
 
 User metadata properties
@@ -607,6 +606,9 @@ Other miscellaneous properties
 
         If no value is specified, or an invalid value is provided, the default behavior is to assume the WOPI host intended the value
         of None.
+
+    TemporarilyNotWritable
+        A **Boolean** value that indicates that if host is temporarily unable to process writes on a file
 
     UniqueContentId
         |need_permission|

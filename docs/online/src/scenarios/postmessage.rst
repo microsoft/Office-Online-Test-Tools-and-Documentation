@@ -71,6 +71,7 @@ You can send the following messages; all others are ignored:
 * :data:`Blur_Focus`
 * :data:`CanEmbed`
 * :data:`Grab_Focus`
+* :data:`Host_IsFrameTrusted`
 * :data:`Host_PerfTiming`
 * :data:`Host_PostmessageReady`
 
@@ -178,6 +179,28 @@ You can send the following messages; all others are ignored:
             "MessageId": "Grab_Focus",
             "SendTime": 1329014075000,
             "Values": { }
+        }
+
+..  data:: Host_IsFrameTrusted
+
+    The Host_IsFrameTrusted message is sent by the host in response to :js:data:`App_IsFrameTrusted` message.
+
+    ..  attribute:: Values
+        :noindex:
+
+        **isTopFrameTrusted** *(boolean)*
+            A boolean value providing the indication whether the top frame is trusted.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "Host_IsFrameTrusted",
+            "SendTime": 1329014075000,
+            "Values": {
+                "isTopFrameTrusted": true
+            }
         }
 
 ..  data:: Host_PerfTiming
@@ -295,6 +318,7 @@ message being sent. The following code example shows how you might consume a mes
 
 The host page receives the following messages; all others are ignored:
 
+* :data:`App_IsFrameTrusted`
 * :data:`App_LoadingStatus`
 * :data:`App_PushState`
 * :data:`Edit_Notification`
@@ -332,6 +356,35 @@ every outgoing PostMessage:
         :ref:`troubleshooting <troubleshooting>` issues with |wac|. See :ref:`session id` for more
         information about this value.
 
+
+..  data:: App_IsFrameTrusted
+
+    The App_IsFrameTrusted message is posted by |wac| application frame to initiate handshake flow.
+    The host is expected to check whether the top frame is trusted and post :js:data:`Host_IsFrameTrusted`
+    message back to |wac| application. The host first needs to include a query string: &sftc=1 to url of POST
+    request sent to |wac| application, to indicate to |wac| application that the host supports frame trust post Message.
+
+    ``sftc`` stands for "SupportsFrameTrustedPostMessage." Only when ``&sftc`` is included in the query string,
+    the ``App_IsFrameTrusted`` message will be posted by |wac| application frame to initiate handshake flow.
+
+
+    ..  attribute:: Values
+        :noindex:
+
+        :ref:`Common values <outgoing postmessage common values>` only.
+
+    ..  rubric:: Example Message:
+
+    ..  code-block:: JSON
+
+        {
+            "MessageId": "App_IsFrameTrusted",
+            "SendTime": 1329014075000,
+            "Values": {
+                "wdUserSession": "3692f636-2add-4b64-8180-42e9411c4984",
+                "ui-language": "1033"
+            }
+        }
 
 ..  data:: App_LoadingStatus
 
