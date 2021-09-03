@@ -1,16 +1,16 @@
 /* docs have moved banner */
 .wy-nav-side {
-    top: 77px !important;
+    top: 125px !important;
 }
 
 .wy-nav-content {
-    margin-top: 77px !important;
+    margin-top: 125px !important;
 }
 
 #docs-moved-banner {
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 300;
 }
 
 /* override table width restrictions */
