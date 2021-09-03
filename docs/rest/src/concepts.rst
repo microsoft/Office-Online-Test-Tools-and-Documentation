@@ -127,12 +127,13 @@ understanding the requirements for integration with WOPI clients such as |wac| a
         * *Not* be associated with a particular user.
 
         All WOPI operations that modify files, such as :ref:`PutFile`, will include a lock ID as a parameter in their
-        request. Usually the ID will be passed in the **X-WOPI-Lock** request header (but not always;
-        :ref:`UnlockAndRelock` is an exception). WOPI requires that hosts compare the lock ID passed in a WOPI
-        request with the lock ID currently on a file and respond appropriately when the lock IDs do not match. In
-        particular, WOPI clients expect that when a lock ID does *not* match the current lock, the host will send
-        back the current lock ID in the **X-WOPI-Lock** response header. This behavior is critical, because WOPI
-        clients will use the current lock ID in order to determine what further WOPI calls to make to the host.
+        request. Usually the expected lock ID will be passed in the **X-WOPI-Lock** request header (but not always;
+        :ref:`UnlockAndRelock` is an exception which uses **X-WOPI-OldLock** instead). WOPI requires that hosts
+        compare the lock ID passed in a WOPI request with the lock ID currently on a file and respond appropriately
+        when the lock IDs do not match. In particular, WOPI clients expect that when a lock ID does *not* match the
+        current lock, the host will send back the current lock ID in the **X-WOPI-Lock** response header. This
+        behavior is critical, because WOPI clients will use the current lock ID in order to determine what further
+        WOPI calls to make to the host.
 
         It is important to note that WOPI locks are *not* user-owned. In other words, a WOPI client may execute
         lock-related operations using multiple access tokens, and hosts are expected to execute those operations as
