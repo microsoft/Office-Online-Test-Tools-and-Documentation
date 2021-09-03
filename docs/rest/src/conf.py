@@ -5,13 +5,11 @@ from path import Path
 # Load shared config file
 exec(open(Path('../../_shared/conf.py').abspath()).read())
 
-
 def setup(app):
     # noinspection PyUnresolvedReferences
     common_setup(app)
-
     app.add_stylesheet('rest.css')
-
+    app.add_js_file('rest.js')
 
 # -- General configuration -----------------------------------------------------
 
