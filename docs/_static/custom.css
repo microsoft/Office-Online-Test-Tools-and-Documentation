@@ -1,3 +1,18 @@
+/* docs have moved banner */
+.wy-nav-side {
+    top: 125px !important;
+}
+
+.wy-nav-content {
+    margin-top: 125px !important;
+}
+
+#docs-moved-banner {
+    position: fixed;
+    width: 100%;
+    z-index: 300;
+}
+
 /* override table width restrictions */
 .wy-table-responsive table td,
 .wy-table-responsive table th {
