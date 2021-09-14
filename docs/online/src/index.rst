@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _intro:
 
 Using the WOPI protocol to integrate with |wac|

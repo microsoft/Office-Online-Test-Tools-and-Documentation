@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _shipping:
 
 Shipping your |wac| integration

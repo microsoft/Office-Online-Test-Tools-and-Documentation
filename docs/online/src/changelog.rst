@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _changelog:
 
 What's New

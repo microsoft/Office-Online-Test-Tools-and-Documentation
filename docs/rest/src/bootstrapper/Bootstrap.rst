@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  |operation| replace:: Bootstrap
 
 ..  _Bootstrap:

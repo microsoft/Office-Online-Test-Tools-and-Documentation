@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 How often should WOPI discovery be run?
 =======================================
 

@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 Frequently Asked Questions
 ==========================
 

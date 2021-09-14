@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _coauth:
 ..  _coauthoring:
 

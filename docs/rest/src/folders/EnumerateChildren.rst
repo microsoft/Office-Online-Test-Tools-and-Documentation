@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 :orphan:
 
 ..  _EnumerateChildren (folders):

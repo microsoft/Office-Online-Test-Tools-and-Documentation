@@ -8,7 +8,7 @@ exec(open(Path('../../_shared/conf.py').abspath()).read())
 def setup(app):
     # noinspection PyUnresolvedReferences
     common_setup(app)
-    app.add_js_file('online.js')
+    # app.add_js_file('online.js')
 
 # -- General configuration -----------------------------------------------------
 

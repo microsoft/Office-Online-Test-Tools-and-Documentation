@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Common headers:
 ..  _standard headers:
 

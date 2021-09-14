@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _faq:
 
 Frequently Asked Questions

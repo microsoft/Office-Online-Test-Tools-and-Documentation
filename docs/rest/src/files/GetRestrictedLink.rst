@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _GetRestrictedLink:
 
 |stub-icon| GetRestrictedLink

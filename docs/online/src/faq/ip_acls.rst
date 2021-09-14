@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 What are the IP ranges and ports used by |wac|?
 ===============================================
 

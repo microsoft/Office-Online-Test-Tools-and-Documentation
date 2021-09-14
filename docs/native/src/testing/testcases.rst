@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Manual Validation:
 
 Manual Validation
@@ -14,15 +17,15 @@ pass before launch.
 
 Please contact Microsoft for directions to set the |Office iOS| apps into a test mode that can be used for testing
 the below scenarios.
-   
+
  ..  note::
-     * "Company app/application" refers to your app. 
-     * "Company service" refers to your service. 
+     * "Company app/application" refers to your app.
+     * "Company service" refers to your service.
      * Where it refers to "Office", please substitute Word, Excel and PowerPoint app. The tests should be re-run
        against each Office application.
      * Please note the version of the Office app you tested against. This information can be found under
        :menuselection:`Settings --> [App] --> Version`
-	 
+
 1 - Open from company app - first install
 -----------------------------------------
 
@@ -128,10 +131,10 @@ Repeat test 2 except with company service already added (i.e. from previous usag
 
 Verify ability to duplicate a file to Company Service, both by adding a new place and using an existing place.
 
-..  figure:: ../images/test_dupe.png  
-    :alt: A screenshot that shows the document actions in |Office iOS|. 
+..  figure:: ../images/test_dupe.png
+    :alt: A screenshot that shows the document actions in |Office iOS|.
 
-    A screenshot that shows the document actions in |Office iOS|. 
+    A screenshot that shows the document actions in |Office iOS|.
 
 
 6 - Create new [name]
@@ -159,23 +162,23 @@ service as a place.
 Verify login page fits in window for various iPad and iPhone sizes.
 
 
-9 - Verify file properties 
+9 - Verify file properties
 --------------------------
 
 Verify file properties from :guilabel:`Recent` and from opened file. When opening the properties from the
 :guilabel:`Recent` tab or the :guilabel:`Open` tab, the fields Author, Created, Modified By and Company will be empty.
 
-..  figure:: ../images/test_prop1.png  
+..  figure:: ../images/test_prop1.png
     :alt: Screenshot that shows document properties in Office.
-	
+
     Properties view from Recent
 
 
-..  figure:: ../images/test_prop2.png  
-    :alt: A screenshot that shows the document properties within the opened file. 
-	
+..  figure:: ../images/test_prop2.png
+    :alt: A screenshot that shows the document properties within the opened file.
+
     Properties view from within a document
-	
+
 
 
 10 - Change passwords
@@ -203,4 +206,4 @@ Verify file properties from :guilabel:`Recent` and from opened file. When openin
 #. Open the |Office iOS| app and browse to the Company Service and open a file.
 
 **RESULT: You should be prompted to enter credentials again.**
-	
+

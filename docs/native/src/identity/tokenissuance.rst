@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 Token Issuance URL requirements
 ===============================
 
@@ -13,7 +16,7 @@ Example Response Body::
 
     HTTP/1.1 200 OK
     Content-Type: application/json;charset=UTF-8
-    
+
     {
         "access_token":"123dfevewafe",
         "token_type": "bearer",

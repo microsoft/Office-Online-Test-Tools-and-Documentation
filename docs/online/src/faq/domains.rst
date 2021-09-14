@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 Can I add new domains to the WOPI domain allow list after launch?
 =================================================================
 

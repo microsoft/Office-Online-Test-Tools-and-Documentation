@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _languages:
 
 What languages does |wac| support?

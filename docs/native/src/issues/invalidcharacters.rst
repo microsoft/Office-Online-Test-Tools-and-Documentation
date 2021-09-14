@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 |Office iOS| will fail to load files with invalid characters in the file name, folder names or user ID
 ======================================================================================================
 

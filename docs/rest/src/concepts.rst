@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _key concepts:
 ..  _Concepts:
 

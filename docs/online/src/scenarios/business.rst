@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Business editing:
 
 Supporting document editing for business users

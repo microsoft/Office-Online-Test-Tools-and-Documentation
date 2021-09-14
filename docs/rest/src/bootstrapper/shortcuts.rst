@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _shortcut operations:
 ..  _shortcuts:
 

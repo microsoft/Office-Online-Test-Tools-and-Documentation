@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 How should users give feedback to Microsoft regarding |wac|?
 ============================================================
 

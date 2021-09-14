@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 .. _building docs:
 
 Building this documentation locally

@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetLock, GetLock
 
 ..  |operation| replace:: GetLock

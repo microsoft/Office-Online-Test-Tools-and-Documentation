@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  default-domain:: wopi
 
 ..  _WOPI discovery:

@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 If I make an edit and immediately close the application, occasionally my edit is lost - why?
 ============================================================================================
 

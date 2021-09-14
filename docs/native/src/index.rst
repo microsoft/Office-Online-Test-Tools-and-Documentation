@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _native wopi:
 
 Using the WOPI protocol to integrate with Office for iOS and Android

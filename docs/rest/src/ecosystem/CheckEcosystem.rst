@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; CheckEcosystem, CheckEcosystem
 
 ..  |operation| replace:: CheckEcosystem

@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; CreateChildContainer, CreateChildContainer
 
 ..  |operation| replace:: CreateChildContainer

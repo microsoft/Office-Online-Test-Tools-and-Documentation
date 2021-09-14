@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; DeleteContainer, DeleteContainer
 
 ..  |operation| replace:: DeleteContainer

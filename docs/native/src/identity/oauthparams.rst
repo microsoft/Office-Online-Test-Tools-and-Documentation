@@ -1,8 +1,11 @@
 
+.. meta::
+    :robots: noindex
+
 |Office iOS| OAuth2 sign-in URL parameters
 ==========================================
 
-The HTTPS request to load the OAuth2 Authorization page (:rfc:`6749#section-3.1`) includes standard OAuth2 parameters 
+The HTTPS request to load the OAuth2 Authorization page (:rfc:`6749#section-3.1`) includes standard OAuth2 parameters
 such as ``client_id``, ``redirect_uri``, etc. but may also include Office-specific parameters, documented here.
 
     ..  important:: Early releases of |Office iOS| may not include some or all of these URL parameters, so callers should fall back to reasonable defaults.
@@ -10,7 +13,7 @@ such as ``client_id``, ``redirect_uri``, etc. but may also include Office-specif
 Culture
 -------
 
-The request includes the :http:header:`Accept-Language` header. The value of this header is determined by the iOS 
+The request includes the :http:header:`Accept-Language` header. The value of this header is determined by the iOS
 language settings.  In addition, the following URL parameter is appended to the request URL::
 
     rs=Culture

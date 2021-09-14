@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetShareUrl (containers), GetShareUrl (containers)
 
 ..  |operation| replace:: GetShareUrl
@@ -18,12 +21,12 @@ GetShareUrl (containers)
 
 ..  post:: /wopi/containers/(container_id)
 
-    The |operation| operation returns a :term:`Share URL` that is suitable for viewing a shared container when launched 
+    The |operation| operation returns a :term:`Share URL` that is suitable for viewing a shared container when launched
     in a web browser. A host can support multiple Share URL types, as described by the :term:`SupportedShareUrlTypes`
-    property. The **X-WOPI-UrlType** request header contains the Share URL type that should be returned. 
+    property. The **X-WOPI-UrlType** request header contains the Share URL type that should be returned.
 
     If the **X-WOPI-UrlType** header is not present or contains a value that is invalid or not supported by the host,
-    the host should respond with a :http:statuscode:`501`. 
+    the host should respond with a :http:statuscode:`501`.
 
     ..  include:: /_fragments/common_containers_params.rst
 

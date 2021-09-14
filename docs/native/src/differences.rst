@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _differences:
 
 Differences between |Office iOS|, |Office Android| and |wac|

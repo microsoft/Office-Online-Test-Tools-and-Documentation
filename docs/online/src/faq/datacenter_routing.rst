@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 How does |wac| determine the datacenter to route a given user to?
 =================================================================
 

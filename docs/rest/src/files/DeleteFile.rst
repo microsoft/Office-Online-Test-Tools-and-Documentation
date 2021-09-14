@@ -1,3 +1,7 @@
+
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; DeleteFile, DeleteFile
 
 ..  |operation| replace:: DeleteFile

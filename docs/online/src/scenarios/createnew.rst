@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Create New:
 
 Creating new files using |wac|

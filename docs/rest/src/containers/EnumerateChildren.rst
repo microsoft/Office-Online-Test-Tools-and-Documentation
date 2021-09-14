@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; EnumerateChildren (containers), EnumerateChildren (containers)
 
 ..  |operation| replace:: EnumerateChildren

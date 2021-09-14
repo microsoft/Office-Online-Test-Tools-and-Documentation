@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetRootContainer (bootstrapper), GetRootContainer (bootstrapper)
 
 ..  |operation| replace:: GetRootContainer

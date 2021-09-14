@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _HostInstallAddIns:
 
 Enable Office Web Add-Ins provided by Host

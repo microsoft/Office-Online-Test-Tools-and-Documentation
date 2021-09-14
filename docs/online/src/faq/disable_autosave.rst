@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 Can auto-save be disabled in |wac|?
 ===================================
 

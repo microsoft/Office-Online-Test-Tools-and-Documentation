@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _ClientBootstrapper:
 
 Bootstrapping OAuth2

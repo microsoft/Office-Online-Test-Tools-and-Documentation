@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 .. _style guide:
 
 |wac| Documentation Style Guide

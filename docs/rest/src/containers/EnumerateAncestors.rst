@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; EnumerateAncestors (containers), EnumerateAncestors (containers)
 
 ..  |operation| replace:: EnumerateAncestors

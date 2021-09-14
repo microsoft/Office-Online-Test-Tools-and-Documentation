@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; PutUserInfo, PutUserInfo
 
 ..  |operation| replace:: PutUserInfo

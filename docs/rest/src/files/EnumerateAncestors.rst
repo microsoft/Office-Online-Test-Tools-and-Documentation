@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; EnumerateAncestors (files), EnumerateAncestors (files)
 
 ..  |operation| replace:: EnumerateAncestors
