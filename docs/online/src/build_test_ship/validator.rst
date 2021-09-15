@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _validator:
 
 WOPI Validation application

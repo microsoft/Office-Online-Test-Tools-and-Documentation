@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Proof Keys:
 
 Verifying that requests originate from |wac| by using proof keys

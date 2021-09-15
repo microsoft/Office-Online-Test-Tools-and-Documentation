@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _operational flows:
 
 Operational flows for |Office iOS| and |Office Android|

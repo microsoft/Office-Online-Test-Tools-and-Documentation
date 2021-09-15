@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _embedding:
 ..  _Embedding Office documents:
 

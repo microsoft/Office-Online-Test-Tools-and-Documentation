@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; RenameContainer, RenameContainer
 
 ..  |operation| replace:: RenameContainer

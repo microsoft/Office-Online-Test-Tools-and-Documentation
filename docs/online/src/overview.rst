@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _office online overview:
 ..  _overview:
 

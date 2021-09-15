@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 .. _app to app:
 
 App to app sign in for |Office iOS| and |Office Android|

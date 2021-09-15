@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _intro:
 
 Integrating with |Office iOS Android|

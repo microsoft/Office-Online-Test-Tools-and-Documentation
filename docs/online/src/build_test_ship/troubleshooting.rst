@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Troubleshooting:
 
 Troubleshooting interactions with |wac|

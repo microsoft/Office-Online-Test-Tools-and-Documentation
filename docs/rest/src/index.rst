@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _index:
 
 WOPI REST API Reference

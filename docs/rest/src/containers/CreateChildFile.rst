@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; CreateChildFile, CreateChildFile
 
 ..  |operation| replace:: CreateChildFile

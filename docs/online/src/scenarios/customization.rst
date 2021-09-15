@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _ui customization:
 
 Customizing |wac| using CheckFileInfo properties

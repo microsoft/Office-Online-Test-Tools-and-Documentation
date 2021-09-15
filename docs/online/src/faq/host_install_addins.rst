@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _addins_faq:
 
 What are WOPI host preinstall add-ins? How are they used?

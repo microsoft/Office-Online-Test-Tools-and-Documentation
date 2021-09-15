@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; CheckContainerInfo, CheckContainerInfo
 
 ..  |operation| replace:: CheckContainerInfo

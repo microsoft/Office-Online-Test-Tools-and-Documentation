@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _requirements:
 
 WOPI implementation requirements for |Office iOS Android| integration

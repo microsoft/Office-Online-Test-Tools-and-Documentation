@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _common issues:
 
 Common implementation problems

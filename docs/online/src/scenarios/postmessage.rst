@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _PostMessage:
 
 Using PostMessage to interact with the |wac| application iframe

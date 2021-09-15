@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 What browsers does |wac| support?
 =========================================
 

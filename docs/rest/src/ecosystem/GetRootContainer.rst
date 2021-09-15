@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetRootContainer (ecosystem), GetRootContainer (ecosystem)
 
 ..  |operation| replace:: GetRootContainer

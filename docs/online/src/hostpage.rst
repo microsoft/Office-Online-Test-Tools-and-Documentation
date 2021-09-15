@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Host page:
 
 Building a host page

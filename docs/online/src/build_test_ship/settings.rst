@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _settings:
 
 Microsoft-configured settings

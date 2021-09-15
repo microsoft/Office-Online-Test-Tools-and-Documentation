@@ -1,4 +1,7 @@
- 
+
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetFile, GetFile
 
 ..  |operation| replace:: GetFile

@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 Why do I get an error when I try to view PDF documents in |wac|?
 ================================================================
 

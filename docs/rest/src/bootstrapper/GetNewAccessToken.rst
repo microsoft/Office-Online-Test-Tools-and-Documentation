@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetNewAccessToken, GetNewAccessToken
 
 ..  |operation| replace:: GetNewAccessToken

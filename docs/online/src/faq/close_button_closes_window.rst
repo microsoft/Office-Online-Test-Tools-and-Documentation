@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _avoid CloseButtonClosesWindow:
 
 Why should I avoid using the CloseButtonClosesWindow property in |wac|?

@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 Can I add more than one domain to the WOPI domain allow list?
 =============================================================
 

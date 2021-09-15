@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; PutFile, PutFile
 
 ..  |operation| replace:: PutFile

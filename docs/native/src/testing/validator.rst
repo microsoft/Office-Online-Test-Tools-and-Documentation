@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Validator app:
 
 Using the validator application to validate your WOPI implementation

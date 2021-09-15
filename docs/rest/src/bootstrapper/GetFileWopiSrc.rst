@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetFileWopiSrc (bootstrapper), GetFileWopiSrc (bootstrapper)
 
 ..  |operation| replace:: GetFileWopiSrc

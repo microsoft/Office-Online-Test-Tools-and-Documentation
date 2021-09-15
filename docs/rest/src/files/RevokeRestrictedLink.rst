@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _RevokeRestrictedLink:
 
 |stub-icon| RevokeRestrictedLink

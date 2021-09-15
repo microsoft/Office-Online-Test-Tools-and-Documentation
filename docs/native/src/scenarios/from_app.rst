@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _open files:
 
 Opening files from your app in |Office iOS| and |Office Android|
@@ -126,11 +129,11 @@ If yes Office is installed, go to Step 2a. Else go to Step 2b/2c.
 **Step 2 - Integrate promotional logic in your app**
 
 Step 2a - When Office apps are installed - Check version of Office apps
- 
+
 * Make sure Office apps are greater than 16.0.XXXX.XX version.
 
     Note: Exact Version number will be provided by Office on Android team.
- 
+
 * Guidance to determine Office application version number
 
     Use Android `PackageInfo`_ to determine whether a particular version of Office application is installed on the device
@@ -143,7 +146,7 @@ Example::
     String version = pInfo.versionName;
 
 Step 2b - When Office apps not installed - promote via Google Play store
- 
+
 Use adjust URLs to throw market intent to install Office apps. These links will be created by Office Android team for
 you. These links will redirect to following Google Play store page for corresponding Office apps.
 
@@ -158,10 +161,10 @@ you. These links will redirect to following Google Play store page for correspon
 +-------------+-----------------------------------------------------------------------------------+
 
 Step 2c - When Office apps not installed - promote via China stores
- 
+
 In China, Office apps are uploaded on following app stores. Since Google Play is not supported in China, app installs
 would happen from one of the following app stores.
- 
+
 +-----------+---------------------------------------------------------------------------------+
 | Stores    | Word                                                                            |
 +===========+=================================================================================+
@@ -191,7 +194,7 @@ Tencent will need to launch the market intent by showing only those app stores w
 In order to also track the number of launches in promotional flow, we will make a call to tracking URL (i.e. adjust
 URL). Following guidance goes over special handling to make a call to tracking URL (i.e. adjust URL) first, and then
 show the valid list of app stores for app installations.
-  
+
 Guidance:
 
 1. Working prototype for this is present here:

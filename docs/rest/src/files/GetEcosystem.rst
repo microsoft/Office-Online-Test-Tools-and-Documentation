@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetEcosystem (files), GetEcosystem (files)
 
 ..  |operation| replace:: GetEcosystem

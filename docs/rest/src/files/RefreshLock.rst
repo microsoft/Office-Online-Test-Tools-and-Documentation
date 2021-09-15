@@ -1,4 +1,7 @@
- 
+
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; RefreshLock, RefreshLock
 
 ..  |operation| replace:: RefreshLock

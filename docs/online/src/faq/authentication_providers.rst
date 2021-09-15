@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 What authentication providers does |wac| support?
 =================================================
 

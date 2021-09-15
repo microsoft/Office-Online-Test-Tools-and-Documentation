@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetFileWopiSrc (ecosystem), GetFileWopiSrc (ecosystem)
 
 ..  |operation| replace:: GetFileWopiSrc

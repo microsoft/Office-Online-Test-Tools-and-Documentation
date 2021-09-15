@@ -1,11 +1,14 @@
 
+.. meta::
+    :robots: noindex
+
 Post-Authorization token endpoint
 =================================
 
 The token endpoint URL (:rfc:`6749#section-3.2`) is normally obtained from the initial unauthenticated call
 described at :ref:`ClientBootstrapper`.
 
-If the token endpoint URL cannot be determined before the end-user has completed the sign-in process, 
+If the token endpoint URL cannot be determined before the end-user has completed the sign-in process,
 an alternative token endpoint URL may be supplied.
 
 This is done via a ``tk=`` URL parameter appended to the value of the

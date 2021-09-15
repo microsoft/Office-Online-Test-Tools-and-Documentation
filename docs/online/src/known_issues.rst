@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _known issues:
 
 Known Issues

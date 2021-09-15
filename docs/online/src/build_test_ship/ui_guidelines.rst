@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _ui guidelines:
 
 UI guidelines

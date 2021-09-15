@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _trello board:
 
 Using Trello to manage the launch process

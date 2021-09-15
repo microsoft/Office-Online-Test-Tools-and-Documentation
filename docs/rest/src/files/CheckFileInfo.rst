@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; CheckFileInfo, CheckFileInfo
 
 ..  |operation| replace:: CheckFileInfo
@@ -594,7 +597,7 @@ Other miscellaneous properties
 
         A **string** value indicating whether the current document is shared with other users. The value can change
         upon adding or removing permissions to other users. Clients should use this value to help decide when to enable
-        collaboration features as a document must be Shared in order to multi-user collaboration on the document. 
+        collaboration features as a document must be Shared in order to multi-user collaboration on the document.
 
         Possible Values:
 
@@ -724,16 +727,16 @@ because they are pending deprecation or they are designated for future features 
         ..  note::
             This does not mean that the user doesn't have rights to edit the file. Hosts should use the
             :term:`UserCanWrite` property for that purpose.
-    
+
     CobaltCapabilities
-        A **array of strings** that contains the Cobalt capabilities supported by the host. If :term:`SupportsCobalt` 
-        is set to ``false``, this property must be ignored by the WOPI client. Any value other than the possible values 
+        A **array of strings** that contains the Cobalt capabilities supported by the host. If :term:`SupportsCobalt`
+        is set to ``false``, this property must be ignored by the WOPI client. Any value other than the possible values
         listed below must be ignored by the WOPI client.
 
         Possible Values:
 
         DownloadStreaming
-            This type of CobaltCapabilities indicates the host supports Cobalt streaming for download 
+            This type of CobaltCapabilities indicates the host supports Cobalt streaming for download
             at the moment it handles the request.
 
 

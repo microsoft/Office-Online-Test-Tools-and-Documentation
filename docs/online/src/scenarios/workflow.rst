@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _workflow:
 
 Integrating |wac| with document workflow processes

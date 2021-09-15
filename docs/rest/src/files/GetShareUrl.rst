@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; GetShareUrl (files), GetShareUrl (files)
 
 ..  |operation| replace:: GetShareUrl
@@ -21,10 +24,10 @@ GetShareUrl (files)
 
     The |operation| operation returns a :term:`Share URL` that is suitable for viewing a shared file when launched
     in a web browser. A host can support multiple Share URL types, as described by the :term:`SupportedShareUrlTypes`
-    property. The **X-WOPI-UrlType** request header contains the Share URL type that should be returned. 
+    property. The **X-WOPI-UrlType** request header contains the Share URL type that should be returned.
 
     If the **X-WOPI-UrlType** header is not present or contains a value that is invalid or not supported by the host,
-    the host should respond with a :http:statuscode:`501`. 
+    the host should respond with a :http:statuscode:`501`.
 
     ..  include:: /_fragments/common_params.rst
 

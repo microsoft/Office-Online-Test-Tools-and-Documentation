@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _testing:
 
 Testing |wac| integration

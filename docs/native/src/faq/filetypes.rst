@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 What file types are supported in |Office iOS|?
 ==============================================
 

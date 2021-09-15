@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; Unlock, Unlock
 
 ..  |operation| replace:: Unlock

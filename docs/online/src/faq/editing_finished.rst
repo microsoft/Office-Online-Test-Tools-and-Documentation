@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 How does a WOPI host know when an editing session is finished?
 ==============================================================
 

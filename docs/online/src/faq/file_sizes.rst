@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 What are the file sizes supported by |wac|?
 ===========================================
 

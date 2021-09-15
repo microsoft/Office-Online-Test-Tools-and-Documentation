@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  index:: WOPI requests; RenameFile, RenameFile
 
 ..  |operation| replace:: RenameFile

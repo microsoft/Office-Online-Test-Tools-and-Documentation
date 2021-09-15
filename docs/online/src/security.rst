@@ -1,4 +1,7 @@
 
+.. meta::
+    :robots: noindex
+
 ..  _Security:
 
 Considerations for security and privacy
