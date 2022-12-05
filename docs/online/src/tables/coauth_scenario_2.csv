@@ -1,4 +1,0 @@
-Application,PutFile access token used,Additional notes
-Word for the web,"Either access token may be used, depending on which user changed the document most recently during the auto-save interval.",
-Excel for the web,User B,
-PowerPoint for the web,"Either access token may be used, depending on which user changed the document most recently during the auto-save interval.",

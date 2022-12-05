@@ -1,5 +1,0 @@
-# This requirements file is what's used when running builds on readthedocs
-
--r requirements.txt
-
-# Add any readthedocs-specific dependencies below

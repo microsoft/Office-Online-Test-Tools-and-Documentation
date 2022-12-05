@@ -1,4 +1,0 @@
-Application,PutFile access token used,Additional notes
-Word for the web,"User A, since User B is not editing.","After no more than 5 minutes, Word for the web will call CheckFileInfo with User B's access token. That call will indicate that User B no longer has edit permissions, so User B will be removed from the editing session. User A can continue editing the document."
-Excel for the web,User B,"Once User B's edit permission is removed, all PutFile requests for the session will fail. In no more than 3 minutes after the first PutFile failure, then all users, including User A, will be removed from the editing session."
-PowerPoint for the web,"User A, since User B is not editing.","After no more than 5 minutes, PowerPoint for the web will call CheckFileInfo with User B's access token. That call will indicate that User B no longer has edit permissions, so User B will be removed from the editing session. User A can continue editing the document."

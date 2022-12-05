@@ -1,4 +1,0 @@
-Application,Auto-save frequency,PutFile access token,Permissions check frequency
-Word,Every 30 seconds if document is updated.,The access token of the user who made the most recent change to the document.,At least every 5 minutes.
-Excel,Every 2 minutes.,The access token of the user who joined the editing session most recently.,At least every 15 minutes.
-PowerPoint,Every 60 seconds if document is updated.,The access token of the user who made the most recent change to the document.,At least every 5 minutes.
