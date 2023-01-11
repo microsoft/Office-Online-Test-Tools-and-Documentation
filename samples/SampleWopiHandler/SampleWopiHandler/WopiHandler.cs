@@ -137,7 +137,7 @@ namespace SampleWopiHandler
             // https(s)://server/<...>/wopi/folders/<id>/children?access_token=<token>
 
             // Get request path, e.g. /<...>/wopi/files/<id>
-            string requestPath = request.Url.AbsolutePath;
+            string requestPath = HttpUtility.UrlDecode(request.Url.AbsolutePath);
             // remove /<...>/wopi/
             string wopiPath = requestPath.Substring(WopiPath.Length);
 
