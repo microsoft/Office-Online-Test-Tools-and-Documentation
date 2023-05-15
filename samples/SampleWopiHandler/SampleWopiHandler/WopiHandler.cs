@@ -250,7 +250,7 @@ namespace SampleWopiHandler
         /// </summary>
         /// <remarks>
         /// For full documentation on CheckFileInfo, see
-        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/CheckFileInfo.html
+        /// https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo
         /// </remarks>
         private void HandleCheckFileInfoRequest(HttpContext context, WopiRequest requestData)
         {
@@ -277,7 +277,7 @@ namespace SampleWopiHandler
                 }
 
                 // For more info on CheckFileInfoResponse fields, see
-                // https://wopi.readthedocs.io/projects/wopirest/en/latest/files/CheckFileInfo.html#response
+                // https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-response
                 CheckFileInfoResponse responseData = new CheckFileInfoResponse()
                 {
                     // required CheckFileInfo properties
@@ -320,7 +320,7 @@ namespace SampleWopiHandler
         /// </summary>
         /// <remarks>
         /// For full documentation on GetFile, see
-        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/GetFile.html
+        /// https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/getfile
         /// </remarks>
         private void HandleGetFileRequest(HttpContext context, WopiRequest requestData)
         {
@@ -364,7 +364,7 @@ namespace SampleWopiHandler
         /// </summary>
         /// <remarks>
         /// For full documentation on PutFile, see
-        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/PutFile.html
+        /// https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/putfile
         /// </remarks>
         private void HandlePutFileRequest(HttpContext context, WopiRequest requestData)
         {
@@ -433,7 +433,7 @@ namespace SampleWopiHandler
         /// </summary>
         /// <remarks>
         /// For full documentation on Lock, see
-        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/Lock.html
+        /// https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/lock
         /// </remarks>
         private void HandleLockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -488,7 +488,7 @@ namespace SampleWopiHandler
         /// </summary>
         /// <remarks>
         /// For full documentation on RefreshLock, see
-        /// ttps://wopi.readthedocs.io/projects/wopirest/en/latest/files/RefreshLock.html
+        /// https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/refreshlock
         /// </remarks>
         private void HandleRefreshLockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -539,7 +539,7 @@ namespace SampleWopiHandler
         /// </summary>
         /// <remarks>
         /// For full documentation on Unlock, see
-        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/Unlock.html
+        /// https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/unlock
         /// </remarks>
         private void HandleUnlockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -591,7 +591,7 @@ namespace SampleWopiHandler
         /// </summary>
         /// <remarks>
         /// For full documentation on UnlockAndRelock, see
-        /// https://wopi.readthedocs.io/projects/wopirest/en/latest/files/UnlockAndRelock.html
+        /// https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/unlockandrelock
         /// </remarks>
         private void HandleUnlockAndRelockRequest(HttpContext context, WopiRequest requestData)
         {
@@ -650,10 +650,10 @@ namespace SampleWopiHandler
         {
             // TODO: WOPI proof key validation is not implemented in this sample.
             // For more details on proof keys, see the documentation
-            // https://wopi.readthedocs.io/en/latest/scenarios/proofkeys.html
+            // https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/scenarios/proofkeys
 
             // The proof keys are returned by WOPI Discovery. For more details, see
-            // https://wopi.readthedocs.io/en/latest/discovery.html
+            // https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/discovery
 
             return true;
         }
@@ -668,7 +668,7 @@ namespace SampleWopiHandler
         {
             // TODO: Access token validation is not implemented in this sample.
             // For more details on access tokens, see the documentation
-            // https://wopi.readthedocs.io/projects/wopirest/en/latest/concepts.html#term-access-token
+            // https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/concepts#access-token
             // "INVALID" is used by the WOPIValidator.
             return !String.IsNullOrWhiteSpace(requestData.AccessToken) && (requestData.AccessToken != "INVALID");
         }
